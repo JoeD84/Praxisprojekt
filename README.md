@@ -11,9 +11,11 @@ Hardware:
 * VI-900 3D-Lasererfassungssystem
 
 Programmiersprache: 
+
 * C
 
 Programmierumgebung:
+
 * Eclipse mit AVRPlugin und AVRDude
 
 Bei Fragen stehe ich gerne unter:<br />
