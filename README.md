@@ -1,8 +1,8 @@
 # Mein Praxisprojekt #
 
-Uebersetzung mehrer Schrittmotorprotokolle mittels Mikrocontroller auf das Protokoll einer vorhanden Schrittmotorkarte.
+## Uebersetzung mehrer Schrittmotorprotokolle mittels Mikrocontroller auf das Protokoll einer vorhanden Schrittmotorkarte.
 
-Hardware:
+### Hardware:
 
 *	ATMEGA 324 A
 *	STK500 Entwicklungsboard
@@ -10,11 +10,11 @@ Hardware:
 * 4x20 LC-Display 
 * VI-900 3D-Lasererfassungssystem
 
-Programmiersprache: 
+### Programmiersprache: 
 
 * C
 
-Programmierumgebung:
+### Programmierumgebung:
 
 * Eclipse mit AVRPlugin und AVRDude
 
