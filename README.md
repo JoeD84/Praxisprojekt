@@ -3,8 +3,8 @@
 Uebersetzung mehrer Schrittmotorprotokolle mittels Mikrocontroller auf das Protokoll einer vorhanden Schrittmotorkarte.
 
 Hardware:
-* ATMEGA 324 A:
-* STK500 Entwicklungsboard
+*	ATMEGA 324 A
+*	STK500 Entwicklungsboard
 * AVRISP mkII Programmer
 * 4x20 LC-Display 
 * VI-900 3D-Lasererfassungssystem
