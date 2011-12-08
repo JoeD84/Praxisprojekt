@@ -489,7 +489,39 @@ void 	csg_Status_melden	() {
 	}
 }
 // Vearbeitungs Logik
-int Initialized = -1;
+
+#define M_ISEL 		0
+#define M_CSG  		1
+#define M_ZETA 		2
+#define M_TERMINAL	3
+#define M_NOTI		-1
+#define M_UNK		-2
+
+#define P_INIT 		0
+#define P_FINISH 	1
+#define P_AROT 		2
+#define P_STOP		3
+#define P_HOME		4
+#define P_STEP		5
+#define P_TIMEOUT	6
+
+#define E_CLS		10
+#define E_TEST		11
+
+/*
+	model "isel(RF-1)"
+	port "9600" "n81h"
+	init "@01\r" "0"
+	finish "@0M0\054+600\r" "0"
+	arot "@0M%d\054+600\r" "0"
+	stop "" "0"
+	home "@0M0\054+600\r" "0"
+	step "-0.0173076" "-8000000" "8000000"
+	timeout "60"
+	firsttimeout "10"
+*/
+
+int Initialized = M_NOTI;
 void 	switch_Stepper		(char * str_rx) {
 	const char* pOptions[] = {
 			"#", 	// 0 - Stepper Karte Befehl erkannt
@@ -521,6 +553,108 @@ void 	switch_Stepper		(char * str_rx) {
 	}
 }
 void 	switch_Isel			(char * str_rx) {
+
+	/*
+	Protokoll
+		Isel
+			Init
+				IN
+				OUT
+				Beschreibung
+			Finish
+				IN
+				OUT
+				Beschreibung
+			Arot
+				IN
+				..
+			Home
+				..
+			..
+		Zeta
+			Init
+				in
+				..
+			..
+		..
+	*/
+	#define MENU_ENTRY_NAMELEN 19
+	#define RETURN_LEN 40
+
+	typedef struct Protokoll_entry_s {
+		char P_Name[MENU_ENTRY_NAMELEN];            // name to display for this entry
+		char P_Init;
+		char P_Return[RETURN_LEN];                  // see flag definitions above
+	} Protokoll_entry_t;
+
+	typedef struct Motor_s {
+		int M_Motor;
+		Protokoll_entry_t entry[];
+	} Motor_t;
+
+	typedef struct Protokoll_s {
+		Motor_t Motoren[];
+	} Protokoll_t;
+
+	Motor_t Motoren = {
+			M_ZETA,
+			.entry = {
+			  {
+					  .P_Name   = "Initialisierung",
+					  .P_Init   = "@01",
+					  .P_Return = "0\r\n",
+			  },
+			  {
+					  .P_Name   = "Endsequenz",
+					  .P_Init   = "@0M0\054+600\r",
+					  .P_Return = "0\r\n",
+			  },
+			},
+			M_ISEL,
+			.entry = {
+			  {
+					  .P_Name   = "Initialisierung",
+					  .P_Init   = "@01",
+					  .P_Return = "0\r\n",
+			  },
+			  {
+					  .P_Name   = "Endsequenz",
+					  .P_Init   = "@0M0\054+600\r",
+					  .P_Return = "0\r\n",
+			  },
+			},
+			M_CSG,
+			.entry = {
+			  {
+					  .P_Name   = "Initialisierung",
+					  .P_Init   = "@01",
+					  .P_Return = "0\r\n",
+			  },
+			  {
+					  .P_Name   = "Endsequenz",
+					  .P_Init   = "@0M0\054+600\r",
+					  .P_Return = "0\r\n",
+			  },
+			},
+			M_TERMINAL,
+			.entry = {
+			  {
+					  .P_Name   = "Initialisierung",
+					  .P_Init   = "@01",
+					  .P_Return = "0\r\n",
+			  },
+			  {
+					  .P_Name   = "Endsequenz",
+					  .P_Init   = "@0M0\054+600\r",
+					  .P_Return = "0\r\n",
+			  },
+			},
+	};
+
+	Protokoll_t	Protokoll = {
+	   Motoren,
+	};
+
 	const char* pOptions[] = {
 			"XXXXXXX", 	// 0 - Reserve
 			"!CLS",    	// 1 - LC-Display löschen
@@ -540,6 +674,7 @@ void 	switch_Isel			(char * str_rx) {
 	case 2:			// 2 - Test
 		lcd_puts("Test bestanden\n");
 		uart_put_string("Test bestanden\r\n", D_Stepper);
+		lcd_puts(Protokoll.Motoren.entry.P_Name);
 		break;
 	case 3:			// 3 - Achse auswählen
 		//lcd_puts("Achse festgelegt\n");
@@ -839,28 +974,33 @@ void 	switch_Terminal			(char * str_rx) {
 		if ( Initialized == -2 ) Initialized = 3;
 	}
 }
+
+
+
+
+
 int 	switch_Inputs		(char * str_rx) {
 	const char* pOptions[] = {
 			"@01", 		// 0 - Isel
 			"Q:",    	// 1 - CSG
 			"ECHO0", 	// 2 - Zeta
-			"!Manual",	// 3 - Terminal ansteuerung!
+			"!Terminal",	// 3 - Terminal ansteuerung!
 			0 };
 	switch (FindStringInArray(str_rx, pOptions, 3)) {
-	case 0: 		// 0 - Reserve
-		return 0;
+	case 0: 		// 0 - ISEL
+		return M_ISEL;
 		break;
-	case 1: 		// 1 - LC-Display löschen
-		return 1;
+	case 1: 		// 1 - CSG
+		return M_CSG;
 		break;
-	case 2:			// 2 - Test
-		return 2;
+	case 2:			// 2 - Zeta
+		return M_ZETA;
 		break;
 	case 3:			// 3 - Terminal ansteuerung
-		return 3;
+		return M_TERMINAL;
 		break;
 	default:
-		return -2;
+		return M_UNK;
 	}
 }
 void 	uart_rx				(int dir, char *str_rx) {
@@ -870,20 +1010,21 @@ void 	uart_rx				(int dir, char *str_rx) {
 		switch_Stepper(str_rx);
 	else{
 		if(Initialized==-2){
-			lcd_puts("Unbekannter Motor");
-			lcd_gotoxy(0,0);
+			lcd_puts("Unbekannter Motor!\n");
+			lcd_puts(str_rx);
+			//lcd_gotoxy(0,0);
 			Initialized = -1;
 		}
 		if(Initialized==-1){
 			Initialized = switch_Inputs(str_rx);
 		}
-		if(Initialized==0)
+		if(Initialized == M_ISEL)
 			switch_Isel(str_rx);
-		if(Initialized==1)
+		if(Initialized == M_CSG)
 			switch_csg(str_rx);
-		if(Initialized==2)
+		if(Initialized == M_ZETA)
 			switch_Zeta(str_rx);
-		if(Initialized==3)
+		if(Initialized == M_TERMINAL)
 			switch_Terminal(str_rx);
 	}
 }
