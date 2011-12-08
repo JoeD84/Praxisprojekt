@@ -27,11 +27,12 @@
 #define D_Stepper 	1
 
 #define MCU_CLK F_CPU
-#define CONFIG_TINYMENU_USE_CLEAR
 #include "tinymenu/spin_delay.h"
+/*
+#define CONFIG_TINYMENU_USE_CLEAR
 #include "tinymenu/tinymenu.h"
 #include "tinymenu/tinymenu_hw.h"
-
+*/
 int blub = 0;
 int move = 0;
 
@@ -110,6 +111,7 @@ void 	led_lauflicht		(void) {
 	LED_PORT = i;
 }
 // Menu Stuff
+/*
 void 	mod_manual			(void *arg, void *name) {
 	lcd_puts("Manueller Modus\n");
 	lcd_puts("Aufnahme starten\n");
@@ -137,7 +139,7 @@ void 	menu_puts			(void *arg, char *name) {
 	uart_rx(D_Stepper, str_rx);
 	ms_spin(1000);
 }
-#include "mymenu.h"
+#include "mymenu.h"*/
 
 // Init Stuff
 void init_WDT(void) {
@@ -192,6 +194,7 @@ int main(void) {
 		if( get_key_press( 1<<KEY2 ) )
 			lcd_clrscr();
 
+		/*
 		if (get_key_press(1 << KEY3)) {
 			lcd_puts("Betrete Menü!\n");
 			menu_enter(&menu_context, &menu_main);
@@ -205,7 +208,7 @@ int main(void) {
 			menu_prev_entry(&menu_context);
 		if (get_key_press(1 << KEY7))
 			menu_exit(&menu_context); // 7 - Menü zurück
-
+		*/
 		if ((UCSR0A & (1 << RXC0)))
 			uart_rx(D_RapidForm, str_rx);
 		if ((UCSR1A & (1 << RXC1)))
@@ -222,10 +225,7 @@ int main(void) {
 ISR(WDT_vect)
 //Interrupt Service Routine
 {
-	for (int i = 0; i < 10; i++) {
-		ms_spin(1000);
 		LED_PORT ^= (1 << LED0);
-	}
 }
 ISR(PCINT3_vect)
 //Interrupt Service Routine
@@ -308,14 +308,16 @@ void 	uart_get_string		(char * string_in, int * string_length, int dir) {
 
 // String Stuff
 
-int 	FindStringInArray	(const char* pInput, const char* pOptions[],
-		int cmp_length) {
+int 	FindStringInArray	(const char* pInput, const char* pOptions[], int cmp_length) {
 	int n = -1;
 	while (pOptions[++n]) {
-		if (!strncmp(pInput, pOptions[n], cmp_length))
+		//lcd_puts(pOptions[n]);
+		//lcd_puts("\n");
+		if (!strncmp(pInput, pOptions[n], cmp_length)){
 			return n;
+		}
 	}
-	return -1;
+	return 99;
 }
 void 	String_zerlegen_Isel(char * str_rx, char * Position) {
 	//0M5200, +600
@@ -508,18 +510,49 @@ void 	csg_Status_melden	() {
 #define E_CLS		10
 #define E_TEST		11
 
-/*
-	model "isel(RF-1)"
-	port "9600" "n81h"
-	init "@01\r" "0"
-	finish "@0M0\054+600\r" "0"
-	arot "@0M%d\054+600\r" "0"
-	stop "" "0"
-	home "@0M0\054+600\r" "0"
-	step "-0.0173076" "-8000000" "8000000"
-	timeout "60"
-	firsttimeout "10"
-*/
+
+#define MENU_ENTRY_NAMELEN 19
+#define RETURN_LEN 40
+
+typedef struct Protokoll_entry_s {
+	char *P_Name[MENU_ENTRY_NAMELEN];            // name to display for this entry
+	char *P_Init[40];
+	char *P_Return[RETURN_LEN];                  // see flag definitions above
+} Protokoll_entry_t;
+
+
+typedef struct Motor_s {
+	Protokoll_entry_t M_Motor[];
+} Motor_t;
+
+typedef struct Protokoll_s {
+	Motor_t *Motoren;
+} Protokoll_t;
+
+/*Protokoll_entry_t M_Motor[M_ISEL]={
+		  {
+				  .P_Name   = "Initialisierung",
+				  .P_Init   = "@01",
+				  .P_Return = "0\r\n",
+		  },
+		  {
+				  .P_Name   = "Initialisierung",
+				  .P_Init   = "@01",
+				  .P_Return = "0\r\n",
+		  },
+};*/
+
+Motor_t Motoren = {
+		.M_Motor[M_ISEL] = {
+				.P_Name   = "Initialisierung",
+			    .P_Init   = "@01",
+			    .P_Return = "0\r\n",
+		},
+};
+
+Protokoll_t	Protokoll = {
+   .Motoren
+};
 
 int Initialized = M_NOTI;
 void 	switch_Stepper		(char * str_rx) {
@@ -554,106 +587,6 @@ void 	switch_Stepper		(char * str_rx) {
 }
 void 	switch_Isel			(char * str_rx) {
 
-	/*
-	Protokoll
-		Isel
-			Init
-				IN
-				OUT
-				Beschreibung
-			Finish
-				IN
-				OUT
-				Beschreibung
-			Arot
-				IN
-				..
-			Home
-				..
-			..
-		Zeta
-			Init
-				in
-				..
-			..
-		..
-	*/
-	#define MENU_ENTRY_NAMELEN 19
-	#define RETURN_LEN 40
-
-	typedef struct Protokoll_entry_s {
-		char P_Name[MENU_ENTRY_NAMELEN];            // name to display for this entry
-		char P_Init;
-		char P_Return[RETURN_LEN];                  // see flag definitions above
-	} Protokoll_entry_t;
-
-	typedef struct Motor_s {
-		int M_Motor;
-		Protokoll_entry_t entry[];
-	} Motor_t;
-
-	typedef struct Protokoll_s {
-		Motor_t Motoren[];
-	} Protokoll_t;
-
-	Motor_t Motoren = {
-			M_ZETA,
-			.entry = {
-			  {
-					  .P_Name   = "Initialisierung",
-					  .P_Init   = "@01",
-					  .P_Return = "0\r\n",
-			  },
-			  {
-					  .P_Name   = "Endsequenz",
-					  .P_Init   = "@0M0\054+600\r",
-					  .P_Return = "0\r\n",
-			  },
-			},
-			M_ISEL,
-			.entry = {
-			  {
-					  .P_Name   = "Initialisierung",
-					  .P_Init   = "@01",
-					  .P_Return = "0\r\n",
-			  },
-			  {
-					  .P_Name   = "Endsequenz",
-					  .P_Init   = "@0M0\054+600\r",
-					  .P_Return = "0\r\n",
-			  },
-			},
-			M_CSG,
-			.entry = {
-			  {
-					  .P_Name   = "Initialisierung",
-					  .P_Init   = "@01",
-					  .P_Return = "0\r\n",
-			  },
-			  {
-					  .P_Name   = "Endsequenz",
-					  .P_Init   = "@0M0\054+600\r",
-					  .P_Return = "0\r\n",
-			  },
-			},
-			M_TERMINAL,
-			.entry = {
-			  {
-					  .P_Name   = "Initialisierung",
-					  .P_Init   = "@01",
-					  .P_Return = "0\r\n",
-			  },
-			  {
-					  .P_Name   = "Endsequenz",
-					  .P_Init   = "@0M0\054+600\r",
-					  .P_Return = "0\r\n",
-			  },
-			},
-	};
-
-	Protokoll_t	Protokoll = {
-	   Motoren,
-	};
 
 	const char* pOptions[] = {
 			"XXXXXXX", 	// 0 - Reserve
@@ -664,7 +597,8 @@ void 	switch_Isel			(char * str_rx) {
 			"@0M", 		// 5 - Gehe zu Position MX , +600
 			0 };
 
-	switch (FindStringInArray(str_rx, pOptions, 3)) {
+	int Ret_Val = FindStringInArray(str_rx, pOptions, 3);
+	switch (Ret_Val) {
 	case 0: 		// 0 - Reserve
 		lcd_puts("Reserve\r\n");
 		break;
@@ -673,8 +607,8 @@ void 	switch_Isel			(char * str_rx) {
 		break;
 	case 2:			// 2 - Test
 		lcd_puts("Test bestanden\n");
-		uart_put_string("Test bestanden\r\n", D_Stepper);
-		lcd_puts(Protokoll.Motoren.entry.P_Name);
+		uart_put_string("Test bestanden\r\n", D_RapidForm);
+		//lcd_puts(Protokoll.Motoren.M_Motor[M_ISEL].P_Init);
 		break;
 	case 3:			// 3 - Achse auswählen
 		//lcd_puts("Achse festgelegt\n");
@@ -746,8 +680,8 @@ void 	switch_Isel			(char * str_rx) {
 		uart_put_string("0\r\n", D_RapidForm);
 		break;
 	default:
-		lcd_puts("U: ");
-		//Initialized = switch_Inputs(str_rx);
+		lcd_puts("ISEL:    \n");
+		lcd_puts(str_rx);
 	}
 }
 void 	switch_csg			(char * str_rx) {
@@ -810,7 +744,6 @@ void 	switch_csg			(char * str_rx) {
 		lcd_puts("U_B: ");
 		lcd_puts(str_rx);
 		lcd_puts("!END       \n");
-		Initialized = switch_Inputs(str_rx);
 	}
 }
 void 	Position_Zeta		(char * str_rx, char * Position) {
@@ -970,14 +903,8 @@ void 	switch_Terminal			(char * str_rx) {
 		lcd_puts("       \n");
 		uart_put_string(str_rx,D_Stepper);
 		uart_put_string("\n",D_Stepper);
-		Initialized = switch_Inputs(str_rx);
-		if ( Initialized == -2 ) Initialized = 3;
 	}
 }
-
-
-
-
 
 int 	switch_Inputs		(char * str_rx) {
 	const char* pOptions[] = {
@@ -1009,13 +936,13 @@ void 	uart_rx				(int dir, char *str_rx) {
 	if (dir == D_Stepper)
 		switch_Stepper(str_rx);
 	else{
-		if(Initialized==-2){
+		if(Initialized == M_UNK){
 			lcd_puts("Unbekannter Motor!\n");
 			lcd_puts(str_rx);
 			//lcd_gotoxy(0,0);
-			Initialized = -1;
+			Initialized = M_NOTI;
 		}
-		if(Initialized==-1){
+		if(Initialized == M_NOTI){
 			Initialized = switch_Inputs(str_rx);
 		}
 		if(Initialized == M_ISEL)
