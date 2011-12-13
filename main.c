@@ -21,6 +21,7 @@
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
 #include <string.h>
+#include <avr/pgmspace.h>
 
 #define B_OK "0\r\n"
 #define D_RapidForm 0
@@ -38,11 +39,11 @@ int move = 0;
 char str_rx[100];
 
 // UART Stuff
-void 	uart_init();
+void 	uart_init			();
 void 	uart_put_charater	(unsigned char c, int dir);
 void 	uart_put_string		(char *s, int dir);
 int  	uart_get_character	(int dir);
-void 	uart_get_string		(char * string_in, int * string_length, int dir);
+void 	uart_get_string		(char * string_in, int dir);
 void 	uart_rx				(int dir);
 // String Stuff
 int 	FindStringInArray	(const char* pInput, const char* pOptions[], int cmp_length);
@@ -180,12 +181,7 @@ void init() {
 //
 //////////////////////////////
 int main(void) {
-
 	init();
-
-	//char str_rx[100];
-	char str_rx_stepper[100];
-
 	while (1) {
 		wdt_reset();
 		if (get_key_press(1 << KEY0) || get_key_rpt(1 << KEY0))
@@ -292,7 +288,7 @@ int 	uart_get_character	(int dir) {
 	}
 	return -1;
 }
-void 	uart_get_string		(char * string_in, int * string_length, int dir) {
+void 	uart_get_string		(char * string_in, int dir) {
 	char c;
 	int i = 0;
 	do {
@@ -304,7 +300,6 @@ void 	uart_get_string		(char * string_in, int * string_length, int dir) {
 		}
 	} while (i < 100 && c != '\r' && c != '\n');
 	*string_in = '\0';
-	*string_length = i + 1;
 }
 
 // String Stuff
@@ -332,19 +327,20 @@ void 	uart_get_string		(char * string_in, int * string_length, int dir) {
 #define MENU_ENTRY_NAMELEN 19
 #define RETURN_LEN 40
 
+
+
+
+
+
 typedef struct Entry_s {
 	char Name[19];           					// Name zum Anzeigen
 	char Input[40];							// Vergleichswert
 	char Output[40];                 			// Ausgabebefehl
-} Entry_t;											// Ergeben Struct P_Entry_t
-
-typedef struct Befehle_s {
-	Entry_t Eintrag;							// 7 Befehlssätze vom Typ P_Entry_t
-} Befehle_t;										// Ergeben Struct Befehle_t
+} PROGMEM Entry_t;											// Ergeben Struct P_Entry_t
 
 typedef struct Motor_s {
 	uint8_t 	num_Befehle;
-	Entry_t 	Befehl[2];						// 4 Motoren vom Typ Befehle_t
+	Entry_t 	*Befehl;						// 4 Motoren vom Typ Befehle_t
 } Motor_t;											// Ergeben Struct Motor_t
 
 typedef struct Protokoll {
@@ -352,37 +348,28 @@ typedef struct Protokoll {
 	Motor_t 	Motor[4];
 } Protokoll_t;
 
+Entry_t progmem_Befehl[] = {   // <===
+	{	// Befehl[0] Init
+		.Name = "Init\n",
+		.Input = "@01",
+		.Output = "0\r\n",
+	},
+	{	// Befehl[1] Home
+		.Name = "Home\n",
+		.Input = "@01",
+		.Output = "0\r\n",
+	},
+};
+
 Protokoll_t Protokoll = {
 	.num_Motor = 4,
 	.Motor[M_ISEL] = {	// Motor[0] Isel
 			.num_Befehle = 7,
-			.Befehl = {
-				{	// Befehl[0] Init
-					.Name = "Init",				// Name
-					.Input = "@01",				// Input
-					.Output = "0\r\n",			// Output
-				},
-				{	// Befehl[1] Home
-					.Name = "Home",				// Name
-					.Input = "@01",				// Input
-					.Output = "0\r\n",			// Output
-				},
-			}
+			.Befehl = progmem_Befehl,
 	},
 	.Motor[M_ZETA] = {
 			.num_Befehle = 7,
-			.Befehl = {
-				{	// Befehl[0] Init
-					.Name = "Init",				// Name
-					.Input = "@01",				// Input
-					.Output = "0\r\n",			// Output
-				},
-				{	// Befehl[1] Home
-					.Name = "Home",				// Name
-					.Input = "@01",				// Input
-					.Output = "0\r\n",			// Output
-				},
-			}
+			.Befehl = progmem_Befehl,
 	}
 };
 
@@ -603,8 +590,6 @@ void 	switch_Stepper		(char * str_rx) {
 	}
 }
 void 	switch_Isel			(char * str_rx) {
-
-
 	const char* pOptions[] = {
 			"XXXXXXX", 	// 0 - Reserve
 			"!CLS",    	// 1 - LC-Display löschen
@@ -628,17 +613,40 @@ void 	switch_Isel			(char * str_rx) {
 		//lcd_puts(Protokoll.Motoren.M_Motor[M_ISEL].P_Init);
 		break;
 	case 3:			// 3 - Achse auswählen
-		lcd_puts(Protokoll.Motor[M_ISEL].Befehl[0].Name);
+		ms_spin(10);
+
+	    char buf[32];
+	    PGM_P p;
+	    int i;
+
+	    memcpy_P(&p, &Protokoll.Motor[M_ISEL].Befehl[0].Name[0], sizeof(PGM_P));
+	    strcpy_P(buf, p);
+
+        /*
+		char string_in[40];
+		char c;
+
+		char * str_in_p = &string_in;
+
+		do{
+			c = pgm_read_byte( s_ptr );
+			*str_in_p = c;
+			str_in_p += 1;
+			s_ptr++; // Increase string pointer
+		} while( pgm_read_byte( s_ptr ) != 0x00 );  // End of string
+		*/
+
+		lcd_puts( buf );
 		//String_zerlegen_Isel(str_rx, Position);
-		//uart_put_string("0\r\n", D_RapidForm);
-		uart_put_string(Protokoll.Motor[M_ISEL].Befehl[0].Output, D_RapidForm);
+		uart_put_string("0\r\n", D_RapidForm);
+		//uart_put_string(Protokoll.Motor[M_ISEL].Befehl[0].Output, D_RapidForm);
 		break;
 	case 4:			// 4 - Status abfrage
 		lcd_puts("Statusabfrage:     \n");
 		uart_put_string("A\n", D_Stepper);
 		ms_spin(50);
 		if ((UCSR1A & (1 << RXC1)))
-			uart_rx(D_Stepper, str_rx);
+			uart_rx(D_Stepper);
 		if (!strcmp(str_rx,"0#"))
 			uart_put_string("0\r\n", D_RapidForm);
 		else {
@@ -665,7 +673,7 @@ void 	switch_Isel			(char * str_rx) {
 		uart_put_string(Move_To, D_Stepper);
 		ms_spin(50);
 		if ((UCSR1A & (1 << RXC1)))
-			uart_rx(D_Stepper, str_rx);
+			uart_rx(D_Stepper);
 		else {
 			//lcd_puts("Befehl n. bestaetig\n");
 			break;
@@ -674,7 +682,7 @@ void 	switch_Isel			(char * str_rx) {
 		uart_put_string("A\n", D_Stepper);
 		ms_spin(50);
 		if ((UCSR1A & (1 << RXC1)))
-			uart_rx(D_Stepper, str_rx);
+			uart_rx(D_Stepper);
 		else {
 			lcd_puts("Keine Bewegung!\n");
 		}
@@ -683,7 +691,7 @@ void 	switch_Isel			(char * str_rx) {
 			uart_put_string("A\n", D_Stepper);
 			ms_spin(50);
 			if ((UCSR1A & (1 << RXC1))){
-				uart_rx(D_Stepper, str_rx);
+				uart_rx(D_Stepper);
 				lcd_clrscr();
 				lcd_puts("running\n");
 			}
@@ -823,7 +831,7 @@ void 	switch_Zeta			(char * str_rx) {
 		uart_put_string(Move_To, D_Stepper);
 		ms_spin(50);
 		if ((UCSR1A & (1 << RXC1)))
-			uart_rx(D_Stepper, str_rx);
+			uart_rx(D_Stepper);
 		else {
 			lcd_puts("Befehl n. bestaetig\n");
 			break;
@@ -832,7 +840,7 @@ void 	switch_Zeta			(char * str_rx) {
 		uart_put_string("A\n", D_Stepper);
 		ms_spin(50);
 		if ((UCSR1A & (1 << RXC1)))
-			uart_rx(D_Stepper, str_rx);
+			uart_rx(D_Stepper);
 		else {
 			lcd_puts("Keine Bewegung!\n");
 		}
@@ -841,7 +849,7 @@ void 	switch_Zeta			(char * str_rx) {
 			uart_put_string("A\n", D_Stepper);
 			ms_spin(50);
 			if ((UCSR1A & (1 << RXC1))){
-				uart_rx(D_Stepper, str_rx);
+				uart_rx(D_Stepper);
 				lcd_clrscr();
 				lcd_puts("running\n");
 			}
@@ -949,15 +957,13 @@ int 	switch_Motor		(char * str_rx) {
 	}
 }
 void 	uart_rx				(int dir) {
-	int* str_rx_len = 0;
-	uart_get_string(str_rx, str_rx_len, dir);
+	uart_get_string(str_rx, dir);
 	if (dir == D_Stepper)
 		switch_Stepper(str_rx);
 	else{
 		if(Initialized == M_UNK){
 			lcd_puts("Unbekannter Motor!\n");
-			lcd_puts(str_rx);
-			//lcd_gotoxy(0,0);
+			//lcd_puts(str_rx);
 			Initialized = M_NOTI;
 		}
 		if(Initialized == M_NOTI){
