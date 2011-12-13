@@ -35,6 +35,7 @@
 */
 int blub = 0;
 int move = 0;
+char str_rx[100];
 
 // UART Stuff
 void 	uart_init();
@@ -42,7 +43,7 @@ void 	uart_put_charater	(unsigned char c, int dir);
 void 	uart_put_string		(char *s, int dir);
 int  	uart_get_character	(int dir);
 void 	uart_get_string		(char * string_in, int * string_length, int dir);
-void 	uart_rx				(int dir, char * str_rx);
+void 	uart_rx				(int dir);
 // String Stuff
 int 	FindStringInArray	(const char* pInput, const char* pOptions[], int cmp_length);
 void 	String_zerlegen_Isel(char * str_rx, char * Position);
@@ -50,7 +51,7 @@ void 	String_zerlegen_csg	(char * str_rx);
 // Hilfs Funktionen
 void 	csg_Status_melden	();
 // Auswerte Logik
-int 	switch_Inputs		(char * str_rx);
+int 	switch_Motor		(char * str_rx);
 void 	switch_Stepper		(char * str_rx);
 void 	switch_Isel			(char * str_rx);
 void 	switch_csg			(char * str_rx);
@@ -182,7 +183,7 @@ int main(void) {
 
 	init();
 
-	char str_rx[100];
+	//char str_rx[100];
 	char str_rx_stepper[100];
 
 	while (1) {
@@ -210,9 +211,9 @@ int main(void) {
 			menu_exit(&menu_context); // 7 - Menü zurück
 		*/
 		if ((UCSR0A & (1 << RXC0)))
-			uart_rx(D_RapidForm, str_rx);
+			uart_rx(D_RapidForm);
 		if ((UCSR1A & (1 << RXC1)))
-			uart_rx(D_Stepper, str_rx_stepper);
+			uart_rx(D_Stepper);
 	}
 }
 //////////////////////////////
@@ -307,6 +308,84 @@ void 	uart_get_string		(char * string_in, int * string_length, int dir) {
 }
 
 // String Stuff
+
+
+#define M_ISEL 		0
+#define M_CSG  		1
+#define M_ZETA 		2
+#define M_TERMINAL	3
+#define M_NOTI		-1
+#define M_UNK		-2
+
+#define P_INIT 		0
+#define P_FINISH 	1
+#define P_AROT 		2
+#define P_STOP		3
+#define P_HOME		4
+#define P_STEP		5
+#define P_TIMEOUT	6
+
+#define E_CLS		10
+#define E_TEST		11
+
+
+#define MENU_ENTRY_NAMELEN 19
+#define RETURN_LEN 40
+
+typedef struct Entry_s {
+	char Name[19];           					// Name zum Anzeigen
+	char Input[40];							// Vergleichswert
+	char Output[40];                 			// Ausgabebefehl
+} Entry_t;											// Ergeben Struct P_Entry_t
+
+typedef struct Befehle_s {
+	Entry_t Eintrag;							// 7 Befehlssätze vom Typ P_Entry_t
+} Befehle_t;										// Ergeben Struct Befehle_t
+
+typedef struct Motor_s {
+	uint8_t 	num_Befehle;
+	Entry_t 	Befehl[2];						// 4 Motoren vom Typ Befehle_t
+} Motor_t;											// Ergeben Struct Motor_t
+
+typedef struct Protokoll {
+	uint8_t 	num_Motor;
+	Motor_t 	Motor[4];
+} Protokoll_t;
+
+Protokoll_t Protokoll = {
+	.num_Motor = 4,
+	.Motor[M_ISEL] = {	// Motor[0] Isel
+			.num_Befehle = 7,
+			.Befehl = {
+				{	// Befehl[0] Init
+					.Name = "Init",				// Name
+					.Input = "@01",				// Input
+					.Output = "0\r\n",			// Output
+				},
+				{	// Befehl[1] Home
+					.Name = "Home",				// Name
+					.Input = "@01",				// Input
+					.Output = "0\r\n",			// Output
+				},
+			}
+	},
+	.Motor[M_ZETA] = {
+			.num_Befehle = 7,
+			.Befehl = {
+				{	// Befehl[0] Init
+					.Name = "Init",				// Name
+					.Input = "@01",				// Input
+					.Output = "0\r\n",			// Output
+				},
+				{	// Befehl[1] Home
+					.Name = "Home",				// Name
+					.Input = "@01",				// Input
+					.Output = "0\r\n",			// Output
+				},
+			}
+	}
+};
+
 
 int 	FindStringInArray	(const char* pInput, const char* pOptions[], int cmp_length) {
 	int n = -1;
@@ -492,68 +571,6 @@ void 	csg_Status_melden	() {
 }
 // Vearbeitungs Logik
 
-#define M_ISEL 		0
-#define M_CSG  		1
-#define M_ZETA 		2
-#define M_TERMINAL	3
-#define M_NOTI		-1
-#define M_UNK		-2
-
-#define P_INIT 		0
-#define P_FINISH 	1
-#define P_AROT 		2
-#define P_STOP		3
-#define P_HOME		4
-#define P_STEP		5
-#define P_TIMEOUT	6
-
-#define E_CLS		10
-#define E_TEST		11
-
-
-#define MENU_ENTRY_NAMELEN 19
-#define RETURN_LEN 40
-
-typedef struct Protokoll_entry_s {
-	char *P_Name[MENU_ENTRY_NAMELEN];            // name to display for this entry
-	char *P_Init[40];
-	char *P_Return[RETURN_LEN];                  // see flag definitions above
-} Protokoll_entry_t;
-
-
-typedef struct Motor_s {
-	Protokoll_entry_t M_Motor[];
-} Motor_t;
-
-typedef struct Protokoll_s {
-	Motor_t *Motoren;
-} Protokoll_t;
-
-/*Protokoll_entry_t M_Motor[M_ISEL]={
-		  {
-				  .P_Name   = "Initialisierung",
-				  .P_Init   = "@01",
-				  .P_Return = "0\r\n",
-		  },
-		  {
-				  .P_Name   = "Initialisierung",
-				  .P_Init   = "@01",
-				  .P_Return = "0\r\n",
-		  },
-};*/
-
-Motor_t Motoren = {
-		.M_Motor[M_ISEL] = {
-				.P_Name   = "Initialisierung",
-			    .P_Init   = "@01",
-			    .P_Return = "0\r\n",
-		},
-};
-
-Protokoll_t	Protokoll = {
-   .Motoren
-};
-
 int Initialized = M_NOTI;
 void 	switch_Stepper		(char * str_rx) {
 	const char* pOptions[] = {
@@ -611,9 +628,10 @@ void 	switch_Isel			(char * str_rx) {
 		//lcd_puts(Protokoll.Motoren.M_Motor[M_ISEL].P_Init);
 		break;
 	case 3:			// 3 - Achse auswählen
-		//lcd_puts("Achse festgelegt\n");
+		lcd_puts(Protokoll.Motor[M_ISEL].Befehl[0].Name);
 		//String_zerlegen_Isel(str_rx, Position);
-		uart_put_string("0\r\n", D_RapidForm);
+		//uart_put_string("0\r\n", D_RapidForm);
+		uart_put_string(Protokoll.Motor[M_ISEL].Befehl[0].Output, D_RapidForm);
 		break;
 	case 4:			// 4 - Status abfrage
 		lcd_puts("Statusabfrage:     \n");
@@ -906,7 +924,7 @@ void 	switch_Terminal			(char * str_rx) {
 	}
 }
 
-int 	switch_Inputs		(char * str_rx) {
+int 	switch_Motor		(char * str_rx) {
 	const char* pOptions[] = {
 			"@01", 		// 0 - Isel
 			"Q:",    	// 1 - CSG
@@ -930,7 +948,7 @@ int 	switch_Inputs		(char * str_rx) {
 		return M_UNK;
 	}
 }
-void 	uart_rx				(int dir, char *str_rx) {
+void 	uart_rx				(int dir) {
 	int* str_rx_len = 0;
 	uart_get_string(str_rx, str_rx_len, dir);
 	if (dir == D_Stepper)
@@ -943,7 +961,7 @@ void 	uart_rx				(int dir, char *str_rx) {
 			Initialized = M_NOTI;
 		}
 		if(Initialized == M_NOTI){
-			Initialized = switch_Inputs(str_rx);
+			Initialized = switch_Motor(str_rx);
 		}
 		if(Initialized == M_ISEL)
 			switch_Isel(str_rx);
