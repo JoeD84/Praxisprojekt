@@ -1,9 +1,19 @@
-/*
- * main.c
- *
- * Created: 05.10.2011 17:36:28
- *  Author: JoeD
- */
+Stepper Translator - Recieve commands over RS-232, translate them and transmit them over RS-232.
+Copyright (C) 2011  Johannes Dielmann
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 #define BAUD 9600
 
 #ifndef F_CPU
@@ -86,7 +96,7 @@ void 	led_spielerein		(void) {
 	for (int i = 1; i < 9; i++) // LEDs durchlaufen
 	{
 		_delay_ms(80); // Eine Sekunde +/-1/10000 Sekunde warten...
-		LED_PORT &= ~((1 << i)); // löscht Bit an PortB - LED an
+		LED_PORT &= ~((1 << i)); // lï¿½scht Bit an PortB - LED an
 		LED_PORT |= ((1 << (i - 1))); // setzt  Bit an PortB - LED aus
 		//wdt_reset();
 	}
@@ -117,7 +127,7 @@ void 	led_lauflicht		(void) {
 void 	mod_manual			(void *arg, void *name) {
 	lcd_puts("Manueller Modus\n");
 	lcd_puts("Aufnahme starten\n");
-	lcd_puts("Nach Aufnahme SW3 drücken!\n");
+	lcd_puts("Nach Aufnahme SW3 drï¿½cken!\n");
 	if (get_key_press(1 << KEY3))
 		uart_put_string("M 16000\r", D_Stepper);
 }
@@ -173,18 +183,18 @@ int main(void) {
 
 
 		if (get_key_press(1 << KEY3)) {
-			lcd_puts("Betrete Menü!\n");
+			lcd_puts("Betrete Menï¿½!\n");
 			menu_enter(&menu_context, &menu_main);
 		}
 
 		if (get_key_press(1 << KEY4))
-			menu_select(&menu_context); // 4 - Auswählen
+			menu_select(&menu_context); // 4 - Auswï¿½hlen
 		if (get_key_press(1 << KEY5) || get_key_rpt(1 << KEY5)) // 5 - Next
 			menu_next_entry(&menu_context);
 		if (get_key_press(1 << KEY6) || get_key_rpt(1 << KEY6)) // 6 - Previous
 			menu_prev_entry(&menu_context);
 		if (get_key_press(1 << KEY7))
-			menu_exit(&menu_context); // 7 - Menü zurück
+			menu_exit(&menu_context); // 7 - Menï¿½ zurï¿½ck
 
 		if ((UCSR0A & (1 << RXC0)))
 			uart_rx(D_RapidForm);
@@ -448,7 +458,7 @@ void 	String_zerlegen_csg	(char * str_rx) {
 	lcd_puts("1_MIN_SPEED:");
 	lcd_puts(ONE_Min_Speed);
 	lcd_puts("\n");
-	// TODO: Range überprüfen! 50-20000
+	// TODO: Range ï¿½berprï¿½fen! 50-20000
 	//uart_puts();
 
 	////////////////////////
@@ -456,8 +466,8 @@ void 	String_zerlegen_csg	(char * str_rx) {
 	//  Max Speed (50 - 20000)
 	//
 	////////////////////////
-	i++; // Stuerzeichen überspringen
-	j = 0; // Variablenzähler zurücksetzen
+	i++; // Stuerzeichen ï¿½berspringen
+	j = 0; // Variablenzï¿½hler zurï¿½cksetzen
 	do {
 		c = str_rx[i];
 		if (c != 'R') {
@@ -477,8 +487,8 @@ void 	String_zerlegen_csg	(char * str_rx) {
 	//  Acceleration (0 - 1000)
 	//
 	////////////////////////
-	i++; // Stuerzeichen überspringen
-	j = 0; // Variablenzähler zurücksetzen
+	i++; // Stuerzeichen ï¿½berspringen
+	j = 0; // Variablenzï¿½hler zurï¿½cksetzen
 	do {
 		c = str_rx[i];
 		if (c != 'S') {
@@ -495,7 +505,7 @@ void 	String_zerlegen_csg	(char * str_rx) {
 
 	//////////////////////////
 	//
-	//  Blub um eins hochzählen
+	//  Blub um eins hochzï¿½hlen
 	//
 	//////////////////////////
 	blub++;
@@ -521,19 +531,19 @@ void 	csg_Status_melden	() {
 	switch (k) {
 	case 0:
 		lcd_puts("Status gemeldet!");
-		uart_put_string("         0,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurückmelden
+		uart_put_string("         0,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurï¿½ckmelden
 		break;
 	case 1:
-		uart_put_string("         9,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurückmelden
+		uart_put_string("         9,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurï¿½ckmelden
 		break;
 	case 2:
-		uart_put_string("        99,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurückmelden
+		uart_put_string("        99,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurï¿½ckmelden
 		break;
 	case 3:
-		uart_put_string("       999,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurückmelden
+		uart_put_string("       999,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurï¿½ckmelden
 		break;
 	default:
-		uart_put_string(" 999999999,         0,K,K,R\r\n", D_RapidForm); // Status an RapidForm zurückmelden
+		uart_put_string(" 999999999,         0,K,K,R\r\n", D_RapidForm); // Status an RapidForm zurï¿½ckmelden
 	}
 }
 void 	Position_Zeta		(char * Position) {
@@ -594,9 +604,9 @@ void 	switch_Stepper		(char * str_rx) {
 void 	switch_Isel			(char * str_rx) {
 	const char* pOptions[] = {
 			"XXXXXXX", 	// 0 - Reserve
-			"!CLS",    	// 1 - LC-Display löschen
+			"!CLS",    	// 1 - LC-Display lï¿½schen
 			"Test", 	// 2 - Test
-			"@01",  	// 3 - Achse auswählen
+			"@01",  	// 3 - Achse auswï¿½hlen
 			"@0R", 		// 4 - Status abfrage
 			"@0M", 		// 5 - Gehe zu Position MX , +600
 			0 };
@@ -606,7 +616,7 @@ void 	switch_Isel			(char * str_rx) {
 	case 0: 		// 0 - Reserve
 		lcd_puts("Reserve\r\n");
 		break;
-	case 1: 		// 1 - LC-Display löschen
+	case 1: 		// 1 - LC-Display lï¿½schen
 		lcd_clrscr();
 		break;
 	case 2:			// 2 - Test
@@ -614,7 +624,7 @@ void 	switch_Isel			(char * str_rx) {
 		uart_put_string("Test bestanden\r\n", D_RapidForm);
 		//lcd_puts(Protokoll.Motoren.M_Motor[M_ISEL].P_Init);
 		break;
-	case 3:			// 3 - Achse auswählen
+	case 3:			// 3 - Achse auswï¿½hlen
 		ms_spin(10);
 		/*
 	    char buf[32];
@@ -718,7 +728,7 @@ void 	switch_Isel			(char * str_rx) {
 void 	switch_csg			(char * str_rx) {
 	const char* pOptions[] = {
 			"Test2", // 0 - Stepper Karte Befehl erkannt
-			"!CLS", // 1 - LC-Display löschen
+			"!CLS", // 1 - LC-Display lï¿½schen
 			"Test", // 2 - Test
 			"Q:", // 3 - Status abfrage
 			"D:2", // 4 - D:2S500F5000R200S500F5000R200.
@@ -732,7 +742,7 @@ void 	switch_csg			(char * str_rx) {
 	case 0: // Motorkarte Erfolgreich angesprochen
 		lcd_puts("!");
 		break;
-	case 1: // Display löschen
+	case 1: // Display lï¿½schen
 		lcd_clrscr();
 		break;
 	case 2: // Interner Test
@@ -779,7 +789,7 @@ void 	switch_csg			(char * str_rx) {
 }
 void 	switch_Zeta			(char * str_rx) {
 	const char* pOptions[] = {
-			"!CLS", // 0 - LC-Display löschen
+			"!CLS", // 0 - LC-Display lï¿½schen
 			"Test",	// 1 - Test
 			"GO", 	// 2 - Motor Starten
 			"WAIT",	// 3 - Wait till motor stops
@@ -800,7 +810,7 @@ void 	switch_Zeta			(char * str_rx) {
 	Move_To[2] = ' ';
 	Move_To[3] = '\0';
 	switch (FindStringInArray(str_rx, pOptions, 1)) {
-	case 0: // Display löschen
+	case 0: // Display lï¿½schen
 		lcd_clrscr();
 		break;
 	case 1: // Interner Test
@@ -858,7 +868,7 @@ void 	switch_Zeta			(char * str_rx) {
 		//lcd_puts("MA1 empfangen     \n");
 		break;
 	case 7: // Position Setzen
-		memset(Position, '\0', 33);			// Array mit Nullen befüllen
+		memset(Position, '\0', 33);			// Array mit Nullen befï¿½llen
 		Position_Zeta(Position);
 		break;
 	case 8:
@@ -883,7 +893,7 @@ void 	switch_Zeta			(char * str_rx) {
 int init_T = 0;
 void 	switch_Terminal			(char * str_rx) {
 	const char* pOptions[] = {
-			"!CLS", // 0 - LC-Display löschen
+			"!CLS", // 0 - LC-Display lï¿½schen
 			"Test",	// 1 - Test
 			"!Manual",// 2 - Ignorieren
 			"!YYYY",// 3 - Wait till motor stops
@@ -892,11 +902,11 @@ void 	switch_Terminal			(char * str_rx) {
 	if (init_T == 0){
 		init_T = 1;
 		uart_put_string("Willkommen im Terminal Modus\r\n",D_RapidForm);
-		uart_put_string("mögliche Befehle sind: \r\n",D_RapidForm);
+		uart_put_string("mï¿½gliche Befehle sind: \r\n",D_RapidForm);
 		uart_put_string(" A - Motorstatus\r\n M - Move Steps\r\n", D_RapidForm);
 	}
 	switch (FindStringInArray(str_rx, pOptions, 2)) {
-	case 0: // Display löschen
+	case 0: // Display lï¿½schen
 		lcd_clrscr();
 		break;
 	case 1: // Interner Test
@@ -975,7 +985,7 @@ void init() {
 	LED_PORT = 0xFF;
 	// Interrupts definieren
 	PCMSK3 |= (1 << PCINT28); // PD4 als Interrupt zulassen
-	PCICR |= (1 << PCIE3); //Pin Change Interrupt Control Register - PCIE3 setzen für PCINT30
+	PCICR |= (1 << PCIE3); //Pin Change Interrupt Control Register - PCIE3 setzen fï¿½r PCINT30
 	// Startup kennzeichnen
 	led_spielerein();
 	// LC Display initialisieren
