@@ -29,11 +29,11 @@
 
 #define MCU_CLK F_CPU
 #include "tinymenu/spin_delay.h"
-/*
+
 #define CONFIG_TINYMENU_USE_CLEAR
 #include "tinymenu/tinymenu.h"
 #include "tinymenu/tinymenu_hw.h"
-*/
+
 int blub = 0;
 int move = 0;
 char str_rx[100];
@@ -113,7 +113,7 @@ void 	led_lauflicht		(void) {
 	LED_PORT = i;
 }
 // Menu Stuff
-/*
+
 void 	mod_manual			(void *arg, void *name) {
 	lcd_puts("Manueller Modus\n");
 	lcd_puts("Aufnahme starten\n");
@@ -130,7 +130,6 @@ void 	my_select			(void *arg, char *name) {
 }
 void 	menu_puts			(void *arg, char *name) {
 	//my_select(arg, name);
-	char str_rx[100];
 	uart_put_string(arg, D_Stepper);
 	lcd_clrscr();
 	lcd_puts("Send: ");
@@ -138,10 +137,10 @@ void 	menu_puts			(void *arg, char *name) {
 	lcd_puts("\n");
 	ms_spin(100);
 	//if ((UCSR1A & (1 << RXC1)))
-	uart_rx(D_Stepper, str_rx);
+	uart_rx(D_Stepper);
 	ms_spin(1000);
 }
-#include "mymenu.h"*/
+#include "mymenu.h"
 
 // Init Stuff
 void init_WDT(void) {
@@ -152,28 +151,9 @@ void init_WDT(void) {
 	//WDTCSR = 0x0F; //Watchdog Off
 	sei();
 }
-void init() {
-	// Watchdog Initialisieren oder Abschalten
-	init_WDT();
-	// LED Port definieren
-	LED_DDR = 0xFF;
-	LED_PORT = 0xFF;
-	// Interrupts definieren
-	PCMSK3 |= (1 << PCINT28); // PD4 als Interrupt zulassen
-	PCICR |= (1 << PCIE3); //Pin Change Interrupt Control Register - PCIE3 setzen für PCINT30
-	// Startup kennzeichnen
-	led_spielerein();
-	// LC Display initialisieren
-	lcd_init(LCD_DISP_ON_CURSOR);
-	lcd_clrscr();
-	lcd_home();
-	//lcd_spielereien();
-	// Taster entprellen
-	debounce_init();
-	// RS-232 Verbindung initialisieren
-	uart_init();
-	//menu_enter(&menu_context, &menu_main);
-}
+
+void 	init				(void);
+
 
 //////////////////////////////
 //
@@ -191,7 +171,7 @@ int main(void) {
 		if( get_key_press( 1<<KEY2 ) )
 			lcd_clrscr();
 
-		/*
+
 		if (get_key_press(1 << KEY3)) {
 			lcd_puts("Betrete Menü!\n");
 			menu_enter(&menu_context, &menu_main);
@@ -205,7 +185,7 @@ int main(void) {
 			menu_prev_entry(&menu_context);
 		if (get_key_press(1 << KEY7))
 			menu_exit(&menu_context); // 7 - Menü zurück
-		*/
+
 		if ((UCSR0A & (1 << RXC0)))
 			uart_rx(D_RapidForm);
 		if ((UCSR1A & (1 << RXC1)))
@@ -415,7 +395,7 @@ void 	String_zerlegen_Isel(char * str_rx, char * Position) {
 	Position[i] = '\0';
 	int32_t z;
 	z = atoi(Position);
-	z = z * 71111/1024;
+	z = (z * 71111)  /4096;
 	ltoa(z,Position,10);
 	//lcd_puts("Position: ");
 	//lcd_puts(Position);
@@ -556,6 +536,28 @@ void 	csg_Status_melden	() {
 		uart_put_string(" 999999999,         0,K,K,R\r\n", D_RapidForm); // Status an RapidForm zurückmelden
 	}
 }
+void 	Position_Zeta		(char * Position) {
+    char c;
+    int i = 0;
+    do{
+        c = str_rx[i + 2];
+        if(c != ','){
+            Position[i] = c;
+            i++;
+        }
+    }
+     while(i < 20 && c != '\0' && c != ',');
+    Position[i] = '\0';
+    int32_t z;
+
+    //z = atol(Position);
+    //z = z / 9;
+    //ltoa(z, Position, 10);
+    lcd_puts("Position: ");
+    lcd_puts(Position);
+    lcd_puts("\n");
+    ms_spin(1000);
+}
 // Vearbeitungs Logik
 
 int Initialized = M_NOTI;
@@ -614,14 +616,14 @@ void 	switch_Isel			(char * str_rx) {
 		break;
 	case 3:			// 3 - Achse auswählen
 		ms_spin(10);
-
+		/*
 	    char buf[32];
 	    PGM_P p;
 	    int i;
 
 	    memcpy_P(&p, &Protokoll.Motor[M_ISEL].Befehl[0].Name[0], sizeof(PGM_P));
 	    strcpy_P(buf, p);
-
+	    */
         /*
 		char string_in[40];
 		char c;
@@ -636,7 +638,8 @@ void 	switch_Isel			(char * str_rx) {
 		} while( pgm_read_byte( s_ptr ) != 0x00 );  // End of string
 		*/
 
-		lcd_puts( buf );
+		//lcd_puts( buf );
+		lcd_puts("Init");
 		//String_zerlegen_Isel(str_rx, Position);
 		uart_put_string("0\r\n", D_RapidForm);
 		//uart_put_string(Protokoll.Motor[M_ISEL].Befehl[0].Output, D_RapidForm);
@@ -693,7 +696,9 @@ void 	switch_Isel			(char * str_rx) {
 			if ((UCSR1A & (1 << RXC1))){
 				uart_rx(D_Stepper);
 				lcd_clrscr();
-				lcd_puts("running\n");
+				lcd_puts("running to\n");
+				lcd_puts("Position: ");
+				lcd_puts(Position);
 			}
 			else {
 				lcd_puts("Keine Antwort\n");
@@ -771,26 +776,6 @@ void 	switch_csg			(char * str_rx) {
 		lcd_puts(str_rx);
 		lcd_puts("!END       \n");
 	}
-}
-void 	Position_Zeta		(char * str_rx, char * Position) {
-    char c;
-    int i = 0;
-    do{
-        c = str_rx[i + 2];
-        if(c != ','){
-            Position[i] = c;
-            i++;
-        }
-    }
-     while(i < 20 && c != '\0' && c != ',');
-    Position[i] = '\0';
-    int32_t z;
-    z = atol(Position);
-    z = z * 9;
-    ltoa(z, Position, 10);
-    //lcd_puts("Position: ");
-    //lcd_puts(Position);
-    //lcd_puts("\n");
 }
 void 	switch_Zeta			(char * str_rx) {
 	const char* pOptions[] = {
@@ -874,7 +859,7 @@ void 	switch_Zeta			(char * str_rx) {
 		break;
 	case 7: // Position Setzen
 		memset(Position, '\0', 33);			// Array mit Nullen befüllen
-		Position_Zeta(str_rx, Position);
+		Position_Zeta(Position);
 		break;
 	case 8:
 		break;
@@ -978,4 +963,29 @@ void 	uart_rx				(int dir) {
 		if(Initialized == M_TERMINAL)
 			switch_Terminal(str_rx);
 	}
+}
+
+
+
+void init() {
+	// Watchdog Initialisieren oder Abschalten
+	init_WDT();
+	// LED Port definieren
+	LED_DDR = 0xFF;
+	LED_PORT = 0xFF;
+	// Interrupts definieren
+	PCMSK3 |= (1 << PCINT28); // PD4 als Interrupt zulassen
+	PCICR |= (1 << PCIE3); //Pin Change Interrupt Control Register - PCIE3 setzen für PCINT30
+	// Startup kennzeichnen
+	led_spielerein();
+	// LC Display initialisieren
+	lcd_init(LCD_DISP_ON_CURSOR);
+	lcd_clrscr();
+	lcd_home();
+	//lcd_spielereien();
+	// Taster entprellen
+	debounce_init();
+	// RS-232 Verbindung initialisieren
+	uart_init();
+	//menu_enter(&menu_context, &menu_main);
 }

@@ -1,0 +1,29 @@
+1 Umdrehung ca. 640500 Schritte
+version=1.10    93/07/29                           ,
+basesps=  1000,
+maxsps=  6500,
+accel= 30000,
+decel= 10000,
+c_vel=  6500,
+current=  8,
+gearbox=  0,
+jitter=  4,
+deadband= 20,
+slowband= 10,
+sense=  0,
+newline=  1#
+
+
+N 1
+P 1000 6500 30000 10000
+R 32
+?
+
+
+
+?
+version=1.10    93/07/29                           ,basesps=  1000,maxsps=  8000,accel= 30000,decel= 10000,c_vel=  6500,current=  8,gearbox=  0,jitter=  4,deadband= 20,slowband= 10,sense=  0,newline=  1#
+
+
+2?
+version=1.10    93/07/29                           ,basesps=  1000,maxsps= 50000,accel= 30000,decel=120000,c_vel=   150,current=  8,gearbox=  0,jitter=  4,deadband= 20,slowband= 10,sense=  0,newline=  0#
