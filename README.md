@@ -18,8 +18,14 @@
 
 * Eclipse mit AVRPlugin und AVRDude
 
+### Bisheriger Verlauf des Projektes:
+* https://github.com/JoeD84/Praxisprojekt/blob/master/Dokumente/Dokumentation/Praxisprojekt_Fortschritte.pdf
+
+### Galerie mit Bildern des Arbeitsplatzes:
+* https://picasaweb.google.com/Johannes.Dielmann/Praxisprojekt?authuser=0&feat=directlink
+
 Bei Fragen stehe ich gerne unter:<br />
 <Joe84D@gmail.com>
 zur Verfuegung.
 
-![Screenshot](https://lh3.googleusercontent.com/-ivEP3IUFTio/To2-t2WCCWI/AAAAAAAAK6Q/S_i5vczRGeU/s800/IMG_20111005_174923.jpg)
+![Screenshot](https://lh5.googleusercontent.com/-3DdKukSgjJs/TuCvp-5xpEI/AAAAAAAALDs/eeFK-buyE2Q/s800/IMG_20111207_191907.jpg)
