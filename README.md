@@ -1,4 +1,4 @@
-# Mein Praxisprojekt #
+# Praxisprojekt #
 
 ## Uebersetzung mehrer Schrittmotorprotokolle mittels Mikrocontroller auf das Protokoll einer vorhanden Schrittmotorkarte.
 
