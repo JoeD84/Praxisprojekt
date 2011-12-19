@@ -551,7 +551,7 @@ void 	Position_Zeta		(char * Position) {
     char c;
     int i = 0;
     do{
-        c = str_rx[i + 2];
+        c = str_rx[i + 1];
         if(c != ','){
             Position[i] = c;
             i++;
@@ -559,7 +559,10 @@ void 	Position_Zeta		(char * Position) {
     }
      while(i < 20 && c != '\0' && c != ',');
     Position[i] = '\0';
-
+	int32_t z;
+	z = atol(Position);
+	z = z/9;
+	ltoa(z,Position,10);
 }
 // Vearbeitungs Logik
 
@@ -588,9 +591,10 @@ void 	switch_Stepper		(char * str_rx) {
 		//uart_put_string("Test bestanden\n\r", D_RapidForm);
 		break;
 	default:
-		lcd_puts("Antwort: ");
-		lcd_puts(str_rx);
-		lcd_puts("!\n");
+		ms_spin(10);
+		//lcd_puts("A: ");
+		//lcd_puts(str_rx);
+		//lcd_puts("!\n");
 		//uart_put_string(str_rx, D_RapidForm);
 	}
 }
@@ -834,12 +838,29 @@ void 	switch_Zeta			(char * str_rx) {
 		}
 
 		while (!strcmp(str_rx,"1#")){
+			uart_put_string("W\n", D_Stepper);
+			ms_spin(100);
+			if ((UCSR1A & (1 << RXC1))){
+				uart_rx(D_Stepper);
+				lcd_clrscr();
+				lcd_puts("Position(Akt/Ges): \n");
+				lcd_puts(str_rx);
+				lcd_puts(" / ");
+			}
+			else {
+				lcd_puts("Keine Antwort\n");
+			}
+			wdt_reset();
+
 			uart_put_string("A\n", D_Stepper);
 			ms_spin(50);
 			if ((UCSR1A & (1 << RXC1))){
 				uart_rx(D_Stepper);
-				lcd_clrscr();
-				lcd_puts("running\n");
+				//lcd_clrscr();
+				//lcd_puts("running to\n");
+				//lcd_puts("Position: ");
+				lcd_puts(Position);
+				lcd_puts("\n");
 			}
 			else {
 				lcd_puts("Keine Antwort\n");
