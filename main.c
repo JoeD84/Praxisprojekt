@@ -1,3 +1,4 @@
+/*
 Stepper Translator - Recieve commands over RS-232, translate them and transmit them over RS-232.
 Copyright (C) 2011  Johannes Dielmann
 
@@ -13,7 +14,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+*/
 #define BAUD 9600
 
 #ifndef F_CPU
@@ -558,15 +559,7 @@ void 	Position_Zeta		(char * Position) {
     }
      while(i < 20 && c != '\0' && c != ',');
     Position[i] = '\0';
-    int32_t z;
 
-    //z = atol(Position);
-    //z = z / 9;
-    //ltoa(z, Position, 10);
-    lcd_puts("Position: ");
-    lcd_puts(Position);
-    lcd_puts("\n");
-    ms_spin(1000);
 }
 // Vearbeitungs Logik
 

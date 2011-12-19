@@ -1,0 +1,720 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Warsaw}
+% oder ...
+
+\setbeamercovered{transparent}
+% oder auch nicht
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 2
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Stichwortverzeichnis
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language danish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Praxisprojekt
+\end_layout
+
+\begin_layout Subtitle
+Fortschritte
+\end_layout
+
+\begin_layout Author
+J.
+\begin_inset space ~
+\end_inset
+
+Dielmann
+\begin_inset Flex InstituteMark
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+\begin_inset Flex InstituteMark
+status collapsed
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+Mess- und Sensortechnik
+\begin_inset Newline newline
+\end_inset
+
+RheinAhrCampus
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfdeclareimage[height=0.5cm]{institution-logo}{RAC_logo}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+logo{
+\backslash
+pgfuseimage{institution-logo}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Gliederung
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Oktober
+\end_layout
+
+\begin_layout Subsection
+1.
+ Woche
+\end_layout
+
+\begin_layout BeginFrame
+03.10.2011 - 09.10.2011
+\end_layout
+
+\begin_layout Itemize
+Inbetriebnahme der Stepper-Karte 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ansteuerung mittels Hyperterminal 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Inbetriebnahme des STK500 Microkontrollerboard 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kleine Programme zum Testen der LEDs und Taster 
+\end_layout
+
+\begin_layout Itemize
+Bibliothek zum entprellen der Taster eingebunden 
+\end_layout
+
+\begin_layout Itemize
+UART Schnittstelle aktiviert
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+2.
+ Woche
+\end_layout
+
+\begin_layout BeginFrame
+10.10.2011 - 16.10.2011
+\end_layout
+
+\begin_layout Standard
+Erledigt:
+\end_layout
+
+\begin_layout Itemize
+Verbindung zwischen Mikrocontroller und Stepper-Karte 
+\end_layout
+
+\begin_layout Itemize
+Hinzufügen eines Displays 
+\end_layout
+
+\begin_layout Itemize
+Inbetriebnahme des VI-900 Lasererfassungsystem 
+\end_layout
+
+\begin_layout Itemize
+Programm auf kompletten Befehlssatz erweitern 
+\end_layout
+
+\begin_layout Itemize
+Statusmeldungen auf Display ausgeben 
+\end_layout
+
+\begin_layout Itemize
+Vollständige Steuerung über Taster/Display (Menü) 
+\end_layout
+
+\begin_layout Standard
+Probleme: 
+\end_layout
+
+\begin_layout Itemize
+Mikrocontroller hat keine 2.
+ Serielle Schnittstelle Multiplexen? Software Uart? 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Abgelehnt Anderer Mikrocontroller! 2x UART + 3 Interrupt 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Defekte Menü Bibliothek 
+\end_layout
+
+\begin_layout Standard
+Offene Ziele: 
+\end_layout
+
+\begin_layout Itemize
+2.
+ Karte in Betrieb nehmen und Endschalter verbinden 
+\end_layout
+
+\begin_layout Itemize
+Protokoll abhören
+\end_layout
+
+\begin_layout Subsection
+3.
+ Woche
+\end_layout
+
+\begin_layout BeginFrame
+17.10.2011 - 23.10.2011
+\end_layout
+
+\begin_layout Standard
+Erledigt: 
+\end_layout
+
+\begin_layout Itemize
+Protokoll in Erfahrung bringen 
+\end_layout
+
+\begin_layout Itemize
+Protokoll in groben Zügen adaptiert 
+\end_layout
+
+\begin_layout Standard
+In Bearbeitung: 
+\end_layout
+
+\begin_layout Itemize
+Anderen Mikrocontroller besorgen 
+\end_layout
+
+\begin_layout Itemize
+Lizenz (neue angefordert) 
+\end_layout
+
+\begin_layout Itemize
+2.
+ Karte in Betrieb nehmen und Endschalter verbinden 
+\end_layout
+
+\begin_layout Itemize
+Auftrag an Werkstatt gegeben (ca.
+ 2 Wochen) 
+\end_layout
+
+\begin_layout Standard
+Zu erledigen: 
+\end_layout
+
+\begin_layout Itemize
+Gedrehtes Pin-Pin Kabel bauen 
+\end_layout
+
+\begin_layout Itemize
+Normales Serielles Kabel bauen (min.
+ 6m) 
+\end_layout
+
+\begin_layout Itemize
+Keine 9 Pol.
+ Kabel in Werkstatt 
+\end_layout
+
+\begin_layout Standard
+Nicht mehr relevant:
+\end_layout
+
+\begin_layout Itemize
+Menü austauschen (zu Speicherintensiv)
+\end_layout
+
+\begin_layout Subsection
+4.
+ Woche
+\end_layout
+
+\begin_layout BeginFrame
+27.10.2011 - 03.11.2011
+\end_layout
+
+\begin_layout Standard
+Erreicht: 
+\end_layout
+
+\begin_layout Itemize
+MAX232 auf Steckboard vorbereiten (2.
+ Schnittstelle) 
+\end_layout
+
+\begin_layout Itemize
+Überall Richtige Buchsen/Stecker verbauen 
+\end_layout
+
+\begin_layout Itemize
+Protokoll für Rapidform Motoren anpassen (verbessern) 
+\end_layout
+
+\begin_layout Itemize
+2.
+ Karte in Betrieb genommen 
+\end_layout
+
+\begin_layout Itemize
+Begonnen Endschalter anzuschliessen 
+\end_layout
+
+\begin_layout Standard
+Probleme: 
+\end_layout
+
+\begin_layout Itemize
+Warten auf neuen Mikrocontroller (heute oder morgen) 
+\end_layout
+
+\begin_layout Itemize
+Warten auf 2.
+ Platine aus Werkstatt (workaround) 
+\end_layout
+
+\begin_layout Itemize
+Speicherplatz auf Mikrocontroller zu gering (neuer) 
+\end_layout
+
+\begin_layout Standard
+Nicht erreichte Ziele: 
+\end_layout
+
+\begin_layout Itemize
+Platinenlayout mit Eagle erstellen 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+2-RS; 2 Max 232; Pinheader Drehgeber; Pinheader Display 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Einschubfront Planen 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(LCD; Drehgeber; 2 D-Sub)
+\end_layout
+
+\end_deeper
+\begin_layout Section
+November
+\end_layout
+
+\begin_layout Subsection
+5.
+ Woche
+\end_layout
+
+\begin_layout BeginFrame
+04.11.2011 - 10.10.2011
+\end_layout
+
+\begin_layout Standard
+Erledigt: 
+\end_layout
+
+\begin_layout Itemize
+Prorgamm auf neuen Mikrocontroller anpassen 
+\end_layout
+
+\begin_layout Itemize
+Auf externen Max232 gewechselt 
+\end_layout
+
+\begin_layout Itemize
+Motor Platinen komplett fertig gestellt 
+\end_layout
+
+\begin_layout Standard
+Probleme: 
+\end_layout
+
+\begin_layout Itemize
+Falscher Mikrocontroller geliefert neuer Bestellt (Fr.
+ o.
+ Mo.) 
+\end_layout
+
+\begin_layout Itemize
+Anpassung auf neuen Mikrocontroller war problematisch 
+\end_layout
+
+\begin_layout Itemize
+Programmierung nur noch über AVRISPmkII 
+\end_layout
+
+\begin_layout Itemize
+Falsche Fuses gesetzt (JTAG, Watchdog, CKPSC, CKSRC) 
+\end_layout
+
+\begin_layout Itemize
+Register haben neue Namen 
+\end_layout
+
+\begin_layout Itemize
+Endschalter haben zu geringen Schaltabstand neue Endschalter (am besten
+ mit 5V In/Out) 
+\end_layout
+
+\begin_layout Standard
+Offene Ziele: 
+\end_layout
+
+\begin_layout Itemize
+Beide Schnittstellen in Betrieb nehmen 
+\end_layout
+
+\begin_layout Itemize
+Endschalter am Mikrocontroller beruecksichtigen 
+\end_layout
+
+\begin_layout Itemize
+Eagle Layout beginnen
+\end_layout
+
+\begin_layout Subsection
+6.
+ Woche
+\end_layout
+
+\begin_layout BeginFrame
+11.11.2011 - 17.11.2011
+\end_layout
+
+\begin_layout Standard
+Erledigt: 
+\end_layout
+
+\begin_layout Itemize
+Endschalter verdrahtet (In Motorkabel integriert) 
+\end_layout
+
+\begin_layout Itemize
+Neuer Mikrocontroller eingetroffen 
+\end_layout
+
+\begin_layout Standard
+Probleme: 
+\end_layout
+
+\begin_layout Itemize
+Beschaltung der Endschalter war unklar 
+\end_layout
+
+\begin_layout Itemize
+Defekter Optokoppler 
+\end_layout
+
+\begin_layout Itemize
+Mikrocontroller startet, bei Timer überlauf, ständig neu 
+\end_layout
+
+\begin_layout Standard
+Verworfene Ziele: 
+\end_layout
+
+\begin_layout Itemize
+Neue Endschalter besorgen
+\end_layout
+
+\begin_layout Standard
+Nicht erreichte Ziele: 
+\end_layout
+
+\begin_layout Itemize
+Beide Schnittstellen in Betrieb nehmen 
+\end_layout
+
+\begin_layout Itemize
+Endschalter am Mikrocontroller beruecksichtigen 
+\end_layout
+
+\begin_layout Itemize
+Eagle Layout beginnen
+\end_layout
+
+\begin_layout Subsection
+7.
+ Woche
+\end_layout
+
+\begin_layout BeginFrame
+18.11.2011 - 25.11.2011
+\end_layout
+
+\begin_layout Standard
+Offene Ziele: 
+\end_layout
+
+\begin_layout Itemize
+Programm an Mikrocontroller anpassen 
+\end_layout
+
+\begin_layout Itemize
+2 Schnittstellen in Betrieb nehmen 
+\end_layout
+
+\begin_layout Itemize
+Endschalter richtig verdrahten
+\end_layout
+
+\begin_layout Subsection
+8.
+ Woche
+\end_layout
+
+\begin_layout BeginFrame
+26.11.2011 - 01.12.2011
+\end_layout
+
+\begin_layout Standard
+Erreichte Ziele: 
+\end_layout
+
+\begin_layout Itemize
+Programm an Mikrocontroller anpassen 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Defekte Bibliothek von Atmel 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Vollständiger Wechsel zu Eclipse/AVRDude 
+\end_layout
+
+\begin_layout Itemize
+2 Schnittstellen in Betrieb nehmen 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Größtenteils Vollständig 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Funktionsfähige ISR um Motor zu stoppen 
+\end_layout
+
+\begin_layout Itemize
+Endschalter richtig verdrahten
+\end_layout
+
+\begin_layout Section
+Dezember
+\end_layout
+
+\begin_layout Subsection
+9.
+ Woche
+\end_layout
+
+\begin_layout BeginFrame
+02.12.2011 - 08.12.2011
+\end_layout
+
+\begin_layout Standard
+Erreichte Ziele: 
+\end_layout
+
+\begin_layout Itemize
+Programmablauf optimiert (Vollständige Steuerung durch Software, weitere
+ Protokolle integriert) 
+\end_layout
+
+\begin_layout Itemize
+Quellcode auf Github hoch geladen (https://github.com/JoeD84/Praxisprojekt)
+ 
+\end_layout
+
+\begin_layout Itemize
+Automatische Protokollauswahl (incl.
+ Terminal) 
+\end_layout
+
+\begin_layout Itemize
+Beide Endschalter funktionieren problemlos 
+\end_layout
+
+\begin_layout Itemize
+Platinen Layout begonnen 
+\end_layout
+
+\begin_layout Itemize
+Motor einstellungen optiemiert (100.000 Schritte / Umdrehung.
+ Umrechnungsfaktoren angepasst) 
+\end_layout
+
+\begin_layout Standard
+Nicht erreichte Ziele: 
+\end_layout
+
+\begin_layout Itemize
+Platine ätzen lassen 
+\end_layout
+
+\begin_layout Itemize
+Vollständige Bilderserie aufnehmen
+\end_layout
+
+\begin_layout Subsection
+10.
+ Woche
+\end_layout
+
+\begin_layout BeginFrame
+09.12.2011 - 14.12.2011
+\end_layout
+
+\begin_layout Standard
+Ziele: 
+\end_layout
+
+\begin_layout Itemize
+Platinenlayout fertigstellen und ätzen lassen (mit KiCad) 
+\end_layout
+
+\begin_layout Itemize
+Praxisbericht schreiben (mit LaTeX) 
+\end_layout
+
+\begin_layout Itemize
+3D Objekt vollständig aufnehmen
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_body
+\end_document
