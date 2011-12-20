@@ -33,20 +33,9 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref true
-\pdf_title "Praxisprojekt Fortschritte"
-\pdf_author "J. Dielmann"
-\pdf_bookmarks true
-\pdf_bookmarksnumbered true
-\pdf_bookmarksopen true
-\pdf_bookmarksopenlevel 1
-\pdf_breaklinks false
-\pdf_pdfborder true
-\pdf_colorlinks false
-\pdf_backref false
-\pdf_pdfusetitle true
+\use_hyperref false
 \papersize default
-\use_geometry true
+\use_geometry false
 \use_amsmath 2
 \use_esint 0
 \use_mhchem 1
@@ -83,18 +72,7 @@ Praxisprojekt
 \end_layout
 
 \begin_layout Subtitle
-Fortschritte 
-\begin_inset Newline newline
-\end_inset
-
-Aktuelle Folie auf Seite:
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "Aktuelle Folie"
-
-\end_inset
-
-
+Fortschritte
 \end_layout
 
 \begin_layout Author
@@ -744,16 +722,6 @@ Praxisbericht schreiben (mit LaTeX)
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "Aktuelle Folie"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Erreichte Ziele:
 \end_layout
 
@@ -799,8 +767,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename C:/Dokumente und Einstellungen/Dielmann/Desktop/Praxisprojekt/GIT/workspace/Translator/Bilder/Motor_vollständig_schlecht.jpg
-	lyxscale 50
-	scale 50
+	scale 25
 
 \end_inset
 
