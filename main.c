@@ -296,12 +296,12 @@ void 	uart_get_string		(char * string_in, int dir) {
 // String Stuff
 
 
-#define M_ISEL 		0
-#define M_CSG  		1
-#define M_ZETA 		2
-#define M_TERMINAL	3
-#define M_NOTI		-1
 #define M_UNK		-2
+#define M_NOTI		-1
+#define M_ISEL 		 0
+#define M_CSG  		 1
+#define M_ZETA 		 2
+#define M_TERMINAL	 3
 
 #define P_INIT 		0
 #define P_FINISH 	1
@@ -318,11 +318,8 @@ void 	uart_get_string		(char * string_in, int dir) {
 #define MENU_ENTRY_NAMELEN 19
 #define RETURN_LEN 40
 
-
-
-
-
-
+// Struct Versuche
+/*
 typedef struct Entry_s {
 	char Name[19];           					// Name zum Anzeigen
 	char Input[40];							// Vergleichswert
@@ -363,7 +360,7 @@ Protokoll_t Protokoll = {
 			.Befehl = progmem_Befehl,
 	}
 };
-
+*/
 
 int 	FindStringInArray	(const char* pInput, const char* pOptions[], int cmp_length) {
 	int n = -1;

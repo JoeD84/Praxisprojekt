@@ -1,0 +1,186 @@
+% anstelle von article auch KOMA-Skript-Variante scrartcl
+\documentclass[11pt]{article}
+
+%anstelle von german auch ngerman
+\usepackage{amsfonts,latexsym,eurofont,german}
+\usepackage{graphicx,color}
+%titelblatt
+
+\thispagestyle{empty}
+
+\setlength{\textheight} {270mm} 
+\setlength{\textwidth} {150mm}
+
+%Kopfzeile
+\setlength{\topmargin} {-25mm}
+
+%Fußzeile
+%\setlength{\footheight} {10mm}
+\setlength{\footskip} {10mm}
+
+
+%Seiten link
+\setlength{\oddsidemargin} {10mm} 
+
+%Seite rechts und Rand
+\setlength{\marginparwidth} {0mm} 
+\setlength{\marginparsep} {0mm} 
+
+%Absätze nicht einrücken, möglicherweise nicht zu empfehlen, falls viele Abbildungen vorhanden;
+%Betreuer fragen
+\parindent0mm
+
+%Inhaltsverzeichnis
+\usepackage[numindex,nottoc,section]{tocbibind} %Einbinden von Index-
+                                %und Literaturverzeichnis (nummeriert) in das
+                                %Inhaltsverzeichnis. Inhaltsverzeichnis wird 
+                                %nicht eingebunden.
+
+
+\begin{document}
+
+
+\begin{titlepage}
+\author{}
+%Bilder einfügen
+\begin{figure}[hp]
+	\centering
+	\includegraphics{bsp.jpg}
+	\hfill
+	\includegraphics[height = 13mm]{fh-remagen.jpg}
+\end{figure}
+\begin{center}
+\huge
+\textsc{Titel\\ des Praxisprojektes}\\
+
+\vspace{2cm}
+
+\LARGE
+%\textsc{\bf Bachelorarbeit\\[0.5\baselineskip]
+\textsc{\bf Praxisprojektbericht\\[0.5\baselineskip]
+\Large \normalfont {im Studiengang XXXXXXXX\\[0.5\baselineskip]
+Fachhochschule Koblenz, RheinAhrCampus Remagen}}
+
+\large
+\vspace{2cm}
+\textnormal{vorgelegt von\\[0.5\baselineskip]\textbf{Max Mustermann}\\[0.5\baselineskip] geb.\ am 01.01.1991 in {\em Musterstadt} }\\ 
+\vspace{1cm}
+
+
+\end{center}
+
+\normalsize
+\begin{flushleft}	
+
+\vspace{15mm}
+\begin{tabbing}
+Externer Betreuer:\quad\=\kill
+Interner Betreuer: \> Prof.\ Dr.\ A\\
+Externer Betreuer: \> Dr.\ C\\[1\baselineskip]
+
+durchgef\"uhrt bei: \> Firma XYZ\\
+\end{tabbing}
+\end{flushleft}
+
+%\vspace{0mm} 
+% falls vertraulich
+\begin{center}
+VERTRAULICH
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\textnormal{Remagen, \today}
+\end{center}
+
+
+\end{titlepage}
+
+% Erstellung des Inhaltsverzeichnisses
+\tableofcontents \newpage
+
+% %Erstellung des Abbildungsverzeichnis
+ \listoffigures \newpage
+ 
+% Erstellung des Tabellenverzeichnisses
+\listoftables\newpage
+
+
+\newpage
+
+\section{Einleitung}
+Die Aufgabenstellung geht auf eine Kooperation zwischen
+\begin{figure}[hp]
+	\centering
+	\includegraphics[height = 13mm]{fh-remagen.jpg}
+	\caption{FH-Logo}
+\end{figure}
+
+und 
+
+\begin{figure}[hp]
+	\centering
+	\includegraphics[height = 13mm]{bsp.jpg}
+	\caption{Firma}
+\end{figure}
+
+im Bereich der Bewegungsanalyse zur\"uck.
+
+\newpage
+
+\section{Das Unternehmen}
+Vorstellung des Unternehmens und der Abteilung, in der das Praxisprojekt durchgef\"uhrt wurde.
+
+\section{Mathematische Grundlagen}
+
+TEXT
+
+\subsection{Der Chi--Quadrat-Test}
+TEXT
+
+
+\subsection{Risikoma\3e}
+
+\newpage
+
+\section{AMA -- Ansatz}
+
+\newpage
+
+\section{Zusammenfassung}
+
+Eine abschlie\3ende Analyse f\"uhrt zu 
+
+\newpage
+
+\addcontentsline{toc}{section}{A Anhang 1}
+\section*{A Anhang 1}
+
+
+\newpage
+
+\begin{thebibliography}{99}
+%Zeitschriftenartikel
+\bibitem{maquarbra} Mack, T., Quarg, G., Braun, C.\ (2006). {\em The mean square error of prediction in the chain ladder reserving method. A comment.} ASTIN Bulletin 36, 543-553. 
+%Buch
+\bibitem{mik} Mikosch, T.\ (1994). {\em Non-life insurance mathematics.} Springer, Heidelberg.
+%Internetquelle
+\bibitem{wiki1} Wikipedia. {\em Chi--Quadrat--Test}, http://de.wikipedia.org/wiki/Chi-Quadrat-Test, Stand: 30.09.2011.
+\end{thebibliography}
+
+\newpage
+
+\section*{Erkl\"arung}
+
+\vspace{2cm}
+
+Hiermit versichere ich, dass ich den vorliegenden Bericht selbst\"andig und nur unter Verwendung der angegebenen Quellen und Hilfsmittel verfasst habe.
+
+\vspace{2cm}
+
+Remagen, den \today \hfill {Max Mustermann} 
+
+
+
+\end{document}
