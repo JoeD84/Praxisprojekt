@@ -18,8 +18,8 @@
 
 * Eclipse mit AVRPlugin und AVRDude
 
-### Entwurf des Praxisberichts(*work in Progress*):
-https://github.com/JoeD84/Praxisprojekt/blob/master/Dokumente/_Dokumentation/Praxisprojekt.pdf?raw=true
+### Entwurf des Praxisberichts(**work in Progress**):
+* https://github.com/JoeD84/Praxisprojekt/blob/master/Dokumente/_Dokumentation/Praxisprojekt.pdf?raw=true
 
 ### Bisheriger Verlauf des Projektes:
 * https://github.com/JoeD84/Praxisprojekt/blob/master/Dokumente/_Dokumentation/Praxisprojekt_Fortschritte.pdf?raw=true
