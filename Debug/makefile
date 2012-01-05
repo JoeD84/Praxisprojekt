@@ -77,13 +77,13 @@ Translator.eep: Translator.elf
 
 sizedummy: Translator.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega324a Translator.elf
+	-avr-size --format=berkeley -t Translator.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
 avrdudedummy: Translator.elf
 	@echo 'Invoking: AVRDude'
-	C:\WinAVR-20100110\bin\avrdude -pm324a -cavrisp2 -Pusb -u -Uflash:w:Translator.hex:a
+	C:\WinAVR-20100110\bin/avrdude -pnull -cavrisp2 -Pusb -u -Uflash:w:Translator.hex:a
 	@echo 'Finished building: $@'
 	@echo ' '
 
