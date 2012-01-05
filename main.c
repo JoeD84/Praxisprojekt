@@ -15,40 +15,43 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+// BAUD Rate definieren
 #define BAUD 9600
-
+// Falls nicht bereits gesetzt, Taktfrequenz definieren
 #ifndef F_CPU
 #define F_CPU 8000000
 #endif
-
+// AVR Includes
 #include <avr/io.h>
 #include <util/delay.h>
 #include <util/setbaud.h>
 #include <stdlib.h>
-#include "mystuff.h"
-#include "Debounce.h"
-#include "lcd.h"
 #include <string.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
 #include <string.h>
 #include <avr/pgmspace.h>
-
-#define B_OK "0\r\n"
+// Meine Includes
+#include "mystuff.h"
+#include "Debounce.h"
+#include "lcd.h"
+// Globale Variablen
+#define B_OK 		"0\r\n"
 #define D_RapidForm 0
 #define D_Stepper 	1
+int 	move = 0;
+int 	init_T = 0;
+char 	str_rx[100];
 
+//// Tinymenu
+// MCU_CLK = F_CPU für TinyMenu
 #define MCU_CLK F_CPU
 #include "tinymenu/spin_delay.h"
-
 #define CONFIG_TINYMENU_USE_CLEAR
 #include "tinymenu/tinymenu.h"
 #include "tinymenu/tinymenu_hw.h"
 
-int blub = 0;
-int move = 0;
-char str_rx[100];
-
+//// Funktionsdefinitionen
 // UART Stuff
 void 	uart_init			();
 void 	uart_put_charater	(unsigned char c, int dir);
@@ -68,101 +71,18 @@ void 	switch_Stepper		(char * str_rx);
 void 	switch_Isel			(char * str_rx);
 void 	switch_csg			(char * str_rx);
 // LCD und LED Stuff
-void 	lcd_my_type			(char *s) {
-	srand(TCNT0);
-	int min = 10;
-	int max = 250;
-	int erg = 0;
-	while (*s) // so lange *s != '\0' also ungleich dem "String-Endezeichen(Terminator)"
-	{
-		erg = (rand() % (max - min + 1) + min);
-		lcd_putc(*s);
-		s++;
-		for (int i = 0; i < erg; i++)
-			_delay_ms(1);
-	}
-}
-void 	lcd_spielereien		(void) {
-	_delay_ms(100);
-	lcd_my_type("Hello Joe!\n");
-	_delay_ms(200);
-	lcd_my_type("Have a nice Day!\n");
-	_delay_ms(500);
-	lcd_my_type("Be a Honey Bee!\n");
-	_delay_ms(600);
-	lcd_clrscr();
-}
-void 	led_spielerein		(void) {
-
-	for (int i = 1; i < 9; i++) // LEDs durchlaufen
-	{
-		_delay_ms(80); // Eine Sekunde +/-1/10000 Sekunde warten...
-		LED_PORT &= ~((1 << i)); // lï¿½scht Bit an PortB - LED an
-		LED_PORT |= ((1 << (i - 1))); // setzt  Bit an PortB - LED aus
-		//wdt_reset();
-	}
-}
-void 	debounce_init		(void) {
-	///////////////// Debounce Stuff ////////////////////
-
-	// Configure debouncing routines
-	KEY_DDR &= ~ALL_KEYS; // configure key port for input
-	KEY_PORT |= ALL_KEYS; // and turn on pull up resistors
-
-	TCCR0B = (1 << CS02) | (1 << CS00); // divide by 1024
-	TCNT0 = (uint8_t) (int16_t) -(F_CPU / 1024 * 10 * 10e-3 + 0.5); // preload for 10ms
-	TIMSK0 |= 1 << TOIE0; // enable timer interrupt
-
-	sei();
-	///////////////// Debounce Stuff ////////////////////
-}
-void 	led_lauflicht		(void) {
-	uint8_t i = LED_PORT;
-	i = (i & 0x07) | ((i << 1) & 0xF0);
-	if (i < 0xF0)
-		i |= 0x08;
-	LED_PORT = i;
-}
+void 	lcd_my_type			(char *s);
+void 	lcd_spielereien		(void);
+void 	led_spielerein		(void);
+void 	debounce_init		(void);
+void 	led_lauflicht		(void);
 // Menu Stuff
-
-void 	mod_manual			(void *arg, void *name) {
-	lcd_puts("Manueller Modus\n");
-	lcd_puts("Aufnahme starten\n");
-	lcd_puts("Nach Aufnahme SW3 drï¿½cken!\n");
-	if (get_key_press(1 << KEY3))
-		uart_put_string("M 16000\r", D_Stepper);
-}
-void 	my_select			(void *arg, char *name) {
-	lcd_clrscr();
-	lcd_puts("Selected: ");
-	lcd_puts(name);
-
-	ms_spin(750);
-}
-void 	menu_puts			(void *arg, char *name) {
-	//my_select(arg, name);
-	uart_put_string(arg, D_Stepper);
-	lcd_clrscr();
-	lcd_puts("Send: ");
-	lcd_puts(arg);
-	lcd_puts("\n");
-	ms_spin(100);
-	//if ((UCSR1A & (1 << RXC1)))
-	uart_rx(D_Stepper);
-	ms_spin(1000);
-}
+void 	mod_manual			(void *arg, void *name);
+void 	my_select			(void *arg, char *name);
+void 	menu_puts			(void *arg, char *name);
 #include "mymenu.h"
-
 // Init Stuff
-void init_WDT(void) {
-	cli();
-	wdt_reset();
-	WDTCSR |= (1 << WDCE) | (1 << WDE);
-	WDTCSR = (1 << WDE) | (1 << WDIE) | (1 << WDP3) | (1 << WDP0); //Watchdog 8s
-	//WDTCSR = 0x0F; //Watchdog Off
-	sei();
-}
-
+void 	init_WDT			(void);
 void 	init				(void);
 
 
@@ -294,8 +214,6 @@ void 	uart_get_string		(char * string_in, int dir) {
 }
 
 // String Stuff
-
-
 #define M_UNK		-2
 #define M_NOTI		-1
 #define M_ISEL 		 0
@@ -314,6 +232,7 @@ void 	uart_get_string		(char * string_in, int dir) {
 #define E_CLS		10
 #define E_TEST		11
 
+#define B_Zeta_Return 	"\r\n>\040\r\n>\040\r\n>\040\r\n>\040"
 
 #define MENU_ENTRY_NAMELEN 19
 #define RETURN_LEN 40
@@ -402,8 +321,8 @@ void 	String_zerlegen_Isel(char * str_rx, char * Position) {
 	} while (i < 20 && c != '\0' && c != ',');
 	Position[i] = '\0';
 	int32_t z;
-	z = atoi(Position);
-	z = (z * 71111)  /4096;
+	z = atol(Position);
+	z = (z * 71111)  /1024;
 	ltoa(z,Position,10);
 	//lcd_puts("Position: ");
 	//lcd_puts(Position);
@@ -501,48 +420,12 @@ void 	String_zerlegen_csg	(char * str_rx) {
 	lcd_puts(ONE_Acc_Speed);
 	lcd_puts("\n");
 
-	//////////////////////////
-	//
-	//  Blub um eins hochzï¿½hlen
-	//
-	//////////////////////////
-	blub++;
 	//uart_put_string("0\n", D_Stepper);
 	uart_put_string(B_OK, D_RapidForm);
 }
 // Hilfs Funktionen
 void 	csg_Status_melden	() {
-	int k = 0;
-	if (blub < 100000)
-		k = 5;
-	if (blub < 10000)
-		k = 4;
-	if (blub < 1000)
-		k = 3;
-	if (blub < 100)
-		k = 2;
-	if (blub < 10)
-		k = 1;
-	if (blub == 0)
-		k = 0;
-	blub++;
-	switch (k) {
-	case 0:
-		lcd_puts("Status gemeldet!");
-		uart_put_string("         0,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurï¿½ckmelden
-		break;
-	case 1:
-		uart_put_string("         9,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurï¿½ckmelden
-		break;
-	case 2:
-		uart_put_string("        99,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurï¿½ckmelden
-		break;
-	case 3:
-		uart_put_string("       999,         0,K,K,R\r\n", D_RapidForm);			// Status an RapidForm zurï¿½ckmelden
-		break;
-	default:
 		uart_put_string(" 999999999,         0,K,K,R\r\n", D_RapidForm); // Status an RapidForm zurï¿½ckmelden
-	}
 }
 void 	Position_Zeta		(char * Position) {
     char c;
@@ -703,6 +586,7 @@ void 	switch_Isel			(char * str_rx) {
 				lcd_puts("running to\n");
 				lcd_puts("Position: ");
 				lcd_puts(Position);
+				lcd_puts("\n");
 			}
 			else {
 				lcd_puts("Keine Antwort\n");
@@ -867,7 +751,7 @@ void 	switch_Zeta			(char * str_rx) {
 		lcd_puts("Position: \n");
 		lcd_puts(Position);
 		lcd_puts(" Erreicht\n");
-		uart_put_string("\r\n>\040\r\n>\040\r\n>\040\r\n>\040", D_RapidForm);
+		uart_put_string(B_Zeta_Return, D_RapidForm);
 		break;
 	case 3: // WAIT
 		break;
@@ -884,24 +768,25 @@ void 	switch_Zeta			(char * str_rx) {
 		break;
 	case 8:
 		break;
-	case 9:
-		//lcd_puts("Speed set");
+	case 9:		//V8
+		lcd_puts("Speed set          \n");
+		uart_put_string(B_Zeta_Return, D_RapidForm);
 		break;
 	case 10:
-		//lcd_puts("Echo off           \n");
+		lcd_puts("Echo off           \n");
 		//uart_put_string(str_rx, D_RapidForm);
-		uart_put_string("ECHO0\r", D_RapidForm);
+		//uart_put_string("ECHO0\r", D_RapidForm);
 		break;
 	case 11:
 		break;
 	default:
 		lcd_puts("Z:");
 		lcd_puts(str_rx);
-		lcd_puts("       \n");
+		lcd_puts("   \n");
 		//Initialized = switch_Inputs(str_rx);
 	}
 }
-int init_T = 0;
+
 void 	switch_Terminal			(char * str_rx) {
 	const char* pOptions[] = {
 			"!CLS", // 0 - LC-Display lï¿½schen
@@ -986,8 +871,100 @@ void 	uart_rx				(int dir) {
 	}
 }
 
+// LCD und LED Stuff
+void 	lcd_my_type			(char *s) {
+	srand(TCNT0);
+	int min = 10;
+	int max = 250;
+	int erg = 0;
+	while (*s) // so lange *s != '\0' also ungleich dem "String-Endezeichen(Terminator)"
+	{
+		erg = (rand() % (max - min + 1) + min);
+		lcd_putc(*s);
+		s++;
+		for (int i = 0; i < erg; i++)
+			_delay_ms(1);
+	}
+}
+void 	lcd_spielereien		(void) {
+	_delay_ms(100);
+	lcd_my_type("Hello Joe!\n");
+	_delay_ms(200);
+	lcd_my_type("Have a nice Day!\n");
+	_delay_ms(500);
+	lcd_my_type("Be a Honey Bee!\n");
+	_delay_ms(600);
+	lcd_clrscr();
+}
+void 	led_spielerein		(void) {
 
+	for (int i = 1; i < 9; i++) // LEDs durchlaufen
+	{
+		_delay_ms(80); // Eine Sekunde +/-1/10000 Sekunde warten...
+		LED_PORT &= ~((1 << i)); // lï¿½scht Bit an PortB - LED an
+		LED_PORT |= ((1 << (i - 1))); // setzt  Bit an PortB - LED aus
+		//wdt_reset();
+	}
+}
+void 	debounce_init		(void) {
+	///////////////// Debounce Stuff ////////////////////
 
+	// Configure debouncing routines
+	KEY_DDR &= ~ALL_KEYS; // configure key port for input
+	KEY_PORT |= ALL_KEYS; // and turn on pull up resistors
+
+	TCCR0B = (1 << CS02) | (1 << CS00); // divide by 1024
+	TCNT0 = (uint8_t) (int16_t) -(F_CPU / 1024 * 10 * 10e-3 + 0.5); // preload for 10ms
+	TIMSK0 |= 1 << TOIE0; // enable timer interrupt
+
+	sei();
+	///////////////// Debounce Stuff ////////////////////
+}
+void 	led_lauflicht		(void) {
+	uint8_t i = LED_PORT;
+	i = (i & 0x07) | ((i << 1) & 0xF0);
+	if (i < 0xF0)
+		i |= 0x08;
+	LED_PORT = i;
+}
+
+// Menu Stuff
+void 	mod_manual			(void *arg, void *name) {
+	lcd_puts("Manueller Modus\n");
+	lcd_puts("Aufnahme starten\n");
+	lcd_puts("Nach Aufnahme SW3 drï¿½cken!\n");
+	if (get_key_press(1 << KEY3))
+		uart_put_string("M 16000\r", D_Stepper);
+}
+void 	my_select			(void *arg, char *name) {
+	lcd_clrscr();
+	lcd_puts("Selected: ");
+	lcd_puts(name);
+
+	ms_spin(750);
+}
+void 	menu_puts			(void *arg, char *name) {
+	//my_select(arg, name);
+	uart_put_string(arg, D_Stepper);
+	lcd_clrscr();
+	lcd_puts("Send: ");
+	lcd_puts(arg);
+	lcd_puts("\n");
+	ms_spin(100);
+	//if ((UCSR1A & (1 << RXC1)))
+	uart_rx(D_Stepper);
+	ms_spin(1000);
+}
+
+// Init Stuff
+void init_WDT(void) {
+	cli();
+	wdt_reset();
+	WDTCSR |= (1 << WDCE) | (1 << WDE);
+	WDTCSR = (1 << WDE) | (1 << WDIE) | (1 << WDP3) | (1 << WDP0); //Watchdog 8s
+	//WDTCSR = 0x0F; //Watchdog Off
+	sei();
+}
 void init() {
 	// Watchdog Initialisieren oder Abschalten
 	init_WDT();

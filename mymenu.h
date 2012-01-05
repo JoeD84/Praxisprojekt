@@ -10,7 +10,7 @@
 
 
 
-menu_t	menu_move = {
+menu_t	menu_move_rot = {
    .top_entry = 0,
    .current_entry = 0,
    .entry =  {
@@ -39,6 +39,40 @@ menu_t	menu_move = {
        .select = menu_puts,
        .name = "Gehe zum Ursprung",
        .value = "MA 0\n",
+      },
+   },
+   .num_entries = 5,
+   .previous = NULL,
+};
+menu_t	menu_move_height = {
+   .top_entry = 0,
+   .current_entry = 0,
+   .entry =  {
+      {.flags = 0,
+       .select = menu_puts,
+       .name = "+500.000",
+       .value = "2M 500000\n",
+      },
+      {.flags = 0,
+       .select = menu_puts,
+       .name = "-500.000",
+       .value = "2M -500000\n",
+      },
+
+      {.flags = 0,
+       .select = menu_puts,
+       .name = "+1.000.000 Schritte",
+       .value = "2M 1000000\n",
+      },
+      {.flags = 0,
+       .select = menu_puts,
+       .name = "-1.000.000 Schritte",
+       .value = "2M -1000000\n",
+      },
+      {.flags = 0,
+       .select = menu_puts,
+       .name = "Gehe zum Ursprung",
+       .value = "2MA 0\n",
       },
    },
    .num_entries = 5,
@@ -84,12 +118,12 @@ menu_t	menu_main = {
       {.flags = MENU_FLAG_SUBMENU,
        .select = NULL,
        .name = "Bewegen - Rotation",
-       .value = &menu_move,
+       .value = &menu_move_rot,
       },
       {.flags = MENU_FLAG_SUBMENU,
        .select = NULL,
        .name = "Bewegen - Hoehe",
-       .value = &menu_move,
+       .value = &menu_move_height,
       },
       {.flags = MENU_FLAG_SUBMENU,
        .select = NULL,
