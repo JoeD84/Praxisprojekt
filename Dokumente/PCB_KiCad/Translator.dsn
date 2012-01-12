@@ -1,897 +1,479 @@
-
-(session Translator.ses
-  (base_design Translator.dsn)
+(pcb D:\Dropbox\!Praxisprojekt\workspace\Translator\Dokumente\PCB_KiCad\Translator.dsn
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "(2011-11-27 BZR 3249)-stable")
+  )
+  (resolution mil 10)
+  (unit mil)
+  (structure
+    (layer Vorderseite
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer Rückseite
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  1574.8 -1574.8  7874 -1574.8  7874 -5511.8  1574.8 -5511.8
+            1574.8 -1574.8)
+    )
+    (via "Via[0-1]_35:25_mil" "Via[0-1]_35:0_mil")
+    (rule
+      (width 19.7)
+      (clearance 19.8)
+      (clearance 19.8 (type default_smd))
+      (clearance 4.925 (type smd_smd))
+    )
+  )
   (placement
-    (resolution mil 10)
     (component pin_array_4x2
-      (place P4 20472 -40551 front 270)
-      (place P3 20472 -49606 front 270)
-      (place P2 20472 -30315 front 270)
-      (place P1 20472 -21260 front 270)
+      (place P4 2165.4 -4606.3 front 270 (PN CONN_4X2))
+      (place P3 2165.4 -2086.6 front 270 (PN CONN_4X2))
+      (place P2 2165.4 -3740.2 front 270 (PN CONN_4X2))
+      (place P1 2165.4 -2716.5 front 270 (PN CONN_4X2))
     )
     (component "HC-33UV"
-      (place X1 61811 -37795 front 180)
+      (place X1 6771.7 -3110.2 front 180 (PN CRYSTAL))
     )
     (component "DIP-40__600"
-      (place IC1 69291 -35433 front 270)
+      (place IC1 4724.4 -3110.2 front 0 (PN "ATMEGA324A-P"))
     )
     (component "DIP-16__300"
-      (place U1 43701 -40945 front 270)
-      (place U2 43307 -27953 front 270)
+      (place U1 4881.9 -4645.7 front 0 (PN MAX232))
+      (place U2 3464.6 -4645.7 front 0 (PN MAX232))
     )
     (component c64abmd
-      (place P5 77165 -35433 front 270)
+      (place P5 7716.5 -3543.3 front 270 (PN C64AC))
     )
     (component C1V7
-      (place C7 43701 -34646 front 270)
-      (place C8 39370 -30709 front 270)
-      (place C6 46851 -24803 front 270)
-      (place C5 47244 -37795 front 270)
-      (place C4 39370 -27953 front 270)
-      (place C3 39370 -24803 front 270)
-      (place C2 39370 -40945 front 270)
-      (place C1 39370 -37795 front 270)
+      (place C7 4685 -4212.6 front 0 (PN CP1))
+      (place C8 3267.7 -4212.6 front 0 (PN CP1))
+      (place C6 2834.6 -4645.7 front 270 (PN CP1))
+      (place C5 4252 -4645.7 front 270 (PN CP1))
+      (place C4 3464.6 -5000.1 front 0 (PN CP1))
+      (place C3 3149.6 -5000.1 front 0 (PN CP1))
+      (place C2 4881.9 -5039.4 front 0 (PN CP1))
+      (place C1 4606.3 -5039.4 front 0 (PN CP1))
     )
   )
-  (was_is
+  (library
+    (image pin_array_4x2
+      (outline (path signal 12  -200 100  200 100))
+      (outline (path signal 12  200 100  200 -100))
+      (outline (path signal 12  200 -100  -200 -100))
+      (outline (path signal 12  -200 -100  -200 100))
+      (pin Rect[A]Pad_60x60_mil 1 -150 -50)
+      (pin Round[A]Pad_60_mil 2 -150 50)
+      (pin Round[A]Pad_60_mil 3 -50 -50)
+      (pin Round[A]Pad_60_mil 4 -50 50)
+      (pin Round[A]Pad_60_mil 5 50 -50)
+      (pin Round[A]Pad_60_mil 6 50 50)
+      (pin Round[A]Pad_60_mil 7 150 -50)
+      (pin Round[A]Pad_60_mil 8 150 50)
+    )
+    (image "HC-33UV"
+      (outline (path signal 8  200 -175  -200 -175))
+      (outline (path signal 8  -200 175  200 175))
+      (pin Round[A]Pad_80_mil 1 -200 0)
+      (pin Round[A]Pad_70_mil 2 200 0)
+    )
+    (image "DIP-40__600"
+      (outline (path signal 15  -1050 50  -1000 50))
+      (outline (path signal 15  -1000 50  -1000 -50))
+      (outline (path signal 15  -1000 -50  -1050 -50))
+      (outline (path signal 15  -1050 250  1050 250))
+      (outline (path signal 15  1050 250  1050 -250))
+      (outline (path signal 15  1050 -250  -1050 -250))
+      (outline (path signal 15  -1050 -250  -1050 250))
+      (pin Rect[A]Pad_55x55_mil 1 -950 -300)
+      (pin Round[A]Pad_55_mil 2 -850 -300)
+      (pin Round[A]Pad_55_mil 3 -750 -300)
+      (pin Round[A]Pad_55_mil 4 -650 -300)
+      (pin Round[A]Pad_55_mil 5 -550 -300)
+      (pin Round[A]Pad_55_mil 6 -450 -300)
+      (pin Round[A]Pad_55_mil 7 -350 -300)
+      (pin Round[A]Pad_55_mil 8 -250 -300)
+      (pin Round[A]Pad_55_mil 9 -150 -300)
+      (pin Round[A]Pad_55_mil 10 -50 -300)
+      (pin Round[A]Pad_55_mil 11 50 -300)
+      (pin Round[A]Pad_55_mil 12 150 -300)
+      (pin Round[A]Pad_55_mil 13 250 -300)
+      (pin Round[A]Pad_55_mil 14 350 -300)
+      (pin Round[A]Pad_55_mil 15 450 -300)
+      (pin Round[A]Pad_55_mil 16 550 -300)
+      (pin Round[A]Pad_55_mil 17 650 -300)
+      (pin Round[A]Pad_55_mil 18 750 -300)
+      (pin Round[A]Pad_55_mil 19 850 -300)
+      (pin Round[A]Pad_55_mil 20 950 -300)
+      (pin Round[A]Pad_55_mil 21 950 300)
+      (pin Round[A]Pad_55_mil 22 850 300)
+      (pin Round[A]Pad_55_mil 23 750 300)
+      (pin Round[A]Pad_55_mil 24 650 300)
+      (pin Round[A]Pad_55_mil 25 550 300)
+      (pin Round[A]Pad_55_mil 26 450 300)
+      (pin Round[A]Pad_55_mil 27 350 300)
+      (pin Round[A]Pad_55_mil 28 250 300)
+      (pin Round[A]Pad_55_mil 29 150 300)
+      (pin Round[A]Pad_55_mil 30 50 300)
+      (pin Round[A]Pad_55_mil 31 -50 300)
+      (pin Round[A]Pad_55_mil 32 -150 300)
+      (pin Round[A]Pad_55_mil 33 -250 300)
+      (pin Round[A]Pad_55_mil 34 -350 300)
+      (pin Round[A]Pad_55_mil 35 -450 300)
+      (pin Round[A]Pad_55_mil 36 -550 300)
+      (pin Round[A]Pad_55_mil 37 -650 300)
+      (pin Round[A]Pad_55_mil 38 -750 300)
+      (pin Round[A]Pad_55_mil 39 -850 300)
+      (pin Round[A]Pad_55_mil 40 -950 300)
+    )
+    (image "DIP-16__300"
+      (outline (path signal 15  -450 50  -450 50))
+      (outline (path signal 15  -450 50  -400 50))
+      (outline (path signal 15  -400 50  -400 -50))
+      (outline (path signal 15  -400 -50  -450 -50))
+      (outline (path signal 15  -450 100  450 100))
+      (outline (path signal 15  450 100  450 -100))
+      (outline (path signal 15  450 -100  -450 -100))
+      (outline (path signal 15  -450 -100  -450 100))
+      (pin Rect[A]Pad_55x55_mil 1 -350 -150)
+      (pin Round[A]Pad_55_mil 2 -250 -150)
+      (pin Round[A]Pad_55_mil 3 -150 -150)
+      (pin Round[A]Pad_55_mil 4 -50 -150)
+      (pin Round[A]Pad_55_mil 5 50 -150)
+      (pin Round[A]Pad_55_mil 6 150 -150)
+      (pin Round[A]Pad_55_mil 7 250 -150)
+      (pin Round[A]Pad_55_mil 8 350 -150)
+      (pin Round[A]Pad_55_mil 9 350 150)
+      (pin Round[A]Pad_55_mil 10 250 150)
+      (pin Round[A]Pad_55_mil 11 150 150)
+      (pin Round[A]Pad_55_mil 12 50 150)
+      (pin Round[A]Pad_55_mil 13 -50 150)
+      (pin Round[A]Pad_55_mil 14 -150 150)
+      (pin Round[A]Pad_55_mil 15 -250 150)
+      (pin Round[A]Pad_55_mil 16 -350 150)
+    )
+    (image c64abmd
+      (outline (path signal 12  -1850 150  1850 150))
+      (outline (path signal 12  1850 150  1850 -150))
+      (outline (path signal 12  -1850 -150  -1850 150))
+      (outline (path signal 12  -1650 -150  -1650 150))
+      (outline (path signal 12  1650 -150  1650 150))
+      (outline (path signal 12  -1850 -150  1850 -150))
+      (pin Round[A]Pad_150_mil 65 -1750 -50)
+      (pin Round[A]Pad_150_mil 66 1750 -50)
+      (pin Round[A]Pad_60_mil A3 -1350 50)
+      (pin Round[A]Pad_60_mil A4 -1250 50)
+      (pin Round[A]Pad_60_mil A5 -1150 50)
+      (pin Round[A]Pad_60_mil A6 -1050 50)
+      (pin Round[A]Pad_60_mil A7 -950 50)
+      (pin Round[A]Pad_60_mil A8 -850 50)
+      (pin Round[A]Pad_60_mil A9 -750 50)
+      (pin Round[A]Pad_60_mil A10 -650 50)
+      (pin Round[A]Pad_60_mil A11 -550 50)
+      (pin Round[A]Pad_60_mil A12 -450 50)
+      (pin Round[A]Pad_60_mil A13 -350 50)
+      (pin Round[A]Pad_60_mil A14 -250 50)
+      (pin Round[A]Pad_60_mil A15 -150 50)
+      (pin Round[A]Pad_60_mil A16 -50 50)
+      (pin Round[A]Pad_60_mil A17 50 50)
+      (pin Round[A]Pad_60_mil A18 150 50)
+      (pin Round[A]Pad_60_mil A19 250 50)
+      (pin Round[A]Pad_60_mil A20 350 50)
+      (pin Round[A]Pad_60_mil A21 450 50)
+      (pin Round[A]Pad_60_mil A22 550 50)
+      (pin Round[A]Pad_60_mil A23 650 50)
+      (pin Round[A]Pad_60_mil A24 750 50)
+      (pin Round[A]Pad_60_mil A25 850 50)
+      (pin Round[A]Pad_60_mil A26 950 50)
+      (pin Round[A]Pad_60_mil A27 1050 50)
+      (pin Round[A]Pad_60_mil A28 1150 50)
+      (pin Round[A]Pad_60_mil A29 1250 50)
+      (pin Round[A]Pad_60_mil A30 1350 50)
+      (pin Round[A]Pad_60_mil A31 1450 50)
+      (pin Round[A]Pad_60_mil A32 1550 50)
+      (pin Round[A]Pad_60_mil A2 -1450 50)
+      (pin Rect[A]Pad_60x60_mil A1 -1550 50)
+      (pin Round[A]Pad_60_mil B1 -1550 -50)
+      (pin Round[A]Pad_60_mil B2 -1450 -50)
+      (pin Round[A]Pad_60_mil B3 -1350 -50)
+      (pin Round[A]Pad_60_mil B4 -1250 -50)
+      (pin Round[A]Pad_60_mil B5 -1150 -50)
+      (pin Round[A]Pad_60_mil B6 -1050 -50)
+      (pin Round[A]Pad_60_mil B7 -950 -50)
+      (pin Round[A]Pad_60_mil B8 -850 -50)
+      (pin Round[A]Pad_60_mil B9 -750 -50)
+      (pin Round[A]Pad_60_mil B10 -650 -50)
+      (pin Round[A]Pad_60_mil B11 -550 -50)
+      (pin Round[A]Pad_60_mil B12 -450 -50)
+      (pin Round[A]Pad_60_mil B13 -350 -50)
+      (pin Round[A]Pad_60_mil B14 -250 -50)
+      (pin Round[A]Pad_60_mil B15 -150 -50)
+      (pin Round[A]Pad_60_mil B16 -50 -50)
+      (pin Round[A]Pad_60_mil B17 50 -50)
+      (pin Round[A]Pad_60_mil B18 150 -50)
+      (pin Round[A]Pad_60_mil B19 250 -50)
+      (pin Round[A]Pad_60_mil B20 350 -50)
+      (pin Round[A]Pad_60_mil B21 450 -50)
+      (pin Round[A]Pad_60_mil B22 550 -50)
+      (pin Round[A]Pad_60_mil B23 650 -50)
+      (pin Round[A]Pad_60_mil B24 750 -50)
+      (pin Round[A]Pad_60_mil B25 850 -50)
+      (pin Round[A]Pad_60_mil B26 950 -50)
+      (pin Round[A]Pad_60_mil B27 1050 -50)
+      (pin Round[A]Pad_60_mil B28 1150 -50)
+      (pin Round[A]Pad_60_mil B29 1250 -50)
+      (pin Round[A]Pad_60_mil B30 1350 -50)
+      (pin Round[A]Pad_60_mil B31 1450 -50)
+      (pin Round[A]Pad_60_mil B32 1550 -50)
+    )
+    (image C1V7
+      (outline (path signal 5  125 0  118.8 -38.6  101.1 -73.4  73.4 -101.1  38.6 -118.8
+            0 -125  -38.6 -118.8  -73.4 -101.1  -101.1 -73.4  -118.8 -38.6
+            -125 0  -118.8 38.6  -101.1 73.4  -73.4 101.1  -38.6 118.8  0 125
+            38.6 118.8  73.4 101.1  101.1 73.4  118.8 38.6))
+      (pin Rect[A]Pad_60x60_mil 1 -50 0)
+      (pin Round[A]Pad_60_mil 2 50 0)
+    )
+    (padstack Round[A]Pad_150_mil
+      (shape (circle Vorderseite 150))
+      (shape (circle Rückseite 150))
+      (attach off)
+    )
+    (padstack Round[A]Pad_55_mil
+      (shape (circle Vorderseite 55))
+      (shape (circle Rückseite 55))
+      (attach off)
+    )
+    (padstack Round[A]Pad_60_mil
+      (shape (circle Vorderseite 60))
+      (shape (circle Rückseite 60))
+      (attach off)
+    )
+    (padstack Round[A]Pad_70_mil
+      (shape (circle Vorderseite 70))
+      (shape (circle Rückseite 70))
+      (attach off)
+    )
+    (padstack Round[A]Pad_80_mil
+      (shape (circle Vorderseite 80))
+      (shape (circle Rückseite 80))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_55x55_mil
+      (shape (rect Vorderseite -27.5 -27.5 27.5 27.5))
+      (shape (rect Rückseite -27.5 -27.5 27.5 27.5))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_60x60_mil
+      (shape (rect Vorderseite -30 -30 30 30))
+      (shape (rect Rückseite -30 -30 30 30))
+      (attach off)
+    )
+    (padstack "Via[0-1]_35:25_mil"
+      (shape (circle Vorderseite 35))
+      (shape (circle Rückseite 35))
+      (attach off)
+    )
+    (padstack "Via[0-1]_35:0_mil"
+      (shape (circle Vorderseite 35))
+      (shape (circle Rückseite 35))
+      (attach off)
+    )
   )
-  (routes 
-    (resolution mil 10)
-    (parser
-      (host_cad "KiCad's Pcbnew")
-      (host_version "(2011-11-27 BZR 3249)-stable")
+  (network
+    (net +5V
+      (pins IC1-9 IC1-10 IC1-30 IC1-32 U1-16 U2-16 P5-A14 C6-1 C5-1)
     )
-    (library_out 
-      (padstack "Via[0-1]_35:25_mil"
-        (shape
-          (circle Vorderseite 350 0 0)
-        )
-        (shape
-          (circle Rückseite 350 0 0)
-        )
-        (attach off)
-      )
-      (padstack "Via[0-1]_35:0_mil"
-        (shape
-          (circle Vorderseite 350 0 0)
-        )
-        (shape
-          (circle Rückseite 350 0 0)
-        )
-        (attach off)
-      )
+    (net GND
+      (pins IC1-11 IC1-31 U1-15 U2-15 P5-A19 C7-1 C8-1)
     )
-    (network_out 
-      (net +5V
-        (wire
-          (path Rückseite 198
-            52948 -32080
-            52948 -30400
-            46851 -24303
-          )
-        )
-        (wire
-          (path Rückseite 198
-            66291 -34933
-            55801 -34933
-            52948 -32080
-          )
-        )
-        (wire
-          (path Rückseite 198
-            47244 -37295
-            47733 -37295
-            52948 -32080
-          )
-        )
-        (wire
-          (path Rückseite 198
-            45201 -37445
-            45351 -37295
-            47244 -37295
-          )
-        )
-        (wire
-          (path Rückseite 198
-            72778 -33933
-            72778 -35446
-            72291 -35933
-          )
-        )
-        (wire
-          (path Rückseite 198
-            77665 -32933
-            77152 -33446
-            73265 -33446
-            72778 -33933
-          )
-        )
-        (wire
-          (path Rückseite 198
-            72778 -33933
-            72291 -33933
-          )
-        )
-        (wire
-          (path Rückseite 198
-            66291 -34933
-            66291 -33933
-          )
-        )
-        (wire
-          (path Rückseite 198
-            72291 -33933
-            66291 -33933
-          )
-        )
-        (wire
-          (path Rückseite 198
-            44807 -24453
-            44957 -24303
-            46851 -24303
-          )
-        )
+    (net "N-000001"
+      (pins P4-1 U1-8)
+    )
+    (net "N-000002"
+      (pins P4-2 U1-7)
+    )
+    (net "N-000003"
+      (pins U1-5 C2-2)
+    )
+    (net "N-000004"
+      (pins U1-4 C2-1)
+    )
+    (net "N-000005"
+      (pins U1-3 C1-2)
+    )
+    (net "N-000006"
+      (pins U1-2 C5-2)
+    )
+    (net "N-000007"
+      (pins U1-1 C1-1)
+    )
+    (net "N-000008"
+      (pins P4-8 U2-14)
+    )
+    (net "N-000009"
+      (pins IC1-16 U2-12)
+    )
+    (net "N-000010"
+      (pins U2-9 U2-10)
+    )
+    (net "N-000011"
+      (pins P4-6 U2-8)
+    )
+    (net "N-000012"
+      (pins P4-5 U2-7)
+    )
+    (net "N-000014"
+      (pins P1-1 IC1-40)
+    )
+    (net "N-000017"
+      (pins P2-8 IC1-8)
+    )
+    (net "N-000018"
+      (pins P2-6 IC1-6)
+    )
+    (net "N-000019"
+      (pins P2-5 IC1-5)
+    )
+    (net "N-000020"
+      (pins P2-4 IC1-4)
+    )
+    (net "N-000021"
+      (pins P2-2 IC1-2)
+    )
+    (net "N-000022"
+      (pins P4-4 U1-14)
+    )
+    (net "N-000023"
+      (pins P3-8 IC1-29)
+    )
+    (net "N-000024"
+      (pins P3-6 IC1-27)
+    )
+    (net "N-000025"
+      (pins P3-4 IC1-25)
+    )
+    (net "N-000026"
+      (pins P3-2 IC1-23)
+    )
+    (net "N-000028"
+      (pins P2-7 IC1-7)
+    )
+    (net "N-000029"
+      (pins U2-5 C4-2)
+    )
+    (net "N-000030"
+      (pins U2-4 C4-1)
+    )
+    (net "N-000031"
+      (pins U2-3 C3-2)
+    )
+    (net "N-000032"
+      (pins U2-2 C6-2)
+    )
+    (net "N-000033"
+      (pins U2-1 C3-1)
+    )
+    (net "N-000034"
+      (pins U1-6 C7-2)
+    )
+    (net "N-000035"
+      (pins U2-6 C8-2)
+    )
+    (net "N-000071"
+      (pins P1-3 IC1-38)
+    )
+    (net "N-000072"
+      (pins P3-7 IC1-28)
+    )
+    (net "N-000073"
+      (pins IC1-17 U2-11)
+    )
+    (net "N-000074"
+      (pins P3-5 IC1-26)
+    )
+    (net "N-000075"
+      (pins IC1-15 U1-11)
+    )
+    (net "N-000076"
+      (pins P1-7 IC1-34)
+    )
+    (net "N-000077"
+      (pins P3-3 IC1-24)
+    )
+    (net "N-000078"
+      (pins IC1-14 U1-12)
+    )
+    (net "N-000079"
+      (pins X1-1 IC1-13)
+    )
+    (net "N-000080"
+      (pins P3-1 IC1-22)
+    )
+    (net "N-000102"
+      (pins P1-8 IC1-33)
+    )
+    (net "N-000103"
+      (pins P2-1 IC1-1)
+    )
+    (net "N-000104"
+      (pins P2-3 IC1-3)
+    )
+    (net "N-000105"
+      (pins U1-9 U1-10)
+    )
+    (net "N-000106"
+      (pins X1-2 IC1-12)
+    )
+    (net "N-000107"
+      (pins IC1-19 P5-A17)
+    )
+    (net "N-000108"
+      (pins IC1-18 P5-A16)
+    )
+    (net "N-000109"
+      (pins P4-7 U2-13)
+    )
+    (net "N-000110"
+      (pins P4-3 U1-13)
+    )
+    (net "N-000111"
+      (pins P1-6 IC1-35)
+    )
+    (net "N-000112"
+      (pins P1-5 IC1-36)
+    )
+    (net "N-000113"
+      (pins P1-4 IC1-37)
+    )
+    (net "N-000114"
+      (pins P1-2 IC1-39)
+    )
+    (class kicad_default "" +5V GND "N-000001" "N-000002" "N-000003" "N-000004"
+      "N-000005" "N-000006" "N-000007" "N-000008" "N-000009" "N-000010" "N-000011"
+      "N-000012" "N-000014" "N-000017" "N-000018" "N-000019" "N-000020" "N-000021"
+      "N-000022" "N-000023" "N-000024" "N-000025" "N-000026" "N-000028" "N-000029"
+      "N-000030" "N-000031" "N-000032" "N-000033" "N-000034" "N-000035" "N-000071"
+      "N-000072" "N-000073" "N-000074" "N-000075" "N-000076" "N-000077" "N-000078"
+      "N-000079" "N-000080" "N-000102" "N-000103" "N-000104" "N-000105" "N-000106"
+      "N-000107" "N-000108" "N-000109" "N-000110" "N-000111" "N-000112" "N-000113"
+      "N-000114"
+      (circuit
+        (use_via Via[0-1]_35:25_mil)
       )
-      (net GND
-        (wire
-          (path Rückseite 198
-            43701 -34146
-            46726 -31121
-            46726 -29360
-            45238 -27872
-          )
-        )
-        (wire
-          (path Rückseite 198
-            45238 -27872
-            44795 -27872
-            43714 -28953
-            40626 -28953
-            39370 -30209
-          )
-        )
-        (wire
-          (path Rückseite 198
-            45238 -27872
-            45238 -25884
-            44807 -25453
-          )
-        )
-        (wire
-          (path Rückseite 198
-            66291 -35933
-            54578 -35933
-            52705 -37806
-            45840 -37806
-            45201 -38445
-          )
-        )
-        (wire
-          (path Rückseite 198
-            45201 -38445
-            44807 -38051
-            44807 -35252
-            43701 -34146
-          )
-        )
-        (wire
-          (path Rückseite 198
-            71632 -35912
-            66312 -35912
-            66291 -35933
-          )
-        )
-        (wire
-          (path Rückseite 198
-            77665 -37933
-            77165 -37433
-            75541 -37433
-            74505 -36397
-            72117 -36397
-            71632 -35912
-          )
-        )
-        (wire
-          (path Rückseite 198
-            72291 -34933
-            71632 -35592
-            71632 -35912
-          )
-        )
-      )
-      (net "N-000001"
-        (wire
-          (path Rückseite 198
-            42201 -44445
-            19546 -44445
-            18281 -43180
-            18281 -40742
-            19972 -39051
-          )
-        )
-      )
-      (net "N-000002"
-        (wire
-          (path Rückseite 198
-            42201 -43445
-            41945 -43701
-            19129 -43701
-            18511 -43083
-            18511 -40912
-            19806 -39617
-            20406 -39617
-            20972 -39051
-          )
-        )
-      )
-      (net "N-000003"
-        (wire
-          (path Rückseite 198
-            39370 -41445
-            42201 -41445
-          )
-        )
-      )
-      (net "N-000004"
-        (wire
-          (path Rückseite 198
-            39370 -40445
-            42201 -40445
-          )
-        )
-      )
-      (net "N-000005"
-        (wire
-          (path Rückseite 198
-            42201 -39445
-            40520 -39445
-            39370 -38295
-          )
-        )
-      )
-      (net "N-000006"
-        (wire
-          (path Rückseite 198
-            47244 -38295
-            46693 -38846
-            42602 -38846
-            42201 -38445
-          )
-        )
-      )
-      (net "N-000007"
-        (wire
-          (path Rückseite 198
-            39370 -37295
-            42051 -37295
-            42201 -37445
-          )
-        )
-      )
-      (net "N-000008"
-        (wire
-          (path Rückseite 198
-            20972 -42051
-            36177 -26846
-            44414 -26846
-            44807 -26453
-          )
-        )
-      )
-      (net "N-000009"
-        (wire
-          (path Rückseite 198
-            44807 -28453
-            44884 -28453
-            46381 -29950
-          )
-        )
-        (via "Via[0-1]_35:25_mil" 46381 -29950
-        )
-        (wire
-          (path Vorderseite 198
-            54392 -40836
-            46381 -32825
-            46381 -29950
-          )
-        )
-        (via "Via[0-1]_35:25_mil" 54392 -40836
-        )
-        (wire
-          (path Rückseite 198
-            66291 -40933
-            54489 -40933
-            54392 -40836
-          )
-        )
-      )
-      (net "N-000010"
-        (wire
-          (path Rückseite 198
-            44807 -30453
-            44807 -31453
-          )
-        )
-      )
-      (net "N-000011"
-        (wire
-          (path Rückseite 198
-            41807 -31453
-            30574 -42686
-            19817 -42686
-            19545 -42414
-            19545 -41654
-            19602 -41597
-            20426 -41597
-            20972 -41051
-          )
-        )
-      )
-      (net "N-000012"
-        (wire
-          (path Rückseite 198
-            41807 -30453
-            42272 -30918
-            42272 -31581
-            30952 -42901
-            19558 -42901
-            19329 -42672
-            19329 -41340
-            19618 -41051
-            19972 -41051
-          )
-        )
-      )
-      (net "N-000014"
-        (wire
-          (path Rückseite 198
-            72291 -25933
-            66578 -20220
-            20432 -20220
-            19972 -19760
-          )
-        )
-      )
-      (net "N-000017"
-        (wire
-          (path Rückseite 198
-            20972 -31815
-            21589 -31815
-            29590 -23814
-            57172 -23814
-            66291 -32933
-          )
-        )
-      )
-      (net "N-000018"
-        (wire
-          (path Rückseite 198
-            20972 -30815
-            21838 -30815
-            29302 -23351
-            58709 -23351
-            66291 -30933
-          )
-        )
-      )
-      (net "N-000019"
-        (wire
-          (path Rückseite 198
-            19972 -30815
-            20472 -30315
-            21871 -30315
-            29065 -23121
-            59479 -23121
-            66291 -29933
-          )
-        )
-      )
-      (net "N-000020"
-        (wire
-          (path Rückseite 198
-            20972 -29815
-            21977 -29815
-            28946 -22846
-            60204 -22846
-            66291 -28933
-          )
-        )
-      )
-      (net "N-000021"
-        (wire
-          (path Rückseite 198
-            20972 -28815
-            21581 -28815
-            28136 -22260
-            61618 -22260
-            66291 -26933
-          )
-        )
-      )
-      (net "N-000022"
-        (wire
-          (path Rückseite 198
-            45201 -39445
-            46909 -39445
-            47810 -38544
-            66432 -38544
-            66905 -39017
-            66905 -39869
-            66303 -40471
-            53145 -40471
-            48764 -44852
-            19140 -44852
-            18069 -43781
-            18069 -40176
-            19626 -38619
-            21331 -38619
-            21417 -38705
-            21417 -39606
-            20972 -40051
-          )
-        )
-      )
-      (net "N-000023"
-        (wire
-          (path Rückseite 198
-            73167 -37385
-            72715 -36933
-            72291 -36933
-          )
-        )
-        (via "Via[0-1]_35:25_mil" 73167 -37385
-        )
-        (wire
-          (path Vorderseite 198
-            54639 -51107
-            67065 -51107
-            73167 -45005
-            73167 -37385
-          )
-        )
-        (via "Via[0-1]_35:25_mil" 54639 -51107
-        )
-        (wire
-          (path Rückseite 198
-            20972 -51106
-            54638 -51106
-            54639 -51107
-          )
-        )
-      )
-      (net "N-000024"
-        (wire
-          (path Rückseite 198
-            72291 -38933
-            72676 -39318
-            72676 -44274
-            72619 -44331
-            72240 -44331
-            63348 -53223
-            19468 -53223
-            18119 -51874
-            18119 -49097
-            19514 -47702
-            21371 -47702
-            21428 -47759
-            21428 -49650
-            20972 -50106
-          )
-        )
-      )
-      (net "N-000025"
-        (wire
-          (path Rückseite 198
-            72291 -40933
-            61169 -52055
-            19903 -52055
-            19272 -51424
-            19272 -50118
-            19784 -49606
-            20472 -49606
-            20972 -49106
-          )
-        )
-      )
-      (net "N-000026"
-        (wire
-          (path Rückseite 198
-            72291 -42933
-            62595 -52629
-            19653 -52629
-            18698 -51674
-            18698 -49547
-            19647 -48598
-            20480 -48598
-            20972 -48106
-          )
-        )
-      )
-      (net "N-000028"
-        (wire
-          (path Rückseite 198
-            19972 -31815
-            20472 -31315
-            21730 -31315
-            29471 -23574
-            57932 -23574
-            66291 -31933
-          )
-        )
-      )
-      (net "N-000029"
-        (wire
-          (path Rückseite 198
-            39370 -28453
-            41807 -28453
-          )
-        )
-      )
-      (net "N-000030"
-        (wire
-          (path Rückseite 198
-            39370 -27453
-            41807 -27453
-          )
-        )
-      )
-      (net "N-000031"
-        (wire
-          (path Rückseite 198
-            39370 -25303
-            40520 -26453
-            41807 -26453
-          )
-        )
-      )
-      (net "N-000032"
-        (wire
-          (path Rückseite 198
-            46851 -25303
-            46501 -24953
-            42307 -24953
-            41807 -25453
-          )
-        )
-      )
-      (net "N-000033"
-        (wire
-          (path Rückseite 198
-            39370 -24303
-            41657 -24303
-            41807 -24453
-          )
-        )
-      )
-      (net "N-000034"
-        (wire
-          (path Rückseite 198
-            43701 -35146
-            40697 -35146
-            38923 -36920
-            38923 -38464
-            40483 -40024
-            45354 -40024
-            45588 -40258
-            45588 -40651
-            45258 -40981
-            45082 -40981
-            43618 -42445
-            42201 -42445
-          )
-        )
-      )
-      (net "N-000035"
-        (wire
-          (path Rückseite 198
-            41807 -29453
-            40051 -31209
-            39370 -31209
-          )
-        )
-      )
-      (net "N-000071"
-        (wire
-          (path Rückseite 198
-            19972 -20760
-            19540 -20328
-            19540 -19386
-            19597 -19329
-            66628 -19329
-            73279 -25980
-            73279 -26945
-            72291 -27933
-          )
-        )
-      )
-      (net "N-000072"
-        (wire
-          (path Rückseite 198
-            19972 -51106
-            20377 -51511
-            56700 -51511
-            62093 -46118
-            62639 -46118
-            65214 -43543
-            66274 -43543
-            71883 -37934
-            72291 -37934
-            72291 -37933
-          )
-        )
-      )
-      (net "N-000073"
-        (wire
-          (path Rückseite 198
-            44807 -29453
-            31129 -43131
-            19425 -43131
-            19085 -42791
-            19085 -41162
-            19794 -40453
-            21571 -40453
-            21623 -40401
-            21623 -38471
-            21548 -38396
-            19421 -38396
-            17555 -40262
-            17555 -43758
-            19346 -45549
-            62082 -45549
-            65698 -41933
-            66291 -41933
-          )
-        )
-      )
-      (net "N-000074"
-        (wire
-          (path Rückseite 198
-            19972 -50106
-            19559 -50519
-            19559 -51420
-            19964 -51825
-            60399 -51825
-            72291 -39933
-          )
-        )
-      )
-      (net "N-000075"
-        (wire
-          (path Rückseite 198
-            66291 -39933
-            47713 -39933
-            45201 -42445
-          )
-        )
-      )
-      (net "N-000076"
-        (wire
-          (path Rückseite 198
-            72291 -31933
-            72690 -32332
-            72690 -33262
-            72633 -33319
-            71713 -33319
-            66985 -28591
-            66985 -25623
-            63126 -21764
-            27788 -21764
-            26504 -23048
-            21282 -23048
-            20811 -23519
-            20731 -23519
-            19972 -22760
-          )
-        )
-      )
-      (net "N-000077"
-        (wire
-          (path Rückseite 198
-            72291 -41933
-            61882 -52342
-            19784 -52342
-            18985 -51543
-            18985 -50093
-            19972 -49106
-          )
-        )
-      )
-      (net "N-000078"
-        (wire
-          (path Rückseite 198
-            45201 -41445
-            47713 -38933
-            66291 -38933
-          )
-        )
-      )
-      (net "N-000079"
-        (wire
-          (path Rückseite 198
-            66291 -37933
-            63949 -37933
-            63811 -37795
-          )
-        )
-      )
-      (net "N-000080"
-        (wire
-          (path Rückseite 198
-            72291 -43933
-            63224 -53000
-            19568 -53000
-            18411 -51843
-            18411 -49330
-            19635 -48106
-            19972 -48106
-          )
-        )
-      )
-      (net "N-000102"
-        (wire
-          (path Rückseite 198
-            72291 -32933
-            67640 -28282
-            67640 -25933
-            63041 -21334
-            27669 -21334
-            26244 -22759
-            20972 -22759
-            20972 -22760
-          )
-        )
-      )
-      (net "N-000103"
-        (wire
-          (path Rückseite 198
-            19972 -28815
-            25243 -23544
-            26441 -23544
-            28012 -21973
-            62331 -21973
-            66291 -25933
-          )
-        )
-      )
-      (net "N-000104"
-        (wire
-          (path Rückseite 198
-            19972 -29815
-            20472 -29315
-            22071 -29315
-            28827 -22559
-            60917 -22559
-            66291 -27933
-          )
-        )
-      )
-      (net "N-000105"
-        (wire
-          (path Rückseite 198
-            45201 -43445
-            45201 -44445
-          )
-        )
-      )
-      (net "N-000106"
-        (wire
-          (path Rückseite 198
-            66291 -36933
-            60673 -36933
-            59811 -37795
-          )
-        )
-      )
-      (net "N-000107"
-        (wire
-          (path Rückseite 198
-            66291 -43933
-            71848 -38376
-            78040 -38376
-            78097 -38319
-            78097 -36365
-            77665 -35933
-          )
-        )
-      )
-      (net "N-000108"
-        (wire
-          (path Rückseite 198
-            77665 -34933
-            78495 -35763
-            78495 -39791
-            77807 -40479
-            77290 -40479
-            77233 -40536
-            77233 -41053
-            76864 -41422
-            76407 -41422
-            64318 -53511
-            19298 -53511
-            17831 -52044
-            17831 -48656
-            20650 -45837
-            62576 -45837
-            65480 -42933
-            66291 -42933
-          )
-        )
-      )
-      (net "N-000109"
-        (wire
-          (path Rückseite 198
-            44807 -27453
-            44307 -27953
-            37282 -27953
-            22764 -42471
-            20392 -42471
-            19972 -42051
-          )
-        )
-      )
-      (net "N-000110"
-        (wire
-          (path Rückseite 198
-            45201 -40445
-            44665 -40981
-            34219 -40981
-            31782 -43418
-            19306 -43418
-            18798 -42910
-            18798 -41031
-            19778 -40051
-            19972 -40051
-          )
-        )
-      )
-      (net "N-000111"
-        (wire
-          (path Rückseite 198
-            20972 -21760
-            20472 -21260
-            19803 -21260
-            19253 -20710
-            19253 -19267
-            19478 -19042
-            66748 -19042
-            73566 -25860
-            73566 -29658
-            72291 -30933
-          )
-        )
-      )
-      (net "N-000112"
-        (wire
-          (path Rückseite 198
-            72291 -29933
-            63405 -21047
-            26971 -21047
-            25758 -22260
-            20472 -22260
-            19972 -21760
-          )
-        )
-      )
-      (net "N-000113"
-        (wire
-          (path Rückseite 198
-            72291 -28933
-            64118 -20760
-            20972 -20760
-          )
-        )
-      )
-      (net "N-000114"
-        (wire
-          (path Rückseite 198
-            20972 -19760
-            66653 -19760
-            72821 -25928
-            72821 -26403
-            72291 -26933
-          )
-        )
+      (rule
+        (width 19.7)
+        (clearance 19.8)
       )
     )
+  )
+  (wiring
   )
 )
