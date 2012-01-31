@@ -1,19 +1,11 @@
-update=12.01.2012 16:13:17
+update=24.01.2012 10:10:21
 version=1
 last_client=pcbnew
-[cvpcb]
+[general]
 version=1
-NetITyp=0
-NetIExt=.net
-PkgIExt=.pkg
-NetDir=
-LibDir=
-NetType=0
-[cvpcb/libraries]
-EquName1=devcms
 [eeschema]
 version=1
-LibDir=
+LibDir=C:/Programme/KiCad/share/library/converted
 NetFmt=1
 HPGLSpd=20
 HPGLDm=15
@@ -41,8 +33,6 @@ offY_E=0
 RptD_X=0
 RptD_Y=100
 RptLab=1
-SimCmd=
-UseNetN=0
 LabSize=60
 [eeschema/libraries]
 LibName1=power
@@ -75,8 +65,11 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
-[general]
+[cvpcb]
 version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=320
@@ -95,7 +88,7 @@ TxtLar=120
 MSegLar=150
 LastNetListRead=
 [pcbnew/libraries]
-LibDir=
+LibDir=C:/Programme/KiCad/share/library/converted
 LibName1=sockets
 LibName2=connect
 LibName3=discret

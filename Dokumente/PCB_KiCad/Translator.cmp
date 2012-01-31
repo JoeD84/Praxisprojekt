@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-11-27 BZR 3249)-stable date = 19.12.2011 18:22:57
+Cmp-Mod V01 Created by CvPcb (2011-11-27 BZR 3249)-stable date = 19.01.2012 10:53:07
 
 BeginCmp
 TimeStamp = /4EDF7E7A;
@@ -64,51 +64,177 @@ IdModule  = DIP-40__600;
 EndCmp
 
 BeginCmp
-TimeStamp = /4EDF869D;
+TimeStamp = /4F169EF0;
 Reference = P1;
-ValeurCmp = CONN_4X2;
-IdModule  = pin_array_4x2;
+ValeurCmp = CONN_2;
+IdModule  = PIN_ARRAY_2X1;
 EndCmp
 
 BeginCmp
-TimeStamp = /4EDF868A;
+TimeStamp = /4F169E84;
 Reference = P2;
-ValeurCmp = CONN_4X2;
-IdModule  = pin_array_4x2;
+ValeurCmp = SWITCH;
+IdModule  = PIN_ARRAY_5x2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4EDF8040;
+TimeStamp = /4F16A014;
 Reference = P3;
-ValeurCmp = CONN_4X2;
-IdModule  = pin_array_4x2;
+ValeurCmp = LED;
+IdModule  = PIN_ARRAY_5x2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4EDFB2CE;
+TimeStamp = /4F16A01B;
 Reference = P4;
-ValeurCmp = CONN_4X2;
-IdModule  = pin_array_4x2;
+ValeurCmp = LCD;
+IdModule  = PIN_ARRAY_5x2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4EDF7D9A;
+TimeStamp = /4F16A164;
 Reference = P5;
+ValeurCmp = RS-232_RF;
+IdModule  = PIN_ARRAY_5x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16A159;
+Reference = P6;
+ValeurCmp = RS-232_ST;
+IdModule  = PIN_ARRAY_5x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F17E664;
+Reference = P7;
 ValeurCmp = C64AC;
-IdModule  = c64abmd;
+IdModule  = connect-VG64M/C;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BB68;
+Reference = R1;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BB75;
+Reference = R2;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BB78;
+Reference = R3;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BB7A;
+Reference = R4;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BB7D;
+Reference = R5;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16B7BA;
+Reference = R6;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16B7F9;
+Reference = R7;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16B7FD;
+Reference = R8;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16B800;
+Reference = R9;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BD01;
+Reference = R10;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BB93;
+Reference = R11;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BBB7;
+Reference = R12;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BBC3;
+Reference = R13;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BBC6;
+Reference = R14;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BBCB;
+Reference = R15;
+ValeurCmp = 150R;
+IdModule  = R5;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F16BDD5;
+Reference = RV1;
+ValeurCmp = POT;
+IdModule  = RV2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4EDF7E24;
 Reference = U1;
-ValeurCmp = MAX232;
+ValeurCmp = MAX232_RF;
 IdModule  = DIP-16__300;
 EndCmp
 
 BeginCmp
 TimeStamp = /4EDF7E2B;
 Reference = U2;
-ValeurCmp = MAX232;
+ValeurCmp = MAX232_ST;
 IdModule  = DIP-16__300;
 EndCmp
 
@@ -116,7 +242,7 @@ BeginCmp
 TimeStamp = /4EDF8AFC;
 Reference = X1;
 ValeurCmp = CRYSTAL;
-IdModule  = HC-33UV;
+IdModule  = HC-18UV;
 EndCmp
 
 EndListe

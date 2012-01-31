@@ -5,11 +5,12 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
+\usepackage{fancyhdr} 
 
 %titelblatt
 \thispagestyle{empty}
 
-\setlength{\textheight} {270mm} 
+\setlength{\textheight} {250mm} 
 \setlength{\textwidth} {150mm}
 
 %Kopfzeile
@@ -31,8 +32,35 @@
 %Betreuer fragen
 \parindent10mm
 
+% Kopf- und Fußzeilen anpassen
+\fancyhf{}  % Kopf- und Fußzeile leeren 
+\fancyfoot[EL]{\thepage} 
+\fancyfoot[OR]{\thepage} 
+\pagestyle{fancy} 
+
+
 %Inhaltsverzeichnis
 \usepackage[numindex,nottoc,section]{tocbibind} %Einbinden von Index-
                                 %und Literaturverzeichnis (nummeriert) in das
                                 %Inhaltsverzeichnis. Inhaltsverzeichnis wird 
                                 %nicht eingebunden.
+
+\usepackage{eso-pic,graphicx}
+\usepackage{hyperref}
+\hypersetup{pageanchor,linkcolor=black, colorlinks=true}
+
+\makeatletter
+
+\newcommand\BackgroundPicture[3]{%
+  \setlength{\unitlength}{1pt}%
+  \put(0,\strip@pt\paperheight){%
+    \parbox[t][\paperheight]{\paperwidth}{%
+      \vfill
+      \centering\includegraphics[width=21.4cm,angle=45]{_Res/draft}
+      \vfill
+    }
+  }
+} 
+
+\makeatother
+\AddToShipoutPicture{\BackgroundPicture}
