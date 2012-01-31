@@ -1,0 +1,25 @@
+\chapter{Einleitung}
+\label{cha:Einleitung}
+
+\todo {Klarstellen der Begrifflichkeiten}
+In der \todo{CAD erklären} \Fachbegriff{CAD-Entwicklung} kommt es vor das für ein real existierendes Objekt eine Erweiterung konstruiert werden muss. Um die Erweiterung sinnvoll konstruieren zu können müssen dazu die Abmessungen des Objektes möglichst genau bekannt sein. Das übertragen der Abmessungen, kann insbesondere für komplexe Objekte, sehr aufwendig sein.
+Abhilfe soll ein Laserscanner schaffen der das Objekt aus mehreren Richtungen vermisst und aus diesen Informationen ein genaues 3D-Modell davon generiert. 
+
+\section{Motivation}
+\label{sec:Motivation}
+Mit dem Aufbau aus RapidForm2004, Lasererfassungssystem VI-900 und Drehtisch sollen auf einfachem Wege 3D-Modelle eines Objektes erzeugt werden. Diese sollen anschließend in einer CAD-Software wie \Fachbegriff{Solidworks} nutzbar sein.\\
+
+\section{Ziel der Arbeit}
+\label{sec:ZielDerArbeit}
+Die Kommunikation zwischen der Software RapidForm2004 und dem gegebenen Drehtisch soll ermöglicht werden. Dazu werden die ASCII-Befehle der Software mit einem Mikrocontroller ausgewertet und in für den gegeben Schrittmotor verständliche Befehle übersetzt.
+Es wird also ein Mikrocontroller mit 2 RS-232 Schnittstellen so programmiert das er die Befehle der Software übersetzen kann. Um den den Drehtisch manuell bedienen zu können und den aktuellen Status zu überprüfen sind noch ein LC-Display und mehrere Bedientaster vorgesehen.\\
+Die Ansteuerung des Schrittmotors ist als Einschub für ein 19"-Rack realisiert. Daher wird die Platine für den Mikrocontroller auch als 19"-Einschub realisiert.
+
+
+\section{Aufbau der Arbeit}
+\label{sec:AufbauDerArbeit}
+\todo{Ausbauen!} Überblick verschaffen. Kommunikation mit Schrittmotor-Karte von PC aus. Aufbauen des STK500. Einarbeiten in uC Entwicklung. Steuern der Schrittmotor Karte vom uC aus. Erarbeiten der Protokolle (Reverse Engineering). C-Programm zum verstehen eingehender Befehle. Übersetzen der Befehle. Neuer Mikrocontroller. Umgebungs wechsel. LC-Display. Endschalter. Max232. Platinenlayout.
+
+
+\section{Typographische Konventionen}
+\todo{Was hier?}Proin id magna eu sem tincidunt feugiat. Sed tincidunt massa sed eros. Fusce condimentum eros et lectus. Pellentesque lectus tortor, mattis in, dapibus a, lobortis ut, justo. Sed id dolor ut nibh varius ultrices. Quisque tincidunt nisl vel nibh. Suspendisse sodales massa non magna. In porttitor augue nonummy nunc. Nam quis enim quis ante dapibus interdum. Morbi nec neque. Fusce pharetra consectetuer magna. Etiam laoreet, augue nec lacinia ornare, risus purus lobortis erat, eu consequat urna orci vel arcu. Integer cursus, augue sed tempor dapibus, erat tortor rutrum elit, sit amet fermentum purus neque vitae tortor. Donec vulputate, ipsum vel viverra pretium, purus orci mattis nulla, nec tincidunt leo metus sed ipsum. Fusce eget lectus sed lectus molestie tincidunt. Etiam tincidunt urna eget tortor.
