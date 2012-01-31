@@ -1,0 +1,79 @@
+eeschema (2011-11-27 BZR 3249)-stable  >> Creation date: 18.01.2012 15:01:40
+
+#Cmp ( Sortiert nach Referenz )
+| C1         CP1         
+| C2         CP1         
+| C3         CP1         
+| C4         CP1         
+| C5         CP1         
+| C6         CP1         
+| C7         CP1         
+| C8         CP1         
+| IC1        ATMEGA324A-P
+| P1         CONN_2      
+| P2         SWITCH      
+| P3         LED         
+| P4         LCD         
+| P5         RS-232 RF   
+| P6         RS-232 ST   
+| P7         C64AC       
+| R1         150R        
+| R2         150R        
+| R3         150R        
+| R4         150R        
+| R5         150R        
+| R6         150R        
+| R7         150R        
+| R8         150R        
+| R9         150R        
+| R10        150R        
+| R11        150R        
+| R12        150R        
+| R13        150R        
+| R14        150R        
+| R15        150R        
+| RV1        POT         
+| U1         MAX232      
+| U2         MAX232      
+| X1         CRYSTAL     
+#Ende der Komponente
+
+#Komponenten ( Sortiert nach Wert )
+| 150R         R1        
+| 150R         R2        
+| 150R         R3        
+| 150R         R4        
+| 150R         R5        
+| 150R         R6        
+| 150R         R7        
+| 150R         R8        
+| 150R         R9        
+| 150R         R10       
+| 150R         R11       
+| 150R         R12       
+| 150R         R13       
+| 150R         R14       
+| 150R         R15       
+| ATMEGA324A-P IC1       
+| C64AC        P7        
+| CONN_2       P1        
+| CP1          C1        
+| CP1          C2        
+| CP1          C3        
+| CP1          C4        
+| CP1          C5        
+| CP1          C6        
+| CP1          C7        
+| CP1          C8        
+| CRYSTAL      X1        
+| LCD          P4        
+| LED          P3        
+| MAX232       U1        
+| MAX232       U2        
+| POT          RV1       
+| RS-232 RF    P5        
+| RS-232 ST    P6        
+| SWITCH       P2        
+#Ende der Komponente
+
+#Ende der Liste
