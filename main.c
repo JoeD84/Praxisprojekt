@@ -34,7 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Meine Includes
 #include "mystuff.h"
 #include "Debounce.h"
-#include "lcd.h"
+//#include "lcd.h"
 // Globale Variablen
 #define B_OK 		"0\r\n"
 #define D_RapidForm 0
@@ -61,7 +61,7 @@ void 	uart_get_string		(char * string_in, int dir);
 void 	uart_rx				(int dir);
 // String Stuff
 int 	FindStringInArray	(const char* pInput, const char* pOptions[], int cmp_length);
-void 	String_zerlegen_Isel(char * str_rx, char * Position);
+void 	String_zerlegen_Isel(char * str_rx, char * Position, char * Winkel);
 void 	String_zerlegen_csg	(char * str_rx);
 // Hilfs Funktionen
 void 	csg_Status_melden	();
@@ -85,7 +85,6 @@ void 	menu_puts			(void *arg, char *name);
 void 	init_WDT			(void);
 void 	init				(void);
 
-
 //////////////////////////////
 //
 //      Hauptschleife
@@ -95,28 +94,18 @@ int main(void) {
 	init();
 	while (1) {
 		wdt_reset();
-		if (get_key_press(1 << KEY0) || get_key_rpt(1 << KEY0))
-			led_lauflicht(); // LED Lauflicht
-		if (get_key_press(1 << KEY1))
-			uart_put_string("0\n", D_RapidForm);
-		if( get_key_press( 1<<KEY2 ) )
-			lcd_clrscr();
-
-
-		if (get_key_press(1 << KEY3)) {
-			lcd_puts("Betrete Men�!\n");
+		if (get_key_press(1 << KEY0) || get_key_rpt(1 << KEY0)){
+			lcd_puts("Betrete Menue!\n");
 			menu_enter(&menu_context, &menu_main);
 		}
-
-		if (get_key_press(1 << KEY4))
-			menu_select(&menu_context); // 4 - Ausw�hlen
-		if (get_key_press(1 << KEY5) || get_key_rpt(1 << KEY5)) // 5 - Next
-			menu_next_entry(&menu_context);
-		if (get_key_press(1 << KEY6) || get_key_rpt(1 << KEY6)) // 6 - Previous
+		if (get_key_press(1 << KEY1))
+			menu_exit(&menu_context); 	// 1 - Back
+		if( get_key_press( 1<<KEY2 ))
 			menu_prev_entry(&menu_context);
-		if (get_key_press(1 << KEY7))
-			menu_exit(&menu_context); // 7 - Men� zur�ck
-
+		if (get_key_press(1 << KEY3) || get_key_rpt(1 << KEY3))
+			menu_next_entry(&menu_context);
+		if (get_key_press(1 << KEY4) || get_key_rpt(1 << KEY4))
+			menu_select(&menu_context); // 4 - Select
 		if ((UCSR0A & (1 << RXC0)))
 			uart_rx(D_RapidForm);
 		if ((UCSR1A & (1 << RXC1)))
@@ -130,18 +119,18 @@ int main(void) {
 //////////////////////////////
 
 // Interrupt Stuff
-ISR(WDT_vect)
-//Interrupt Service Routine
-{
-		LED_PORT ^= (1 << LED0);
+ISR(WDT_vect){ 							// Watchdog ISR
+		LED_PORT &= ~(1 << LED4); 		// LED5 einschalten
 }
-ISR(PCINT3_vect)
-//Interrupt Service Routine
-{
-	//led_lauflicht();
-	//uart_put_string("2H\n", D_Stepper);
-	uart_put_string("1H\n", D_Stepper);
-	LED_PORT ^= (1 << LED0);
+ISR(PCINT3_vect){						// Endschalter Position erreicht
+	lcd_puts("Positive Enschalter Position Erreicht!");
+	//uart_put_string("1H\n", D_Stepper);
+	LED_PORT ^= (1 << LED5);
+}
+ISR(PCINT2_vect){						// Endschalter Position erreicht
+	lcd_puts("Negative Enschalter Position Erreicht!");
+	//uart_put_string("1H\n", D_Stepper);
+	LED_PORT ^= (1 << LED5);
 }
 // UART Stuff
 void 	uart_init			() {
@@ -292,7 +281,7 @@ int 	FindStringInArray	(const char* pInput, const char* pOptions[], int cmp_leng
 	}
 	return 99;
 }
-void 	String_zerlegen_Isel(char * str_rx, char * Position) {
+void 	String_zerlegen_Isel(char * str_rx, char * Position, char * Winkel) {
 	//0M5200, +600
 	//Achse M Position, +Geschwindigkeit
 	char * Achse="0";
@@ -321,9 +310,12 @@ void 	String_zerlegen_Isel(char * str_rx, char * Position) {
 	} while (i < 20 && c != '\0' && c != ',');
 	Position[i] = '\0';
 	int32_t z;
+	int32_t y;
 	z = atol(Position);
 	z = (z * 71111)  /1024;
-	ltoa(z,Position,10);
+	y = z / 7200;
+	ltoa(y, Winkel,		10 );
+	ltoa(z, Position,	10 );
 	//lcd_puts("Position: ");
 	//lcd_puts(Position);
 	//lcd_puts("\n");
@@ -456,19 +448,20 @@ void 	switch_Stepper		(char * str_rx) {
 			0 };
 	switch (FindStringInArray(str_rx, pOptions, 1)) {
 	case 0:
-		lcd_puts("Erfolgreich\n");
+		//lcd_puts("Erfolgreich\n");
 		//uart_put_string("0\n\r", D_RapidForm);
 		break;
 	case 1:
-		lcd_puts("Error\n");
+		//lcd_puts("Error\n");
 		uart_put_string("1\r\n", D_RapidForm);
 		break;
 	case 2:
 		lcd_clrscr();
 		break;
 	case 3:
-		lcd_puts("Test bestanden\n");
+		//lcd_puts("Test bestanden\n");
 		//uart_put_string("Test bestanden\n\r", D_RapidForm);
+		uart_put_string("Test bestanden\n\r", D_Stepper);
 		break;
 	default:
 		ms_spin(10);
@@ -546,9 +539,10 @@ void 	switch_Isel			(char * str_rx) {
 		break;
 	case 5:			// 5 - Gehe zu Position MX , +600
 		ms_spin(10);
-		char Position[33];
+		char Position[33], Winkel[6];
 		memset(Position, '\0', 33);
-		String_zerlegen_Isel(str_rx, Position);
+		memset(Winkel, '\0', 6);
+		String_zerlegen_Isel(str_rx, Position, Winkel);
 		char Move_To[40];
 		memset(Move_To,  '\0', 40);
 		Move_To[0] = 'M';
@@ -583,8 +577,7 @@ void 	switch_Isel			(char * str_rx) {
 			if ((UCSR1A & (1 << RXC1))){
 				uart_rx(D_Stepper);
 				lcd_clrscr();
-				lcd_puts("running to\n");
-				lcd_puts("Position: ");
+				lcd_puts("Gehe zu Winkel: ");
 				lcd_puts(Position);
 				lcd_puts("\n");
 			}
@@ -853,7 +846,7 @@ void 	uart_rx				(int dir) {
 		switch_Stepper(str_rx);
 	else{
 		if(Initialized == M_UNK){
-			lcd_puts("Unbekannter Motor!\n");
+			//lcd_puts("Unbekannter Motor!\n");
 			//lcd_puts(str_rx);
 			Initialized = M_NOTI;
 		}
@@ -889,19 +882,20 @@ void 	lcd_my_type			(char *s) {
 void 	lcd_spielereien		(void) {
 	_delay_ms(100);
 	lcd_my_type("Hello Joe!\n");
-	_delay_ms(200);
-	lcd_my_type("Have a nice Day!\n");
-	_delay_ms(500);
-	lcd_my_type("Be a Honey Bee!\n");
 	_delay_ms(600);
+	//lcd_my_type("Have a nice Day!\n");
+	//_delay_ms(500);
+	//lcd_my_type("Be a Honey Bee!\n");
+	//_delay_ms(600);
 	lcd_clrscr();
+	lcd_my_type("Ready");
 }
 void 	led_spielerein		(void) {
 
 	for (int i = 1; i < 9; i++) // LEDs durchlaufen
 	{
 		_delay_ms(80); // Eine Sekunde +/-1/10000 Sekunde warten...
-		LED_PORT &= ~((1 << i)); // l�scht Bit an PortB - LED an
+		LED_PORT &= ~((1 << i)); 	// l�scht Bit an PortB - LED an
 		LED_PORT |= ((1 << (i - 1))); // setzt  Bit an PortB - LED aus
 		//wdt_reset();
 	}
@@ -920,11 +914,27 @@ void 	debounce_init		(void) {
 	sei();
 	///////////////// Debounce Stuff ////////////////////
 }
-void 	led_lauflicht		(void) {
+/*
+ * i   11110111		11111110	11111111
+ * is  11101111		11111101	11111110
+ * F0  11110000	FE	11111110	11111110
+ * r   11100000		11111100	11111110
+ *
+ * i   11110111		11111110	11111111
+ * 07  00000111	00	00000000	00000000
+ * l   00000111		00000000	00000000
+ *
+ * l|r 11100111		11111100	11111110
+ *
+ * if< 11110000	FE	11111110	11111110
+ *
+ * 08  00001000		00000001
+ * i|  11101111		11111101
+*/
+void led_lauflicht (void) {
 	uint8_t i = LED_PORT;
-	i = (i & 0x07) | ((i << 1) & 0xF0);
-	if (i < 0xF0)
-		i |= 0x08;
+	i = (i & 0x00) | ((i << 1) & 0xFE);
+	if (i < 0xFE) i |= 0x01;
 	LED_PORT = i;
 }
 
@@ -966,24 +976,17 @@ void init_WDT(void) {
 	sei();
 }
 void init() {
-	// Watchdog Initialisieren oder Abschalten
-	init_WDT();
-	// LED Port definieren
-	LED_DDR = 0xFF;
-	LED_PORT = 0xFF;
-	// Interrupts definieren
-	PCMSK3 |= (1 << PCINT28); // PD4 als Interrupt zulassen
-	PCICR |= (1 << PCIE3); //Pin Change Interrupt Control Register - PCIE3 setzen f�r PCINT30
-	// Startup kennzeichnen
-	led_spielerein();
-	// LC Display initialisieren
-	lcd_init(LCD_DISP_ON_CURSOR);
-	lcd_clrscr();
-	lcd_home();
-	//lcd_spielereien();
-	// Taster entprellen
-	debounce_init();
-	// RS-232 Verbindung initialisieren
-	uart_init();
-	//menu_enter(&menu_context, &menu_main);
+	init_WDT();						// Watchdog Initialisieren oder Abschalten
+	LED_DDR = 0xFF;					// LED Port Richtung definieren (Ausgang)
+	LED_PORT = 0xFF;				// LEDs ausschalten
+	PCMSK3 |= (1 << PCINT28); 		// Interrupts definierenPD4 als Interrupt zulassen
+	PCICR |= (1 << PCIE3); 			// Pin Change Interrupt Control Register - PCIE3 setzen f�r PCINT30
+	led_spielerein();				// Starten des Mikrocontroller kennzeichnen
+	DDRC  |= ( 1 << PB7 );			// Pin7 als Ausgang definieren (Nur LCD an STK500)
+	LCD_PORT &= ( 1 << PB7 );  		// Pin7 auf 0V legen (Nur LCD an STK500)
+    lcd_init(LCD_DISP_ON_CURSOR);	// LC Display initialisieren
+	lcd_spielereien();				// Kurze Startup Meldung zeigen
+	debounce_init();				// Taster entprellen
+	uart_init();					// RS-232 Verbindung initialisieren
+	//menu_enter(&menu_context, &menu_main); // Kommentar entfernen um Menue zu aktivieren
 }
