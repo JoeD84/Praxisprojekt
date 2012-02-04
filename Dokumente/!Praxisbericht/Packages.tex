@@ -4,7 +4,7 @@
 \usepackage[
 	automark,			% Kapitelangaben in Kopfzeile automatisch erstellen
 	headsepline,	% Trennlinie unter Kopfzeile
-	ilines				% Trennlinie linksbündig ausrichten
+	ilines				% Trennlinie linksbÃ¼ndig ausrichten
 ]{scrpage2}
 
 
@@ -15,12 +15,12 @@
 
 
 % Umlaute ------------------------------------------------------------------
-% 	Umlaute/Sonderzeichen wie äüöß direkt im Quelltext verwenden (CodePage).
+% 	Umlaute/Sonderzeichen wie Ã¤Ã¼Ã¶ÃŸ direkt im Quelltext verwenden (CodePage).
 %		Erlaubt automatische Trennung von Worten mit Umlauten.
 % --------------------------------------------------------------------------
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-%\usepackage{ae} % "schöneres" ß
+%\usepackage{ae} % "schÃ¶neres" ÃŸ
 \usepackage{textcomp} % Euro-Zeichen etc.
 
 % Grafiken -----------------------------------------------------------------
@@ -30,22 +30,22 @@
 \usepackage[dvips,final]{graphicx}
 \graphicspath{{Bilder/}} % Dort liegen die Bilder des Dokuments
 
-% Befehle aus AMSTeX für mathematische Symbole z.B. \boldsymbol \mathbb ----
+% Befehle aus AMSTeX fÃ¼r mathematische Symbole z.B. \boldsymbol \mathbb ----
 \usepackage{amsmath,amsfonts}
 
 
 % Weitere Zeichen z.B. \textcelsius \textordmasculine \textsurd \textonehalf 
 % \texteuro \texttimes \textdiv ... aus textcomp.sty
-% siehe >>Schnell ans Ziel mit \LaTeXe<< von Jörg Knappen
-% (Oldenbourg, München und Wien 1997, ISBN 3-486-24199-0)
+% siehe >>Schnell ans Ziel mit \LaTeXe<< von JÃ¶rg Knappen
+% (Oldenbourg, MÃ¼nchen und Wien 1997, ISBN 3-486-24199-0)
 % \usepackage{tccompat}
 	
 
-% Für Index-Ausgabe; \printindex -------------------------------------------
+% FÃ¼r Index-Ausgabe; \printindex -------------------------------------------
 \usepackage{makeidx}
 
 
-% Einfache Definition der Zeilenabstände und Seitenränder etc. -------------
+% Einfache Definition der ZeilenabstÃ¤nde und SeitenrÃ¤nder etc. -------------
 \usepackage{setspace}
 \usepackage{geometry}
 
@@ -54,19 +54,19 @@
 % 	Symbolverzeichnisse bequem erstellen, beruht auf MakeIndex.
 % 		makeindex.exe %Name%.nlo -s nomencl.ist -o %Name%.nls
 % 	erzeugt dann das Verzeichnis. Dieser Befehl kann z.B. im TeXnicCenter
-%		als Postprozessor eingetragen werden, damit er nicht ständig manuell
-%		ausgeführt werden muss.
+%		als Postprozessor eingetragen werden, damit er nicht stÃ¤ndig manuell
+%		ausgefÃ¼hrt werden muss.
 %		Die Definitionen sind ausgegliedert in die Datei Abkuerzungen.tex.
 % --------------------------------------------------------------------------
 \usepackage[intoc]{nomencl}
   \let\abbrev\nomenclature
-  \renewcommand{\nomname}{Abkürzungsverzeichnis}
+  \renewcommand{\nomname}{AbkÃ¼rzungsverzeichnis}
   \setlength{\nomlabelwidth}{.25\hsize}
   \renewcommand{\nomlabel}[1]{#1 \dotfill}
   \setlength{\nomitemsep}{-\parsep}
 
 
-% Zum Umfließen von Bildern -------------------------------------------------
+% Zum UmflieÃŸen von Bildern -------------------------------------------------
 \usepackage{floatflt}
 
 
@@ -103,14 +103,14 @@
 \usepackage{url}
 
 
-% Wichtig für korrekte Zitierweise ------------------------------------------
+% Wichtig fÃ¼r korrekte Zitierweise ------------------------------------------
 \usepackage[square]{natbib}
 % Quellenangaben in eckige Klammern fassen ---------------------------------
 \bibpunct{[}{]}{;}{a}{}{,~}
 
 
 %\usepackage{jurabib}
-%\jurabibsetup{authorformat=smallcaps,% Autor in Kapitälchen              
+%\jurabibsetup{authorformat=smallcaps,% Autor in KapitÃ¤lchen              
 %              %authorformat=year,
 %              authorformat=citationreversed,% Im Zitat Vorname vorne
 %              authorformat=indexed,% Autor in Index
@@ -123,7 +123,7 @@
 %              titleformat=all,
 %              titleformat=colonsep,% Doppelpunkt zwischen Aut. u. Titel
 %              ibidem=strict,% Ebenda pro Doppelseite
-%              see,% Das zweite Argument ist optional für "Vgl." etc.
+%              see,% Das zweite Argument ist optional fÃ¼r "Vgl." etc.
 %              commabeforerest,% Komma vor Seitenzahl
 %              %howcited=compare,%
 %              %bibformat=ibidem,% Strich bei widerholtem Autor in BIB.
@@ -131,7 +131,7 @@
 %              bibformat=compress,
 %              pages=always,
 %              %pages=format,% S. wird vorweggesetzt
-%              crossref=long,% Querverweise in voller Länge
+%              crossref=long,% Querverweise in voller LÃ¤nge
 %              square,% eckige Klammern bei Zitaten
 %              %oxford,
 %              %chicago,
@@ -186,17 +186,17 @@ pdfcreator={\autor},
 pdfsubject={\titel},
 pdfkeywords={\titel},
 colorlinks=true,
-linkcolor=red, % einfache interne Verknüpfungen
+linkcolor=red, % einfache interne VerknÃ¼pfungen
 anchorcolor=black,% Ankertext
-citecolor=blue, % Verweise auf Literaturverzeichniseinträge im Text
-filecolor=magenta, % Verknüpfungen, die lokale Dateien öffnen
-menucolor=red, % Acrobat-Menüpunkte
+citecolor=blue, % Verweise auf LiteraturverzeichniseintrÃ¤ge im Text
+filecolor=magenta, % VerknÃ¼pfungen, die lokale Dateien Ã¶ffnen
+menucolor=red, % Acrobat-MenÃ¼punkte
 urlcolor=cyan, 
-%linkcolor=black, % einfache interne Verknüpfungen
+%linkcolor=black, % einfache interne VerknÃ¼pfungen
 %anchorcolor=black,% Ankertext
-%citecolor=black, % Verweise auf Literaturverzeichniseinträge im Text
-%filecolor=black, % Verknüpfungen, die lokale Dateien öffnen
-%menucolor=black, % Acrobat-Menüpunkte
+%citecolor=black, % Verweise auf LiteraturverzeichniseintrÃ¤ge im Text
+%filecolor=black, % VerknÃ¼pfungen, die lokale Dateien Ã¶ffnen
+%menucolor=black, % Acrobat-MenÃ¼punkte
 %urlcolor=black, 
 backref,
 %pagebackref,
@@ -206,25 +206,25 @@ hypertexnames=false,% zur korrekten Erstellung der Bookmarks
 linktocpage % Seitenzahlen anstatt Text im Inhaltsverzeichnis verlinken
 ]{hyperref}
 
-% Zum fortlaufenden Durchnummerieren der Fußnoten ---------------------------
+% Zum fortlaufenden Durchnummerieren der FuÃŸnoten ---------------------------
 \usepackage{chngcntr}
 
 
-% Aliase für Zitate
+% Aliase fÃ¼r Zitate
 % \defcitealias{WPProzess}{Wikipedia:~Prozess}
 
 %\usepackage{minitoc}
 
-% für lange Tabellen
+% fÃ¼r lange Tabellen
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{ragged2e}
 \usepackage{lscape}
 
-%Spaltendefinition rechtsbündig mit definierter Breite
+%Spaltendefinition rechtsbÃ¼ndig mit definierter Breite
 \newcolumntype{w}[1]{>{\raggedleft\hspace{0pt}}p{#1}}
 
-% Formatierung von Listen ändern
+% Formatierung von Listen Ã¤ndern
 \usepackage{paralist}
 % \setdefaultleftmargin{2.5em}{2.2em}{1.87em}{1.7em}{1em}{1em}
 
@@ -232,7 +232,7 @@ linktocpage % Seitenzahlen anstatt Text im Inhaltsverzeichnis verlinken
 %\makeatletter% --> De-TeX-FAQ
 %\newcommand*{\maintoc}{% Hauptinhaltsverzeichnis
 %\begingroup
-%\@fileswfalse% kein neues Verzeichnis öffnen
+%\@fileswfalse% kein neues Verzeichnis Ã¶ffnen
 %\renewcommand*{\appendixattoc}{% Trennanweisung im Inhaltsverzeichnis
 %\value{tocdepth}=-10000 % lokal tocdepth auf sehr kleinen Wert setzen
 %}%
@@ -242,8 +242,8 @@ linktocpage % Seitenzahlen anstatt Text im Inhaltsverzeichnis verlinken
 %\newcommand*{\appendixtoc}{% Anhangsinhaltsverzeichnis
 %\begingroup
 %\edef\@alltocdepth{\the\value{tocdepth}}% tocdepth merken
-%\setcounter{tocdepth}{-10000}% Keine Verzeichniseinträge
-%\renewcommand*{\contentsname}{% Verzeichnisname ändern
+%\setcounter{tocdepth}{-10000}% Keine VerzeichniseintrÃ¤ge
+%\renewcommand*{\contentsname}{% Verzeichnisname Ã¤ndern
 %Verzeichnis der Anh\"ange}%
 %\renewcommand*{\appendixattoc}{% Trennanweisung im Inhaltsverzeichnis
 %\setcounter{tocdepth}{\@alltocdepth}% tocdepth wiederherstellen
