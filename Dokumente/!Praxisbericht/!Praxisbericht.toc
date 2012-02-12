@@ -19,25 +19,28 @@
 \contentsline {subsection}{\numberline {2.3.3}MAX232}{8}{subsection.25}
 \contentsline {section}{\numberline {2.4}Platinenlayout}{8}{section.26}
 \contentsline {chapter}{\numberline {3}Software}{9}{chapter.27}
-\contentsline {section}{\numberline {3.1}Entwicklungsumgebung}{9}{section.28}
-\contentsline {section}{\numberline {3.2}RapidForm2004}{9}{section.38}
-\contentsline {section}{\numberline {3.3}Watchdog}{10}{section.39}
-\contentsline {section}{\numberline {3.4}Einfaches Beispiel f\IeC {\"u}r LEDs und Taster}{10}{section.40}
-\contentsline {section}{\numberline {3.5}LCD Bibliothek}{10}{section.41}
-\contentsline {section}{\numberline {3.6}RS-232}{10}{section.42}
-\contentsline {section}{\numberline {3.7}Men\IeC {\"u} Bibliothek}{10}{section.43}
-\contentsline {section}{\numberline {3.8}Interrupts}{10}{section.44}
-\contentsline {subsection}{\numberline {3.8.1}Endschalter}{10}{subsection.45}
-\contentsline {subsection}{\numberline {3.8.2}Watchdog}{10}{subsection.46}
-\contentsline {section}{\numberline {3.9}Protokoll der Stepperkarte}{10}{section.47}
-\contentsline {section}{\numberline {3.10}Manueller Betrieb}{10}{section.48}
-\contentsline {section}{\numberline {3.11}Protokolle aus RapidForm}{10}{section.49}
-\contentsline {section}{\numberline {3.12}\IeC {\"U}bersetungs Logik}{10}{section.50}
-\contentsline {section}{\numberline {3.13}Automatische Protokollwahl}{10}{section.51}
-\contentsline {chapter}{\numberline {4}Fazit und Zukunft}{11}{chapter.52}
-\contentsline {section}{\numberline {4.1}Fazit}{11}{section.53}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{13}{chapter*.55}
-\contentsline {chapter}{\numberline {A}Anhang}{i}{appendix.56}
-\contentsline {section}{\numberline {A.1}Schritt f\IeC {\"u}r Schritt Anleitung}{ii}{section.57}
-\contentsline {section}{\numberline {A.2}ASCII Befehlssatz R+S Schrittmotorsteuerung}{iii}{section.58}
-\contentsline {section}{\numberline {A.3}Vom Autor verwendete Software}{iv}{section.60}
+\contentsline {section}{\numberline {3.1}RapidForm2004}{9}{section.28}
+\contentsline {section}{\numberline {3.2}Entwicklungsumgebung}{9}{section.29}
+\contentsline {subsection}{\numberline {3.2.1}AVR Studio 5}{9}{subsection.30}
+\contentsline {subsection}{\numberline {3.2.2}Eclipse}{9}{subsection.31}
+\contentsline {section}{\numberline {3.3}Mikrocontroller}{9}{section.32}
+\contentsline {subsection}{\numberline {3.3.1}Fuses}{10}{subsection.33}
+\contentsline {subsection}{\numberline {3.3.2}LEDs}{10}{subsection.34}
+\contentsline {subsection}{\numberline {3.3.3}Taster}{11}{subsection.44}
+\contentsline {subsection}{\numberline {3.3.4}LCD Bibliothek}{11}{subsection.61}
+\contentsline {subsection}{\numberline {3.3.5}RS-232}{12}{subsection.87}
+\contentsline {subsection}{\numberline {3.3.6}Men\IeC {\"u} Bibliothek}{13}{subsection.121}
+\contentsline {subsection}{\numberline {3.3.7}Interrupts}{13}{subsection.122}
+\contentsline {subsubsection}{\numberline {3.3.7.1}Endschalter}{13}{subsubsection.123}
+\contentsline {subsubsection}{\numberline {3.3.7.2}Watchdog}{14}{subsubsection.135}
+\contentsline {subsection}{\numberline {3.3.8}Protokoll der Schrittmotorkarte}{15}{subsection.152}
+\contentsline {subsection}{\numberline {3.3.9}Manueller Betrieb}{15}{subsection.154}
+\contentsline {subsection}{\numberline {3.3.10}Protokolle aus RapidForm}{15}{subsection.155}
+\contentsline {subsection}{\numberline {3.3.11}\IeC {\"U}bersetungs Logik}{15}{subsection.156}
+\contentsline {subsection}{\numberline {3.3.12}Automatische Protokollwahl}{15}{subsection.157}
+\contentsline {chapter}{\numberline {4}Fazit und Zukunft}{16}{chapter.158}
+\contentsline {section}{\numberline {4.1}Fazit}{16}{section.159}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{18}{chapter*.161}
+\contentsline {chapter}{\numberline {A}Anhang}{i}{appendix.162}
+\contentsline {section}{\numberline {A.1}Schritt f\IeC {\"u}r Schritt Anleitung}{ii}{section.163}
+\contentsline {section}{\numberline {A.2}Vom Autor verwendete Software}{iii}{section.164}

@@ -1,0 +1,15 @@
+#include "Debounce.h"
+
+void 	debounce_init		(void) {
+	KEY_DDR &= ~ALL_KEYS; // configure key port for input
+	KEY_PORT |= ALL_KEYS; // and turn on pull up resistors
+	TCCR0B = (1 << CS02) | (1 << CS00); // divide by 1024
+	TCNT0 = (uint8_t) (int16_t) -(F_CPU / 1024 * 10 * 10e-3 + 0.5); // preload for 10ms
+	TIMSK0 |= 1 << TOIE0; // enable timer interrupt
+	sei();
+}
+
+if 	(get_key_press(1 << KEY0) || get_key_rpt(1 << KEY0)){
+	lcd_puts("Betrete Menue!\n");
+	menu_enter(&menu_context, &menu_main);
+}

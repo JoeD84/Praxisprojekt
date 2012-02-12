@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.12.22)  12 FEB 2012 14:46
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.12.22)  12 FEB 2012 23:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1035,7 +1035,7 @@ LaTeX Info: Redefining \selectfont on input line 54.
 \openout2 = `Deckblatt.aux'.
 
  (./Deckblatt.tex
-<Bilder/RAC_Logo.jpg, id=172, 250.9375pt x 124.465pt>
+<Bilder/RAC_Logo.jpg, id=184, 250.9375pt x 124.465pt>
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 <use Bilder/RAC_Logo.jpg>
@@ -1143,7 +1143,7 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
  (./Inhalt/Kapitel_Hardware.tex
 Kapitel 2.
-<Bilder/Uebersicht.jpg, id=280, 642.4pt x 479.7925pt>
+<Bilder/Uebersicht.jpg, id=305, 642.4pt x 479.7925pt>
 File: Bilder/Uebersicht.jpg Graphic file (type jpg)
 
 <use Bilder/Uebersicht.jpg>
@@ -1153,27 +1153,27 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 
  <./Bilder/Uebersicht.jpg>]
-Overfull \hbox (11.09521pt too wide) in paragraph at lines 23--25
+Overfull \hbox (11.09521pt too wide) in paragraph at lines 22--24
 []\T1/cmr/bx/sc/10.95 (TODO: Ver-ka-be-lung Steck-bar und uni-ver-sell ge-macht
 )[] \T1/cmr/m/n/10.95 Die Schritt-
  []
 
 
-Overfull \hbox (6.9894pt too wide) in paragraph at lines 26--27
+Overfull \hbox (6.9894pt too wide) in paragraph at lines 25--26
 []\T1/cmr/bx/sc/10.95 (TODO: Mo-to-ren be-schrei-ben! Tech-ni-sche Da-ten! Schr
 it-te, Span-
  []
 
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 <use Bilder/RAC_Logo.jpg> [4]
-Overfull \hbox (2.36792pt too wide) in paragraph at lines 38--45
+Overfull \hbox (2.36792pt too wide) in paragraph at lines 37--44
 \T1/cmr/m/n/10.95 Nor-ma-ler-wei-se un-ter-stützt die Schritt-mo-tor-kar-te nur
  me-cha-ni-sche End-schal-ter. Durch
  []
 
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 <use Bilder/RAC_Logo.jpg> [5]
-<Bilder/uC_Block.jpg, id=308, 626.34pt x 456.20438pt>
+<Bilder/uC_Block.jpg, id=334, 626.34pt x 456.20438pt>
 File: Bilder/uC_Block.jpg Graphic file (type jpg)
 
 <use Bilder/uC_Block.jpg>
@@ -1189,26 +1189,45 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
  (./Inhalt/Kapitel_Software.tex
 Kapitel 3.
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+<use Bilder/RAC_Logo.jpg> [9
+
+
+
+]
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(./Code/led_lauflicht_sample.txt)
+(./Code/led_lauflicht_sample.txt
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [9
+ <use Bilder/RAC_Logo.jpg> [10])
+(./Code/taster.txt)
 
+Package natbib Warning: Citation `uC:Fleury' on page 11 undefined on input line
+ 57.
 
-
-])
+(./Code/lcd_def.txt
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [11]) (./Code/rs232.txt
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
-<use Bilder/RAC_Logo.jpg> [10]
+<use Bilder/RAC_Logo.jpg> [12]) (./Code/ISR_Endschalter.txt
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+
+<use Bilder/RAC_Logo.jpg> [13]) (./Code/Watchdog.txt)
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+
+<use Bilder/RAC_Logo.jpg> [14])
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [15]
 \openout2 = `Inhalt/Fazit.aux'.
 
- (./Inhalt/Fazit.tex
+
+(./Inhalt/Fazit.tex
 Kapitel 4.
 )
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [11
+ <use Bilder/RAC_Logo.jpg> [16
 
 
 
@@ -1241,7 +1260,7 @@ iste&oldid = 99052435$[][]\T1/cmr/m/n/10.95 .
 
 )
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [12
+ <use Bilder/RAC_Logo.jpg> [17
 
 
 ]
@@ -1252,12 +1271,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
-<../../../../Unterschrift.png, id=372, 577.357pt x 126.071pt>
+<../../../../Unterschrift.png, id=524, 577.357pt x 126.071pt>
 File: ../../../../Unterschrift.png Graphic file (type png)
 
 <use ../../../../Unterschrift.png>)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [13
+ <use Bilder/RAC_Logo.jpg> [18
 
 
  <../../../../Unterschrift.png>] (./Inhalt/Anhang.tex
@@ -1279,64 +1298,63 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 \openout2 = `Inhalt/Tabelle_ASCII_Befehle.aux'.
 
  (./Inhalt/Tabelle_ASCII_Befehle.tex)
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-
-<use Bilder/RAC_Logo.jpg> [3
-
-
-]
 \openout2 = `Inhalt/Werkzeuge.aux'.
 
- (./Inhalt/Werkzeuge.tex)
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
-<use Bilder/RAC_Logo.jpg> [4
+(./Inhalt/Werkzeuge.tex)
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [3
+
+
 
 
 ]) (./!Praxisbericht.ind)
+
+Package natbib Warning: There were undefined citations.
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
- (./!Praxisbericht.aux
-(./Deckblatt.aux) (./Inhalt/Einleitung.aux) (./Inhalt/Kapitel_Hardware.aux)
-(./Inhalt/Kapitel_Software.aux) (./Inhalt/Fazit.aux) (./Inhalt/Erklaerung.aux)
-(./Inhalt/StepByStep.aux) (./Inhalt/Tabelle_ASCII_Befehle.aux)
-(./Inhalt/Werkzeuge.aux))
+(./!Praxisbericht.aux (./Deckblatt.aux) (./Inhalt/Einleitung.aux)
+(./Inhalt/Kapitel_Hardware.aux) (./Inhalt/Kapitel_Software.aux)
+(./Inhalt/Fazit.aux) (./Inhalt/Erklaerung.aux) (./Inhalt/StepByStep.aux)
+(./Inhalt/Tabelle_ASCII_Befehle.aux) (./Inhalt/Werkzeuge.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
 Package rerunfilecheck Info: File `!Praxisbericht.out' has not changed.
-(rerunfilecheck)             Checksum: 58035D6E0616759CFE22BDB04EA3BC18;2613.
+(rerunfilecheck)             Checksum: 0134D2D1639604D7FA79CCF9E4C99631;2786.
 Package rerunfilecheck Info: File `!Praxisbericht.brf' has not changed.
-(rerunfilecheck)             Checksum: A8182E8A1CCE71FE0B3D8563EB25DED3;230.
+(rerunfilecheck)             Checksum: BDE0675D89CDB5561D219C62658E41EF;230.
  ) 
 Here is how much of TeX's memory you used:
- 12292 strings out of 495022
- 175128 string characters out of 3180791
- 355373 words of memory out of 3000000
- 15015 multiletter control sequences out of 15000+200000
- 29118 words of font info for 67 fonts, out of 3000000 for 9000
+ 12663 strings out of 495022
+ 179962 string characters out of 3180791
+ 665560 words of memory out of 3000000
+ 15262 multiletter control sequences out of 15000+200000
+ 29455 words of font info for 68 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 50i,15n,47p,863b,1175s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 50i,16n,47p,863b,1937s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
 exmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/font
-s/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/
-cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx17
-28.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/
-fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
-rm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></us
-r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1
-/public/cm-super/sfsx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
-r/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb>
-</usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/tex
-mf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1095.
-pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2074.pfb>
-Output written on !Praxisbericht.pdf (24 pages, 670286 bytes).
+s/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx10
+95.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf-dist/
+fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
+rm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></us
+r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1
+/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
+r/sfsx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb>
+</usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/tex
+mf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
+super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.
+pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1095.pfb></usr/share
+/texmf-dist/fonts/type1/public/cm-super/sfxc2074.pfb>
+Output written on !Praxisbericht.pdf (28 pages, 703930 bytes).
 PDF statistics:
- 489 PDF objects out of 1000 (max. 8388607)
- 433 compressed objects within 5 object streams
- 91 named destinations out of 1000 (max. 500000)
- 357 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 660 PDF objects out of 1000 (max. 8388607)
+ 598 compressed objects within 6 object streams
+ 199 named destinations out of 1000 (max. 500000)
+ 381 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,32 @@
+#define BAUD 9600
+#include <util/setbaud.h>
+
+void 	uart_init		() {
+	UBRR0H = UBRRH_VALUE;		// UART 0 - IN (Rapidform Software/Terminal)
+	UBRR0L = UBRRL_VALUE;
+	UCSR0C = (3 << UCSZ00);
+	UCSR0B |= (1 << TXEN0); 	//Transmitter Enabled
+	UCSR0B |= (1 << RXEN0); 	// UART RX einschalten
+
+	UBRR1H = UBRRH_VALUE;		// UART 1 - OUT (Stepper Karte/Drehtisch)
+	UBRR1L = UBRRL_VALUE;
+	UCSR1C = (3 << UCSZ00);
+	UCSR1B |= (1 << TXEN1); 	//Transmitter Enabled
+	UCSR1B |= (1 << RXEN1); 	// UART RX einschalten
+}
+void 	uart_put_charater	(unsigned char c, int dir) {
+	if (dir == D_RapidForm) {	// To Rapidform
+		while (!(UCSR0A & (1 << UDRE0))) {}//warten bis Senden moeglich
+		UDR0 = c; 		// sende Zeichen
+	}
+	else {				// To Stepper
+		while (!(UCSR1A & (1 << UDRE1))) {}//warten bis Senden moeglich
+		UDR1 = c; // sende Zeichen
+	}
+}
+void 	uart_put_string		(char *s, int dir) {
+	while (*s) // so lange *s != '\0' also ungleich dem "String-Endezeichen(Terminator)"	{
+		uart_put_charater(*s, dir);
+		s++;
+	}
+} 
