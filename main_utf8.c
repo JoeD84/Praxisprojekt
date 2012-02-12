@@ -44,7 +44,7 @@ int 	init_T = 0;
 char 	str_rx[100];
 
 //// Tinymenu
-// MCU_CLK = F_CPU für TinyMenu
+// MCU_CLK = F_CPU fќr TinyMenu
 #define MCU_CLK F_CPU
 #include "tinymenu/spin_delay.h"
 #define CONFIG_TINYMENU_USE_CLEAR
@@ -373,7 +373,7 @@ void 	String_zerlegen_csg	(char * str_rx) {
 	lcd_puts("1_MIN_SPEED:");
 	lcd_puts(ONE_Min_Speed);
 	lcd_puts("\n");
-	// TODO: Range überprüfen! 50-20000
+	// TODO: Range prüfen! 50-20000
 	//uart_puts();
 
 	////////////////////////
@@ -423,7 +423,7 @@ void 	String_zerlegen_csg	(char * str_rx) {
 }
 // 		Hilfs Funktionen
 void 	csg_Status_melden	(void) {
-		uart_put_string("         0,         0,K,K,R\r\n", D_RapidForm); // Status an RapidForm zurückmelden
+		uart_put_string("         0,         0,K,K,R\r\n", D_RapidForm); // Status an RapidForm zurяПНckmelden
 }
 void 	Position_Zeta		(char * Position) {
     char c;
@@ -478,9 +478,9 @@ void 	switch_Stepper		(char * str_rx) {
 void 	switch_Isel			(char * str_rx) {
 	const char* pOptions[] = {
 			"XXXXXXX", 	// 0 - Reserve
-			"!CLS",    	// 1 - LC-Display löschen
+			"!CLS",    	// 1 - LC-Display lяПНschen
 			"Test", 	// 2 - Test
-			"@01",  	// 3 - Achse auswählen
+			"@01",  	// 3 - Achse auswяПНhlen
 			"@0R", 		// 4 - Status abfrage
 			"@0M", 		// 5 - Gehe zu Position MX , +600
 			0 };
@@ -490,7 +490,7 @@ void 	switch_Isel			(char * str_rx) {
 	case 0: 		// 0 - Reserve
 		lcd_puts("Reserve\r\n");
 		break;
-	case 1: 		// 1 - LC-Display löschen
+	case 1: 		// 1 - LC-Display lяПНschen
 		lcd_clrscr();
 		break;
 	case 2:			// 2 - Test
@@ -498,7 +498,7 @@ void 	switch_Isel			(char * str_rx) {
 		uart_put_string("Test bestanden\r\n", D_RapidForm);
 		//lcd_puts(Protokoll.Motoren.M_Motor[M_ISEL].P_Init);
 		break;
-	case 3:			// 3 - Achse auswählen
+	case 3:			// 3 - Achse auswяПНhlen
 		ms_spin(10);
 		/*
 	    char buf[32];
@@ -603,7 +603,7 @@ void 	switch_Isel			(char * str_rx) {
 void 	switch_csg			(char * str_rx) {
 	const char* pOptions[] = {
 			"Test2", // 0 - Stepper Karte Befehl erkannt
-			"!CLS", // 1 - LC-Display löschen
+			"!CLS", // 1 - LC-Display lяПНschen
 			"Test", // 2 - Test
 			"Q:", // 3 - Status abfrage
 			"D:2", // 4 - D:2S500F5000R200S500F5000R200.
@@ -617,7 +617,7 @@ void 	switch_csg			(char * str_rx) {
 	case 0: // Motorkarte Erfolgreich angesprochen
 		lcd_puts("!");
 		break;
-	case 1: // Display löschen
+	case 1: // Display lяПНschen
 		lcd_clrscr();
 		break;
 	case 2: // Interner Test
@@ -664,7 +664,7 @@ void 	switch_csg			(char * str_rx) {
 }
 void 	switch_Zeta			(char * str_rx) {
 	const char* pOptions[] = {
-			"!CLS", // 0 - LC-Display löschen
+			"!CLS", // 0 - LC-Display lяПНschen
 			"Test",	// 1 - Test
 			"GO", 	// 2 - Motor Starten
 			"WAIT",	// 3 - Wait till motor stops
@@ -685,7 +685,7 @@ void 	switch_Zeta			(char * str_rx) {
 	Move_To[2] = ' ';
 	Move_To[3] = '\0';
 	switch (FindStringInArray(str_rx, pOptions, 1)) {
-	case 0: // Display löschen
+	case 0: // Display lяПНschen
 		lcd_clrscr();
 		break;
 	case 1: // Interner Test
@@ -760,7 +760,7 @@ void 	switch_Zeta			(char * str_rx) {
 		//lcd_puts("MA1 empfangen     \n");
 		break;
 	case 7: // Position Setzen
-		memset(Position, '\0', 33);			// Array mit Nullen befüllen
+		memset(Position, '\0', 33);			// Array mit Nullen befяПНllen
 		Position_Zeta(Position);
 		break;
 	case 8:
@@ -785,7 +785,7 @@ void 	switch_Zeta			(char * str_rx) {
 }
 void 	switch_Terminal		(char * str_rx) {
 	const char* pOptions[] = {
-			"!CLS", // 0 - LC-Display löschen
+			"!CLS", // 0 - LC-Display lяПНschen
 			"Test",	// 1 - Test
 			"!Manual",// 2 - Ignorieren
 			"!YYYY",// 3 - Wait till motor stops
@@ -794,11 +794,11 @@ void 	switch_Terminal		(char * str_rx) {
 	if (init_T == 0){
 		init_T = 1;
 		uart_put_string("Willkommen im Terminal Modus\r\n",D_RapidForm);
-		uart_put_string("moegliche Befehle sind: \r\n",D_RapidForm);
+		uart_put_string("mяПНgliche Befehle sind: \r\n",D_RapidForm);
 		uart_put_string(" A - Motorstatus\r\n M - Move Steps\r\n", D_RapidForm);
 	}
 	switch (FindStringInArray(str_rx, pOptions, 2)) {
-	case 0: // Display löschen
+	case 0: // Display lяПНschen
 		lcd_clrscr();
 		break;
 	case 1: // Interner Test

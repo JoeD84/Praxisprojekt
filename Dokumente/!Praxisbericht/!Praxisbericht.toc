@@ -34,13 +34,18 @@
 \contentsline {subsubsection}{\numberline {3.3.7.1}Endschalter}{13}{subsubsection.123}
 \contentsline {subsubsection}{\numberline {3.3.7.2}Watchdog}{14}{subsubsection.135}
 \contentsline {subsection}{\numberline {3.3.8}Protokoll der Schrittmotorkarte}{15}{subsection.152}
-\contentsline {subsection}{\numberline {3.3.9}Manueller Betrieb}{15}{subsection.154}
-\contentsline {subsection}{\numberline {3.3.10}Protokolle aus RapidForm}{15}{subsection.155}
-\contentsline {subsection}{\numberline {3.3.11}\IeC {\"U}bersetungs Logik}{15}{subsection.156}
-\contentsline {subsection}{\numberline {3.3.12}Automatische Protokollwahl}{15}{subsection.157}
-\contentsline {chapter}{\numberline {4}Fazit und Zukunft}{16}{chapter.158}
-\contentsline {section}{\numberline {4.1}Fazit}{16}{section.159}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{18}{chapter*.161}
-\contentsline {chapter}{\numberline {A}Anhang}{i}{appendix.162}
-\contentsline {section}{\numberline {A.1}Schritt f\IeC {\"u}r Schritt Anleitung}{ii}{section.163}
-\contentsline {section}{\numberline {A.2}Vom Autor verwendete Software}{iii}{section.164}
+\contentsline {subsection}{\numberline {3.3.9}Manueller Betrieb}{16}{subsection.154}
+\contentsline {subsection}{\numberline {3.3.10}Protokolle aus RapidForm}{16}{subsection.155}
+\contentsline {subsection}{\numberline {3.3.11}\IeC {\"U}bersetungs Logik}{16}{subsection.156}
+\contentsline {subsubsection}{\numberline {3.3.11.1}Zeta}{16}{subsubsection.157}
+\contentsline {subsubsection}{\numberline {3.3.11.2}Isel}{16}{subsubsection.158}
+\contentsline {subsubsection}{\numberline {3.3.11.3}Weitere}{16}{subsubsection.159}
+\contentsline {subsection}{\numberline {3.3.12}Automatische Protokollwahl}{16}{subsection.160}
+\contentsline {chapter}{\numberline {4}Fazit und Zukunft}{17}{chapter.161}
+\contentsline {section}{\numberline {4.1}Fazit}{17}{section.162}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{19}{chapter*.164}
+\contentsline {chapter}{\numberline {A}Anhang}{i}{appendix.165}
+\contentsline {section}{\numberline {A.1}Schritt f\IeC {\"u}r Schritt Anleitung}{ii}{section.166}
+\contentsline {section}{\numberline {A.2}Vom Autor verwendete Software}{iii}{section.167}
+\contentsline {section}{\numberline {A.3}Codelistings}{iv}{section.168}
+\contentsline {subsection}{\numberline {A.3.1}main.c}{iv}{subsection.169}
