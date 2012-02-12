@@ -1,14 +1,19 @@
-\chapter{Entwicklung der Software}
+\chapter{Software}
 \label{cha:Software}
 \todo{Einführung schreiben}
 \todo{Weitere Software in Begriffen erklären. Minolta}
-\section{Entwicklungs Umgebung}
+\section{Entwicklungsumgebung}
+Als Entwicklungsumgebung wird eine Software bezeichnet die es dem Anwender erleichtert Programme für den Mikrocontroller zu schreiben. Im allgemeinen bestehen Entwicklungsumgebungen aus einem Editor, dem Compiler und einer Programmiersoftware. Der Editor bietet dabei meist Komfortfunktionen wie Syntaxhighlighting, Autovervollständigung und Projektmanagement. \todo{besser schreiben!} 
+\subsection{AVR Studio 5}
+\subsection{Eclipse}
 \todo{AVR Studio Eclipse Bug Defekte Biblio?}
 
 \lstset{language=Java, basicstyle=\footnotesize, showstringspaces=false, tabsize=2}
 \lstinputlisting[label=lst:Test,caption=Funktion - Lauflicht]{Code/led_lauflicht_sample.txt}
 \section{RapidForm2004}
 \label{sec:RapidForm}
+Zur Erfassung am PC steht die Software RapidForm2004 der Firma TrustInus zur Verfügung. Diese ist zur Erfassung und Bearbeitung von 3D-Modellen gedacht. Sie bietet umfangreiche Möglichkeiten die aufgenommen Modelle zu verbessern, verändern und zu vermessen.\\
+Die Ansteuerung des VI-900 ist durch ein \Fachbegriff{Add-In} bereits in die Software integriert. Das Add-In kann das VI-900 ansteuern und die Aufgenommenen Daten auslesen. Weiterhin kann das Add-In verschiedene Drehtische ansteuern.
 \section{Watchdog}
 \todo{Fuses erklären!}
 \section{Einfaches Beispiel für LEDs und Taster}

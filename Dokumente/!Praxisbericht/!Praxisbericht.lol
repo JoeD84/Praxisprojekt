@@ -1,8 +1,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {lstlisting}{\numberline {4.1}Funktion - Lauflicht}{7}{lstlisting.33}
+\contentsline {lstlisting}{\numberline {3.1}Funktion - Lauflicht}{9}{lstlisting.29}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

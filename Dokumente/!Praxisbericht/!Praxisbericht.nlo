@@ -1,1 +1,15 @@
 \nomenclatureentry{aSCSI@[{SCSI}]\begingroup Small Computer System Interface\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aASCII@[{ASCII}]\begingroup American Standard Code for Information Interchange\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aCAD@[{CAD}]\begingroup (engl. computer-aided design) Computer gestützter Entwurf\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aCF@[{CF}]\begingroup Compact Flash\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aLCD@[{LCD}]\begingroup (engl. liquid crystal display) Flüssigkristall Display\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aRS@[{RS}]\begingroup Recommended Standard\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aIC@[{IC}]\begingroup integrated cuircuit\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aCPU@[{CPU}]\begingroup central processing unit\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aADC@[{ADC}]\begingroup analog digital convertor\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aDAC@[{DAC}]\begingroup digital analog convertor\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aDIL@[{DIL}]\begingroup dual in line package\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aMHz@[{MHz}]\begingroup megaherz\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aAVRISP@[{AVRISP}]\begingroup AVR in system programmer\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aV@[{V}]\begingroup Volt\nomeqref {0.0}|nompageref}{II}
+\nomenclatureentry{aUSB@[{USB}]\begingroup universal serial bus\nomeqref {0.0}|nompageref}{II}

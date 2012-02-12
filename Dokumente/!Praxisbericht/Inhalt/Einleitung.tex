@@ -1,26 +1,28 @@
 \chapter{Einleitung}
 \label{cha:Einleitung}
+
 \todo{Die Einleitung ist sehr WICHTIG!!!}
+\todo{Ausbauen? Neu schreiben!}
+Die 3D-Lasererfassung bietet zahlreiche Anwendungsgebiete. Von der Erfassung kleiner Objekte über die Erkennung von 
+
 \todo{Klarstellen der Begrifflichkeiten}
-In der \todo{CAD erklären} \Fachbegriff{CAD-Entwicklung} kommt es vor das für ein real existierendes Objekt eine Erweiterung konstruiert werden muss. Um die Erweiterung sinnvoll konstruieren zu können müssen dazu die Abmessungen des Objektes möglichst genau bekannt sein. Das übertragen der Abmessungen, kann insbesondere für komplexe Objekte, sehr aufwendig sein.
+In der CAD-Entwicklung kommt es vor das für ein real existierendes Objekt eine Erweiterung konstruiert werden muss. Um die Erweiterung sinnvoll konstruieren zu können müssen dazu die Abmessungen des Objektes möglichst genau bekannt sein. Das übertragen der Abmessungen, kann insbesondere für komplexe Objekte, sehr aufwendig sein.
 Abhilfe soll ein Laserscanner schaffen der das Objekt aus mehreren Richtungen vermisst und aus diesen Informationen ein genaues 3D-Modell davon generiert. 
 
 \section{Motivation}
 \label{sec:Motivation}
-Mit dem Aufbau aus RapidForm2004, Lasererfassungssystem VI-900 und Drehtisch sollen auf einfachem Wege 3D-Modelle eines Objektes erzeugt werden. Diese sollen anschließend in einer CAD-Software wie \Fachbegriff{Solidworks} nutzbar sein.
+Im Projekt soll nun mit einer Kombination aus einem Lasererfassungssystem, einem Drehtisch und der dazugehörigen Software auf einfachem Wege ein 3D-Modell erfasst werden. Dieses soll dann in einer CAD-Software wie \Fachbegriff{Solidworks} nutzbar sein. 
 
 \section{Ziel der Arbeit}
 \label{sec:ZielDerArbeit}
-Die Kommunikation zwischen der Software RapidForm2004 und dem gegebenen Drehtisch soll ermöglicht werden. Dazu werden die ASCII-Befehle der Software mit einem Mikrocontroller ausgewertet und in für den gegeben Schrittmotor verständliche Befehle übersetzt.
-Es wird also ein Mikrocontroller mit 2 RS-232 Schnittstellen so programmiert das er die Befehle der Software übersetzen kann. Um den den Drehtisch manuell bedienen zu können und den aktuellen Status zu überprüfen sind noch ein LC-Display und mehrere Bedientaster vorgesehen.\\
-Die Ansteuerung des Schrittmotors ist als Einschub für ein 19"-Rack realisiert. Daher wird die Platine für den Mikrocontroller auch als 19"-Einschub realisiert.
-
+Die Kommunikation zwischen Software und Drehtisch soll ermöglicht werden. Dazu werden die Befehle der Software mit einem Mikrocontroller ausgewertet und in für den Drehtisch verständliche Befehle übersetzt.\\
+Um den Drehtisch manuell bedienen zu können und den aktuellen Status des Drehtisch anzuzeigen sind noch ein LC-Display und mehrere Taster vorgesehen.\\
+Die Ansteuerung des Drehtisches ist als Einschub für ein 19"-Rack realisiert. Daher wird die Platine für den Mikrocontroller auch als 19"-Einschub realisiert.
 
 \section{Aufbau der Arbeit}
 \label{sec:AufbauDerArbeit}
-Der Aufbau der Arbeit gliedert sich im Wesentlichen in die Entwicklung neuer und die Nutzung vorhandener Hardware, sowie in die Entwicklung der Software. \\
-Zur Hardware gehören die Auswahl des Mikrocontroller, die Endschalter, die Schrittmotorkarten, die Schrittmotoren, sowie die verwedeten PCs.
-\todo{Kabel zu den Motoren nicht vergessen! Schema Zeichnung?}
+Der Aufbau der Arbeit gliedert sich im Wesentlichen in die Entwicklung neuer und die Nutzung vorhandener Hardware, sowie in die Entwicklung der Software für den Mikrocontroller. \\
+Zur Hardware gehören die Auswahl des Mikrocontroller, die Endschalter, die Schrittmotorkarten, die Schrittmotoren, sowie die verwendeten PCs.\\
 Zur Software gehören die Entwicklungsumgebungen und die 3D-Erfassungssoftware.
 
-\todo{Ausbauen! Überblick verschaffen. Kommunikation mit Schrittmotor-Karte von PC aus. Aufbauen des STK500. Einarbeiten in uC Entwicklung. Steuern der Schrittmotor Karte vom uC aus. Erarbeiten der Protokolle (Reverse Engineering). C-Programm zum verstehen eingehender Befehle. Übersetzen der Befehle. Neuer Mikrocontroller. Umgebungs wechsel. LC-Display. Endschalter. Max232. Platinenlayout.}
+\todo{Überblick verschaffen. Kommunikation mit Schrittmotor-Karte von PC aus. Aufbauen des STK500. Einarbeiten in uC Entwicklung. Steuern der Schrittmotor Karte vom uC aus. Erarbeiten der Protokolle (Reverse Engineering). C-Programm zum verstehen eingehender Befehle. Übersetzen der Befehle. Neuer Mikrocontroller. Umgebungswechsel. LC-Display. Endschalter. Max232. Platinenlayout.}

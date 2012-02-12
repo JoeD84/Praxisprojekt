@@ -4,44 +4,40 @@
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.7}
 \contentsline {section}{\numberline {1.2}Ziel der Arbeit}{1}{section.8}
 \contentsline {section}{\numberline {1.3}Aufbau der Arbeit}{2}{section.9}
-\contentsline {chapter}{\numberline {2}Begriffe und Komponenten}{3}{chapter.10}
-\contentsline {section}{\numberline {2.1}Kopmonenten zur Erfassung}{4}{section.12}
-\contentsline {subsection}{\numberline {2.1.1}Lasererfassungssystem VI-900}{4}{subsection.13}
-\contentsline {subsection}{\numberline {2.1.2}RapidForm2004}{4}{subsection.14}
-\contentsline {section}{\numberline {2.2}Drehtisch}{4}{section.15}
-\contentsline {subsection}{\numberline {2.2.1}Schrittmotoren}{4}{subsection.16}
-\contentsline {subsection}{\numberline {2.2.2}Schrittmotorkarten}{4}{subsection.17}
-\contentsline {section}{\numberline {2.3}Mikrocontroller}{5}{section.18}
-\contentsline {subsection}{\numberline {2.3.1}Entwicklungsumgebung}{5}{subsection.19}
-\contentsline {subsection}{\numberline {2.3.2}Entwicklerboard STK500}{5}{subsection.20}
-\contentsline {subsection}{\numberline {2.3.3}AVRISP mkII}{5}{subsection.22}
-\contentsline {chapter}{\numberline {3}Hardware}{6}{chapter.23}
-\contentsline {section}{\numberline {3.1}Mikrocontroller}{6}{section.24}
-\contentsline {subsection}{\numberline {3.1.1}MAX232}{6}{subsection.25}
-\contentsline {section}{\numberline {3.2}Schrittmotorkarten}{6}{section.26}
-\contentsline {subsection}{\numberline {3.2.1}Endschalter}{6}{subsection.27}
-\contentsline {subsection}{\numberline {3.2.2}Motorverkabelung}{6}{subsection.28}
-\contentsline {section}{\numberline {3.3}Spannungsversorgung}{6}{section.29}
-\contentsline {section}{\numberline {3.4}Platinenlayout}{6}{section.30}
-\contentsline {chapter}{\numberline {4}Entwicklung der Software}{7}{chapter.31}
-\contentsline {section}{\numberline {4.1}Entwicklungs Umgebung}{7}{section.32}
-\contentsline {section}{\numberline {4.2}RapidForm2004}{7}{section.42}
-\contentsline {section}{\numberline {4.3}Watchdog}{7}{section.43}
-\contentsline {section}{\numberline {4.4}Einfaches Beispiel f\IeC {\"u}r LEDs und Taster}{8}{section.44}
-\contentsline {section}{\numberline {4.5}LCD Bibliothek}{8}{section.45}
-\contentsline {section}{\numberline {4.6}RS-232}{8}{section.46}
-\contentsline {section}{\numberline {4.7}Men\IeC {\"u} Bibliothek}{8}{section.47}
-\contentsline {section}{\numberline {4.8}Interrupts}{8}{section.48}
-\contentsline {subsection}{\numberline {4.8.1}Endschalter}{8}{subsection.49}
-\contentsline {subsection}{\numberline {4.8.2}Watchdog}{8}{subsection.50}
-\contentsline {section}{\numberline {4.9}Protokoll der Stepperkarte}{8}{section.51}
-\contentsline {section}{\numberline {4.10}Manueller Betrieb}{8}{section.52}
-\contentsline {section}{\numberline {4.11}Protokolle aus RapidForm}{8}{section.53}
-\contentsline {section}{\numberline {4.12}\IeC {\"U}bersetungs Logik}{8}{section.54}
-\contentsline {section}{\numberline {4.13}Automatische Protokollwahl}{8}{section.55}
-\contentsline {chapter}{\numberline {5}Fazit und Zukunft}{9}{chapter.56}
-\contentsline {section}{\numberline {5.1}Fazit}{9}{section.57}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{11}{chapter*.59}
-\contentsline {chapter}{\numberline {A}Anhang}{i}{appendix.60}
-\contentsline {section}{\numberline {A.1}Schritt f\IeC {\"u}r Schritt Anleitung}{ii}{section.61}
-\contentsline {section}{\numberline {A.2}Vom Autor verwendete Software}{iii}{section.62}
+\contentsline {chapter}{\numberline {2}Hardware}{3}{chapter.10}
+\contentsline {section}{\numberline {2.1}Lasererfassungssystem VI-900}{3}{section.12}
+\contentsline {section}{\numberline {2.2}Ansteuerung f\IeC {\"u}r den Drehtisch}{4}{section.13}
+\contentsline {subsection}{\numberline {2.2.1}Drehtisch}{4}{subsection.14}
+\contentsline {subsection}{\numberline {2.2.2}Spannungsversorgung}{4}{subsection.15}
+\contentsline {subsection}{\numberline {2.2.3}Schrittmotoren}{4}{subsection.16}
+\contentsline {subsection}{\numberline {2.2.4}Schrittmotorkarten}{4}{subsection.17}
+\contentsline {subsection}{\numberline {2.2.5}Motorverkabelung}{5}{subsection.19}
+\contentsline {subsection}{\numberline {2.2.6}Endschalter}{5}{subsection.20}
+\contentsline {section}{\numberline {2.3}Mikrocontroller}{6}{section.21}
+\contentsline {subsection}{\numberline {2.3.1}Entwicklerboard STK500}{6}{subsection.23}
+\contentsline {subsection}{\numberline {2.3.2}AVRISP mkII}{7}{subsection.24}
+\contentsline {subsection}{\numberline {2.3.3}MAX232}{8}{subsection.25}
+\contentsline {section}{\numberline {2.4}Platinenlayout}{8}{section.26}
+\contentsline {chapter}{\numberline {3}Software}{9}{chapter.27}
+\contentsline {section}{\numberline {3.1}Entwicklungsumgebung}{9}{section.28}
+\contentsline {section}{\numberline {3.2}RapidForm2004}{9}{section.38}
+\contentsline {section}{\numberline {3.3}Watchdog}{10}{section.39}
+\contentsline {section}{\numberline {3.4}Einfaches Beispiel f\IeC {\"u}r LEDs und Taster}{10}{section.40}
+\contentsline {section}{\numberline {3.5}LCD Bibliothek}{10}{section.41}
+\contentsline {section}{\numberline {3.6}RS-232}{10}{section.42}
+\contentsline {section}{\numberline {3.7}Men\IeC {\"u} Bibliothek}{10}{section.43}
+\contentsline {section}{\numberline {3.8}Interrupts}{10}{section.44}
+\contentsline {subsection}{\numberline {3.8.1}Endschalter}{10}{subsection.45}
+\contentsline {subsection}{\numberline {3.8.2}Watchdog}{10}{subsection.46}
+\contentsline {section}{\numberline {3.9}Protokoll der Stepperkarte}{10}{section.47}
+\contentsline {section}{\numberline {3.10}Manueller Betrieb}{10}{section.48}
+\contentsline {section}{\numberline {3.11}Protokolle aus RapidForm}{10}{section.49}
+\contentsline {section}{\numberline {3.12}\IeC {\"U}bersetungs Logik}{10}{section.50}
+\contentsline {section}{\numberline {3.13}Automatische Protokollwahl}{10}{section.51}
+\contentsline {chapter}{\numberline {4}Fazit und Zukunft}{11}{chapter.52}
+\contentsline {section}{\numberline {4.1}Fazit}{11}{section.53}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{13}{chapter*.55}
+\contentsline {chapter}{\numberline {A}Anhang}{i}{appendix.56}
+\contentsline {section}{\numberline {A.1}Schritt f\IeC {\"u}r Schritt Anleitung}{ii}{section.57}
+\contentsline {section}{\numberline {A.2}ASCII Befehlssatz R+S Schrittmotorsteuerung}{iii}{section.58}
+\contentsline {section}{\numberline {A.3}Vom Autor verwendete Software}{iv}{section.60}
