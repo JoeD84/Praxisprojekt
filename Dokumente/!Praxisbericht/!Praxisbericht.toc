@@ -6,51 +6,50 @@
 \contentsline {section}{\numberline {1.3}Aufbau der Arbeit}{2}{section.9}
 \contentsline {chapter}{\numberline {2}Hardware}{3}{chapter.10}
 \contentsline {section}{\numberline {2.1}Lasererfassungssystem VI-900}{3}{section.12}
-\contentsline {section}{\numberline {2.2}Ansteuerung f\IeC {\"u}r den Drehtisch}{4}{section.13}
-\contentsline {subsection}{\numberline {2.2.1}Drehtisch}{4}{subsection.14}
-\contentsline {subsection}{\numberline {2.2.2}Spannungsversorgung}{4}{subsection.15}
-\contentsline {subsection}{\numberline {2.2.3}Schrittmotoren}{4}{subsection.16}
-\contentsline {subsection}{\numberline {2.2.4}Schrittmotorkarten}{4}{subsection.17}
-\contentsline {subsection}{\numberline {2.2.5}Motorverkabelung}{5}{subsection.19}
-\contentsline {subsection}{\numberline {2.2.6}Endschalter}{5}{subsection.20}
-\contentsline {section}{\numberline {2.3}Mikrocontroller}{5}{section.21}
-\contentsline {subsection}{\numberline {2.3.1}Entwicklerboard STK500}{6}{subsection.23}
-\contentsline {subsection}{\numberline {2.3.2}AVRISP mkII}{6}{subsection.24}
-\contentsline {subsection}{\numberline {2.3.3}MAX232}{7}{subsection.25}
-\contentsline {section}{\numberline {2.4}Platinenlayout}{8}{section.26}
-\contentsline {chapter}{\numberline {3}Software}{9}{chapter.27}
-\contentsline {section}{\numberline {3.1}RapidForm2004}{9}{section.28}
-\contentsline {section}{\numberline {3.2}Entwicklungsumgebung}{9}{section.29}
-\contentsline {subsection}{\numberline {3.2.1}AVR Studio 5}{9}{subsection.30}
-\contentsline {subsection}{\numberline {3.2.2}Eclipse}{9}{subsection.31}
-\contentsline {section}{\numberline {3.3}Mikrocontroller}{9}{section.32}
-\contentsline {subsection}{\numberline {3.3.1}Fuses}{10}{subsection.33}
-\contentsline {subsection}{\numberline {3.3.2}LEDs}{10}{subsection.34}
-\contentsline {subsection}{\numberline {3.3.3}Taster}{11}{subsection.44}
-\contentsline {subsection}{\numberline {3.3.4}LCD Bibliothek}{11}{subsection.61}
-\contentsline {subsection}{\numberline {3.3.5}RS-232}{12}{subsection.87}
-\contentsline {subsection}{\numberline {3.3.6}Men\IeC {\"u} Bibliothek}{13}{subsection.121}
-\contentsline {subsection}{\numberline {3.3.7}Interrupts}{13}{subsection.122}
-\contentsline {subsubsection}{\numberline {3.3.7.1}Endschalter}{13}{subsubsection.123}
-\contentsline {subsubsection}{\numberline {3.3.7.2}Watchdog}{14}{subsubsection.135}
-\contentsline {subsection}{\numberline {3.3.8}Protokoll der Schrittmotorkarte}{15}{subsection.152}
-\contentsline {subsection}{\numberline {3.3.9}Manueller Betrieb}{16}{subsection.154}
-\contentsline {subsection}{\numberline {3.3.10}Protokolle aus RapidForm}{16}{subsection.155}
-\contentsline {subsection}{\numberline {3.3.11}\IeC {\"U}bersetungs Logik}{16}{subsection.156}
-\contentsline {subsubsection}{\numberline {3.3.11.1}Zeta}{16}{subsubsection.157}
-\contentsline {subsubsection}{\numberline {3.3.11.2}Isel}{16}{subsubsection.158}
-\contentsline {subsubsection}{\numberline {3.3.11.3}Weitere}{16}{subsubsection.159}
-\contentsline {subsection}{\numberline {3.3.12}Automatische Protokollwahl}{16}{subsection.160}
-\contentsline {chapter}{\numberline {4}Fazit und Zukunft}{17}{chapter.161}
-\contentsline {section}{\numberline {4.1}Fazit}{17}{section.162}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{19}{chapter*.164}
-\contentsline {chapter}{\numberline {A}Anhang}{i}{appendix.165}
-\contentsline {section}{\numberline {A.1}Schritt f\IeC {\"u}r Schritt Anleitung}{ii}{section.166}
-\contentsline {section}{\numberline {A.2}Vom Autor verwendete Software}{iii}{section.167}
-\contentsline {section}{\numberline {A.3}Codelistings}{iv}{section.168}
-\contentsline {subsection}{\numberline {A.3.1}main.c}{iv}{subsection.169}
-\contentsline {subsection}{\numberline {A.3.2}lcd.h}{xxvi}{subsection.1151}
-\contentsline {subsection}{\numberline {A.3.3}Debounce.h}{xxxii}{subsection.1420}
-\contentsline {subsection}{\numberline {A.3.4}tinymenu.h}{xxxviii}{subsection.1689}
-\contentsline {subsection}{\numberline {A.3.5}mymenu.h}{xxxviii}{subsection.1690}
-\contentsline {subsection}{\numberline {A.3.6}mystuff.h}{xxxviii}{subsection.1691}
+\contentsline {subsection}{\numberline {2.1.1}Lasertriangulator Prinzip}{4}{subsection.14}
+\contentsline {section}{\numberline {2.2}Ansteuerung f\IeC {\"u}r den Drehtisch}{4}{section.16}
+\contentsline {subsection}{\numberline {2.2.1}Drehtisch}{4}{subsection.18}
+\contentsline {subsection}{\numberline {2.2.2}Spannungsversorgung}{5}{subsection.20}
+\contentsline {subsection}{\numberline {2.2.3}Schrittmotoren}{6}{subsection.22}
+\contentsline {subsection}{\numberline {2.2.4}Schrittmotorkarten}{6}{subsection.23}
+\contentsline {subsection}{\numberline {2.2.5}Motorverkabelung}{7}{subsection.26}
+\contentsline {subsection}{\numberline {2.2.6}Endschalter}{7}{subsection.29}
+\contentsline {section}{\numberline {2.3}Mikrocontroller}{8}{section.31}
+\contentsline {subsection}{\numberline {2.3.1}Atmega 324A}{10}{subsection.33}
+\contentsline {subsection}{\numberline {2.3.2}Entwicklerboard STK500}{10}{subsection.34}
+\contentsline {subsection}{\numberline {2.3.3}AVRISP mkII}{11}{subsection.37}
+\contentsline {subsection}{\numberline {2.3.4}MAX232}{11}{subsection.38}
+\contentsline {section}{\numberline {2.4}Platinenlayout}{11}{section.40}
+\contentsline {section}{\numberline {2.5}19''-Einschub}{12}{section.42}
+\contentsline {chapter}{\numberline {3}Software}{13}{chapter.43}
+\contentsline {section}{\numberline {3.1}RapidForm2004}{13}{section.44}
+\contentsline {section}{\numberline {3.2}Entwicklungsumgebung}{13}{section.45}
+\contentsline {subsection}{\numberline {3.2.1}AVR Studio 5}{13}{subsection.46}
+\contentsline {subsection}{\numberline {3.2.2}Eclipse}{13}{subsection.47}
+\contentsline {section}{\numberline {3.3}Mikrocontroller}{13}{section.48}
+\contentsline {subsection}{\numberline {3.3.1}Fuses}{14}{subsection.49}
+\contentsline {subsection}{\numberline {3.3.2}LEDs}{15}{subsection.51}
+\contentsline {subsection}{\numberline {3.3.3}Taster}{15}{subsection.61}
+\contentsline {subsection}{\numberline {3.3.4}LCD Bibliothek}{16}{subsection.78}
+\contentsline {subsection}{\numberline {3.3.5}RS-232}{17}{subsection.104}
+\contentsline {subsection}{\numberline {3.3.6}Men\IeC {\"u} Bibliothek}{18}{subsection.138}
+\contentsline {subsection}{\numberline {3.3.7}Interrupts}{18}{subsection.139}
+\contentsline {subsubsection}{\numberline {3.3.7.1}Endschalter}{18}{subsubsection.140}
+\contentsline {subsubsection}{\numberline {3.3.7.2}Watchdog}{19}{subsubsection.152}
+\contentsline {subsection}{\numberline {3.3.8}Protokoll der Schrittmotorkarte}{19}{subsection.169}
+\contentsline {subsection}{\numberline {3.3.9}Manueller Betrieb}{20}{subsection.171}
+\contentsline {subsection}{\numberline {3.3.10}Protokolle aus RapidForm}{20}{subsection.172}
+\contentsline {subsection}{\numberline {3.3.11}\IeC {\"U}bersetzungs Logik}{21}{subsection.184}
+\contentsline {subsubsection}{\numberline {3.3.11.1}FindStringInArray Funktion}{21}{subsubsection.185}
+\contentsline {subsubsection}{\numberline {3.3.11.2}Automatische Protokollwahl}{21}{subsubsection.195}
+\contentsline {subsubsection}{\numberline {3.3.11.3}Zeta}{22}{subsubsection.221}
+\contentsline {subsubsection}{\numberline {3.3.11.4}Isel}{22}{subsubsection.222}
+\contentsline {subsubsection}{\numberline {3.3.11.5}Weitere}{25}{subsubsection.314}
+\contentsline {chapter}{\numberline {4}Fazit und Zukunft}{26}{chapter.315}
+\contentsline {section}{\numberline {4.1}Fazit}{26}{section.316}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{28}{chapter*.318}
+\contentsline {chapter}{\numberline {A}Anhang}{i}{appendix.319}
+\contentsline {section}{\numberline {A.1}Schritt f\IeC {\"u}r Schritt Anleitung}{ii}{section.320}
+\contentsline {section}{\numberline {A.2}Techniche Daten VI-910}{iii}{section.321}
+\contentsline {section}{\numberline {A.3}Verwendete Software}{v}{section.323}
+\contentsline {section}{\numberline {A.4}Verwendete Hardware}{v}{section.324}

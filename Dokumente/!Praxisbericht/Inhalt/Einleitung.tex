@@ -1,28 +1,28 @@
 \chapter{Einleitung}
 \label{cha:Einleitung}
-
-\todo{Die Einleitung ist sehr WICHTIG!!!}
-\todo{Ausbauen? Neu schreiben!}
-Die 3D-Lasererfassung bietet zahlreiche Anwendungsgebiete. Von der Erfassung kleiner Objekte über die Erkennung von 
-
-\todo{Klarstellen der Begrifflichkeiten}
-In der CAD-Entwicklung kommt es vor das für ein real existierendes Objekt eine Erweiterung konstruiert werden muss. Um die Erweiterung sinnvoll konstruieren zu können müssen dazu die Abmessungen des Objektes möglichst genau bekannt sein. Das übertragen der Abmessungen, kann insbesondere für komplexe Objekte, sehr aufwendig sein.
-Abhilfe soll ein Laserscanner schaffen der das Objekt aus mehreren Richtungen vermisst und aus diesen Informationen ein genaues 3D-Modell davon generiert. 
+\todo{Die Einleitung ist sehr WICHTIG!!!}\\
+Die 3D-Lasererfassung bietet zahlreiche Anwendungsgebiete. Von der Erfassung kleinerer Objekte, über die Erfassung von Hindernissen bis hin zur Erkennung von Hauswänden.\\
+Im medizinischen Bereich z.B. können Zahnprothesen erfasst und vermessen werden. Im Straßenverkehr können Hindernisse erfasst, kategorisierte und bewertet werden. Google nutzt bei Streetview\cite{Ggl:StreetView} Lasererfassung um die Entfernung zu Häuserfronten zu bestimmen.
 
 \section{Motivation}
 \label{sec:Motivation}
-Im Projekt soll nun mit einer Kombination aus einem Lasererfassungssystem, einem Drehtisch und der dazugehörigen Software auf einfachem Wege ein 3D-Modell erfasst werden. Dieses soll dann in einer CAD-Software wie \Fachbegriff{Solidworks} nutzbar sein. 
+Im Projekt soll nun mit einer Kombination aus einem Lasererfassungssystem, einem Drehtisch und der dazugehörigen Software so vorbereitet werden, dass er unterstützend in der \Fachbegriff{CAD-Entwicklung} genutzt werden kann.
+In der CAD-Entwicklung kann es vorkommen das für ein real existierendes Objekt eine \textit{Erweiterung} konstruiert werden soll. Um die Erweiterung, einen Anschlag zum Beispiel, leichter konstruieren zu können ist es von Vorteil die Abmessungen des Objektes möglichst genau zu kennen. Das übertragen der Abmessungen in die CAD-Software, kann insbesondere für komplexe Objekte, sehr aufwendig sein.
+Abhilfe soll der Laserscanner schaffen, der das Objekt aus mehreren Richtungen vermisst und aus diesen Informationen ein 3D-Modell generiert. Dieses soll dann in einem neutralen CAD-Format \todo{welches?} exportiert werden.\\
+Dabei sind mehrere Hürden zu nehmen. Die Ansteuerung des Drehtisches ist nicht kompatibel mit den Protokollen der Software. Die Höhenverstellung des Drehtisches soll genutzt werden können und die Endschalter sollen funktionieren. 
 
 \section{Ziel der Arbeit}
 \label{sec:ZielDerArbeit}
-Die Kommunikation zwischen Software und Drehtisch soll ermöglicht werden. Dazu werden die Befehle der Software mit einem Mikrocontroller ausgewertet und in für den Drehtisch verständliche Befehle übersetzt.\\
-Um den Drehtisch manuell bedienen zu können und den aktuellen Status des Drehtisch anzuzeigen sind noch ein LC-Display und mehrere Taster vorgesehen.\\
-Die Ansteuerung des Drehtisches ist als Einschub für ein 19"-Rack realisiert. Daher wird die Platine für den Mikrocontroller auch als 19"-Einschub realisiert.
+Die Kommunikation zwischen Software und Drehtisch soll ermöglicht werden. Dazu sollen die Befehle der Software mit einem Mikrocontroller ausgewertet werden und in für den Drehtisch verständliche Befehle übersetzt.\\
+Für die Höhenverstellung des Drehtisches wird eine Manuelle Steuerung im Mikrocontroller realisiert und die Endschalter so verdrahtet das sie funktionieren. \\
+Der Mikrocontroller lässt sich mit mehreren Tastern bedienen und ein \Fachbegriff{LC-Display} zeigt den aktuellen Status an.\\
+Der Mikrocontroller und seine Peripherie werden als \Fachbegriff{19"-Einschub} realisiert, da die Ansteuerung des Drehtisches auch als Einschub realisiert ist.\\
+Als Abschluss soll ein komplettes 3D-Modell für die Nutzung in einer CAD-Software zur Verfügung stehen und die Aufnahme eines 3D-Modelles für andere Personen möglich sein.
 
 \section{Aufbau der Arbeit}
 \label{sec:AufbauDerArbeit}
-Der Aufbau der Arbeit gliedert sich im Wesentlichen in die Entwicklung neuer und die Nutzung vorhandener Hardware, sowie in die Entwicklung der Software für den Mikrocontroller. \\
-Zur Hardware gehören die Auswahl des Mikrocontroller, die Endschalter, die Schrittmotorkarten, die Schrittmotoren, sowie die verwendeten PCs.\\
-Zur Software gehören die Entwicklungsumgebungen und die 3D-Erfassungssoftware.
-
+Der Aufbau der Arbeit gliedert sich im Wesentlichen in die Nutzung vorhandener und die Entwicklung neuer Hardware, sowie in die Entwicklung der Software für den Mikrocontroller und einer Schritt-für-Schritt Anleitung. \\
+Zur Hardware gehören der Laserscanner, die Ansteuerung für den Drehtisch sowie der Drehtisch selbst, seine Spannungsversorgung, die Schrittmotoren und die Schrittmotorkarten, die Motorverkabelung, die Endschalter, sowie der Mikrocontroller als auch das Platinenlayout und der 19''-Einschub.\\
+Zur Software gehören die 3D-Erfassungsoftware, die Entwicklungsumgebungen und die Software für den Mikrocontroller.\\
+Im Anhang befindet sich eine Schritt-für-Schritt Anleitung um 3D-Modelle aufzunehmen und zu exportieren.\\
 \todo{Überblick verschaffen. Kommunikation mit Schrittmotor-Karte von PC aus. Aufbauen des STK500. Einarbeiten in uC Entwicklung. Steuern der Schrittmotor Karte vom uC aus. Erarbeiten der Protokolle (Reverse Engineering). C-Programm zum verstehen eingehender Befehle. Übersetzen der Befehle. Neuer Mikrocontroller. Umgebungswechsel. LC-Display. Endschalter. Max232. Platinenlayout.}
