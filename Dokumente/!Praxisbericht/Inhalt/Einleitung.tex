@@ -1,28 +1,96 @@
 \chapter{Einleitung}
 \label{cha:Einleitung}
-\todo{Die Einleitung ist sehr WICHTIG!!!}\\
-Die 3D-Lasererfassung bietet zahlreiche Anwendungsgebiete. Von der Erfassung kleinerer Objekte, über die Erfassung von Hindernissen bis hin zur Erkennung von Hauswänden.\\
-Im medizinischen Bereich z.B. können Zahnprothesen erfasst und vermessen werden. Im Straßenverkehr können Hindernisse erfasst, kategorisierte und bewertet werden. Google nutzt bei Streetview\cite{Ggl:StreetView} Lasererfassung um die Entfernung zu Häuserfronten zu bestimmen.
+
+\section{Ziel der Arbeit anhand eines Beispiels} 
+\label{sec:ZielDerArbeit}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{Blender/Schema_Arbeitsplatz.png}
+\caption{Blick auf den Arbeitsaufbau}
+\label{fig:Übersicht}
+\end{figure}
+
+\subsection{Vorhanden waren:}
+\begin{enumerate}
+\item Arbeitstisch mit integriertem Drehtisch
+\item Computer
+\item 3D-Laserscanner VI-900
+\item 19''-Rack mit 2 Schrittmotorkarten
+\end{enumerate}
+\subsection{Vorgaben des betreuenden Professors:}
+Aufbau eines Übersetzers, basierend auf einem Mikrocontroller.\\
+Der Übersetzer sollte ein LC-Display, mehrere Taster, mehrere LEDs und zwei serielle Schnittstellen enthalten.
+Die Höhenverstellung des Drehtisches sollte genutzt werden und die zu Beginn noch nicht funktionierenden Endschalter sollten die vorgesehene Funktion erfüllen.\\
+Im konkreten Beispiel ging es um die automatische 3D-Erfassung eines Schädelmodells. In der Ausgangssituation war es zwar möglich, mit der Erfassungssoftware RapidForm2004 und dem 3D-Laserscanner VI-900  einen Schädel aus einer Richtung zu erfassen. Die Kommunikation zwischen dem VI-900 und der Erfassungssoftware funktionierte. Die Drehtischsteuerung, welche den Drehtisch nach den Vorgaben der Erfassungssoftware des Computers drehen sollte, war nicht in das System eingebunden. Dies war ein Problem der verschiedenen Befehlssätze.\\
+\subsection{Die Zielvorgabe:}
+\begin{enumerate}
+\item Der VI-900 erstellt eine Aufnahme des Schädels.
+\item Der VI-900 sendet die Aufnahme an die Erfassungssoftware im Computer.
+\item Die Erfassungssoftware im Computer sendet nach der Speicherung der Aufnahme den Befehl zum Drehen des Drehtisches an die Drehtischsteuerung.
+\item Die Drehtischsteuerung dreht den Tisch um die gewünschte Gradzahl.
+\item Die Drehtischsteuerung meldet die erfolgreiche Rotation mit Hilfe des zu entwickelnden Übersetzers an die Erfassungssoftware im Computer.
+\item Die Erfassungssoftware im Computer sendet erneut einen Aufnahmebefehl an den VI-900.
+\end{enumerate}
+Nachdem ein kompletter Aufnahmesatz im Computer eingespeichert ist, kann das 3D-Modell als CAD-Datei exportiert werden.
+Das Erstellen eines kompletten Aufnahmesatzes soll auch für Laien leicht möglich sein.\\
 
 \section{Motivation}
 \label{sec:Motivation}
-Im Projekt soll nun mit einer Kombination aus einem Lasererfassungssystem, einem Drehtisch und der dazugehörigen Software so vorbereitet werden, dass er unterstützend in der \Fachbegriff{CAD-Entwicklung} genutzt werden kann.
-In der CAD-Entwicklung kann es vorkommen das für ein real existierendes Objekt eine \textit{Erweiterung} konstruiert werden soll. Um die Erweiterung, einen Anschlag zum Beispiel, leichter konstruieren zu können ist es von Vorteil die Abmessungen des Objektes möglichst genau zu kennen. Das übertragen der Abmessungen in die CAD-Software, kann insbesondere für komplexe Objekte, sehr aufwendig sein.
-Abhilfe soll der Laserscanner schaffen, der das Objekt aus mehreren Richtungen vermisst und aus diesen Informationen ein 3D-Modell generiert. Dieses soll dann in einem neutralen CAD-Format \todo{welches?} exportiert werden.\\
-Dabei sind mehrere Hürden zu nehmen. Die Ansteuerung des Drehtisches ist nicht kompatibel mit den Protokollen der Software. Die Höhenverstellung des Drehtisches soll genutzt werden können und die Endschalter sollen funktionieren. 
+Die 3D-Lasererfassung bietet zahlreiche Anwendungsgebiete. 
+\begin{itemize}
+\item Qualitätskontrolle und Bauteilprüfung für Guss- und Spritzgusstechnik
+\item Erstellung von Finite-Elemente-Daten für Blechteile im Karosseriebau usw. in Verbindung mit Bauteilanalyse
+\item Erstellung von 3D-Daten zur Kontrolle von Zubehörteilen und anderen Zukaufteilen, für die keine 3D-CAD-Daten verfügbar sind (z.B. Reverse Engineering)
+\item Umwandlung von Daten aus der Zahnmedizin und der plastischen Chirurgie in ein Datenbankformat
+\item Erstellen von Konstruktionsdaten aus Mustern und Verzugs-Prüfung an mechanischen Bauteilen
+\item Integration in Rapid-Prototyping-Systemen für die Erstellung von Mustern aus Kunststoff
+\item Vergleich von Eigenprodukten mit Produkten des Mitbewerbs und Umwandlung der erfassten Daten in ein Datenbankformat
+\item Archivierung in Museen und Forschungseinrichtungen
+\item Erstellung von Daten für die CAE-Analyse
+\item 3D-Daten von beliebigen Objekten für unterschiedlichste Forschungszwecke
+\item Informations- und Kommunikationstechnik, Mimikanalyse, Muskelbewegungsanalyse, Robot-Vision und Wachstumskontrolle landwirtschaftlicher Erzeugnisse
+\item Unterschiedliche Anwendungen in der Filmindustrie
+\end{itemize}\cite{minolta:Einleitung}
 
-\section{Ziel der Arbeit}
-\label{sec:ZielDerArbeit}
-Die Kommunikation zwischen Software und Drehtisch soll ermöglicht werden. Dazu sollen die Befehle der Software mit einem Mikrocontroller ausgewertet werden und in für den Drehtisch verständliche Befehle übersetzt.\\
-Für die Höhenverstellung des Drehtisches wird eine Manuelle Steuerung im Mikrocontroller realisiert und die Endschalter so verdrahtet das sie funktionieren. \\
-Der Mikrocontroller lässt sich mit mehreren Tastern bedienen und ein \Fachbegriff{LC-Display} zeigt den aktuellen Status an.\\
-Der Mikrocontroller und seine Peripherie werden als \Fachbegriff{19"-Einschub} realisiert, da die Ansteuerung des Drehtisches auch als Einschub realisiert ist.\\
-Als Abschluss soll ein komplettes 3D-Modell für die Nutzung in einer CAD-Software zur Verfügung stehen und die Aufnahme eines 3D-Modelles für andere Personen möglich sein.
+Im konkreten Fall soll nun die Erstellung von 3D-Daten eines vorhanden Objektes (\Fachbegriff{Reverse Engineering}) genutzt werden.\\
+Es wird nun mit einer Kombination aus dem 3D-Laserscanner, dem Drehtisch und der dazugehörigen Erfassungssoftware ein 3D-Modell erfasst. Dieses kann dann unterstützend in der \Fachbegriff{CAD-Entwicklung} genutzt werden kann.\\
+In der CAD-Entwicklung kann es vorkommen das für ein real existierendes Objekt eine \textit{Erweiterung} konstruiert werden soll. Um die Erweiterung, einen Anschlag zum Beispiel, leichter konstruieren zu können, ist es von Vorteil, die Abmessungen des Objektes möglichst genau zu kennen. Das Übertragen der Abmessungen in die CAD-Software kann, insbesondere für komplexe Objekte, sehr aufwendig sein.
+Abhilfe soll der 3D-Laserscanner schaffen, der das Objekt aus mehreren Richtungen vermisst und aus diesen Informationen ein 3D-Modell generiert. Dieses soll dann in einem neutralen CAD-Format \todo{welches?} exportiert werden.\\
 
-\section{Aufbau der Arbeit}
+\chapter{Aufbau der Arbeit}
 \label{sec:AufbauDerArbeit}
-Der Aufbau der Arbeit gliedert sich im Wesentlichen in die Nutzung vorhandener und die Entwicklung neuer Hardware, sowie in die Entwicklung der Software für den Mikrocontroller und einer Schritt-für-Schritt Anleitung. \\
-Zur Hardware gehören der Laserscanner, die Ansteuerung für den Drehtisch sowie der Drehtisch selbst, seine Spannungsversorgung, die Schrittmotoren und die Schrittmotorkarten, die Motorverkabelung, die Endschalter, sowie der Mikrocontroller als auch das Platinenlayout und der 19''-Einschub.\\
-Zur Software gehören die 3D-Erfassungsoftware, die Entwicklungsumgebungen und die Software für den Mikrocontroller.\\
-Im Anhang befindet sich eine Schritt-für-Schritt Anleitung um 3D-Modelle aufzunehmen und zu exportieren.\\
-\todo{Überblick verschaffen. Kommunikation mit Schrittmotor-Karte von PC aus. Aufbauen des STK500. Einarbeiten in uC Entwicklung. Steuern der Schrittmotor Karte vom uC aus. Erarbeiten der Protokolle (Reverse Engineering). C-Programm zum verstehen eingehender Befehle. Übersetzen der Befehle. Neuer Mikrocontroller. Umgebungswechsel. LC-Display. Endschalter. Max232. Platinenlayout.}
+
+\section{Erste Schritte}
+Im ersten Schritt ging es darum, den Drehtisch mithilfe des Mikrocontrollers um 90° zu drehen. Der Mikrocontroller befindet sich auf dem STK 500(siehe Kapitel \ref{sec:STK500). Dieses bietet grundlegenden Funktionalitäten wie Taster, LEDs, Programmierschnittstelle und eine serielle Schnittstelle.
+Um die Komponenten sinnvoll im Mikrocontroller nutzen zu können müssen dafür Funktionalitäten wie z.B. Bibliotheken bereit gestellt werden oder Register initialisiert werden.\\
+Die folgenden Kapitel beschreiben dieses bereitstellen der Funktionalitäten.
+\subsection{Taster entprellen}
+\label{sec:Taster}
+Um Taster vernünftig nutzen zu können müssen diese Entprellt werden. Dazu kann die Bibliothek von Peter Fleury genutzt werden. Mit Zeile 1 des Code Listing 3.2 wird diese Bibliothek eingebunden. Zeilen 3-10 inintialisieren die Bibliothek.
+Danach kann mit den Funktionen get\_key\_press der Status der Taster prellfrei ausgelesen werden.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=2}
+\lstinputlisting[label=lst:Taster,caption=Taster]{Code/taster.txt}
+
+\subsection{LEDs ansteuern}
+\subsection{LCD ansteuern}
+\subsection{Serielle Schnittstelle ansteuern}	
+
+
+Der Aufbau der Arbeit gliedert sich im Wesentlichen in die Nutzung vorhandener und die Entwicklung neuer Hardware, sowie in die Entwicklung der Software für den Mikrocontroller und eine Schritt-für-Schritt Anleitung. \\
+Zur Hardware gehören der 3D-Laserscanner, die Ansteuerung für den Drehtisch sowie der Drehtisch selbst, seine Spannungsversorgung, die Schrittmotoren und die Schrittmotorkarten, die Motorverkabelung, die Endschalter, sowie der Mikrocontroller, der Pegelwandler MAX232, ein LC-Display, als auch das Platinenlayout und der 19''-Einschub.\\
+Zur Software gehören die 3D-Erfassungsoftware, die Entwicklungsumgebungen und die Software für den Mikrocontroller. Die Software für den Mikrocontroller deckt das Reverse-Engineering der Protokolle, deren Auswertung und Übersetzung ab; außerdem eine manuelle Ansteuerung des Drehtisches.\\
+Im Anhang befindet sich eine Schritt-für-Schritt Anleitung, 3D-Modelle aufzunehmen und zu exportieren.
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{STK_500}
+\caption{STK500}
+\label{fig:STK500}
+\end{figure}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{STK500_Schema}
+\caption{STK500 - Schema}
+\label{fig:STK500_Schema}
+\end{figure}
