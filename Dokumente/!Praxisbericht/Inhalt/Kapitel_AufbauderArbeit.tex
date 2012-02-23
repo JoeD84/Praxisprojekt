@@ -6,6 +6,7 @@ Ein komplettes Codelisting der \textit{main.c} befindet sich im Anhang. Der komp
 \todo{Backup anlegen und cleanen!}
 
 \section{Erste Schritte}
+\label{sec:Erste_Schritte}
 Der Mikrocontroller befindet sich auf dem STK 500(siehe Kapitel \ref{sec:STK500}). Dieses bietet grundlegenden Funktionalitäten wie Taster, LEDs, eine Programmierschnittstelle und eine serielle Schnittstelle.
 Um die Komponenten sinnvoll im Mikrocontroller nutzen zu können müssen dafür Funktionalitäten wie z.B. Bibliotheken bereit gestellt werden oder Register initialisiert werden.\\
 Die folgenden Kapitel beschreiben dieses Bereitstellen der Funktionalitäten.
@@ -25,7 +26,7 @@ Die LEDs sollen im Programmablauf nutzbar sein.\\
 Dazu verband ich zuerst die Stiftleiste von \emph{PortB} mit der LED Stiftleiste.\\
 Um LEDs an \emph{PortB} betreiben zu können musste ich die Pins im \Fachbegriff{Register} \emph{DDRB} als Ausgänge definieren. Dies geschieht in Zeile 3 des Codelisting \ref{lst:LED}. Die Bibliothek zum Entprellen der Taster nutzte die Variablen \emph{LED\_DDR} und \emph{LED\_PORT}. Auch ich nutzte diese Variablen um auf die Register zuzugreifen, da dies eine bessere Übersicht gewährleistet.\\
 Die Werte im 8-Bit Register \emph{LED\_PORT} spiegeln die Spannungen an den Pins des \emph{PortB} am Mikrocontroller wieder.\\
-Da die LEDs auf dem STK500 mit \Fachbegriff{active-low Logik} betrieben werden, muss das jeweilige Bit gelöscht, also auf ''0'', gesetzt werden damit die LED leuchtet.
+Da die LEDs auf dem STK500 mit \Fachbegriff{active-low-Logik} betrieben werden, muss das jeweilige Bit gelöscht, also auf ''0'', gesetzt werden damit die LED leuchtet.
 Um alle Bits in einem Register zu verändern kann das Register mit einem 2-stelligen Hex-Wert(8-Bit) beschrieben werden. In Zeile 4 werden so alle Bits auf ''1'' gesetzt.\\
 Um ein einzelnes Bit zu verändern, können die Zeilen 5 und 6 verwendet werden. Dabei steht das x in \emph{PBX} für die x-te Stelle im Register die gesetzt oder gelöscht werden soll.\\
 Es ist damit möglich im Programmablauf einzelne LEDs anzusteuern.
@@ -44,7 +45,8 @@ Danach kann das Display mit den Befehlen aus Zeile 11--20 angesteuert werden.
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:LCD, caption=lcd.h (Auszug)]{Code/lcd_def.txt}
 
-\subsection{Serielle Schnittstelle ansteuern}	
+\subsection{Serielle Schnittstelle ansteuern}
+\label{sec:RS232}	
 \Fachbegriff{RS-232} ist der Name der am meisten verwendeten seriellen asynchronen Schnittstelle , im Fachjargon auch Übertragungsstandard genannt, um Daten zwischen zwei elektronischen Geräten hin und her zu schicken (im Fachjargon: Datenkommunikation).\cite{uC:rs232}\\
 Auf dem STK500 ist bereits eine serielle Schnittstelle vorbereitet. Um diese nutzen zu können musste ich den ersten UART des Mikrocontrollers(PortC 3:4) mit der Stiftleiste Rx/Tx auf dem STK500 verbinden.\\
 Eine weitere Schnittstelle baute ich auf einem Steckbrett auf. Diese verband ich mit dem zweiten UART des Mikrocontrollers(PortC 1:2).\\
@@ -68,7 +70,7 @@ Das folgende Listing zeigt die vollständige Menü Struktur
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:Menu_Baum,caption=Menü Baum]{Code/menu_main.txt}
 Wird einer der Menüpunkte aufgerufen, wird die im Menüpunkt hinterlegte Funktion mit dem hinterlegten Parameter aufgerufen.
-Wird ein Befehl ausgewählt wird die Funktion \emph{menu\_puts()} aufgerufen und ihr der zu sendene Befehl übergenen. Diese sendet dann mit der aus Kapitel \ref{sec:RS-232} bekannten Funktion \emph{uart\_puts(arg, dir)} einen Befehl an die Schrittmotorsteuerung.\\
+Wird ein Befehl ausgewählt wird die Funktion \emph{menu\_puts()} aufgerufen und ihr der zu sendene Befehl übergenen. Diese sendet dann mit der aus Kapitel \ref{sec:RS232} bekannten Funktion \emph{uart\_puts(arg, dir)} einen Befehl an die Schrittmotorsteuerung.\\
 Nun kann mit den Tasten Hoch, Runter, Ok und Zurück im Menü Navigiert werden. Ist ein Befehl ausgewählt kann dieser durch Drücken des Ok Knopfes ausgewählt werden. Wird z.B. der Menüpunkt \emph{+90} ausgewählt wird die Zeichenkette ''M 125000'' an die Drehtischsteuerung gesendet. Der Drehtisch dreht sich um 90° gegen den Uhrzeigersinn.
 \todo{Zukunft: Einstellbarer Winkel}
 
@@ -79,7 +81,7 @@ Nun sollen Befehle die von der PC Software RapidForm2004 zur Drehtischsteuerung 
 Befehl empfangen und an Auswertung übergeben.\\
 In der Hauptschleife des Programms wird ständig das Eingangsregister der seriellen Schnittstelle abgefragt(siehe Codelisting \ref{lst:rs232empfang} Zeile 1--4. Dieses Vorgehen bezeichnet man als \Fachbegriff{Polling}.
 Sind Daten im Register vorhanden, wird LED2 eingeschaltet und die Funktion uart\_rx() mit dem Parameter D\_RapidForm aufgerufen. Dieser bestimmt die Schnittstelle die ausgelesen werden soll und wie der empfangene \Fachbegriff{String} weiterverarbeitet wird. \\
-Uart\_rx() liest dann das das Empfangsregister mit der aus Kapitel \ref{sec:RS-232} bekannten Funktion uart\_get\_string() aus und schriebt den empfangenen String in die Variable \emph{str\_rx}.\\
+Uart\_rx() liest dann das das Empfangsregister mit der aus Kapitel \ref{sec:RS232} bekannten Funktion uart\_get\_string() aus und schriebt den empfangenen String in die Variable \emph{str\_rx}.\\
 Nun wird
 
 \lstset{language=Java, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
@@ -152,7 +154,7 @@ Im Projekt wurden folgende Fuses problematisch.
 \begin{longtable}{|c|l|} 
 \caption{Fuses} \\
 \hline
-\label{tab:TD_VI-910}
+\label{tab:Fuses}
 OCDEN & On Chip Debugging \\ \hline 
 JTAGEN & Hardware Debugging \\ \hline 
 SPIEN & Serial Program and Data Downloading \\ \hline 

@@ -10,19 +10,17 @@
 \label{fig:Übersicht}
 \end{figure}
 
-\subsection{Vorhanden waren:}
+\subsection{Vorhandene Komponenten}
 \begin{enumerate}
-\item Arbeitstisch mit integriertem Drehtisch
-\item Computer
+\item Computer mit Erfassungssoftware RapidForm2004
 \item 3D-Laserscanner VI-900
+\item Arbeitstisch mit integriertem Drehtisch
 \item 19''-Rack mit 2 Schrittmotorkarten
+\item Mikrocontroller
 \end{enumerate}
-\subsection{Vorgaben des betreuenden Professors:}
-Aufbau eines Übersetzers, basierend auf einem Mikrocontroller.\\
-Der Übersetzer sollte ein LC-Display, mehrere Taster, mehrere LEDs und zwei serielle Schnittstellen enthalten.
-Die Höhenverstellung des Drehtisches sollte genutzt werden und die zu Beginn noch nicht funktionierenden Endschalter sollten die vorgesehene Funktion erfüllen.\\
-Im konkreten Beispiel ging es um die automatische 3D-Erfassung eines Schädelmodells. In der Ausgangssituation war es zwar möglich, mit der Erfassungssoftware RapidForm2004 und dem 3D-Laserscanner VI-900  einen Schädel aus einer Richtung zu erfassen. Die Kommunikation zwischen dem VI-900 und der Erfassungssoftware funktionierte. Die Drehtischsteuerung, welche den Drehtisch nach den Vorgaben der Erfassungssoftware des Computers drehen sollte, war nicht in das System eingebunden. Dies war ein Problem der verschiedenen Befehlssätze.\\
-\subsection{Die Zielvorgabe:}
+\subsection{Vorgaben}
+Aufbau eines Übersetzers, basierend auf einem Mikrocontroller. Der Übersetzer sollte ein LC-Display, mehrere Taster, mehrere LEDs und zwei serielle Schnittstellen enthalten. Die Höhenverstellung des Drehtisches sollte genutzt werden und die zu Beginn noch nicht funktionierenden Endschalter sollten die vorgesehene Funktion erfüllen.\\ Im konkreten Beispiel ging es um die automatische 3D-Erfassung eines Schädelmodells. In der Ausgangssituation war es zwar möglich, mit der Erfassungssoftware RapidForm2004 und dem 3D-Laserscanner VI-900  einen Schädel aus einer Richtung zu erfassen. Die Kommunikation zwischen dem VI-900 und der Erfassungssoftware funktionierte. Die Drehtischsteuerung, welche den Drehtisch nach den Vorgaben der Erfassungssoftware des Computers drehen sollte, war nicht in das System eingebunden. Dies war ein Problem der verschiedenen Befehlssätze.
+\subsection{Zielvorgabe}
 \begin{enumerate}
 \item Der VI-900 erstellt eine Aufnahme des Schädels.
 \item Der VI-900 sendet die Aufnahme an die Erfassungssoftware im Computer.
@@ -32,7 +30,7 @@ Im konkreten Beispiel ging es um die automatische 3D-Erfassung eines Schädelmod
 \item Die Erfassungssoftware im Computer sendet erneut einen Aufnahmebefehl an den VI-900.
 \end{enumerate}
 Nachdem ein kompletter Aufnahmesatz im Computer eingespeichert ist, kann das 3D-Modell als CAD-Datei exportiert werden.
-Das Erstellen eines kompletten Aufnahmesatzes soll auch für Laien leicht möglich sein.\\
+Das Erstellen eines kompletten Aufnahmesatzes soll auch für Laien leicht möglich sein.
 
 \section{Motivation}
 \label{sec:Motivation}
@@ -50,31 +48,8 @@ Die 3D-Lasererfassung bietet zahlreiche Anwendungsgebiete.
 \item 3D-Daten von beliebigen Objekten für unterschiedlichste Forschungszwecke
 \item Informations- und Kommunikationstechnik, Mimikanalyse, Muskelbewegungsanalyse, Robot-Vision und Wachstumskontrolle landwirtschaftlicher Erzeugnisse
 \item Unterschiedliche Anwendungen in der Filmindustrie
-\end{itemize}\cite{minolta:Einleitung}
-
+\end{itemize}\cite{Minolta:Einleitung}
 Im konkreten Fall soll nun die Erstellung von 3D-Daten eines vorhanden Objektes (\Fachbegriff{Reverse Engineering}) genutzt werden.\\
 Es wird nun mit einer Kombination aus dem 3D-Laserscanner, dem Drehtisch und der dazugehörigen Erfassungssoftware ein 3D-Modell erfasst. Dieses kann dann unterstützend in der \Fachbegriff{CAD-Entwicklung} genutzt werden kann.\\
 In der CAD-Entwicklung kann es vorkommen das für ein real existierendes Objekt eine \textit{Erweiterung} konstruiert werden soll. Um die Erweiterung, einen Anschlag zum Beispiel, leichter konstruieren zu können, ist es von Vorteil, die Abmessungen des Objektes möglichst genau zu kennen. Das Übertragen der Abmessungen in die CAD-Software kann, insbesondere für komplexe Objekte, sehr aufwendig sein.
-Abhilfe soll der 3D-Laserscanner schaffen, der das Objekt aus mehreren Richtungen vermisst und aus diesen Informationen ein 3D-Modell generiert. Dieses soll dann in einem neutralen CAD-Format \todo{welches?} exportiert werden.\\
-
-
-
-
-Der Aufbau der Arbeit gliedert sich im Wesentlichen in die Nutzung vorhandener und die Entwicklung neuer Hardware, sowie in die Entwicklung der Software für den Mikrocontroller und eine Schritt-für-Schritt Anleitung. \\
-Zur Hardware gehören der 3D-Laserscanner, die Ansteuerung für den Drehtisch sowie der Drehtisch selbst, seine Spannungsversorgung, die Schrittmotoren und die Schrittmotorkarten, die Motorverkabelung, die Endschalter, sowie der Mikrocontroller, der Pegelwandler MAX232, ein LC-Display, als auch das Platinenlayout und der 19''-Einschub.\\
-Zur Software gehören die 3D-Erfassungsoftware, die Entwicklungsumgebungen und die Software für den Mikrocontroller. Die Software für den Mikrocontroller deckt das Reverse-Engineering der Protokolle, deren Auswertung und Übersetzung ab; außerdem eine manuelle Ansteuerung des Drehtisches.\\
-Im Anhang befindet sich eine Schritt-für-Schritt Anleitung, 3D-Modelle aufzunehmen und zu exportieren.
-
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{STK_500}
-\caption{STK500}
-\label{fig:STK500}
-\end{figure}
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{STK500_Schema}
-\caption{STK500 - Schema}
-\label{fig:STK500_Schema}
-\end{figure}
+Abhilfe soll der 3D-Laserscanner schaffen, der das Objekt aus mehreren Richtungen vermisst und aus diesen Informationen ein 3D-Modell generiert. Dieses soll dann in einem neutralen CAD-Format \todo{welches?} exportiert werden.

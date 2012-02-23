@@ -2,30 +2,35 @@
 
  \nomgroup{A}
 
-  \item [{ADC}]\begingroup analog digital convertor\nomeqref {0.0}
+  \item [{ADC}]\begingroup Analog Digital Convertor\nomeqref {0.0}
 		\nompageref{II}
   \item [{ASCII}]\begingroup American Standard Code for Information Interchange\nomeqref {0.0}
 		\nompageref{II}
-  \item [{AVRISP}]\begingroup AVR in system programmer\nomeqref {0.0}
+  \item [{AVRISP}]\begingroup AVR in System Programmer\nomeqref {0.0}
 		\nompageref{II}
-  \item [{CAD}]\begingroup (engl. computer-aided design) Computer gestützter Entwurf\nomeqref {0.0}
+  \item [{CAD}]\begingroup Computer Aided Design\nomeqref {0.0}
 		\nompageref{II}
   \item [{CF}]\begingroup Compact Flash\nomeqref {0.0}\nompageref{II}
-  \item [{CPU}]\begingroup central processing unit\nomeqref {0.0}
+  \item [{CPU}]\begingroup Central Processing Unit\nomeqref {0.0}
 		\nompageref{II}
-  \item [{DAC}]\begingroup digital analog convertor\nomeqref {0.0}
+  \item [{DAC}]\begingroup Digital Analog Convertor\nomeqref {0.0}
 		\nompageref{II}
-  \item [{DIL}]\begingroup dual in line package\nomeqref {0.0}
+  \item [{DIL}]\begingroup Dual in Line Package\nomeqref {0.0}
 		\nompageref{II}
-  \item [{IC}]\begingroup integrated cuircuit\nomeqref {0.0}
+  \item [{IC}]\begingroup Integrated Cuircuit\nomeqref {0.0}
 		\nompageref{II}
-  \item [{LCD}]\begingroup (engl. liquid crystal display) Flüssigkristall Display\nomeqref {0.0}
+  \item [{ISR}]\begingroup Interrupt Service Routine\nomeqref {0.0}
 		\nompageref{II}
-  \item [{MHz}]\begingroup megaherz\nomeqref {0.0}\nompageref{II}
-  \item [{RS}]\begingroup Radio Sector\nomeqref {0.0}\nompageref{II}
+  \item [{LCD}]\begingroup Liquid Crystal Display\nomeqref {0.0}
+		\nompageref{II}
+  \item [{MHz}]\begingroup Megahertz\nomeqref {0.0}\nompageref{II}
+  \item [{RS}]\begingroup Recommended Standard\nomeqref {0.0}
+		\nompageref{II}
   \item [{SCSI}]\begingroup Small Computer System Interface\nomeqref {0.0}
 		\nompageref{II}
-  \item [{USB}]\begingroup universal serial bus\nomeqref {0.0}
+  \item [{USART}]\begingroup Universal Asynchronous Receiver Transmitter\nomeqref {0.0}
+		\nompageref{II}
+  \item [{USB}]\begingroup Universal Serial Bus\nomeqref {0.0}
 		\nompageref{II}
   \item [{V}]\begingroup Volt\nomeqref {0.0}\nompageref{II}
 

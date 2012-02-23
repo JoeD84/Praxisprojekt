@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.12.22)  23 FEB 2012 19:23
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.12.22)  23 FEB 2012 23:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -916,18 +916,11 @@ Writing nomenclature file !Praxisbericht.nlo
 \openout2 = `Silbentrennung.aux'.
 
 (./Silbentrennung.tex) (./!Praxisbericht.aux (./Deckblatt.aux)
-(./Inhalt/Einleitung.aux) (./Inhalt/Kapitel_Hardware.aux
-
-LaTeX Warning: Label `fig:\IeC {\"U}bersicht' multiply defined.
-
-
-LaTeX Warning: Label `fig:STK500' multiply defined.
-
-) (./Inhalt/Kapitel_Software.aux)
-No file Inhalt/Kapitel_AufbauderArbeit.aux.
+(./Inhalt/Einleitung.aux) (./Inhalt/Kapitel_Hardware.aux)
+(./Inhalt/Kapitel_Software.aux) (./Inhalt/Kapitel_AufbauderArbeit.aux)
 (./Inhalt/Fazit.aux) (./Inhalt/Erklaerung.aux) (./Inhalt/StepByStep.aux)
-(./Inhalt/Tabelle_ASCII_Befehle.aux) (./Inhalt/Tabelle_TD_VI900.aux)
-(./Inhalt/Werkzeuge.aux))
+(./Inhalt/Tabelle_ASCII_Befehle.aux) (./Inhalt/Tabelle_Protokolle_RF.aux)
+(./Inhalt/Tabelle_TD_VI900.aux) (./Inhalt/Werkzeuge.aux))
 \openout1 = `!Praxisbericht.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -944,7 +937,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 54.
- (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 54.
@@ -1042,7 +1036,7 @@ LaTeX Info: Redefining \selectfont on input line 54.
 \openout2 = `Deckblatt.aux'.
 
  (./Deckblatt.tex
-<Bilder/RAC_Logo.jpg, id=233, 250.9375pt x 124.465pt>
+<Bilder/RAC_Logo.jpg, id=237, 250.9375pt x 124.465pt>
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 <use Bilder/RAC_Logo.jpg>
@@ -1127,130 +1121,80 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              Support for \float@addtolists may be removed from
 (scrreprt)              `scrreprt' soon .
 
-<Bilder/Blender/Schema_Arbeitsplatz.png, id=389, 462.528pt x 260.172pt>
+<Bilder/Blender/Schema_Arbeitsplatz.png, id=390, 462.528pt x 260.172pt>
 File: Bilder/Blender/Schema_Arbeitsplatz.png Graphic file (type png)
 
 <use Bilder/Blender/Schema_Arbeitsplatz.png>
-Underfull \hbox (badness 10000) in paragraph at lines 21--25
-
- []
-
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [1
+ <use Bilder/RAC_Logo.jpg> [1
 
 
 
  <./Bilder/Blender/Schema_Arbeitsplatz.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 34--36
-
- []
-
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [2]
-
-Package natbib Warning: Citation `minolta:Einleitung' on page 3 undefined on in
-put line 53.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--59
-
- []
-
+ <use Bilder/RAC_Logo.jpg>
+[2])
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [3]
-<Bilder/STK_500.jpg, id=416, 2601.72pt x 1461.46pt>
-File: Bilder/STK_500.jpg Graphic file (type jpg)
- <use Bilder/STK_500.jpg>
-<Bilder/STK500_Schema.pdf, id=417, 391.3019pt x 245.79831pt>
-File: Bilder/STK500_Schema.pdf Graphic file (type pdf)
-
-<use Bilder/STK500_Schema.pdf>)
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [4 <./Bilder/STK_500.jpg>]
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [5 <./Bilder/STK500_Schema.pdf>]
+ <use Bilder/RAC_Logo.jpg> [3]
 \openout2 = `Inhalt/Kapitel_Hardware.aux'.
 
-
-(./Inhalt/Kapitel_Hardware.tex
+ (./Inhalt/Kapitel_Hardware.tex
 Kapitel 2.
-File: Bilder/Blender/Schema_Arbeitsplatz.png Graphic file (type png)
-<use Bilder/Blender/Schema_Arbeitsplatz.png>
-Overfull \hbox (10.39626pt too wide) in paragraph at lines 14--15
-\T1/cmr/m/n/10.95 Zur Ver-fü-gung steht ein IBM kom-pa-ti-bler x86 Stan-dard PC
- mit ei-ner SCSI-Schnittstelle
- []
-
-<Bilder/vi900-big.jpg, id=435, 43.8438pt x 72.27pt>
+<Bilder/vi900-big.jpg, id=421, 43.8438pt x 72.27pt>
 File: Bilder/vi900-big.jpg Graphic file (type jpg)
  <use Bilder/vi900-big.jpg>
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-
-<use Bilder/RAC_Logo.jpg> [6
-
-
-
-]
-
-Package natbib Warning: Citation `Minolta:Einleitung' on page 7 undefined on in
-put line 26.
-
-<Bilder/Laser-Triangulation.png, id=444, 180.675pt x 252.945pt>
+<Bilder/Laser-Triangulation.png, id=427, 180.675pt x 252.945pt>
 File: Bilder/Laser-Triangulation.png Graphic file (type png)
 
 <use Bilder/Laser-Triangulation.png>
-<Bilder/19Zoll_Rack.jpg, id=446, 803.0pt x 600.2425pt>
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [4
+
+
+
+ <./Bilder/vi900-big.jpg>] <Bilder/19Zoll_Rack.jpg, id=433, 803.0pt x 600.2425p
+t>
 File: Bilder/19Zoll_Rack.jpg Graphic file (type jpg)
 
 <use Bilder/19Zoll_Rack.jpg>
-<Bilder/Drehtisch.jpg, id=447, 479.7925pt x 642.4pt>
+<Bilder/Drehtisch.jpg, id=434, 479.7925pt x 642.4pt>
 File: Bilder/Drehtisch.jpg Graphic file (type jpg)
 
 <use Bilder/Drehtisch.jpg>
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [7 <./Bilder/vi900-big.jpg>]
+ <use Bilder/RAC_Logo.jpg> [5 <./Bilder/Laser-Triangulation.png (PNG copy)>]
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [8 <./Bilder/Laser-Triangulation.png (PNG copy)> <./
-Bilder/19Zoll_Rack.jpg> <./Bilder/Drehtisch.jpg>]
-Overfull \hbox (6.9894pt too wide) in paragraph at lines 64--65
-[]\T1/cmr/bx/sc/10.95 (TODO: Mo-to-ren be-schrei-ben! Tech-ni-sche Da-ten! Schr
-it-te, Span-
- []
-
-
-Package natbib Warning: Citation `wiki:ASCII' on page 9 undefined on input line
- 69.
-
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [9]
-<Bilder/uC_Block.jpg, id=480, 626.34pt x 456.20438pt>
+ <use Bilder/RAC_Logo.jpg> [6 <./Bilder/19Zoll_Rack.jpg> <./Bilder/Drehtisch.jp
+g>]
+<Bilder/uC_Block.jpg, id=458, 626.34pt x 456.20438pt>
 File: Bilder/uC_Block.jpg Graphic file (type jpg)
 
 <use Bilder/uC_Block.jpg>
-Overfull \hbox (13.77367pt too wide) in paragraph at lines 120--134
+Overfull \hbox (42.51125pt too wide) in paragraph at lines 135--149
 \T1/cmr/m/n/10.95 Für die-ses Pro-jekt sind je-doch zwei se-ri-el-le Schnitt-st
-el-len nö-tig. Der AT-me-ga 324A[][][]Atmel[][]
+el-len nö-tig. Der AT-me-ga 324A[][][]Corporation[][]
  []
 
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+<use Bilder/RAC_Logo.jpg> [7]
+<Bilder/STK500_Schema.pdf, id=474, 391.3019pt x 245.79831pt>
 File: Bilder/STK500_Schema.pdf Graphic file (type pdf)
+
 <use Bilder/STK500_Schema.pdf>
-
-Package natbib Warning: Citation `atmel:ug_STK500' on page 10 undefined on inpu
-t line 144.
-
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [8 <./Bilder/uC_Block.jpg>]
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [9 <./Bilder/STK500_Schema.pdf>])
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+
 <use Bilder/RAC_Logo.jpg> [10]
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [11 <./Bilder/uC_Block.jpg>])
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [12]
 \openout2 = `Inhalt/Kapitel_Software.aux'.
 
  (./Inhalt/Kapitel_Software.tex
 Kapitel 3.
 )
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [13
+ <use Bilder/RAC_Logo.jpg> [11
 
 
 
@@ -1259,128 +1203,76 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
  (./Inhalt/Kapitel_AufbauderArbeit.tex
 Kapitel 4.
-
-LaTeX Warning: Reference `sec:STK500' on page 14 undefined on input line 9.
-
-
-Package natbib Warning: Citation `uC:Dannegger' on page 14 undefined on input l
-ine 16.
-
-
-LaTeX Warning: Reference `lst:Taster' on page 14 undefined on input line 18.
-
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-Overfull \hbox (15.60295pt too wide) in paragraph at lines 14--21
+Overfull \hbox (20.89143pt too wide) in paragraph at lines 15--22
+\T1/cmr/m/n/10.95 Das Ent-prel-len der Ta-ster rea-li-sier-te ich soft-wa-re-se
+i-tig in dem ich die Bi-blio-thek[][][]Dannegger[][]
+ []
+
+
+Overfull \hbox (15.60295pt too wide) in paragraph at lines 15--22
 \T1/cmr/m/n/10.95 Nach dem Ein-bin-den der Bi-blio-thek war es mög-lich Funk-ti
 o-nen wie z.B. get_key_press()
  []
 
 (./Code/taster.txt
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [14
+ <use Bilder/RAC_Logo.jpg> [12
 
 
 
-])
-
-LaTeX Warning: Reference `lst:LED' on page 15 undefined on input line 26.
-
-(./Code/led.c
+]) (./Code/led.c
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [15])
 
-Package natbib Warning: Citation `uC:Fleury' on page 16 undefined on input line
- 38.
-
-
-LaTeX Warning: Reference `lst:LCD' on page 16 undefined on input line 41.
-
-(./Code/lcd_def.txt)
+<use Bilder/RAC_Logo.jpg> [13]) (./Code/lcd_def.txt)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [16]
-
-Package natbib Warning: Citation `uC:rs232' on page 17 undefined on input line 
-48.
-
-
-LaTeX Warning: Reference `lst:RS232' on page 17 undefined on input line 51.
-
-(./Code/rs232.txt
+ <use Bilder/RAC_Logo.jpg>
+[14] (./Code/rs232.txt
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [17])
-
-Package natbib Warning: Citation `AVRFreaks:Menu' on page 18 undefined on input
- line 60.
-
-
-LaTeX Warning: Reference `lst:Menu' on page 18 undefined on input line 63.
-
-
-LaTeX Warning: Reference `sec:Taster' on page 18 undefined on input line 64.
-
-(./Code/menu.c
+ <use Bilder/RAC_Logo.jpg> [15]) (./Code/menu.c
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [18]) (./Code/menu_main.txt)
 
-LaTeX Warning: Reference `sec:RS-232' on page 19 undefined on input line 71.
-
+<use Bilder/RAC_Logo.jpg> [16]) (./Code/menu_main.txt)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [19]
 
-LaTeX Warning: Reference `lst:rs232empfang' on page 20 undefined on input line 
-80.
-
-
-LaTeX Warning: Reference `sec:RS-232' on page 20 undefined on input line 82.
-
+<use Bilder/RAC_Logo.jpg> [17]
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 ) (./Code/rs232_empfang.c
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [20])
-
-LaTeX Warning: Reference `lst:Proto_RF_Zeta' on page 21 undefined on input line
- 94.
-
-(./Code/Protokolle_RF_Zeta.txt)
+<use Bilder/RAC_Logo.jpg> [18]) (./Code/Protokolle_RF_Zeta.txt
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [21]
-(./Code/FindString.c) (./Code/switch_Motor.c
+
+<use Bilder/RAC_Logo.jpg> [19]) (./Code/FindString.c) (./Code/switch_Motor.c
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+
+<use Bilder/RAC_Logo.jpg> [20]) (./Code/switch_Isel.txt
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+
+<use Bilder/RAC_Logo.jpg> [21]
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg> [22])
-(./Code/switch_Isel.txt
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [23]
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
-<use Bilder/RAC_Logo.jpg> [24])
+<use Bilder/RAC_Logo.jpg> [23] (./Code/ISR_Endschalter.txt)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [25]
 
-LaTeX Warning: Reference `lst:ISR_ES' on page 26 undefined on input line 127.
-
-(./Code/ISR_Endschalter.txt)
-
-LaTeX Warning: Reference `lst:Watchdog' on page 26 undefined on input line 133.
-
-
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [26] (./Code/Watchdog.txt)
+<use Bilder/RAC_Logo.jpg> [24] (./Code/Watchdog.txt)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg>
-[27]
+[25]
 Kapitel 5.
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [28
+<use Bilder/RAC_Logo.jpg> [26
 
 ])
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [29]
+ <use Bilder/RAC_Logo.jpg> [27]
 \openout2 = `Inhalt/Fazit.aux'.
 
 
@@ -1388,7 +1280,7 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 Kapitel 6.
 )
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [30
+ <use Bilder/RAC_Logo.jpg> [28
 
 
 
@@ -1396,35 +1288,63 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 \tf@brf=\write10
 \openout10 = `!Praxisbericht.brf'.
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 26.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 31.
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 3039) in paragraph at lines 45--45
+\T1/cmr/m/sc/10.95 Dan-neg-ger\T1/cmr/m/n/10.95 , Pe-ter:  \T1/cmr/m/it/10.95 E
+nt-prel-lung - Mi-kro-con-trol-ler.net\T1/cmr/m/n/10.95 .  [][]$\T1/cmtt/m/n/10
+.95 http : / / www .
+ []
+
+
+Underfull \hbox (badness 1565) in paragraph at lines 52--52
+\T1/cmr/m/sc/10.95 Fleu-ry\T1/cmr/m/n/10.95 , Pe-ter:  \T1/cmr/m/it/10.95 Pe-te
+r Fleu-ry's Ho-me Pa-ge\T1/cmr/m/n/10.95 .  [][]$\T1/cmtt/m/n/10.95 http : / / 
+jump . to / fleury$[][]\T1/cmr/m/n/10.95 .
+ []
+
+
+Underfull \hbox (badness 2617) in paragraph at lines 59--59
+\T1/cmr/m/sc/10.95 Mi-kro-con-trol-ler.ner\T1/cmr/m/n/10.95 :  \T1/cmr/m/it/10.
+95 RS-232 - Mi-kro-con-trol-ler.net\T1/cmr/m/n/10.95 .  [][]$\T1/cmtt/m/n/10.95
+ http : / / www .
+ []
+
+
+Underfull \hbox (badness 7631) in paragraph at lines 67--67
+\T1/cmr/m/sc/10.95 Mi-nol-ta\T1/cmr/m/n/10.95 :  \T1/cmr/m/it/10.95 Funk-tio-ne
+n - VI-910 | KO-NI-CA MI-NOL-TA\T1/cmr/m/n/10.95 .  [][]$\T1/cmtt/m/n/10.95 htt
+p :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+\T1/cmtt/m/n/10.95 / / www . konicaminolta . eu / de / messinstrumente / produk
+te / 3d-[]messtechnik /
+ []
+
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+<use Bilder/RAC_Logo.jpg> [29
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
+\T1/cmtt/m/n/10.95 American _ Standard _ Code _ for _ Information _ Interchange
+&oldid = 99892678$[][]\T1/cmr/m/n/10.95 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
 \T1/cmtt/m/n/10.95 / / de . wikipedia . org / w / index . php ? title = Daisy _
  chain&oldid = 98475104$[][]\T1/cmr/m/n/10.95 .
  []
 
-
-Underfull \hbox (badness 2600) in paragraph at lines 54--54
-\T1/cmr/m/sc/10.95 Wi-ki-pe-dia\T1/cmr/m/n/10.95 :  \T1/cmr/m/it/10.95 Stift-le
-i-ste --- Wi-ki-pe-dia, Die freie En-zy-klo-pä-die\T1/cmr/m/n/10.95 .  [][]$\T1
-/cmtt/m/n/10.95 http :
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
-\T1/cmtt/m/n/10.95 / / de . wikipedia . org / w / index . php ? title = Stiftle
-iste&oldid = 99052435$[][]\T1/cmr/m/n/10.95 .
- []
-
 )
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [31
-
-
-]
+ <use Bilder/RAC_Logo.jpg> [30]
 \openout2 = `Inhalt/Erklaerung.aux'.
 
  (./Inhalt/Erklaerung.tex
@@ -1432,12 +1352,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
-<../../../../Unterschrift.png, id=913, 577.357pt x 126.071pt>
+<../../../../Unterschrift.png, id=963, 577.357pt x 126.071pt>
 File: ../../../../Unterschrift.png Graphic file (type png)
 
 <use ../../../../Unterschrift.png>)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [32
+ <use Bilder/RAC_Logo.jpg> [31
 
 
  <../../../../Unterschrift.png>] (./Inhalt/Anhang.tex
@@ -1465,9 +1385,24 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 
 ]
+\openout2 = `Inhalt/Tabelle_Protokolle_RF.aux'.
+
+ (./Inhalt/Tabelle_Protokolle_RF.tex
+(./Code/Protokolle_RF.txt
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [4
+
+
+]
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+
+<use Bilder/RAC_Logo.jpg> [5]))
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [6]
 \openout2 = `Inhalt/Tabelle_TD_VI900.aux'.
 
- (./Inhalt/Tabelle_TD_VI900.tex
+
+(./Inhalt/Tabelle_TD_VI900.tex
 Underfull \hbox (badness 10000) in paragraph at lines 25--25
 \T1/cmr/m/n/10.95 X-Richtung (an-hän-gig
  []
@@ -1530,111 +1465,121 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--63
  []
 
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [4
+<use Bilder/RAC_Logo.jpg> [7
 
 
 ])
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [5]
+ <use Bilder/RAC_Logo.jpg> [8]
 \openout2 = `Inhalt/Werkzeuge.aux'.
 
 
 (./Inhalt/Werkzeuge.tex
-Underfull \hbox (badness 10000) in paragraph at lines 16--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
-
- []
-
-
-Overfull \hbox (57.80554pt too wide) in paragraph at lines 29--32
+Overfull \hbox (57.80554pt too wide) in paragraph at lines 4--7
 \T1/cmr/m/n/10.95 Website: [][]$\T1/cmtt/m/n/10.95 http : / / www . konicaminol
 ta . eu / de / messinstrumente / produkte / 3d-[]messtechnik /
  []
 
+
+Overfull \hbox (120.04762pt too wide) in paragraph at lines 16--19
+\T1/cmr/m/n/10.95 Website: [][]$\T1/cmtt/m/n/10.95 http : / / www . pepperl-[]f
+uchs . de / germany / de / classid _ 143 . htm ? view = productdetails&prodid =
+
+ []
+
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [6
+<use Bilder/RAC_Logo.jpg> [9
 
 
-])
+]
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 52--14
+
+ []
+
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [7])
-(./!Praxisbericht.ind)
-
-Package natbib Warning: There were undefined citations.
-
+<use Bilder/RAC_Logo.jpg> [10])
+No file !Praxisbericht.ind.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
 (./!Praxisbericht.aux (./Deckblatt.aux) (./Inhalt/Einleitung.aux)
 (./Inhalt/Kapitel_Hardware.aux) (./Inhalt/Kapitel_Software.aux)
 (./Inhalt/Kapitel_AufbauderArbeit.aux) (./Inhalt/Fazit.aux)
 (./Inhalt/Erklaerung.aux) (./Inhalt/StepByStep.aux)
-(./Inhalt/Tabelle_ASCII_Befehle.aux) (./Inhalt/Tabelle_TD_VI900.aux)
-(./Inhalt/Werkzeuge.aux))
+(./Inhalt/Tabelle_ASCII_Befehle.aux) (./Inhalt/Tabelle_Protokolle_RF.aux)
+(./Inhalt/Tabelle_TD_VI900.aux) (./Inhalt/Werkzeuge.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
 Package rerunfilecheck Info: File `!Praxisbericht.out' has not changed.
-(rerunfilecheck)             Checksum: 5D9DB5A1D8B6890A8121DC629141324C;3767.
+(rerunfilecheck)             Checksum: 26C2E7D0F386E223A6B1F92AA10D30EA;3817.
 Package rerunfilecheck Info: File `!Praxisbericht.brf' has not changed.
-(rerunfilecheck)             Checksum: EE625F5D307DF92C26B0300390BA50B1;234.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: 56236BEE8ED6DC58280C16A72A0F3D28;640.
  ) 
 Here is how much of TeX's memory you used:
- 13479 strings out of 495022
- 191368 string characters out of 3180791
- 622736 words of memory out of 3000000
- 15769 multiletter control sequences out of 15000+200000
- 30917 words of font info for 70 fonts, out of 3000000 for 9000
+ 13636 strings out of 495022
+ 193924 string characters out of 3180791
+ 685741 words of memory out of 3000000
+ 15815 multiletter control sequences out of 15000+200000
+ 30141 words of font info for 69 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 50i,16n,51p,899b,1934s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 50i,16n,51p,959b,2001s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
 exmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/
-cm-super/sfbx0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx10
-00.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/
-fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
-rm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></us
-r/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1
-/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
-r/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-</usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/tex
-mf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/cm-super/sfsx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
-super/sfti0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.
-pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share
-/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fon
-ts/type1/public/cm-super/sfxc1095.pfb></usr/share/texmf-dist/fonts/type1/public
-/cm-super/sfxc2074.pfb>
-Output written on !Praxisbericht.pdf (46 pages, 1647956 bytes).
+cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx10
+95.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf-dist/
+fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
+rm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></us
+r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1
+/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
+r/sfsx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb>
+</usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/tex
+mf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/cm-super/sfti0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
+super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.
+pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share
+/texmf-dist/fonts/type1/public/cm-super/sfxc1095.pfb></usr/share/texmf-dist/fon
+ts/type1/public/cm-super/sfxc2074.pfb>
+Output written on !Praxisbericht.pdf (48 pages, 1018805 bytes).
 PDF statistics:
- 1137 PDF objects out of 1200 (max. 8388607)
- 1041 compressed objects within 11 object streams
- 460 named destinations out of 1000 (max. 500000)
- 507 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1316 PDF objects out of 1440 (max. 8388607)
+ 1218 compressed objects within 13 object streams
+ 563 named destinations out of 1000 (max. 500000)
+ 510 words of extra memory for PDF output out of 10000 (max. 10000000)
 
