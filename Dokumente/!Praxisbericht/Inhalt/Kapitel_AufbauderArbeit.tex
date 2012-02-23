@@ -1,0 +1,172 @@
+\chapter{Aufbau der Arbeit}
+\label{sec:AufbauDerArbeit}
+Im ersten Schritt ging es darum, den Drehtisch mithilfe des Mikrocontrollers um 90° zu drehen.\\
+Die Codelistings sind thematisch zusammen gefasst und gekürzt um die Lesbarkeit und das Verständnis zu gewährleisten.
+Ein komplettes Codelisting der \textit{main.c} befindet sich im Anhang. Der komplette Code, mit allen Bibliotheken, liegt dem Praxisbericht als CD oder Archiv bei. 
+\todo{Backup anlegen und cleanen!}
+
+\section{Erste Schritte}
+Der Mikrocontroller befindet sich auf dem STK 500(siehe Kapitel \ref{sec:STK500}). Dieses bietet grundlegenden Funktionalitäten wie Taster, LEDs, eine Programmierschnittstelle und eine serielle Schnittstelle.
+Um die Komponenten sinnvoll im Mikrocontroller nutzen zu können müssen dafür Funktionalitäten wie z.B. Bibliotheken bereit gestellt werden oder Register initialisiert werden.\\
+Die folgenden Kapitel beschreiben dieses Bereitstellen der Funktionalitäten.
+\subsection{Taster nutzbar machen}
+\label{sec:Taster}
+Um die Taster des STK500 im Mikrocontroller nutzen zu können müssen diese entprellt werden.\\
+Im ersten Schritt verband ich die Stiftleiste des PortA mit der Stiftleiste für die Taster.\\
+Das Entprellen der Taster realisierte ich softwareseitig in dem ich die Bibliothek\cite{uC:Dannegger} von Peter Dannegger einband.\\
+Diese habe ich heruntergeladen und in das Projektverzeichnis entpackt.\\
+Mit Zeile 1 des Codelisting\ref{lst:Taster} wird die Bibliothek in das Programm eingebunden. Die Zeilen 3-10 spiegeln die Funktion zum Initialisieren der Bibliothek wieder.\\
+Nach dem Einbinden der Bibliothek war es möglich Funktionen wie z.B. get\_key\_press() zu nutzen um den Status der Taster prellfrei auszulesen und diese Information für Entscheidungen im Programm zu verwenden.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:Taster,caption=Taster]{Code/taster.txt}
+
+\subsection{LEDs ansteuern}
+Die LEDs sollen im Programmablauf nutzbar sein.\\
+Dazu verband ich zuerst die Stiftleiste von \emph{PortB} mit der LED Stiftleiste.\\
+Um LEDs an \emph{PortB} betreiben zu können musste ich die Pins im \Fachbegriff{Register} \emph{DDRB} als Ausgänge definieren. Dies geschieht in Zeile 3 des Codelisting \ref{lst:LED}. Die Bibliothek zum Entprellen der Taster nutzte die Variablen \emph{LED\_DDR} und \emph{LED\_PORT}. Auch ich nutzte diese Variablen um auf die Register zuzugreifen, da dies eine bessere Übersicht gewährleistet.\\
+Die Werte im 8-Bit Register \emph{LED\_PORT} spiegeln die Spannungen an den Pins des \emph{PortB} am Mikrocontroller wieder.\\
+Da die LEDs auf dem STK500 mit \Fachbegriff{active-low Logik} betrieben werden, muss das jeweilige Bit gelöscht, also auf ''0'', gesetzt werden damit die LED leuchtet.
+Um alle Bits in einem Register zu verändern kann das Register mit einem 2-stelligen Hex-Wert(8-Bit) beschrieben werden. In Zeile 4 werden so alle Bits auf ''1'' gesetzt.\\
+Um ein einzelnes Bit zu verändern, können die Zeilen 5 und 6 verwendet werden. Dabei steht das x in \emph{PBX} für die x-te Stelle im Register die gesetzt oder gelöscht werden soll.\\
+Es ist damit möglich im Programmablauf einzelne LEDs anzusteuern.
+
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:LED,caption=LEDs]{Code/led.c}
+
+\subsection{LCD ansteuern}
+Um den aktuellen Status des Motor komfortabel anzeigen zu können und den Mikrocontroller "Menü basiert" steuern zu können verwendete ich ein LC-Display.\\
+Die meisten LC-Displays werden auf die selbe Art angesteuert. Hier gibt es fertige Bibliotheken die frei genutzt werden können. Im Projekt entschied ich mich für die von Peter Fleury\cite{uC:Fleury}.\\
+Dazu lud ich die Bibliothek herunter und entpackte die Dateien \emph{lcd.c} und \emph{lcd.h} in das Projektverzeichnis. \\
+Die Bibliothek wird mit \#include ''lcd.h'' eingebunden.\\
+In der \emph{lcd.h} mussten noch die Daten des Displays eingegeben werden(siehe Codelisting \ref{lst:LCD}).
+Danach kann das Display mit den Befehlen aus Zeile 11--20 angesteuert werden.
+
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:LCD, caption=lcd.h (Auszug)]{Code/lcd_def.txt}
+
+\subsection{Serielle Schnittstelle ansteuern}	
+\Fachbegriff{RS-232} ist der Name der am meisten verwendeten seriellen asynchronen Schnittstelle , im Fachjargon auch Übertragungsstandard genannt, um Daten zwischen zwei elektronischen Geräten hin und her zu schicken (im Fachjargon: Datenkommunikation).\cite{uC:rs232}\\
+Auf dem STK500 ist bereits eine serielle Schnittstelle vorbereitet. Um diese nutzen zu können musste ich den ersten UART des Mikrocontrollers(PortC 3:4) mit der Stiftleiste Rx/Tx auf dem STK500 verbinden.\\
+Eine weitere Schnittstelle baute ich auf einem Steckbrett auf. Diese verband ich mit dem zweiten UART des Mikrocontrollers(PortC 1:2).\\
+Um die Schnittstellen im Mikrocontroller nutzen zu können wird in Listing \ref{lst:RS232} - Zeile 2 die setbaud.h eingebunden. Zuvor muss noch die Baudrate gesetzt werden.
+In der Funktion  werden die entsprechenden Register im Mikrocontroller gesetzt um die Schnittstellen zu konfigurieren.\\
+Anschließend kann mit der Funktionen uart\_put\_string() eine Zeichenkette versendet werden. Dabei kann mit der Variable \emph{dir} die Schnittstelle ausgewählt werden über die gesendet werden soll.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:RS232,caption=RS-232]{Code/rs232.txt}
+
+\section{Menü Bibliothek / Autonome Ansteuerung}
+Der Drehtisch soll leicht und komfortabel vom Mikrocontroller aus angesteuert werden.\\
+Dazu entschied ich mich für eine Menü basierte Steuerung auf dem LC-Display. Im Menü lässt sich mit den Tasten \emph{Hoch} \emph{Runter} \emph{Ok} und \emph{Zurück} navigieren.\\
+Ich entschied mich für eine Menü Bibliothek basierend auf verketteten Pointer Structs von AVRFreaks\cite{AVRFreaks:Menu}. Diese lud ich herunter und entpackte sie ins Arbeitsverzeichnis.\\
+Danach passte ich die Menüstruktur auf meine Bdürfnisse an und speicherte sie in die Datei \emph{mymenu.h}.\\
+Außerdem musste der Menü-Bibliothek die Befehle der LCD-Bibliothek in der Datei \emph{tinymenu.h} bekannt gemacht werden.\\
+Die Zeilen 1--6 des Codelisting \ref{lst:Menu} dienen zum Einbinden der benötigten Bibliotheken.\\
+Die Zeilen 8-16 zeigen eine vereinfachte Struktur meines  Hauptprogramms. Wird ein Taster gedrückt wird dies durch die get\_key\_press() Funktion, bekannt aus Kapitel \ref{sec:Taster}, erkannt und die entsprechende Menü Funktion aufgerufen.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:Menu,caption=Menü]{Code/menu.c}
+Das folgende Listing zeigt die vollständige Menü Struktur
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:Menu_Baum,caption=Menü Baum]{Code/menu_main.txt}
+Wird einer der Menüpunkte aufgerufen, wird die im Menüpunkt hinterlegte Funktion mit dem hinterlegten Parameter aufgerufen.
+Wird ein Befehl ausgewählt wird die Funktion \emph{menu\_puts()} aufgerufen und ihr der zu sendene Befehl übergenen. Diese sendet dann mit der aus Kapitel \ref{sec:RS-232} bekannten Funktion \emph{uart\_puts(arg, dir)} einen Befehl an die Schrittmotorsteuerung.\\
+Nun kann mit den Tasten Hoch, Runter, Ok und Zurück im Menü Navigiert werden. Ist ein Befehl ausgewählt kann dieser durch Drücken des Ok Knopfes ausgewählt werden. Wird z.B. der Menüpunkt \emph{+90} ausgewählt wird die Zeichenkette ''M 125000'' an die Drehtischsteuerung gesendet. Der Drehtisch dreht sich um 90° gegen den Uhrzeigersinn.
+\todo{Zukunft: Einstellbarer Winkel}
+
+\section{Kommunikation mit RapidForm2004}
+
+Nun sollen Befehle die von der PC Software RapidForm2004 zur Drehtischsteuerung gesendet werden empfangen, ausgewertet, in verständlicher Form an die Drehtischsteuerung weiter gegeben werden und die Antwort der Drehtischsteuerung an RapidForm2004 zurück gegeben werden.
+\subsection{Empfangen der Befehle}
+Befehl empfangen und an Auswertung übergeben.\\
+In der Hauptschleife des Programms wird ständig das Eingangsregister der seriellen Schnittstelle abgefragt(siehe Codelisting \ref{lst:rs232empfang} Zeile 1--4. Dieses Vorgehen bezeichnet man als \Fachbegriff{Polling}.
+Sind Daten im Register vorhanden, wird LED2 eingeschaltet und die Funktion uart\_rx() mit dem Parameter D\_RapidForm aufgerufen. Dieser bestimmt die Schnittstelle die ausgelesen werden soll und wie der empfangene \Fachbegriff{String} weiterverarbeitet wird. \\
+Uart\_rx() liest dann das das Empfangsregister mit der aus Kapitel \ref{sec:RS-232} bekannten Funktion uart\_get\_string() aus und schriebt den empfangenen String in die Variable \emph{str\_rx}.\\
+Nun wird
+
+\lstset{language=Java, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:rs232empfang, caption=RS-232 Empfang]{Code/rs232_empfang.c}
+
+
+
+
+
+\subsection{Protokolle aus RapidForm}
+Die Protokolle die RapidForm nutzt um mit den Schrittmotoren zu kommunizieren können leicht mit der Software \todo{Name} abgehört werden. Dies hat jedoch den Nachteil das RapidForm erst den nächsten Befehl sendet wenn der erste richtig quittiert wurde. Die Befehle die RapidForm erwartet konnten aus den Betriebsanleitungen der Schrittmotoren entnommen werden. Dies war jedoch auch nicht immer leicht.\\
+Durch \Fachbegriff{Reverse-Engineering} konnten alle Befehle und der Antwort die darauf erwartet wird, aus der Executebale ausgelesen werden. Listing \ref{lst:Proto_RF_Zeta} zeigt einen Auszug für das Protokoll eines Zeta Schrittmotors. Im Anhang befinden sich alle Protokolle.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:Proto_RF_Zeta,caption=Protokoll aus Rapidform: Zeta]{Code/Protokolle_RF_Zeta.txt}
+\subsection{Übersetzungs Logik}
+Das Herzstück der Übersetzungs Software. Für jedes Protokoll muss eine eigene Auswerte Logik geschrieben werden. 
+\subsubsection{FindStringInArray Funktion}
+Zuerst wird eine Auswerte Logik geschrieben die ankommende Strings mit einem übergebenen Array vergleicht und die Arrayposition übergibt. Diese numerische Rückgabe kann dann mittels einer switch/case Struktur ausgewertet werden.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:FindString,caption=Funktion: FindStringInArray]{Code/FindString.c}
+\subsubsection{Automatische Protokollwahl}
+Nicht jede Software unterstützt alle Protokolle. Daher wurden alle Protokolle realisiert. Um automatisch fest zu stellen welches Protokoll verwendet wird, wird der erste ankommende Befehl gegen die Initialisierungssequenz der Protokolle geprüft und in einer globalen Variable gespeichert.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:switchMotor,caption=Funktion: switchMotor]{Code/switch_Motor.c}
+\subsubsection{Zeta}
+Zeta
+\subsubsection{Isel}
+\todo{Splitten und jeden Abschnitt einzeln erklären!}
+Auch hier wird wieder ein Array mit möglichen ankommenden Befehlen definiert und der ankommende String gegen dieses Array geprüft. Kommt z.B. die Sequenz "@01" an, wird case 3 ausgewählt. Das Display zeigt Init an und sendet die Antwort die RapidForm erwartet zurück.\\
+Die Sequenz "@0R" steht für eine Statusabfrage. Es wird eine Statusabfrage an die Schrittmotorkarte gesendet und der Status an RapidForm zurück gemeldet.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:switch_Isel,caption=Übersetzungs Logik: Isel]{Code/switch_Isel.txt}
+\subsubsection{Weitere}
+Es sind weitere Protokolle ansatzweise implementiert. Diese werden im allgemeinen jedoch nicht benötigt da nur das Isel und das Zeta Protokoll ordentlich in der Clientsoftware umgesetzt sind.
+
+
+\subsection{Interrupts}
+\label{sec:Interrupts}
+Viele Mikrocontroller bieten die Möglichkeit zeitkritische Subroutinen auszuführen. Wenn einer der Interrupts ausgelöst wird, wird das Hauptprogramm unterbrochen und die Entsprechende Interrupt-Service-Routine ausgeführt. Nach Beendigung der ISR wird das Hauptprogramm an der vorherigen Stelle wieder aufgenommen.\\
+ISR dürfen nur sehr wenige Befehle enthalten und müssen innerhalb weniger ClockCicles abgeschlossen sein. \\
+Interrupts können z.B. der Überlauf eines internen Timer sein, oder ein externens Signal an einem Pin.\\
+Im Projekt werden externe Interrupts, Timer-Überlauf Interrupts und der Watchdog Interrupt genutzt. 
+\subsubsection{Endschalter}
+Die Endschalter sind über die Schrittmotorkarten und eine Brücke in der Steuerung mit der Mikrocontroller Platine Verbunden. Dort sind sie an 2 Interrupt Pins angeschlossen. \todo{Pins raus suchen!} Bei einem Flanken Wechsel an den Pins wird ein Interrupt ausgelöst. \\
+Das Code-Listing \ref{lst:ISR_ES} zeigt die ISR für die Endschalter.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=2}
+\lstinputlisting[label=lst:ISR_ES,caption=ISR: Endschalter]{Code/ISR_Endschalter.txt}
+\subsubsection{Watchdog}
+Der \Fachbegriff{Watchdog} ist eine Sicherungseinrichtung des Mikrocontroller. In regelmäßigen Abständen wird überprüft ob das Watchdog Bit gesetzt ist und anschließend zurück gesetzt. Das Bit muss innerhalb der voreingestellten Zeit immer wieder neu gesetzt werden. Dies kann mit der wdt\_reset() Funktion realisiert werden. Ist das Bit nicht gesetzt, wird der Mikrocontroller zurückgesetzt. \todo{Inverse Logik?} Dies geschieht z.B. bei nicht geplanten Endlosschleifen.\\
+Wahlweise kann kurz vor dem Reset noch die Watchdog-ISR durchlaufen werden.\\
+Im Projekt wird in der ISR die Fehler LED eingeschaltet und eine Meldung auf dem LC-Display ausgegeben. Siehe hierzu auch Listing \ref{lst:Watchdog} Zeilen 12-15.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=4}
+\lstinputlisting[label=lst:Watchdog,caption=Watchdog]{Code/Watchdog.txt}
+
+
+
+\chapter{Probleme und Lösungen}
+\section{Entwicklungsumgebungen}
+\section{Fuses}
+\label{sec:Fuses}
+Als Fuses werden Register bezeichnet mit denen sich, auf Hardwareebene, das Verhalten des Mikrocontrollers verändern lässt. \\
+Im Projekt wurden folgende Fuses problematisch.
+\begin{itemize}
+\item \textbf{JTAGEN} - Ist dieses \Fachbegriff{Fusebit} gesetzt, werden 4 Pins des PortB genutzt um den Mikrocontroller zu debuggen und können nicht anders genutzt werden. Hardware Debugging bietet viele Vorteile. Diese wurden im Projekt jedoch nicht genutzt da PortB für die LEDs genutzt wurde.
+\item \textbf{WDTON} - Ist dieses Fusebit gesetzt läuft der Watchdog Timer immer mit. Wird der Watchdog dann nicht regelmäßig zurückgesetzt startet der Mikrocontroller ständig neu.
+\item \textbf{CKDIV8} - Teilt den Systemtakt des Mikrocontroller durch 8. Dies ist Energiesparender. Der geringere Takt muss in F\_CPU angepasst werden da sonst zeitkritische Prozesse mit der falschen Geschwindigkeit ablaufen.
+\item \textbf{CKOUT} - An PortB wird an einem Pin der Systemtakt ausgegeben. Dieser kann dann leicht mit einem Frequenz-Messgerät überprüft werden. Der Pin kann dann jedoch nicht anderweitig genutzt werden.
+\item \textbf{CKSELX} - Über diese 4 Bits kann der Systemtakt eingestellt werden.
+\end{itemize}
+\begin{longtable}{|c|l|} 
+\caption{Fuses} \\
+\hline
+\label{tab:TD_VI-910}
+OCDEN & On Chip Debugging \\ \hline 
+JTAGEN & Hardware Debugging \\ \hline 
+SPIEN & Serial Program and Data Downloading \\ \hline 
+WDTON & Watchdot Timer always on \\ \hline 
+EESAVE & EEPROM memory is preserved through the Chip Erase \\ \hline 
+BOOTSZ1 & Select Boot Size \\ \hline 
+BOOTSZ0 & Select Boot Size \\ \hline 
+BOOTRST & Select Reset Vector \\ \hline 
+CKDIV8 & Divide clock by 8 \\ \hline 
+CKOUT & Clock output \\ \hline 
+SUT1 & Select start-up time \\ \hline 
+SUT0 & Select start-up time \\ \hline 
+CKSEL3 & Select Clock source \\ \hline 
+CKSEL2 & Select Clock source \\ \hline 
+CKSEL1 & Select Clock source \\ \hline 
+CKSEL0 & Select Clock source \\ \hline 
+\end{longtable} 

@@ -1,22 +1,18 @@
 \select@language {german}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Blick auf den Arbeitsaufbau}}{1}{figure.8}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces STK500}}{4}{figure.23}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces STK500 - Schema}}{5}{figure.24}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces STK500}}{5}{figure.24}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces STK500 - Schema}}{6}{figure.25}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Blick auf den Arbeitsaufbau}}{6}{figure.26}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces VI-900 - 3D-Scanner}}{7}{figure.29}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Prinzip: Laser-Triangulation}}{8}{figure.31}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ansteuerung im 19''-Rack}}{8}{figure.33}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Drehtisch}}{8}{figure.35}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Block Diagram: Mikrocontroller}}{11}{figure.44}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Schema: STK500}}{12}{figure.47}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Blick auf den Arbeitsaufbau}}{8}{figure.48}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces VI-900 - 3D-Scanner}}{9}{figure.50}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Prinzip: Laser-Triangulation}}{10}{figure.52}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Ansteuerung im 19''-Rack}}{10}{figure.54}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Drehtisch}}{11}{figure.56}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Stromverbinder - Y-Kabel}}{11}{figure.58}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Motor- und Endschalterverkabelung}}{12}{figure.64}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Motor- und Endschalterverkabelung}}{13}{figure.67}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Block Diagram: Mikrocontroller}}{15}{figure.69}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Schema: STK500}}{16}{figure.73}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Schema: MAX232}}{17}{figure.76}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Platinenlayout}}{17}{figure.78}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
