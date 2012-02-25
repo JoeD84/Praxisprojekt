@@ -1,14 +1,19 @@
 \select@language {german}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Blick auf den Arbeitsaufbau}}{1}{figure.8}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Blick auf den Arbeitsaufbau}}{2}{figure.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces VI-900 - 3D-Scanner}}{4}{figure.27}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Prinzip: Laser-Triangulation}}{5}{figure.29}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ansteuerung im 19''-Rack}}{6}{figure.31}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Drehtisch}}{6}{figure.33}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Block Diagram: Mikrocontroller}}{8}{figure.42}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Schema: STK500}}{9}{figure.45}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces VI-900 - 3D-Scanner}}{5}{figure.27}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Prinzip: Laser-Triangulation}}{6}{figure.29}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ansteuerung im 19''-Rack}}{7}{figure.31}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Drehtisch}}{7}{figure.33}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Block Diagram: Mikrocontroller}}{9}{figure.42}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Schema: STK500}}{10}{figure.45}
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stromverbinder - Y-Kabel}}{20}{figure.189}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Motor- und Endschalterverkabelung}}{21}{figure.192}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Motor- und Endschalterverkabelung}}{21}{figure.195}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Schema: MAX232}}{22}{figure.197}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

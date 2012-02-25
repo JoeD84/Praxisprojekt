@@ -1,27 +1,44 @@
-\chapter{Aufbau der Arbeit}
-\label{sec:AufbauDerArbeit}
-Im ersten Schritt ging es darum, den Drehtisch mithilfe des Mikrocontrollers um 90° zu drehen.\\
-Die Codelistings sind thematisch zusammen gefasst und gekürzt um die Lesbarkeit und das Verständnis zu gewährleisten.
-Ein komplettes Codelisting der \textit{main.c} befindet sich im Anhang. Der komplette Code, mit allen Bibliotheken, liegt dem Praxisbericht als CD oder Archiv bei. 
-\todo{Backup anlegen und cleanen!}
+\chapter{Arbeitsablauf}
+\label{cha:Arbeit}
+Die ersten Arbeitsschritte \ref{sec:Erste_Schritte}--\ref{sec:menu} in diesem Kapitel dienen dazu die Programmierung des Mikrocontrollers zu beschreiben. 
+Um den Mikrocontroller nutzen zu können ist es dafür notwendig den Mikrocontroller mit einem Programm zu beschreiben(\Fachbegriff{Flashen}). 
+Diese Programmierung lässt sich am einfachsten in einer Entwicklungsumgebung(siehe Kapitel \ref{sec:Entwicklungsumgebung}) schreiben.\\
+Das Ziel des Programms besteht darin Spannungen an den Pins des Mikrocontrollers auszugeben oder auszuwerten und somit Komponenten wie LEDs, LC-Display, Taster und serielle Schnittstellen anzusteuern.
+Zuerst werden die ersten Schritte mit dem Mikrocontroller beschrieben. Diese dienen dazu, benötigte Grundfunktionalitäten bereitzustellen.\\
+In den Arbeitsschritten \ref{sec:xxx}--\ref{sec:xxx} geht es um die Entwicklung und Verbesserung von Hardware.\\
+Diese wird so erweitert, dass sie den Vorgaben entspricht.\\
+In den Arbeitsschritten \ref{...} wird beschrieben wie die Software so erweitert wird, dass auch sie allen Vorgaben genügt.\\
+Im letzten Arbeitsschritt \ref{...} wird dann noch die Entwicklung des Platinenlayouts und des Einschubes erklärt.
+\todo{Umstellungsprobleme}
 
 \section{Erste Schritte}
 \label{sec:Erste_Schritte}
+Im ersten Schritt ging es darum, den Drehtisch mithilfe eines Mikrocontrollers um 90° zu drehen.\\
 Der Mikrocontroller befindet sich auf dem STK 500(siehe Kapitel \ref{sec:STK500}). Dieses bietet grundlegenden Funktionalitäten wie Taster, LEDs, eine Programmierschnittstelle und eine serielle Schnittstelle.
 Um die Komponenten sinnvoll im Mikrocontroller nutzen zu können müssen dafür Funktionalitäten wie z.B. Bibliotheken bereit gestellt werden oder Register initialisiert werden.\\
 Die folgenden Kapitel beschreiben dieses Bereitstellen der Funktionalitäten.
+
+\begin{Tipp}
+Die Codelistings in diesem Kapitel sind thematisch zusammen gefasst und gekürzt um die Lesbarkeit
+und das Verständnis zu gewährleisten. Ein komplettes Codelisting des Hauptprogramms befindet
+sich im Anhang \ref{cha:CodeComplete}. Der komplette Code, mit allen Bibliotheken, liegt dem Praxisbericht
+als CD oder Archiv bei.
+\end{Tipp}
+
 \subsection{Taster nutzbar machen}
 \label{sec:Taster}
 Um die Taster des STK500 im Mikrocontroller nutzen zu können müssen diese entprellt werden.\\
 Im ersten Schritt verband ich die Stiftleiste des PortA mit der Stiftleiste für die Taster.\\
-Das Entprellen der Taster realisierte ich softwareseitig in dem ich die Bibliothek\cite{uC:Dannegger} von Peter Dannegger einband.\\
+Das Entprellen der Taster realisierte ich softwareseitig in dem ich die Bibliothek \cite{uC:Dannegger} von Peter Dannegger einband.\\
 Diese habe ich heruntergeladen und in das Projektverzeichnis entpackt.\\
 Mit Zeile 1 des Codelisting\ref{lst:Taster} wird die Bibliothek in das Programm eingebunden. Die Zeilen 3-10 spiegeln die Funktion zum Initialisieren der Bibliothek wieder.\\
-Nach dem Einbinden der Bibliothek war es möglich Funktionen wie z.B. get\_key\_press() zu nutzen um den Status der Taster prellfrei auszulesen und diese Information für Entscheidungen im Programm zu verwenden.
+Nach dem Einbinden der Bibliothek war es möglich Funktionen wie z.B. get\_key\_press() zu nutzen um den Status der Taster prellfrei auszulesen und diese Information für Entscheidungen im Programm zu verwenden. 
+
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:Taster,caption=Taster]{Code/taster.txt}
 
 \subsection{LEDs ansteuern}
+\label{sec:LED}
 Die LEDs sollen im Programmablauf nutzbar sein.\\
 Dazu verband ich zuerst die Stiftleiste von \emph{PortB} mit der LED Stiftleiste.\\
 Um LEDs an \emph{PortB} betreiben zu können musste ich die Pins im \Fachbegriff{Register} \emph{DDRB} als Ausgänge definieren. Dies geschieht in Zeile 3 des Codelisting \ref{lst:LED}. Die Bibliothek zum Entprellen der Taster nutzte die Variablen \emph{LED\_DDR} und \emph{LED\_PORT}. Auch ich nutzte diese Variablen um auf die Register zuzugreifen, da dies eine bessere Übersicht gewährleistet.\\
@@ -35,6 +52,7 @@ Es ist damit möglich im Programmablauf einzelne LEDs anzusteuern.
 \lstinputlisting[label=lst:LED,caption=LEDs]{Code/led.c}
 
 \subsection{LCD ansteuern}
+\label{sec:LCD}
 Um den aktuellen Status des Motor komfortabel anzeigen zu können und den Mikrocontroller "Menü basiert" steuern zu können verwendete ich ein LC-Display.\\
 Die meisten LC-Displays werden auf die selbe Art angesteuert. Hier gibt es fertige Bibliotheken die frei genutzt werden können. Im Projekt entschied ich mich für die von Peter Fleury\cite{uC:Fleury}.\\
 Dazu lud ich die Bibliothek herunter und entpackte die Dateien \emph{lcd.c} und \emph{lcd.h} in das Projektverzeichnis. \\
@@ -56,7 +74,9 @@ Anschließend kann mit der Funktionen uart\_put\_string() eine Zeichenkette vers
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:RS232,caption=RS-232]{Code/rs232.txt}
 
-\section{Menü Bibliothek / Autonome Ansteuerung}
+\section{Kommunikation mit der Schrittmotorsteuerung}
+\subsection{Menü Bibliothek / Autonome Ansteuerung}
+\label{sec:menu}
 Der Drehtisch soll leicht und komfortabel vom Mikrocontroller aus angesteuert werden.\\
 Dazu entschied ich mich für eine Menü basierte Steuerung auf dem LC-Display. Im Menü lässt sich mit den Tasten \emph{Hoch} \emph{Runter} \emph{Ok} und \emph{Zurück} navigieren.\\
 Ich entschied mich für eine Menü Bibliothek basierend auf verketteten Pointer Structs von AVRFreaks\cite{AVRFreaks:Menu}. Diese lud ich herunter und entpackte sie ins Arbeitsverzeichnis.\\
@@ -74,26 +94,102 @@ Wird ein Befehl ausgewählt wird die Funktion \emph{menu\_puts()} aufgerufen und
 Nun kann mit den Tasten Hoch, Runter, Ok und Zurück im Menü Navigiert werden. Ist ein Befehl ausgewählt kann dieser durch Drücken des Ok Knopfes ausgewählt werden. Wird z.B. der Menüpunkt \emph{+90} ausgewählt wird die Zeichenkette ''M 125000'' an die Drehtischsteuerung gesendet. Der Drehtisch dreht sich um 90° gegen den Uhrzeigersinn.
 \todo{Zukunft: Einstellbarer Winkel}
 
-\section{Kommunikation mit RapidForm2004}
+\section{Verbesserungen an der vorhandenen Hardware}
+\subsection{Spannungsverorgung}
+Um den Aufbau modular und erweiterbar zu machen, ersetzte ich die feste Lötverbindung durch eine Standard PC-Netzteil Verbindung(siehe Abbildung \ref{fig:Y-Kabel}). Dadurch kann das Netzteil nun einfach ausgebaut werden, bzw. das System leicht mit neuen Einschubkarten erweitert werden.\\
+Die \Fachbegriff{Logikbausteine} der Schrittmotorkarten und die Mikrocontroller-Platine werden mit 5V gespeist. Zusätzlich werden die Schrittmotorkarten mit 12V für die Schrittmotoren gespeist.
+\begin{figure}[h]
+\centering
+\includegraphics[width=100pt]{Y-Kabel.jpg}
+\caption{Stromverbinder - Y-Kabel}
+\label{fig:Y-Kabel}
+\end{figure}
+\todo{\url{http://www.kosatec.de/prod_images/kc/640x480/100539.jpg}}
 
-Nun sollen Befehle die von der PC Software RapidForm2004 zur Drehtischsteuerung gesendet werden empfangen, ausgewertet, in verständlicher Form an die Drehtischsteuerung weiter gegeben werden und die Antwort der Drehtischsteuerung an RapidForm2004 zurück gegeben werden.
+\subsection{Inbetriebnahme der zweiten Schrittmotorkarte}
+\todo{Schreiben!}
+
+\subsection{Motorverkabelung}
+Zwischen der zweiten Schrittmotorkarte und dem zugehörigen Schrittmotor, der für die Höhenverstellung zuständig ist, war noch kein Kabel vorhanden. Dieses musste noch gefertigt und um 3 Leitungen für die Endschalter erweitert werden.\\
+Dafür besorgte ich in der Werkstatt ein 7 adriges Kabel(Abbildung \ref{fig:Motorverkabelung}) und lies die passenden Endstecker bestellen.\\
+Die Belegung wählte ich gleich zum Kabel für den ersten Schrittmotor, erweiterte sie jedoch um die 3 Adern für die beiden Endschalter.\\
+Tabelle \ref{tab:Motorverkabelung} gibt die Belegung des Kabels wieder.\\
+Somit stand ein Kabel zur Verfügung mit dem sowohl der Schrittmotor gesteuert, als auch der Status der Endschalter ausgelesen werden konnte.
+\todo{Belegung überprüfen!}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Kabel.pdf}
+\caption{Motor- und Endschalterverkabelung}
+\label{fig:Motorverkabelung}
+\end{figure}
+\begin{longtable}{|c|l|} 
+\caption{Motor- und Endschalterverkabelung} \\
+\hline
+\label{tab:Motorverkabelung}
+1 & Phase A \\ 
+\hline 
+2 & Phase B \\ 
+\hline 
+3 & Phase C \\ 
+\hline 
+4 & Phase D \\ 
+\hline 
+5 & Endschalter oben \\ 
+\hline 
+6 & Endschalter unten \\ 
+\hline 
+7 & Endschalter Masse \\ 
+\hline 
+\end{longtable} 
+
+\subsection{Endschalter}
+Normalerweise unterstützt die Schrittmotorkarte nur mechanische Endschalter. Durch geschickte Verdrahtung ließen sich die vorgegebenen induktiven Endschalter verwenden. Hierzu musste über einen Spannungsteiler die Spannung herabgesetzt werden. Dadurch konnten die Endschalter direkt an die Optokoppler der Schrittmotorkarte angeschlossen werden. 
+\begin{figure}[h]
+\centering
+\includegraphics{Endschalter.pdf}
+\caption{Motor- und Endschalterverkabelung}
+\label{fig:Motorverkabelung}
+\end{figure}\\
+Zur Abhilfe lies ich einen längeren Metallstutzen von der Werkstatt anfertigen.\\
+Wenn der Tisch sich in der Endposition befindet, soll dies auch auf dem Mikrocontroller angezeigt werden. Die Signale der Endschalter liegen auf der Rückseite der Schrittmotorkarte \todo{Zeichnung der Anschlüsse referenzieren.} am Verbindungsstecker an. Ich lötete eine Brücke zwischen den Verbindungssteckern der Schrittmotorkarte und des Mikrocontrollers.\\
+Auf der Mikrocontrollerplatine sind diese Pins mit dem Mikrocontroller verbunden. Die beiden Pins werden im Mikrocontroller als \Fachbegriff{Interrupts} definiert. Die Interrupt-Service-Routine wird in Kapitel \ref{sec:Interrupts} beschrieben.\\
+Da die Signale der Endschalter nun an der Schrittmotorkarte anlagen, konnte diese den Motor stoppen. Zusätzlich lagen die Signale am Mikrocontroller an. Dieser konnte dadurch auf dem Display die Meldung \emph{Endschalterposition erreicht!} ausgeben. Siehe dazu auch Kapitel \ref{sec:Endschalter}
+
+\subsection{Zweite serielle Schnittstelle}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.6\textwidth]{AVR-RS232}
+\caption{Schema: MAX232}
+\label{fig:MAX232}
+\citep{uC:RS232}
+\end{figure}
+
+\section{Kommunikation mit RapidForm2004}
+RapidForm2004 sendet die Befehle die für die Drehtischstuerung bestimmt sind an den Mikrocontroller.
+Diese sollen nun empfangen, ausgewertet und in verständlicher Form an die Drehtischsteuerung weiter gegeben werden. 
+Anschließend soll die Antwort der Drehtischsteuerung an RapidForm2004 zurück gesendet werden. Die Kommunikation mit der Schrittmotorsteuerung wurde schon in Kapitel \ref{sec:XXX} beschrieben. 
+\subsection{Protokolle}
 \subsection{Empfangen der Befehle}
-Befehl empfangen und an Auswertung übergeben.\\
+Zuerst sollen nun empfangene Befehle gespeichert werden und an die zugehörige Auswerte-Funktion übergeben werden.\\
 In der Hauptschleife des Programms wird ständig das Eingangsregister der seriellen Schnittstelle abgefragt(siehe Codelisting \ref{lst:rs232empfang} Zeile 1--4. Dieses Vorgehen bezeichnet man als \Fachbegriff{Polling}.
-Sind Daten im Register vorhanden, wird LED2 eingeschaltet und die Funktion uart\_rx() mit dem Parameter D\_RapidForm aufgerufen. Dieser bestimmt die Schnittstelle die ausgelesen werden soll und wie der empfangene \Fachbegriff{String} weiterverarbeitet wird. \\
-Uart\_rx() liest dann das das Empfangsregister mit der aus Kapitel \ref{sec:RS232} bekannten Funktion uart\_get\_string() aus und schriebt den empfangenen String in die Variable \emph{str\_rx}.\\
-Nun wird
+Sind Daten im Register vorhanden, wird \emph{LED2} eingeschaltet und die Funktion uart\_rx() mit dem Parameter D\_RapidForm aufgerufen. Dieser Parameter bestimmt die Schnittstelle, die ausgelesen werden soll und wie der empfangene \Fachbegriff{String} weiterverarbeitet wird. \\
+Die Funktion \emph{uart\_rx()} liest dann das Empfangsregister mit der aus Kapitel \ref{sec:RS232} bekannten Funktion \emph{uart\_get\_string()} aus und schreibt den empfangenen String in die Variable \emph{str\_rx}(Codelisting \ref{lst:rs232empfang}-Zeile7).\\
+Mittels einer IF-Abfrage wird das weitere Vorgehen entschieden. Da \emph{D\_RapidForm} als Parameter übergeben wird, wird der else-Teil der Abfrage ausgeführt.\\
+In diesem wird überprüft ob bereits ein Motor ausgewählt ist. Ist dies nicht der Fall wird der String str\_rx an die Funktion switch\_Motor() übergeben. Diese prüft den String gegen die Initialisierungsbefehle der einzelnen Motoren und gibt einen numerischen Wert zurück, welcher einem der Motoren entspricht. Die numerischen Werte wurden mittels Makro-Definitionen in lesbare Variablen gespeichert.\\
+Ist dieser Schritt erfolgreich wird in den folgenden IF-Abfragen die richtige Auswerte-Funktion aufgerufen. Wurde kein Protokoll erkannt, wird auf dem Display \emph{Unbekannter Motor!} ausgegeben.\\
+Somit ist es mir möglich Befehle beider Schnittstellen zu empfangen und an die richtigen Auswerte-Funktionen zu übergeben. Zusätzlich wird für RapidForm schon automatisch das richtige Protokoll eingestellt.\\
+Eine Limitierung ist, das für eine erneute Protokollwahl der Mikrocontroller neu gestartet werden müsste.
 
 \lstset{language=Java, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:rs232empfang, caption=RS-232 Empfang]{Code/rs232_empfang.c}
 
+\subsection{Verarbeiten der Befehle}
 
 
-
-
+\chapter{Parkplatz}
 \subsection{Protokolle aus RapidForm}
 Die Protokolle die RapidForm nutzt um mit den Schrittmotoren zu kommunizieren können leicht mit der Software \todo{Name} abgehört werden. Dies hat jedoch den Nachteil das RapidForm erst den nächsten Befehl sendet wenn der erste richtig quittiert wurde. Die Befehle die RapidForm erwartet konnten aus den Betriebsanleitungen der Schrittmotoren entnommen werden. Dies war jedoch auch nicht immer leicht.\\
-Durch \Fachbegriff{Reverse-Engineering} konnten alle Befehle und der Antwort die darauf erwartet wird, aus der Executebale ausgelesen werden. Listing \ref{lst:Proto_RF_Zeta} zeigt einen Auszug für das Protokoll eines Zeta Schrittmotors. Im Anhang befinden sich alle Protokolle.
+Durch \Fachbegriff{Reverse-Engineering} konnten alle Befehle und der Antwort die darauf erwartet wird, aus der RapidForm2004 ausgelesen werden. Listing \ref{lst:Proto_RF_Zeta} zeigt einen Auszug für das Protokoll eines Zeta Schrittmotors. Im Anhang befinden sich alle Protokolle.
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:Proto_RF_Zeta,caption=Protokoll aus Rapidform: Zeta]{Code/Protokolle_RF_Zeta.txt}
 \subsection{Übersetzungs Logik}
@@ -140,6 +236,18 @@ Im Projekt wird in der ISR die Fehler LED eingeschaltet und eine Meldung auf dem
 
 \chapter{Probleme und Lösungen}
 \section{Entwicklungsumgebungen}
+\subsection{AVR Studio 5}
+Die von Atmel AVR Studio 5 ist eine von Atmel bereitgestellte Entwicklungsumgebung. Diese scheint jedoch eine fehlerhafte Bibliothek zu enthalten. Die Kombination aus Mikrocontroller ATmega324A und AVR Studio 5 erzeugte nicht nachvollziehbare Probleme. Bei dem selbem Programm und einem anderem Mikrocontroller oder einer anderen Entwicklungsumgebung tauchten keine Fehler auf.
+In der Entwicklungsumgebung Eclipse lies sich der Fehler reproduzieren wenn der Pfad der Atmel Bibliotheken eingestellt wurde. Die WinAVR Bibliotheken und eine selbst kompilierte \Fachbegriff{Toolchain} unter Linux zeigten keine Probleme.\\
+Daher wechselte ich zur \Fachbegriff{Open Source} Entwicklungsumgebung Eclipse. Erst dadurch wurde es möglich erfolgreich zu arbeiten. Außerdem wurde das Projekt dadurch plattformunabhänig und ich nutzte bis auf RapidForm2004 nur noch freie Open Source Software.\\
+\subsection{Eclipse}
+Eclipse ist eine in Java programmierte freie Open Source Entwicklungsumgebung für Java. Sie lässt sich durch \Fachbegriff{Plugins} leicht für viele Sprachen erweitern.\\
+Mit dem CDT-Plugin, dem AVR-Plugin und einer Bibliothek wie z.B. WinAVR für Windows ist Eclipse eine vollwertige Entwicklungsumgebung für Atmel Mikrocontroller. 
+Ergänzt wird diese durch die Programmiersoftware AVR-Dude.\\
+
+
+
+
 \section{Fuses}
 \label{sec:Fuses}
 Als Fuses werden Register bezeichnet mit denen sich, auf Hardwareebene, das Verhalten des Mikrocontrollers verändern lässt. \\
@@ -172,3 +280,18 @@ CKSEL2 & Select Clock source \\ \hline
 CKSEL1 & Select Clock source \\ \hline 
 CKSEL0 & Select Clock source \\ \hline 
 \end{longtable} 
+
+
+\section{Platinenlayout}
+%Für den Mikrocontroller und seine Peripherie entwickelte ich ein Platinenlayout in der Open Source Software KiCad. \\ 
+%Dazu wurden die Schaltungen wie auf dem STK500 in den Schaltplan übernommen und dort das Layout entwickelt. 
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[width=\textwidth]{Translator_white}
+%\caption{Platinenlayout}
+%\label{fig:Platine}
+%\end{figure}
+%\todo{Schaltplan und einbinden.}
+%\section{19''-Einschub}
+%Die Platine für den Mikrocontroller konstruierte ich als 19''-Einschub. Über den rückwärtigen Steckverbinder verband ich die Platine mit der Spannungsversorgung. Zusätzlich kommen hier auch die Signale der Endschalter an.
+%An der Vorderseite befestigte ich eine Blende. Auf der Blende befinden sich das LC-Display, fünf Taster, 5 LEDs und 2 serielle Schnittstellen. Alle Bauteile sind steckbar mit der Platine verbunden. \todo{Bild des Einschub}

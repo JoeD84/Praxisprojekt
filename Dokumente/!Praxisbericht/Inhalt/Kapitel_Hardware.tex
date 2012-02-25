@@ -60,15 +60,6 @@ Der Drehtisch(siehe Abbildung \ref{fig:Übersicht}) ist eine Eigenkonstruktion d
 \label{sec:Spannungsv}
 Die Schrittmotorkarten werden von einem PC-Netzteil gespeist. Die \Fachbegriff{Logikbausteine} werden mit 5V gespeist, zusätzlich werden die Schrittmotorkarten mit 12V für die Schrittmotoren gespeist. Die Kabel sind direkt an die \todo{Verbindungsleisten} gelötet.\\
 Dies verhindert das einfache Ausbauen der Spannungsversorgung und die einfache Erweiterung um neue Einschubkarten.
-%Um den Aufbau modular und erweiterbar zu machen, ersetzte ich die feste Lötverbindung durch eine Standard PC-Netzteil Verbindung(siehe Abbildung \ref{fig:Y-Kabel}). Dadurch kann das Netzteil nun einfach ausgebaut werden, bzw. das System leicht mit neuen Einschubkarten erweitert werden.\\
-%Die \Fachbegriff{Logikbausteine} der Schrittmotorkarten und die Mikrocontroller-Platine werden mit 5V gespeist. Zusätzlich werden die Schrittmotorkarten mit 12V für die Schrittmotoren gespeist.
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[width=100pt]{Y-Kabel.jpg}
-%\caption{Stromverbinder - Y-Kabel}
-%\label{fig:Y-Kabel}
-%\end{figure}
-%\todo{\url{http://www.kosatec.de/prod_images/kc/640x480/100539.jpg}}
 \subsection{Schrittmotoren}
 \label{sec:Schrittmotoren}
 \todo{Motoren beschreiben! Technische Daten!}\\
@@ -86,32 +77,6 @@ in Reihe geschaltet werden.
 \label{sec:Motorverkabelung}
 Die Schrittmotoren benötigen ein mindestens 4-adriges Kabel. Das Kabel für den Schrittmotor, der für die Rotation zuständig ist, war bereits gefertigt. Ein Kabel zwischen Schrittmotor und Schrittmotorkarte zur Höhenverstellung und für die Endschalter ist nicht vorhanden. 
 
-%Hier wurden 3 weitere Adern für die beiden Endschalter benötigt.\\ Abbildung \ref{fig:Motorverkabelung} zeigt eine schematische Darstellung des Kabel. Tabelle \ref{tab:Motorverkabelung} gibt die Belegung der Kabel wieder.\todo{Belegung überprüfen!}
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[width=\textwidth]{Kabel.pdf}
-%\caption{Motor- und Endschalterverkabelung}
-%\label{fig:Motorverkabelung}
-%\end{figure}
-%\begin{longtable}{|c|l|} 
-%\caption{Motor- und Endschalterverkabelung} \\
-%\hline
-%\label{tab:Motorverkabelung}
-%1 & Phase A \\ 
-%\hline 
-%2 & Phase B \\ 
-%\hline 
-%3 & Phase C \\ 
-%\hline 
-%4 & Phase D \\ 
-%\hline 
-%5 & Endschalter oben \\ 
-%\hline 
-%6 & Endschalter unten \\ 
-%\hline 
-%7 & Endschalter Masse \\ 
-%\hline 
-%\end{longtable} 
 
 \subsection{Endschalter}
 \label{sec:Endschalter}
@@ -119,25 +84,14 @@ Die Schrittmotorkarten unterstützen das Abschalten der Motoren wenn ein sogenan
 Im Aufbau sind bereits induktive Endschalter der Firma \textit{Pepperl+Fuchs} verbaut. 
 Am Drehtisch ist ein Metallstutzen von ungenügender Länge angebracht. Durch die ungenügende Länge des Metallstutzen würde der Endschalter nicht rechtzeitig ausgelöst werden und der Aufbau des Drehtisches würde beschädigt.
 
-%Normalerweise unterstützt die Schrittmotorkarte nur mechanische Endschalter. Durch geschickte Verdrahtung ließen sich die induktiven Endschalter verwenden. Hierzu musste über einen Spannungsteiler die Spannung herabgesetzt werden. Dadurch konnten die Endschalter direkt an die Optokoppler der Schrittmotorkarte angeschlossen werden. 
-%\begin{figure}[htb]
-%\centering
-%\includegraphics{Endschalter.pdf}
-%\caption{Motor- und Endschalterverkabelung}
-%\label{fig:Motorverkabelung}
-%\end{figure}\\
-% Zur Abhilfe lies ich einen längeren Metallstutzen von der Werkstatt anfertigen.\\
-%Wenn der Tisch sich in der Endposition befindet, soll dies auch auf dem Mikrocontroller angezeigt werden. Die Signale der Endschalter liegen auf der Rückseite der Schrittmotorkarte \todo{Zeichnung der Anschlüsse referenzieren.} am Verbindungsstecker an. Ich lötete eine Brücke zwischen den Verbindungssteckern der Schrittmotorkarte und des Mikrocontrollers.\\
-%Auf der Mikrocontrollerplatine sind diese Pins mit dem Mikrocontroller verbunden. Die beiden Pins werden im Mikrocontroller als \Fachbegriff{Interrupts} definiert. Die Interrupt-Service-Routine wird in Kapitel \ref{sec:Interrupts} beschrieben.
 
 \section{Mikrocontroller}
 \label{sec:Mikrocontroller}
 Ein \Fachbegriff{Mikrocontroller} vereint, in einem IC, die wichtigsten Komponenten um komplexe technische Probleme leicht lösen zu können. Dazu gehören z.B. CPU, Flash-Speicher, Arbeitsspeicher, Register, Ports, ADC, DAC und mehr. Einen schematischen Überblick über die Komponenten eines Mikrocontrollers bietet das Blockdiagramm in Abbildung \ref{fig:uC_Blockdiagramm}. \\
-%Um den Mikrocontroller nutzen zu können ist es notwendig den Mikrocontroller mit einem Programm zu beschreiben(\Fachbegriff{Flashen}). Dies lässt sich am einfachsten in einer Entwicklungsumgebung(siehe Kapitel \ref{sec:Entwicklungsumgebung}). Diese Programme können dann z.B. Signale an Pins des Mikrocontrollers auswerten und Signale über andere Pins wieder ausgeben und dadurch externe Geräte steuern. Eingehende Signale können binär ausgewertet,  oder mit einem ADC die Spannungshöhe bestimmt werden. Ausgehende Signale können auch binär oder mit einem DAC analog ausgegeben werden. Binäre Signale können zur Steuerung von LEDs oder Peripherie-Geräten genutzt werden. Auch LC-Displays und serielle Schnittstellen können so angesteuert werden. \todo{Umstellungsprobleme}
 Für unterschiedliche Aufgaben sind unterschiedliche Mikrocontroller geeignet.\\
-Es steht ein ATmega8515\cite{atmel:8515} im DIL-Gehäuse zur Verfügung. Dieser hat 8 Kbyte Flash, drei externe Interrupts, eine serielle Schnittstelle und kann mit bis zu 16 MHz betrieben werden. 
+Es steht ein ATmega8515 \cite{atmel:8515} im DIL-Gehäuse zur Verfügung. Dieser hat 8 Kbyte Flash, drei externe Interrupts, eine serielle Schnittstelle und kann mit bis zu 16 MHz betrieben werden. 
 Dieser ist geeignet um sich in die Programmierung mit \Fachbegriff{C} einzufinden und eine serielle Schnittstelle anzusteuern. \\
-Für dieses Projekt sind jedoch zwei serielle Schnittstellen nötig. Der ATmega 324A\cite{atmel:324A} würde diese Voraussetzungen erfüllen, ist jedoch nicht vorhanden. Er ist dem ATmega 8515 recht ähnlich, bietet jedoch die benötigten zwei seriellen Schnittstellen. Des Weiteren hat er 32 Kbyte Flash. 
+Für dieses Projekt sind jedoch zwei serielle Schnittstellen nötig. Der ATmega 324A \cite{atmel:324A} würde diese Voraussetzungen erfüllen, ist jedoch nicht vorhanden. Er ist dem ATmega 8515 recht ähnlich, bietet jedoch die benötigten zwei seriellen Schnittstellen. Des Weiteren hat er 32 Kbyte Flash. 
 %Diese wurden aufgrund des recht umfangreichen Programms und der diversen Bibliotheken notwendig.
 \begin{figure}[htb]
 \centering
@@ -172,24 +126,3 @@ Der AVRISP mkII lässt sich einfach an den Programmierport, eine 6-Polige Stiftl
 \label{sec:MAX232}
 Um die Serielle Schnittstelle am Mikrocontroller nutzen zu können müssen die Spannungspegel auf die des RS-232 Standard gewandelt werden. Dazu befindet sich auf dem STK500 der \Fachbegriff{Pegelwandler} MAX232. 
 Dieser wandelt die Spannungspegel des Mikrocontroller(typ. 0 V -- 5 V \Fachbegriff{TTL\footnote{Transistor-Transistor-Logik}}) auf die Spannungspegel des RS-232 Standards (typ. -12 V -- +12 V).
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[width=0.6\textwidth]{AVR-RS232}
-%\caption{Schema: MAX232}
-%\label{fig:MAX232}
-%\citep{uC:RS232}
-%\end{figure}
-
-%\section{Platinenlayout}
-%Für den Mikrocontroller und seine Peripherie entwickelte ich ein Platinenlayout in der Open Source Software KiCad. \\ 
-%Dazu wurden die Schaltungen wie auf dem STK500 in den Schaltplan übernommen und dort das Layout entwickelt. 
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[width=\textwidth]{Translator_white}
-%\caption{Platinenlayout}
-%\label{fig:Platine}
-%\end{figure}
-%\todo{Schaltplan und einbinden.}
-%\section{19''-Einschub}
-%Die Platine für den Mikrocontroller konstruierte ich als 19''-Einschub. Über den rückwärtigen Steckverbinder verband ich die Platine mit der Spannungsversorgung. Zusätzlich kommen hier auch die Signale der Endschalter an.
-%An der Vorderseite befestigte ich eine Blende. Auf der Blende befinden sich das LC-Display, fünf Taster, 5 LEDs und 2 serielle Schnittstellen. Alle Bauteile sind steckbar mit der Platine verbunden. \todo{Bild des Einschub}

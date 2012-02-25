@@ -259,3 +259,35 @@ hypertexnames=false,% zur korrekten Erstellung der Bookmarks
 %\addtocontents{toc}{\protect\appendixattoc}% Trennanweisung in die toc-Datei
 %}
 %\makeatother
+
+
+%
+%
+%    Hinweis Box!
+%
+%
+
+ %\usepackage{xltxtra}
+%\usepackage[biolinum,noamsmath,language]{xelibertine}
+%\setmonofont{Linux Biolinum O}
+\usepackage{calc}
+\usepackage{tabularx,colortbl,multirow,dcolumn} 
+\usepackage{xcolor}
+%\usepackage{showframe}
+
+\definecolor{raccolor1}{HTML}{A3D7DF}
+\definecolor{raccolor2}{HTML}{009A9D}
+\newenvironment{Tipp}{
+\begin{center}
+\begin{sffamily}
+\setlength\arrayrulewidth{0.75pt}\arrayrulecolor{white}
+\renewcommand{\arraystretch}{1.3}
+    \begin{tabular}[h!]{p{\textwidth}}
+    \rowcolor{raccolor2} \textbf{{\color{white}Hinweis}} \\
+    \hline
+    \rowcolor{raccolor1} }
+    {\\ 
+    \end{tabular}
+\end{sffamily}
+\end{center}
+}
