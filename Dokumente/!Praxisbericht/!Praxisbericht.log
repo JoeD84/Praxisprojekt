@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.12.22)  25 FEB 2012 11:08
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.12.22)  25 FEB 2012 16:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1073,7 +1073,7 @@ LaTeX Info: Redefining \selectfont on input line 54.
 \openout2 = `Deckblatt.aux'.
 
  (./Deckblatt.tex
-<Bilder/RAC_Logo.jpg, id=285, 250.9375pt x 124.465pt>
+<Bilder/RAC_Logo.jpg, id=289, 250.9375pt x 124.465pt>
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 <use Bilder/RAC_Logo.jpg>
@@ -1167,7 +1167,7 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 
 ]
-<Bilder/Blender/Schema_Arbeitsplatz.png, id=469, 462.528pt x 260.172pt>
+<Bilder/Blender/Schema_Arbeitsplatz.png, id=474, 462.528pt x 260.172pt>
 File: Bilder/Blender/Schema_Arbeitsplatz.png Graphic file (type png)
 
 <use Bilder/Blender/Schema_Arbeitsplatz.png>
@@ -1183,10 +1183,10 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
  (./Inhalt/Kapitel_Hardware.tex
 Kapitel 2.
-<Bilder/vi900-big.jpg, id=500, 43.8438pt x 72.27pt>
+<Bilder/vi900-big.jpg, id=505, 43.8438pt x 72.27pt>
 File: Bilder/vi900-big.jpg Graphic file (type jpg)
  <use Bilder/vi900-big.jpg>
-<Bilder/Laser-Triangulation.png, id=506, 180.675pt x 252.945pt>
+<Bilder/Laser-Triangulation.png, id=511, 180.675pt x 252.945pt>
 File: Bilder/Laser-Triangulation.png Graphic file (type png)
 
 <use Bilder/Laser-Triangulation.png>
@@ -1195,12 +1195,12 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 
 
- <./Bilder/vi900-big.jpg>] <Bilder/19Zoll_Rack.jpg, id=513, 803.0pt x 600.2425p
+ <./Bilder/vi900-big.jpg>] <Bilder/19Zoll_Rack.jpg, id=518, 803.0pt x 600.2425p
 t>
 File: Bilder/19Zoll_Rack.jpg Graphic file (type jpg)
 
 <use Bilder/19Zoll_Rack.jpg>
-<Bilder/Drehtisch.jpg, id=514, 479.7925pt x 642.4pt>
+<Bilder/Drehtisch.jpg, id=519, 479.7925pt x 642.4pt>
 File: Bilder/Drehtisch.jpg Graphic file (type jpg)
 
 <use Bilder/Drehtisch.jpg>
@@ -1209,13 +1209,13 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg> [7 <./Bilder/19Zoll_Rack.jpg> <./Bilder/Drehtisch.jp
 g>]
-<Bilder/uC_Block.jpg, id=537, 626.34pt x 456.20438pt>
+<Bilder/uC_Block.jpg, id=542, 626.34pt x 456.20438pt>
 File: Bilder/uC_Block.jpg Graphic file (type jpg)
 
 <use Bilder/uC_Block.jpg>
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg> [8]
-<Bilder/STK500_Schema.pdf, id=553, 391.3019pt x 245.79831pt>
+<Bilder/STK500_Schema.pdf, id=558, 391.3019pt x 245.79831pt>
 File: Bilder/STK500_Schema.pdf Graphic file (type pdf)
 
 <use Bilder/STK500_Schema.pdf>
@@ -1242,25 +1242,21 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  (./Inhalt/Kapitel_AufbauderArbeit.tex
 Kapitel 4.
 
-LaTeX Warning: Reference `sec:xxx' on page 13 undefined on input line 8.
-
-
-LaTeX Warning: Reference `sec:xxx' on page 13 undefined on input line 8.
-
-
-LaTeX Warning: Reference `...' on page 13 undefined on input line 10.
-
-
-LaTeX Warning: Reference `...' on page 13 undefined on input line 11.
-
-
-LaTeX Warning: Reference `cha:CodeComplete' on page 13 undefined on input line 
-24.
-
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 21--26
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4--6
  [] 
  []
+
+
+LaTeX Warning: Reference `sec:xxx' on page 13 undefined on input line 12.
+
+
+LaTeX Warning: Reference `sec:xxx' on page 13 undefined on input line 12.
+
+
+LaTeX Warning: Reference `...' on page 13 undefined on input line 14.
+
+
+LaTeX Warning: Reference `...' on page 13 undefined on input line 15.
 
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 <use Bilder/RAC_Logo.jpg> [13
@@ -1268,7 +1264,17 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 
 ]
-Overfull \hbox (15.60295pt too wide) in paragraph at lines 30--36
+
+LaTeX Warning: Reference `cha:CodeComplete' on page 14 undefined on input line 
+28.
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 25--30
+ [] 
+ []
+
+
+Overfull \hbox (15.60295pt too wide) in paragraph at lines 34--40
 \T1/cmr/m/n/10.95 Nach dem Ein-bin-den der Bi-blio-thek war es mög-lich Funk-ti
 o-nen wie z.B. get_key_press()
  []
@@ -1278,134 +1284,156 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) (./Code/taster.txt)
+) (./Code/taster.txt
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
-<use Bilder/RAC_Logo.jpg> [14] (./Code/led.c)
+<use Bilder/RAC_Logo.jpg> [14]) (./Code/led.c)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg>
 [15] (./Code/lcd_def.txt)
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [16] (./Code/rs232.txt)
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+Underfull \hbox (badness 10000) in paragraph at lines 72--78
 
-<use Bilder/RAC_Logo.jpg> [17] (./Code/menu.c
+ []
+
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+<use Bilder/RAC_Logo.jpg> [16] (./Code/rs232.txt
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg>
-[18]) (./Code/menu_main.txt) <Bilder/Y-Kabel.jpg, id=736, 642.4pt x 481.8pt>
+[17])
+Overfull \hbox (19.1607pt too wide) in paragraph at lines 85--86
+\T1/cmr/m/n/10.95 Mir ste-hen da-durch die es-sen-ti-el-len Funk-tio-nen \T1/cm
+r/m/it/10.95 uart_put_string() \T1/cmr/m/n/10.95 und \T1/cmr/m/it/10.95 uart_ge
+t_string()
+ []
+
+
+Overfull \hbox (6.2692pt too wide) in paragraph at lines 88--99
+\T1/cmr/m/n/10.95 Jede Schritt-mo-tor-kar-te ver-wen-de-te ein ei-ge-nes Pro-to
+-koll. Die Soft-wa-re Ra-pid-Form2004
+ []
+
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+<use Bilder/RAC_Logo.jpg> [18] (./Code/Protokolle_RF_Zeta.txt
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+
+<use Bilder/RAC_Logo.jpg> [19]) (./Code/menu.c
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg>
+[20]) (./Code/menu_main.txt
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [21])
+<Bilder/Y-Kabel.jpg, id=813, 642.4pt x 481.8pt>
 File: Bilder/Y-Kabel.jpg Graphic file (type jpg)
+ <use Bilder/Y-Kabel.jpg>
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 140.
 
-<use Bilder/Y-Kabel.jpg>
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 107.
 
- (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 
 LaTeX Font Warning: Font shape `T1/cmtt/bx/sc' undefined
-(Font)              using `T1/cmtt/bx/n' instead on input line 107.
+(Font)              using `T1/cmtt/bx/n' instead on input line 140.
 
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 107.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 140.
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [19]
-<Bilder/Kabel.pdf, id=771, 463.6879pt x 101.58101pt>
+<use Bilder/RAC_Logo.jpg> [22 <./Bilder/Y-Kabel.jpg>]
+<Bilder/Kabel.pdf, id=836, 463.6879pt x 101.58101pt>
 File: Bilder/Kabel.pdf Graphic file (type pdf)
  <use Bilder/Kabel.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [20 <./Bilder/Y-Kabel.jpg>]
-<Bilder/Endschalter.pdf, id=778, 193.3138pt x 148.46764pt>
+<Bilder/Endschalter.pdf, id=837, 193.3138pt x 148.46764pt>
 File: Bilder/Endschalter.pdf Graphic file (type pdf)
 
 <use Bilder/Endschalter.pdf>
-Overfull \hbox (2.36792pt too wide) in paragraph at lines 146--157
+Overfull \hbox (2.36792pt too wide) in paragraph at lines 179--190
 \T1/cmr/m/n/10.95 Normalerweise un-ter-stützt die Schritt-mo-tor-kar-te nur me-
 cha-ni-sche End-schal-ter. Durch
  []
 
-
-Overfull \vbox (120.76926pt too high) has occurred while \output is active []
-
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-
-<use Bilder/RAC_Logo.jpg> [21 <./Bilder/Kabel.pdf> <./Bilder/Endschalter.pdf>]
-<Bilder/AVR-RS232.png, id=822, 534.49687pt x 321.45094pt>
+<use Bilder/RAC_Logo.jpg> [23 <./Bilder/Kabel.pdf>]
+<Bilder/AVR-RS232.png, id=866, 534.49687pt x 321.45094pt>
 File: Bilder/AVR-RS232.png Graphic file (type png)
 
 <use Bilder/AVR-RS232.png>
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [24 <./Bilder/Endschalter.pdf>]
+Overfull \hbox (29.16174pt too wide) in paragraph at lines 209--220
+\T1/cmr/m/n/10.95 nem Mo-tor-pro-to-koll. Die Zah-len-wer-te wer-den da-bei mit
+-tels Makro-Definitionen(Codelisting
+ []
 
-Package natbib Warning: Citation `uC:RS232' on page 22 undefined on input line 
-164.
 
-
-LaTeX Warning: Reference `sec:XXX' on page 22 undefined on input line 170.
+Overfull \hbox (7.24316pt too wide) in paragraph at lines 209--220
+\T1/cmr/m/n/10.95 War die-ser Schritt er-folg-reich, wird in den fol-gen-den IF
+-Abfragen die rich-ti-ge Auswerte-
+ []
 
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [22 <./Bilder/AVR-RS232.png (PNG copy)>]
+<use Bilder/RAC_Logo.jpg> [25 <./Bilder/AVR-RS232.png (PNG copy)>]
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 ) (./Code/rs232_empfang.c
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [23])
+<use Bilder/RAC_Logo.jpg> [26])
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [24]
+ <use Bilder/RAC_Logo.jpg> [27]
 Kapitel 5.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 190.
+(hyperref)                than one, level fixed on input line 229.
 
-(./Code/Protokolle_RF_Zeta.txt)
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [25
 
-]
-(./Code/FindString.c) (./Code/switch_Motor.c)
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg>
-[26] (./Code/switch_Isel.txt
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [27]
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 231.
 
-<use Bilder/RAC_Logo.jpg> [28])
+(./Code/FindString.c) (./Code/switch_Motor.c
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [28
+
+])
+(./Code/switch_Isel.txt
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg> [29]
-(./Code/ISR_Endschalter.txt) (./Code/Watchdog.txt
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg>
-[30])
+
+<use Bilder/RAC_Logo.jpg> [30])
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg> [31]
+(./Code/ISR_Endschalter.txt)
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [32]
+(./Code/Watchdog.txt)
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+ <use Bilder/RAC_Logo.jpg> [33]
 Kapitel 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--243
+Underfull \hbox (badness 10000) in paragraph at lines 274--277
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--247
+Underfull \hbox (badness 10000) in paragraph at lines 278--281
 
  []
 
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [32
+<use Bilder/RAC_Logo.jpg> [34
 
 ]
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [33])
+ <use Bilder/RAC_Logo.jpg> [35])
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
-<use Bilder/RAC_Logo.jpg> [34]
+<use Bilder/RAC_Logo.jpg> [36]
 \openout2 = `Inhalt/Fazit.aux'.
 
  (./Inhalt/Fazit.tex
 Kapitel 7.
 )
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [35
+ <use Bilder/RAC_Logo.jpg> [37
 
 
 
@@ -1448,7 +1476,7 @@ te / 3d-[]messtechnik /
  []
 
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [36
+<use Bilder/RAC_Logo.jpg> [38
 
 
 ]
@@ -1463,9 +1491,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--96
  chain&oldid = 98475104$[][]\T1/cmr/m/n/10.95 .
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+\T1/cmr/m/sc/10.95 Wi-ki-pe-dia\T1/cmr/m/n/10.95 :  \T1/cmr/m/it/10.95 Kom-mu-n
+i-ka-ti-ons-pro-to-koll --- Wi-ki-pe-dia, Die freie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+\T1/cmr/m/it/10.95 En-zy-klo-pä-die\T1/cmr/m/n/10.95 .  [][]$\T1/cmtt/m/n/10.95
+ http : / / de . wikipedia . org / w / index . php ? title =
+ []
+
+
+Underfull \hbox (badness 2626) in paragraph at lines 105--105
+\T1/cmtt/m/n/10.95 Kommunikationsprotokoll&oldid = 99325271$[][]\T1/cmr/m/n/10.
+95 .  Version:2012. --  [On-li-ne;
+ []
+
 )
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [37]
+ <use Bilder/RAC_Logo.jpg> [39]
 \openout2 = `Inhalt/Erklaerung.aux'.
 
  (./Inhalt/Erklaerung.tex
@@ -1473,12 +1519,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
-<../../../../Unterschrift.png, id=1146, 577.357pt x 126.071pt>
+<../../../../Unterschrift.png, id=1181, 577.357pt x 126.071pt>
 File: ../../../../Unterschrift.png Graphic file (type png)
 
 <use ../../../../Unterschrift.png>)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [38
+ <use Bilder/RAC_Logo.jpg> [40
 
 
  <../../../../Unterschrift.png>] (./Inhalt/Anhang.tex
@@ -1655,9 +1701,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--14
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 <use Bilder/RAC_Logo.jpg> [10])
 No file !Praxisbericht.ind.
-
-Package natbib Warning: There were undefined citations.
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
 (./!Praxisbericht.aux (./Deckblatt.aux) (./Inhalt/Einleitung.aux)
@@ -1667,22 +1710,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
 (./Inhalt/Tabelle_ASCII_Befehle.aux) (./Inhalt/Tabelle_Protokolle_RF.aux)
 (./Inhalt/Tabelle_TD_VI900.aux) (./Inhalt/Werkzeuge.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
+Package rerunfilecheck Info: File `!Praxisbericht.out' has not changed.
+(rerunfilecheck)             Checksum: 2882B2416B74E993D7C21C447BA25AEA;4716.
 
-
-Package rerunfilecheck Warning: File `!Praxisbericht.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `!Praxisbericht.out':
-(rerunfilecheck)             Before: 4B2AD3907963E087B7274285803F50CF;4678
-(rerunfilecheck)             After:  6D064CCCE39E19F6607DCFACDABB59CD;4739.
 
 Package rerunfilecheck Warning: File `!Praxisbericht.brf' has changed.
 (rerunfilecheck)                Rerun to get bibliographical references right.
 
 Package rerunfilecheck Info: Checksums for `!Praxisbericht.brf':
-(rerunfilecheck)             Before: 0E87B57A2ADBAAEDD8CE03220892A182;646
-(rerunfilecheck)             After:  0A8F3B9278337CB3FC5D831A63CC2CB2;646.
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  12D3E0029327300B3273D3A848DADE0C;687.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1694,140 +1731,38 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13958 strings out of 495022
- 198436 string characters out of 3180791
- 690645 words of memory out of 3000000
- 16056 multiletter control sequences out of 15000+200000
+ 13996 strings out of 495022
+ 198944 string characters out of 3180791
+ 691425 words of memory out of 3000000
+ 16074 multiletter control sequences out of 15000+200000
  30141 words of font info for 69 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  50i,16n,51p,899b,2011s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{lstlisting.420} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{lstlisting.388} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{lstlisting.376} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{lstlisting.282} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{lstlisting.255} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{lstlisting.245} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{lstlisting.232} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{lstlisting.200} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.517} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{table.418} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{table.409} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{section.518} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.516} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.419} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.416} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.415} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.412} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.411} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.410} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.408} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.406} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.405} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.404} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.387} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.375} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.374} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.373} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.280} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.254} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.244} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.243} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.231} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.230} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.229} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/tex
-mf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/cm
--super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095
-.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf-dist/fo
-nts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/cm-super/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm
-0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/
-share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dis
-t/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/
-sfss1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></
-usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf
--dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/cm-super/sfsx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
-per/sfti0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pf
-b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/t
-exmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts
-/type1/public/cm-super/sfxc1095.pfb></usr/share/texmf-dist/fonts/type1/public/c
-m-super/sfxc2074.pfb>
-Output written on !Praxisbericht.pdf (56 pages, 1122743 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
+exmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx10
+95.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf-dist/
+fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
+rm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></us
+r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1
+/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
+r/sfss1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
+</usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/tex
+mf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/cm-super/sfsx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
+super/sfti0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.
+pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share
+/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fon
+ts/type1/public/cm-super/sfxc1095.pfb></usr/share/texmf-dist/fonts/type1/public
+/cm-super/sfxc2074.pfb>
+Output written on !Praxisbericht.pdf (58 pages, 1131336 bytes).
 PDF statistics:
- 1525 PDF objects out of 1728 (max. 8388607)
- 1403 compressed objects within 15 object streams
- 623 named destinations out of 1000 (max. 500000)
- 626 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1555 PDF objects out of 1728 (max. 8388607)
+ 1431 compressed objects within 15 object streams
+ 643 named destinations out of 1000 (max. 500000)
+ 634 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,11 @@
+
 \chapter{Arbeitsablauf}
 \label{cha:Arbeit}
-Die ersten Arbeitsschritte \ref{sec:Erste_Schritte}--\ref{sec:menu} in diesem Kapitel dienen dazu die Programmierung des Mikrocontrollers zu beschreiben. 
+\todo{Register beschreiben!}
+\begin{Tipp}
+Die Schritte in diesem Kapitel folgen dem chronologischen Aufbau des Projektes.
+\end{Tipp}
+Die ersten Arbeitsschritte \ref{sec:Erste_Schritte}--\ref{sec:menu} dienen dazu die Programmierung des Mikrocontrollers zu beschreiben. \\
 Um den Mikrocontroller nutzen zu können ist es dafür notwendig den Mikrocontroller mit einem Programm zu beschreiben(\Fachbegriff{Flashen}). 
 Diese Programmierung lässt sich am einfachsten in einer Entwicklungsumgebung(siehe Kapitel \ref{sec:Entwicklungsumgebung}) schreiben.\\
 Das Ziel des Programms besteht darin Spannungen an den Pins des Mikrocontrollers auszugeben oder auszuwerten und somit Komponenten wie LEDs, LC-Display, Taster und serielle Schnittstellen anzusteuern.
@@ -10,8 +15,9 @@ Diese wird so erweitert, dass sie den Vorgaben entspricht.\\
 In den Arbeitsschritten \ref{...} wird beschrieben wie die Software so erweitert wird, dass auch sie allen Vorgaben genügt.\\
 Im letzten Arbeitsschritt \ref{...} wird dann noch die Entwicklung des Platinenlayouts und des Einschubes erklärt.
 \todo{Umstellungsprobleme}
-
-\section{Erste Schritte}
+\section{Grundlagen}
+Protokolle
+\section{Bereitstellen grundlegender Funktionalitäten}
 \label{sec:Erste_Schritte}
 Im ersten Schritt ging es darum, den Drehtisch mithilfe eines Mikrocontrollers um 90° zu drehen.\\
 Der Mikrocontroller befindet sich auf dem STK 500(siehe Kapitel \ref{sec:STK500}). Dieses bietet grundlegenden Funktionalitäten wie Taster, LEDs, eine Programmierschnittstelle und eine serielle Schnittstelle.
@@ -65,34 +71,63 @@ Danach kann das Display mit den Befehlen aus Zeile 11--20 angesteuert werden.
 
 \subsection{Serielle Schnittstelle ansteuern}
 \label{sec:RS232}	
-\Fachbegriff{RS-232} ist der Name der am meisten verwendeten seriellen asynchronen Schnittstelle , im Fachjargon auch Übertragungsstandard genannt, um Daten zwischen zwei elektronischen Geräten hin und her zu schicken (im Fachjargon: Datenkommunikation).\cite{uC:rs232}\\
+\Fachbegriff{RS-232} ist der Name der am meisten verwendeten seriellen asynchronen Schnittstelle, im Fachjargon auch Übertragungsstandard genannt, um Daten zwischen zwei elektronischen Geräten hin und her zu schicken (im Fachjargon: Datenkommunikation). \cite{uC:RS232}\\
 Auf dem STK500 ist bereits eine serielle Schnittstelle vorbereitet. Um diese nutzen zu können musste ich den ersten UART des Mikrocontrollers(PortC 3:4) mit der Stiftleiste Rx/Tx auf dem STK500 verbinden.\\
 Eine weitere Schnittstelle baute ich auf einem Steckbrett auf. Diese verband ich mit dem zweiten UART des Mikrocontrollers(PortC 1:2).\\
-Um die Schnittstellen im Mikrocontroller nutzen zu können wird in Listing \ref{lst:RS232} - Zeile 2 die setbaud.h eingebunden. Zuvor muss noch die Baudrate gesetzt werden.
-In der Funktion  werden die entsprechenden Register im Mikrocontroller gesetzt um die Schnittstellen zu konfigurieren.\\
-Anschließend kann mit der Funktionen uart\_put\_string() eine Zeichenkette versendet werden. Dabei kann mit der Variable \emph{dir} die Schnittstelle ausgewählt werden über die gesendet werden soll.
+Um die Schnittstellen im Mikrocontroller nutzen zu können musste ich diese auch noch in der Software vorbereiten.\\
+Das Codelisting \ref{lst:RS232} teilt sich in 4 wesentliche Bereiche: \\
+\begin{itemize}
+\item Zeilen 1 -- 2: Setzen der Baudrate und einbinden der benötigten Bibliotheken.
+\item Zeilen 4 -- 16: Initialisieren der Schnittstellen durch setzen der richtigen Bits in den entsprechenden Registern.
+\item Zeilen 17 -- 32: Funktionen zum Senden von Daten
+\item Zeilen 34 -- 65: Funktionen zum Empfangen von Daten
+\end{itemize}
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:RS232,caption=RS-232]{Code/rs232.txt}
+Mir stehen dadurch die essentiellen Funktionen \emph{uart\_put\_string()} und \emph{uart\_get\_string()} zur Verfügung. Mit diesen kann der Mikrocontroller über die serielle Schnittstelle Strings senden und empfangen.
+
+\section{Protokolle}
+Nun ging es um die Kommunikation zwischen PC und Peripheriegeräten bzw. der Peripheriegeräte untereinander.
+Das Ziel das erreicht werden sollte, bestand darin, dass der PC mit den Peripheriegeräten und die Peripheriegeräte untereinander miteinander kommunizieren sollten.\\
+Die Befehlssätze die im Projekt verwendet werden um mit den Schrittmotorsteuerungen zu kommunizieren, werden als Protokolle bezeichnet. In diesen Protokollen ist geregelt, welche Befehle ausgesendet werden müssen und welche Antworten auf diese Befehle erwartet werden.\\
+Jede Schrittmotorkarte verwendete ein eigenes Protokoll.
+Die Software RapidForm2004 kannte mehrere Protokolle um Schrittmotorkarten anzusteuern. Die vorhandenen Schrittmotorkarten hatten jedoch ein eigenes Protokoll das nicht in RapidForm2004 vorhanden war.\\
+Nun soll auch der Mikrocontroller mit RapidForm2004 und einer der vorhandenen Schrittmotorkarten kommunizieren. 
+Dazu musste der Mikrocontroller zumindest eines der Protokolle aus RapidForm2004 kennen und das Protokoll der vorhanden Schrittmotorkarten.\\
+In der ersten Phase verwendete ich die Software \emph{Free Serial Port Monitor} um die Kommunikation zwischen dem PC und den Peripheriegeräten abzuhören. Dies hatte jedoch den Nachteil, das RapidForm2004 erst den nächsten Befehl sendete, wenn der erste mit der erwarteten Antwort quittiert wurde. Die Befehle die RapidForm erwartete, konnten zwar teilweise aus den Betriebsanleitungen der Schrittmotoren entnommen werden, dies war jedoch sehr mühsam.\\
+Nach einiger Zeit kam ich auf die Idee \Fachbegriff{Reverse-Engineering} zu verwenden und war dadurch in der Lage alle Protokolle aus der ausführbaren Datei von RapidForm2004 auszulesen.\\
+Das Codelisting \ref{lst:Proto_RF_Zeta} zeigt einen Auszug für das Protokoll eines Zeta Schrittmotors. Im Anhang befinden sich alle Protokolle.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:Proto_RF_Zeta,caption=Protokoll aus Rapidform: Zeta]{Code/Protokolle_RF_Zeta.txt}
+Somit standen mir die Protokolle aller Schrittmotorsteuerungen zur Verfügung. Diese speicherte ich in einer Textdatei ab um sie bei Bedarf im Mikrocontroller Programm zu verwenden. Das bedeutete, dass nun alle Befehlssätze und deren Antworten, die ich im Projekt verwenden würde, vorhanden waren.\\
+Im nächsten Schritt ging es darum, Befehle an die Schrittmotorkarte zu versenden. Da es nicht möglich ist, für jeden Befehl eine eigene Taste zu verwenden, entschied ich mich für eine Menübibliothek  basierend auf verketteten Pointer Structs von AVRFreaks \cite{AVRFreaks:Menu}.
+Ich passte die Menüstruktur meinen Bedürfnissen an. Dazu gehörte dem Menü die Befehle und die Funktion zum Versenden von Befehlen bekannt zu machen.
+
+
+
 
 \section{Kommunikation mit der Schrittmotorsteuerung}
-\subsection{Menü Bibliothek / Autonome Ansteuerung}
+\label{sec:Komm_SM}
+\subsection{Befehle senden}
 \label{sec:menu}
 Der Drehtisch soll leicht und komfortabel vom Mikrocontroller aus angesteuert werden.\\
 Dazu entschied ich mich für eine Menü basierte Steuerung auf dem LC-Display. Im Menü lässt sich mit den Tasten \emph{Hoch} \emph{Runter} \emph{Ok} und \emph{Zurück} navigieren.\\
-Ich entschied mich für eine Menü Bibliothek basierend auf verketteten Pointer Structs von AVRFreaks\cite{AVRFreaks:Menu}. Diese lud ich herunter und entpackte sie ins Arbeitsverzeichnis.\\
+Ich entschied mich für eine Menü Bibliothek Diese lud ich herunter und entpackte sie ins Arbeitsverzeichnis.\\
 Danach passte ich die Menüstruktur auf meine Bdürfnisse an und speicherte sie in die Datei \emph{mymenu.h}.\\
 Außerdem musste der Menü-Bibliothek die Befehle der LCD-Bibliothek in der Datei \emph{tinymenu.h} bekannt gemacht werden.\\
 Die Zeilen 1--6 des Codelisting \ref{lst:Menu} dienen zum Einbinden der benötigten Bibliotheken.\\
 Die Zeilen 8-16 zeigen eine vereinfachte Struktur meines  Hauptprogramms. Wird ein Taster gedrückt wird dies durch die get\_key\_press() Funktion, bekannt aus Kapitel \ref{sec:Taster}, erkannt und die entsprechende Menü Funktion aufgerufen.
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:Menu,caption=Menü]{Code/menu.c}
-Das folgende Listing zeigt die vollständige Menü Struktur
-\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
-\lstinputlisting[label=lst:Menu_Baum,caption=Menü Baum]{Code/menu_main.txt}
 Wird einer der Menüpunkte aufgerufen, wird die im Menüpunkt hinterlegte Funktion mit dem hinterlegten Parameter aufgerufen.
-Wird ein Befehl ausgewählt wird die Funktion \emph{menu\_puts()} aufgerufen und ihr der zu sendene Befehl übergenen. Diese sendet dann mit der aus Kapitel \ref{sec:RS232} bekannten Funktion \emph{uart\_puts(arg, dir)} einen Befehl an die Schrittmotorsteuerung.\\
+Wird beispielsweise der Befehl \emph{+90} ausgewählt, wird die hinterlegte Funktion \emph{menu\_puts()}(Codelisting \ref{lst:Menu} Zeile 18-28) mit dem hinterlegten Wert aufgerufen. Diese sendet dann mit der aus Kapitel \ref{sec:RS232} bekannten Funktion \emph{uart\_puts(arg, dir)} einen Befehl an die Schrittmotorsteuerung.\\
 Nun kann mit den Tasten Hoch, Runter, Ok und Zurück im Menü Navigiert werden. Ist ein Befehl ausgewählt kann dieser durch Drücken des Ok Knopfes ausgewählt werden. Wird z.B. der Menüpunkt \emph{+90} ausgewählt wird die Zeichenkette ''M 125000'' an die Drehtischsteuerung gesendet. Der Drehtisch dreht sich um 90° gegen den Uhrzeigersinn.
 \todo{Zukunft: Einstellbarer Winkel}
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:Menu_Baum,caption=Menü Baum]{Code/menu_main.txt}
+\subsection{Befehle Empfangen und auswerten}
+asdf
+
 
 \section{Verbesserungen an der vorhandenen Hardware}
 \subsection{Spannungsverorgung}
@@ -164,34 +199,35 @@ Da die Signale der Endschalter nun an der Schrittmotorkarte anlagen, konnte dies
 \citep{uC:RS232}
 \end{figure}
 
+
+
 \section{Kommunikation mit RapidForm2004}
-RapidForm2004 sendet die Befehle die für die Drehtischstuerung bestimmt sind an den Mikrocontroller.
-Diese sollen nun empfangen, ausgewertet und in verständlicher Form an die Drehtischsteuerung weiter gegeben werden. 
-Anschließend soll die Antwort der Drehtischsteuerung an RapidForm2004 zurück gesendet werden. Die Kommunikation mit der Schrittmotorsteuerung wurde schon in Kapitel \ref{sec:XXX} beschrieben. 
-\subsection{Protokolle}
-\subsection{Empfangen der Befehle}
+\label{sec:Komm_RF2004}
+RapidForm2004 sendet Befehle die für die Drehtischstuerung bestimmt sind an den Mikrocontroller. Diese sollen dort empfangen, ausgewertet und in verständlicher Form an die Drehtischsteuerung weiter gegeben werden. RapidForm2004 verwendet dabei verschiedene Protokolle für verschiedene Schrittmotorsteuerungen. Für jedes dieser Protokolle schrieb ich eine eigene Auswerte-Funktion. Im folgenden Kapitel wird nun das empfangen der Befehle beschrieben und eine erste Auswertung die den empfangenden Befehl dem Protokoll einer Schrittmotorsteuerung zu ordnet.\\
+Nach der Beschreibung der Auswerte Funktionen soll der Befehl an die Drehtischsteuerung gesendet werden und die Antwort der Drehtischsteuerung ausgewertet werden.
+Abschließend soll diese an RapidForm2004 zurück gesendet werden. \\
+Die Kommunikation mit der Schrittmotorsteuerung wurde bereits in Kapitel \ref{sec:Komm_SM} beschrieben. 
+\subsection{Befehle empfangen}
 Zuerst sollen nun empfangene Befehle gespeichert werden und an die zugehörige Auswerte-Funktion übergeben werden.\\
-In der Hauptschleife des Programms wird ständig das Eingangsregister der seriellen Schnittstelle abgefragt(siehe Codelisting \ref{lst:rs232empfang} Zeile 1--4. Dieses Vorgehen bezeichnet man als \Fachbegriff{Polling}.
-Sind Daten im Register vorhanden, wird \emph{LED2} eingeschaltet und die Funktion uart\_rx() mit dem Parameter D\_RapidForm aufgerufen. Dieser Parameter bestimmt die Schnittstelle, die ausgelesen werden soll und wie der empfangene \Fachbegriff{String} weiterverarbeitet wird. \\
+Dazu wird in der Hauptschleife des Programms ständig das Eingangsregister der ersten seriellen Schnittstelle abgefragt(siehe Codelisting \ref{lst:rs232empfang} Zeile 1--4. Dieses Vorgehen bezeichnet man als \Fachbegriff{Polling}.
+Sind Daten im Register vorhanden, wird \emph{LED2} eingeschaltet und die Funktion \emph{uart\_rx()} mit dem Parameter \emph{D\_RapidForm} aufgerufen. Dieser Parameter gibt an das der Befehl von der ersten seriellen Schnittstelle empfangen wurde. Dies bestimmt wie der empfangene \Fachbegriff{String} weiterverarbeitet wird. \\
 Die Funktion \emph{uart\_rx()} liest dann das Empfangsregister mit der aus Kapitel \ref{sec:RS232} bekannten Funktion \emph{uart\_get\_string()} aus und schreibt den empfangenen String in die Variable \emph{str\_rx}(Codelisting \ref{lst:rs232empfang}-Zeile7).\\
-Mittels einer IF-Abfrage wird das weitere Vorgehen entschieden. Da \emph{D\_RapidForm} als Parameter übergeben wird, wird der else-Teil der Abfrage ausgeführt.\\
-In diesem wird überprüft ob bereits ein Motor ausgewählt ist. Ist dies nicht der Fall wird der String str\_rx an die Funktion switch\_Motor() übergeben. Diese prüft den String gegen die Initialisierungsbefehle der einzelnen Motoren und gibt einen numerischen Wert zurück, welcher einem der Motoren entspricht. Die numerischen Werte wurden mittels Makro-Definitionen in lesbare Variablen gespeichert.\\
-Ist dieser Schritt erfolgreich wird in den folgenden IF-Abfragen die richtige Auswerte-Funktion aufgerufen. Wurde kein Protokoll erkannt, wird auf dem Display \emph{Unbekannter Motor!} ausgegeben.\\
-Somit ist es mir möglich Befehle beider Schnittstellen zu empfangen und an die richtigen Auswerte-Funktionen zu übergeben. Zusätzlich wird für RapidForm schon automatisch das richtige Protokoll eingestellt.\\
+In einer ersten IF-Abfrage wird entschieden, von welcher Schnittstelle der empfangene Befehl kam. Da \emph{D\_RapidForm} übergeben wurde, wird der else-Teil der Abfrage ausgeführt.\\
+Dieser entscheidet mit mehreren IF-Abfragen ob bereits ein Protokoll für einen bestimmten Motor ausgewählt wurde.
+Ist dies nicht der Fall wird der String \emph{str\_rx} an die Funktion \emph{switch\_Motor()}(Codelisting \ref{lst:switchMotor}) übergeben(Codelisting \ref{lst:rs232empfang} Zeile 17). Diese prüft den String gegen die Initialisierungsbefehle der einzelnen Protokolle. Die Initialisierungsbefehle sind die ersten Befehle die RapidForm2004 an eine Schrittmotorsteuerung sendet um zu prüfen ob diese vorhanden ist.\\
+\emph{switch\_Motor()} gibt einen numerischen Wert zurück. Jede Zahl entspricht dabei einem Motorprotokoll. Die Zahlenwerte werden dabei mittels Makro-Definitionen(Codelisting \ref{lst:rs232empfang} Zeile 1-6) mit lesbare Text-Variablen ersetzt. Dies erhöht die Lesbarkeit und das Verständnis ungemein.\\
+War dieser Schritt erfolgreich, wird in den folgenden IF-Abfragen die richtige Auswerte-Funktion aufgerufen. Konnte die Funktion \emph{switch\_Motor()} den empfangen Befehl nicht zuordnen, gibt sie \emph{M\_UNK} zurück und es wird auf dem Display \emph{Unbekannter Motor!} ausgegeben.\\
+Somit ist es mir möglich Befehle der Schnittstelle zu empfangen und an die richtigen Auswerte-Funktionen zu übergeben. Zusätzlich wird bereits automatisch das richtige Protokoll ausgewählt das RapidForm2004 verwendet hat.\\
 Eine Limitierung ist, das für eine erneute Protokollwahl der Mikrocontroller neu gestartet werden müsste.
 
 \lstset{language=Java, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:rs232empfang, caption=RS-232 Empfang]{Code/rs232_empfang.c}
 
-\subsection{Verarbeiten der Befehle}
+\subsection{Befehle verarbeiten}
 
 
 \chapter{Parkplatz}
-\subsection{Protokolle aus RapidForm}
-Die Protokolle die RapidForm nutzt um mit den Schrittmotoren zu kommunizieren können leicht mit der Software \todo{Name} abgehört werden. Dies hat jedoch den Nachteil das RapidForm erst den nächsten Befehl sendet wenn der erste richtig quittiert wurde. Die Befehle die RapidForm erwartet konnten aus den Betriebsanleitungen der Schrittmotoren entnommen werden. Dies war jedoch auch nicht immer leicht.\\
-Durch \Fachbegriff{Reverse-Engineering} konnten alle Befehle und der Antwort die darauf erwartet wird, aus der RapidForm2004 ausgelesen werden. Listing \ref{lst:Proto_RF_Zeta} zeigt einen Auszug für das Protokoll eines Zeta Schrittmotors. Im Anhang befinden sich alle Protokolle.
-\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
-\lstinputlisting[label=lst:Proto_RF_Zeta,caption=Protokoll aus Rapidform: Zeta]{Code/Protokolle_RF_Zeta.txt}
+
 \subsection{Übersetzungs Logik}
 Das Herzstück der Übersetzungs Software. Für jedes Protokoll muss eine eigene Auswerte Logik geschrieben werden. 
 \subsubsection{FindStringInArray Funktion}

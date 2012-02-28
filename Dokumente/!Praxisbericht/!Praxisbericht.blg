@@ -23,45 +23,45 @@ Database file #1: Bibliographie.bib
 Warning--empty edition in atmel:ug_STK500
 Warning--empty edition in atmel:ug_324A
 Warning--empty edition in rs:ug_stepper
-You've used 12 entries,
+You've used 13 entries,
             4728 wiz_defined-function locations,
-            957 strings with 8106 characters,
-and the built_in function-call counts, 5102 in all, are:
-= -- 526
-> -- 90
-< -- 47
-+ -- 70
-- -- 27
-* -- 343
-:= -- 856
-add.period$ -- 21
-call.type$ -- 12
-change.case$ -- 48
+            962 strings with 8302 characters,
+and the built_in function-call counts, 5524 in all, are:
+= -- 567
+> -- 100
+< -- 49
++ -- 75
+- -- 30
+* -- 372
+:= -- 930
+add.period$ -- 23
+call.type$ -- 13
+change.case$ -- 52
 chr.to.int$ -- 10
-cite$ -- 15
-duplicate$ -- 192
-empty$ -- 450
-format.name$ -- 54
-if$ -- 1108
-int.to.chr$ -- 3
+cite$ -- 16
+duplicate$ -- 208
+empty$ -- 487
+format.name$ -- 60
+if$ -- 1200
+int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 60
-newline$ -- 93
-num.names$ -- 36
-pop$ -- 69
+missing$ -- 66
+newline$ -- 100
+num.names$ -- 40
+pop$ -- 75
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 78
 quote$ -- 0
-skip$ -- 264
+skip$ -- 283
 stack$ -- 0
-substring$ -- 190
-swap$ -- 31
-text.length$ -- 9
+substring$ -- 203
+swap$ -- 34
+text.length$ -- 10
 text.prefix$ -- 2
 top$ -- 0
-type$ -- 168
+type$ -- 181
 warning$ -- 3
-while$ -- 36
+while$ -- 40
 width$ -- 0
-write$ -- 195
+write$ -- 211
 (There were 3 warnings)

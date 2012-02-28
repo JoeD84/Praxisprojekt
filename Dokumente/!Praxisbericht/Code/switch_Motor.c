@@ -1,3 +1,12 @@
+#define M_UNK		-2
+#define M_NOTI		-1
+#define M_ISEL 		 0
+#define M_CSG  		 1
+#define M_ZETA 		 2
+#define M_TERMINAL	 3
+
+int 	Initialized = M_NOTI;
+
 int 	switch_Motor		(char * str_rx) {
 	const char* pOptions[] = {
 			"@01", 		// 0 - Isel
