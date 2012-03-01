@@ -5,18 +5,15 @@
 \begin{Tipp}
 Die Schritte in diesem Kapitel folgen dem chronologischen Aufbau des Projektes.
 \end{Tipp}
-Die ersten Arbeitsschritte \ref{sec:Erste_Schritte}--\ref{sec:menu} dienen dazu die Programmierung des Mikrocontrollers zu beschreiben. \\
-Um den Mikrocontroller nutzen zu können ist es dafür notwendig den Mikrocontroller mit einem Programm zu beschreiben(\Fachbegriff{Flashen}). 
-Diese Programmierung lässt sich am einfachsten in einer Entwicklungsumgebung(siehe Kapitel \ref{sec:Entwicklungsumgebung}) schreiben.\\
-Das Ziel des Programms besteht darin Spannungen an den Pins des Mikrocontrollers auszugeben oder auszuwerten und somit Komponenten wie LEDs, LC-Display, Taster und serielle Schnittstellen anzusteuern.
-Zuerst werden die ersten Schritte mit dem Mikrocontroller beschrieben. Diese dienen dazu, benötigte Grundfunktionalitäten bereitzustellen.\\
-In den Arbeitsschritten \ref{sec:xxx}--\ref{sec:xxx} geht es um die Entwicklung und Verbesserung von Hardware.\\
+Das Kapitel \ref{sec:Erste_Schritte} dient dazu den Mikrocontroller so zu programmieren, dass die notwendigen Grundvoraussetzungen für dieses Projekt geschaffen werden. Diese Programmierung lässt sich am einfachsten in einer Entwicklungsumgebung(siehe Kapitel \ref{sec:Entwicklungsumgebung}) schreiben. Das Ziel des Programms besteht darin Spannungen an den Pins des Mikrocontrollers auszugeben oder auszuwerten und somit Komponenten wie LEDs, LC-Display, Taster und serielle Schnittstellen anzusteuern.\\
+Das Kapitel \ref{sec:Protokolle} beschreibt die Arbeitsschritte zur Erarbeitung der Protokolle die zur Kommunikation zwischen dem PC und den Peripheriegeräten notwendig sind.\\
+Im Kapitel \ref{sec:Komm_SM} geht es um die Kommunikation mit der Schrittmotorkarte.\\
+In den Arbeitsschritten in Kapitel \ref{sec:Verbesserung_Hardware} geht es um die Entwicklung und Verbesserung von Hardware. 
 Diese wird so erweitert, dass sie den Vorgaben entspricht.\\
-In den Arbeitsschritten \ref{...} wird beschrieben wie die Software so erweitert wird, dass auch sie allen Vorgaben genügt.\\
+In den Arbeitsschritten \ref{sec:Komm_RF2004} wird beschrieben wie die Software so erweitert wird, dass auch sie allen Vorgaben genügt.\\
+
 Im letzten Arbeitsschritt \ref{...} wird dann noch die Entwicklung des Platinenlayouts und des Einschubes erklärt.
 \todo{Umstellungsprobleme}
-\section{Grundlagen}
-Protokolle
 \section{Bereitstellen grundlegender Funktionalitäten}
 \label{sec:Erste_Schritte}
 Im ersten Schritt ging es darum, den Drehtisch mithilfe eines Mikrocontrollers um 90° zu drehen.\\
@@ -86,8 +83,9 @@ Das Codelisting \ref{lst:RS232} teilt sich in 4 wesentliche Bereiche: \\
 \lstinputlisting[label=lst:RS232,caption=RS-232]{Code/rs232.txt}
 Mir stehen dadurch die essentiellen Funktionen \emph{uart\_put\_string()} und \emph{uart\_get\_string()} zur Verfügung. Mit diesen kann der Mikrocontroller über die serielle Schnittstelle Strings senden und empfangen.
 
-\section{Protokolle}
-Nun ging es um die Kommunikation zwischen PC und Peripheriegeräten bzw. der Peripheriegeräte untereinander.
+
+\section{Protokolle als notwendige Vorrausetzung zur Kommunikation zwischen PC und Peripheriegeräten} 
+\label{sec:Protokolle}
 Das Ziel das erreicht werden sollte, bestand darin, dass der PC mit den Peripheriegeräten und die Peripheriegeräte untereinander miteinander kommunizieren sollten.\\
 Die Befehlssätze die im Projekt verwendet werden um mit den Schrittmotorsteuerungen zu kommunizieren, werden als Protokolle bezeichnet. In diesen Protokollen ist geregelt, welche Befehle ausgesendet werden müssen und welche Antworten auf diese Befehle erwartet werden.\\
 Jede Schrittmotorkarte verwendete ein eigenes Protokoll.
@@ -99,22 +97,16 @@ Nach einiger Zeit kam ich auf die Idee \Fachbegriff{Reverse-Engineering} zu verw
 Das Codelisting \ref{lst:Proto_RF_Zeta} zeigt einen Auszug für das Protokoll eines Zeta Schrittmotors. Im Anhang befinden sich alle Protokolle.
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:Proto_RF_Zeta,caption=Protokoll aus Rapidform: Zeta]{Code/Protokolle_RF_Zeta.txt}
-Somit standen mir die Protokolle aller Schrittmotorsteuerungen zur Verfügung. Diese speicherte ich in einer Textdatei ab um sie bei Bedarf im Mikrocontroller Programm zu verwenden. Das bedeutete, dass nun alle Befehlssätze und deren Antworten, die ich im Projekt verwenden würde, vorhanden waren.\\
-Im nächsten Schritt ging es darum, Befehle an die Schrittmotorkarte zu versenden. Da es nicht möglich ist, für jeden Befehl eine eigene Taste zu verwenden, entschied ich mich für eine Menübibliothek  basierend auf verketteten Pointer Structs von AVRFreaks \cite{AVRFreaks:Menu}.
-Ich passte die Menüstruktur meinen Bedürfnissen an. Dazu gehörte dem Menü die Befehle und die Funktion zum Versenden von Befehlen bekannt zu machen.
-
-
-
+Somit standen mir die Protokolle aller Schrittmotorsteuerungen zur Verfügung. Diese speicherte ich in einer Textdatei ab um sie bei Bedarf im Mikrocontroller Programm zu verwenden. Das bedeutete, dass nun alle Befehlssätze und deren Antworten, die ich im Projekt verwenden würde, vorhanden waren.
 
 \section{Kommunikation mit der Schrittmotorsteuerung}
 \label{sec:Komm_SM}
 \subsection{Befehle senden}
 \label{sec:menu}
-Der Drehtisch soll leicht und komfortabel vom Mikrocontroller aus angesteuert werden.\\
-Dazu entschied ich mich für eine Menü basierte Steuerung auf dem LC-Display. Im Menü lässt sich mit den Tasten \emph{Hoch} \emph{Runter} \emph{Ok} und \emph{Zurück} navigieren.\\
-Ich entschied mich für eine Menü Bibliothek Diese lud ich herunter und entpackte sie ins Arbeitsverzeichnis.\\
-Danach passte ich die Menüstruktur auf meine Bdürfnisse an und speicherte sie in die Datei \emph{mymenu.h}.\\
-Außerdem musste der Menü-Bibliothek die Befehle der LCD-Bibliothek in der Datei \emph{tinymenu.h} bekannt gemacht werden.\\
+Im nächsten Schritt ging es darum, Befehle an die Schrittmotorkarte zu versenden. Da es nicht möglich war, für jeden Befehl eine eigene Taste zu verwenden, 
+entschied ich mich für eine Menü basierte Steuerung auf dem LC-Display. Im Menü lies sich mit den Tasten \emph{Hoch} \emph{Runter} \emph{Ok} und \emph{Zurück} navigieren.\\
+Ich passte die Menüstruktur meinen Bedürfnissen an. Dazu gehörte, dem Menü die Befehle und die Funktion zum Versenden von Befehlen bekannt zu machen.
+Außerdem musste der Menü-Bibliothek die Befehle der LCD-Bibliothek bekannt gemacht werden.\\
 Die Zeilen 1--6 des Codelisting \ref{lst:Menu} dienen zum Einbinden der benötigten Bibliotheken.\\
 Die Zeilen 8-16 zeigen eine vereinfachte Struktur meines  Hauptprogramms. Wird ein Taster gedrückt wird dies durch die get\_key\_press() Funktion, bekannt aus Kapitel \ref{sec:Taster}, erkannt und die entsprechende Menü Funktion aufgerufen.
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
@@ -125,30 +117,56 @@ Nun kann mit den Tasten Hoch, Runter, Ok und Zurück im Menü Navigiert werden. 
 \todo{Zukunft: Einstellbarer Winkel}
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:Menu_Baum,caption=Menü Baum]{Code/menu_main.txt}
-\subsection{Befehle Empfangen und auswerten}
-asdf
+\subsection{Antworten Empfangen und speichern}
+\label{sec:Empfangen_Schrittmotor}
+In diesem Arbeitsschritt stellte ich die Funktionalität zum Empfangen von Antworten der Schrittmotorsteuerung auf Befehle des Mikrocontrollers her. Diese Antworten sollten gespeichert und an eine Auswerte-Funktion weiter gegeben werden.\\
+Dazu lies ich in der Hauptschleife des Programms ständig das Eingangsregister der ersten seriellen Schnittstelle abfragen(siehe Codelisting \ref{lst:rs232empfang} Zeile 10--13). Dieses Vorgehen bezeichnet man als \Fachbegriff{Polling}.
+Sind Daten im Register vorhanden, wird \emph{LED3} eingeschaltet und die Funktion \emph{uart\_rx(int dir)} mit dem Parameter \emph{D\_Stepper} aufgerufen. Dieser Parameter gibt an das der Befehl von der, für die Schrittmotorkarte zuständigen seriellen Schnittstelle empfangen wurde. Dadurch wird bestimmt, dass der empfangene \Fachbegriff{String} aus dem richtigen Datenempfangsregister ausgelesen wird und wie er weiterverarbeitet wird.\\
+Die Funktion \emph{uart\_rx(dir)} liest dann das Empfangsregister mit der aus Kapitel \ref{sec:RS232} bekannten Funktion \emph{uart\_get\_string(str\_rx, dir)} aus und schreibt den empfangenen String in die Variable \emph{str\_rx}(Codelisting \ref{lst:rs232empfangstepper}, Zeile 7).\\
+In einer if-Abfrage wird entschieden, von welcher Schnittstelle der empfangene Befehl kam. Da \emph{D\_Stepper} übergeben wurde, wird der if-Teil der Abfrage ausgeführt.\\
+In dieser wird der empfangene String an die Auswerte-Funktion  für die Schrittmotorkarte(Codelisting \ref{lst:rs232empfangstepper}, Zeile 15-45) übergeben.
+Durch diesen Teil des Programms ist es nun möglich Antworten der Schrittmotorkarte zu empfangen, zu speichern und an die  Auswerte-Funktion für die Schrittmotorkarte zu übergeben.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:rs232empfangstepper, caption=RS-232 Empfang]{Code/rs232_empfang_stepper.c}
 
+
+\subsection{Antworten auswerten}
+\label{sec:Auswerten}
+Die Funktion zum Auswerten empfangener Strings spielt eine zentrale Rolle im Projekt. Diese Funktion soll es ermöglichen, ankommende Strings im Mikrocontroller gegen den Antwortsatz aus den Protokollen zu prüfen und eine entsprechende Reaktion auszuführen.\\
+In der Auswerte-Funktion wird der übergebene String mittels der Funktion \emph{FindStringInArray(str\_rx, pOptions, 1)}(Codelisting \ref{lst:FindString}) gegen ein Array(Codelisting \ref{sec:switchStepper}, Zeile 2) mit vorhanden Befehlen geprüft. Ist der String in diesem Array vorhanden wird die Position des Strings im Array zurückgegeben. Ansonsten "99".\\
+In einer anschließenden switch/case-Struktur wird dann anhand der Position das Verhalten des Mikrocontrollers festgelegt.\\
+Wird beispielsweise der String \emph{\#} empfangen, wird Position \emph{0} zurück gegeben und auf dem Display wird \emph{Erfolgreich} ausgegeben.\\
+Durch diese Funktion kann nun auf Strings reagiert werden und eine entsprechende Reaktion seitens des Mikrocontrollers erfolgen.
+\lstset{language=Java, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:FindString, caption=FindStringInArray()]{Code/FindString.c}
+\lstset{language=Java, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:switchStepper, caption=switchStepper()]{Code/switch_stepper.c}
 
 \section{Verbesserungen an der vorhandenen Hardware}
-\subsection{Spannungsverorgung}
-Um den Aufbau modular und erweiterbar zu machen, ersetzte ich die feste Lötverbindung durch eine Standard PC-Netzteil Verbindung(siehe Abbildung \ref{fig:Y-Kabel}). Dadurch kann das Netzteil nun einfach ausgebaut werden, bzw. das System leicht mit neuen Einschubkarten erweitert werden.\\
-Die \Fachbegriff{Logikbausteine} der Schrittmotorkarten und die Mikrocontroller-Platine werden mit 5V gespeist. Zusätzlich werden die Schrittmotorkarten mit 12V für die Schrittmotoren gespeist.
+\label{sec:Verbesserung_Hardware}
+\subsection{Netzteil modular erweiterbar machen}
+\label{sec:Netzteil}
+Ziel dieses Arbeitsschrittes war es die festen Lötverbindungen zwischen dem PC-Netzteil und den einzelnen Karten im 19''-Rack durch Steckverbindungen zu ersetzen und dadurch leicht erweiterbar zu machen.\\
+Ich ersetzte die festen Lötverbindungen der Schrittmotorkarten  durch Standard PC-Netzteil Stecker. Nun versah ich auch den Einschub für die Mikrocontroller-Platine mit einem Standard PC-Netzteil Stecker. Die Mikrocontroller-Platine speiste ich mit 5V.
+Die \Fachbegriff{Logikbausteine} der Schrittmotorkarten wurden ebenfalls mit 5V gespeist. Die Schrittmotoren wurden über die Schrittmotorkarten mit 12V gespeist.\\
+Diese Stecker ließen sich nun einfach mit den Buchsen des Netzteils verbinden. Mittels eines Y-Kabels(siehe Abbildung \ref{fig:Y-Kabel}) konnte ich nun leicht weitere Buchsen hinzufügen.\\
+Dadurch konnte das Netzteil nun einfach ein- und ausgebaut werden, bzw. das System leicht mit neuen Einschubkarten erweitert werden.
 \begin{figure}[h]
 \centering
 \includegraphics[width=100pt]{Y-Kabel.jpg}
-\caption{Stromverbinder - Y-Kabel}
+\caption{Stromverbinder - Y-Kabel\cite{kosatec}}
 \label{fig:Y-Kabel}
 \end{figure}
 \todo{\url{http://www.kosatec.de/prod_images/kc/640x480/100539.jpg}}
 
 \subsection{Inbetriebnahme der zweiten Schrittmotorkarte}
-\todo{Schreiben!}
+Zu Anfang stand mir nur eine Schrittmotorkarte für die Rotation des Drehtisches zur Verfügung. Mit einem zweiten Schrittmotor konnte der Tisch in der Höhe verstellt werden. Hierzu fehlte aber noch eine zweite Schrittmotorkarte. Diese musste noch vorbereitet und mit der ersten verbunden werden.\\
+Dazu bereitete ich, wie in Kapitel \ref{sec:Netzteil} beschrieben, einen weiteren Einschubplatz für die Schrittmotorkarte vor. Ich versah die Karte mit einer Frontblende und brachte auf dieser eine Buchse für die Motorverkabelung und je eine Buchse und einen Stecker für die seriellen Schnittstellen an. Diese verlötete ich mit den entsprechenden Anschlüssen auf der Schrittmotorkarte. Ich schob die Karte in den Einschubplatz und verband diese als \Fachbegriff{Daisy-Chain} mit der ersten Schrittmotorkarte. Dadurch konnte die zweite Schrittmotorkarte über die erste angesteuert werden.\\
+Somit stand mir eine Baugleiche Schrittmotorkarte zur Verfügung. Nun  konnte ich den Schrittmotor für die Höhenverstellung ansteuern. 
 
-\subsection{Motorverkabelung}
+\subsection{Motor- und Endschalterverkabelung}
 Zwischen der zweiten Schrittmotorkarte und dem zugehörigen Schrittmotor, der für die Höhenverstellung zuständig ist, war noch kein Kabel vorhanden. Dieses musste noch gefertigt und um 3 Leitungen für die Endschalter erweitert werden.\\
-Dafür besorgte ich in der Werkstatt ein 7 adriges Kabel(Abbildung \ref{fig:Motorverkabelung}) und lies die passenden Endstecker bestellen.\\
-Die Belegung wählte ich gleich zum Kabel für den ersten Schrittmotor, erweiterte sie jedoch um die 3 Adern für die beiden Endschalter.\\
-Tabelle \ref{tab:Motorverkabelung} gibt die Belegung des Kabels wieder.\\
+Dafür besorgte ich in der Werkstatt ein 7 adriges Kabel(Abbildung \ref{fig:Motorverkabelung}) und lies die passenden Endstecker bestellen. Die Belegung wählte ich gleich zum Kabel für den ersten Schrittmotor, erweiterte sie jedoch um die 3 Adern für die beiden Endschalter. Tabelle \ref{tab:Motorverkabelung} gibt die Belegung des Kabels wieder.\\
 Somit stand ein Kabel zur Verfügung mit dem sowohl der Schrittmotor gesteuert, als auch der Status der Endschalter ausgelesen werden konnte.
 \todo{Belegung überprüfen!}
 \begin{figure}[h]
@@ -177,21 +195,25 @@ Somit stand ein Kabel zur Verfügung mit dem sowohl der Schrittmotor gesteuert, 
 \hline 
 \end{longtable} 
 
-\subsection{Endschalter}
-Normalerweise unterstützt die Schrittmotorkarte nur mechanische Endschalter. Durch geschickte Verdrahtung ließen sich die vorgegebenen induktiven Endschalter verwenden. Hierzu musste über einen Spannungsteiler die Spannung herabgesetzt werden. Dadurch konnten die Endschalter direkt an die Optokoppler der Schrittmotorkarte angeschlossen werden. 
+\subsection{Inbetriebnahme der induktiven Endschalter}
+Nun ging es darum, die vorgegeben induktiven Endschalter mit der Schrittmotorkarte und dem Mikrocontroller zu verbinden. Dadurch sollte gewährleistet sein, dass der Drehtisch nicht über den Arbeitsbereich hinaus bewegt wird. Zusätzlich sollte das Erreichen der Endpositionen auf dem LC-Display angezeigt werden.\\
+Da die Schrittmotorkarte nur mechanische Endschalter unterstützt, ließen sich die induktiven Endschalter nicht ohne weiteres nutzen. Um die induktiven Endschalter nutzen zu können, musste die Spannung über einen Spannungsteiler heruntergesetzt werden. Ich umging die standardmäßigen Eingänge für die mechanischen Endschalter und schloss die induktiven Endschalter direkt an den Optokoppler an, welcher für die mechanischen Endschalter zuständig war. Dadurch wurden die Signale der Endschalter für die Schrittmotorkarte nutzbar. 
 \begin{figure}[h]
 \centering
 \includegraphics{Endschalter.pdf}
 \caption{Motor- und Endschalterverkabelung}
 \label{fig:Motorverkabelung}
-\end{figure}\\
-Zur Abhilfe lies ich einen längeren Metallstutzen von der Werkstatt anfertigen.\\
-Wenn der Tisch sich in der Endposition befindet, soll dies auch auf dem Mikrocontroller angezeigt werden. Die Signale der Endschalter liegen auf der Rückseite der Schrittmotorkarte \todo{Zeichnung der Anschlüsse referenzieren.} am Verbindungsstecker an. Ich lötete eine Brücke zwischen den Verbindungssteckern der Schrittmotorkarte und des Mikrocontrollers.\\
-Auf der Mikrocontrollerplatine sind diese Pins mit dem Mikrocontroller verbunden. Die beiden Pins werden im Mikrocontroller als \Fachbegriff{Interrupts} definiert. Die Interrupt-Service-Routine wird in Kapitel \ref{sec:Interrupts} beschrieben.\\
-Da die Signale der Endschalter nun an der Schrittmotorkarte anlagen, konnte diese den Motor stoppen. Zusätzlich lagen die Signale am Mikrocontroller an. Dieser konnte dadurch auf dem Display die Meldung \emph{Endschalterposition erreicht!} ausgeben. Siehe dazu auch Kapitel \ref{sec:Endschalter}
+\end{figure}
+Ein weiteres Problem bestand darin, dass, wenn der Tisch sich bereits in der Endposition befand, die Endschalter noch nicht aktiviert wurden. Dies lag daran, dass der Metallstutzen, der die Endschalter auslösen sollte, sich nicht im Schaltbereich der induktiven Schalter befand. Zur Abhilfe lies ich einen längeren Metallstutzen von der Werkstatt anfertigen.\\
+Wenn der Tisch sich in der Endposition befindet, sollte dies auch auf dem LC-Display der Mikrocontroller-Platine angezeigt werden. Die Signale der Endschalter liegen auf der Rückseite der Schrittmotorkarte am Verbindungsstecker an. Ich lötete eine Brücke zwischen den Verbindungssteckern der Schrittmotorkarte und des Mikrocontrollers.\\
+Auf der Mikrocontroller-Platine sind diese beiden Pins mit je einem Pin des Mikrocontrollers verbunden. Diese beiden Pins werden im Mikrocontroller als \Fachbegriff{Interrupts} definiert. Die Interrupt-Service-Routine zum Anzeigen der Nachricht auf dem LC-Display wird in Kapitel \ref{sec:Endschalter_SW} beschrieben.\\
+Da die Signale der Endschalter nun an der Schrittmotorkarte anlagen, konnte diese den Motor stoppen wenn die Endschalterpositionen erreicht werden. Zusätzlich lagen die Signale am Mikrocontroller an. Dieser konnte dadurch auf dem Display die Meldung \emph{Endschalterposition erreicht!} ausgeben.
 
 \subsection{Zweite serielle Schnittstelle}
-\begin{figure}[htb]
+Das STK500 bot nur eine serielle Schnittstelle. Um zusätzlich zur Schrittmotorkarte auch mit dem Erfassungs-PC kommunizieren zu können benötigte ich eine zweite serielle Schnittstelle.\\
+Dafür baute ich auf einem Steckbrett eine zweite serielle Schnittstelle nach dem Schaltplan in Abbildung \ref{fig:MAX232} auf.\\
+Dadurch war es mir möglich über zwei seriellen Schnittstellen gleichzeitig zu kommunizieren.
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{AVR-RS232}
 \caption{Schema: MAX232}
@@ -199,64 +221,84 @@ Da die Signale der Endschalter nun an der Schrittmotorkarte anlagen, konnte dies
 \citep{uC:RS232}
 \end{figure}
 
-
-
 \section{Kommunikation mit RapidForm2004}
 \label{sec:Komm_RF2004}
-RapidForm2004 sendet Befehle die für die Drehtischstuerung bestimmt sind an den Mikrocontroller. Diese sollen dort empfangen, ausgewertet und in verständlicher Form an die Drehtischsteuerung weiter gegeben werden. RapidForm2004 verwendet dabei verschiedene Protokolle für verschiedene Schrittmotorsteuerungen. Für jedes dieser Protokolle schrieb ich eine eigene Auswerte-Funktion. Im folgenden Kapitel wird nun das empfangen der Befehle beschrieben und eine erste Auswertung die den empfangenden Befehl dem Protokoll einer Schrittmotorsteuerung zu ordnet.\\
-Nach der Beschreibung der Auswerte Funktionen soll der Befehl an die Drehtischsteuerung gesendet werden und die Antwort der Drehtischsteuerung ausgewertet werden.
-Abschließend soll diese an RapidForm2004 zurück gesendet werden. \\
-Die Kommunikation mit der Schrittmotorsteuerung wurde bereits in Kapitel \ref{sec:Komm_SM} beschrieben. 
+RapidForm2004 sendet Befehle die für die Drehtischstuerung bestimmt sind an den Mikrocontroller. Diese sollen dort empfangen, ausgewertet und in verständlicher Form an die Drehtischsteuerung weiter gegeben werden. RapidForm2004 verwendet dabei verschiedene Protokolle für verschiedene Schrittmotorsteuerungen. Für jedes dieser Protokolle schrieb ich eine eigene Auswerte-Funktion. Im folgenden Kapitel wird nun das Empfangen der Befehle beschrieben und eine erste Auswertung die den empfangenden Befehl dem Protokoll einer Schrittmotorsteuerung zu ordnet.\\
+Nach der Beschreibung der Auswerte-Funktionen sollte der Befehl an die Drehtischsteuerung gesendet und die Antwort der Drehtischsteuerung ausgewertet werden.
+Abschließend sollte eine entsprechende Antwort an RapidForm2004 zurück gesendet werden. \\
+Die Kommunikation mit RapidForm2004 ist sehr ähnlich zu der mit der Schrittmotorsteuerung. Diese wurde bereits in Kapitel \ref{sec:Komm_SM} ausführlich beschrieben. 
+
 \subsection{Befehle empfangen}
-Zuerst sollen nun empfangene Befehle gespeichert werden und an die zugehörige Auswerte-Funktion übergeben werden.\\
-Dazu wird in der Hauptschleife des Programms ständig das Eingangsregister der ersten seriellen Schnittstelle abgefragt(siehe Codelisting \ref{lst:rs232empfang} Zeile 1--4. Dieses Vorgehen bezeichnet man als \Fachbegriff{Polling}.
-Sind Daten im Register vorhanden, wird \emph{LED2} eingeschaltet und die Funktion \emph{uart\_rx()} mit dem Parameter \emph{D\_RapidForm} aufgerufen. Dieser Parameter gibt an das der Befehl von der ersten seriellen Schnittstelle empfangen wurde. Dies bestimmt wie der empfangene \Fachbegriff{String} weiterverarbeitet wird. \\
-Die Funktion \emph{uart\_rx()} liest dann das Empfangsregister mit der aus Kapitel \ref{sec:RS232} bekannten Funktion \emph{uart\_get\_string()} aus und schreibt den empfangenen String in die Variable \emph{str\_rx}(Codelisting \ref{lst:rs232empfang}-Zeile7).\\
-In einer ersten IF-Abfrage wird entschieden, von welcher Schnittstelle der empfangene Befehl kam. Da \emph{D\_RapidForm} übergeben wurde, wird der else-Teil der Abfrage ausgeführt.\\
-Dieser entscheidet mit mehreren IF-Abfragen ob bereits ein Protokoll für einen bestimmten Motor ausgewählt wurde.
-Ist dies nicht der Fall wird der String \emph{str\_rx} an die Funktion \emph{switch\_Motor()}(Codelisting \ref{lst:switchMotor}) übergeben(Codelisting \ref{lst:rs232empfang} Zeile 17). Diese prüft den String gegen die Initialisierungsbefehle der einzelnen Protokolle. Die Initialisierungsbefehle sind die ersten Befehle die RapidForm2004 an eine Schrittmotorsteuerung sendet um zu prüfen ob diese vorhanden ist.\\
-\emph{switch\_Motor()} gibt einen numerischen Wert zurück. Jede Zahl entspricht dabei einem Motorprotokoll. Die Zahlenwerte werden dabei mittels Makro-Definitionen(Codelisting \ref{lst:rs232empfang} Zeile 1-6) mit lesbare Text-Variablen ersetzt. Dies erhöht die Lesbarkeit und das Verständnis ungemein.\\
-War dieser Schritt erfolgreich, wird in den folgenden IF-Abfragen die richtige Auswerte-Funktion aufgerufen. Konnte die Funktion \emph{switch\_Motor()} den empfangen Befehl nicht zuordnen, gibt sie \emph{M\_UNK} zurück und es wird auf dem Display \emph{Unbekannter Motor!} ausgegeben.\\
-Somit ist es mir möglich Befehle der Schnittstelle zu empfangen und an die richtigen Auswerte-Funktionen zu übergeben. Zusätzlich wird bereits automatisch das richtige Protokoll ausgewählt das RapidForm2004 verwendet hat.\\
-Eine Limitierung ist, das für eine erneute Protokollwahl der Mikrocontroller neu gestartet werden müsste.
-
+Zuerst sollten nun Befehle von RapidForm2004 an den Mikrocontroller, gespeichert werden. Anschließend wird die automatische Protokollwahl beschrieben.\\
+Um anstehende Befehle zu empfangen verwendete ich, ähnlich wie in Kapitel \ref{sec:Empfangen_Schrittmotor}, eine Funktion die ständig das Eingangsregister der ersten seriellen Schnittstelle abfragte(siehe Codelisting \ref{lst:rs232empfangrf}) Auch hier wurde die Funktion \emph{uart\_rx(dir)} aufgerufen, jedoch mit dem Parameter \emph{D\_RapidForm}. Der empfangenen String wurde auch hier in die Variable \emph{str\_rx} gespeichert.\\
+Somit konnten nun auch Strings von RapidForm2004 empfangen werden.
 \lstset{language=Java, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
-\lstinputlisting[label=lst:rs232empfang, caption=RS-232 Empfang]{Code/rs232_empfang.c}
+\lstinputlisting[label=lst:rs232empfangrf, caption=RS-232 Empfang - RapidForm2004]{Code/rs232_empfang.c}
 
-\subsection{Befehle verarbeiten}
-
-
-\chapter{Parkplatz}
-
-\subsection{Übersetzungs Logik}
-Das Herzstück der Übersetzungs Software. Für jedes Protokoll muss eine eigene Auswerte Logik geschrieben werden. 
-\subsubsection{FindStringInArray Funktion}
-Zuerst wird eine Auswerte Logik geschrieben die ankommende Strings mit einem übergebenen Array vergleicht und die Arrayposition übergibt. Diese numerische Rückgabe kann dann mittels einer switch/case Struktur ausgewertet werden.
-\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
-\lstinputlisting[label=lst:FindString,caption=Funktion: FindStringInArray]{Code/FindString.c}
 \subsubsection{Automatische Protokollwahl}
-Nicht jede Software unterstützt alle Protokolle. Daher wurden alle Protokolle realisiert. Um automatisch fest zu stellen welches Protokoll verwendet wird, wird der erste ankommende Befehl gegen die Initialisierungssequenz der Protokolle geprüft und in einer globalen Variable gespeichert.
+\label{AutoProtokoll}
+Nun ging es darum, dass RapidForm2004 anhand eines ersten Befehls der empfangen wurde, festlegt mit welchem Protokoll fortan kommuniziert werden sollte. Dieses Protokoll sollte dann global festgelegt sein und alle weiteren Befehle sollten an die entsprechende Auswerte-Funktion übergeben werden.\\
+In der Funktion \emph{uart\_rx()}(Codelisting \ref{lst:uartrx}) wurde nun in der ersten \emph{if-Abfrage} entscheiden, von welcher Schnittstelle der empfangene Befehl kam. Diese verzweigte nun, da \emph{D\_RapidForm} übergeben wurde, in den else-Teil.\\
+In diesem überprüfte ich mit mehreren \emph{if-Abfragen}, ob bereits ein Protokoll für einen bestimmten Motor ausgewählt wurde.
+War dies nicht der Fall, wurde der String an die Funktion \emph{switch\_Motor()}(Codelisting \ref{lst:switchMotor}) übergeben. Diese prüfte mit der aus Kapitel \ref{sec:Auswerten} bekannten Funktion \emph{FindStringInArray()}, den angekommenen String gegen die Initialisierungsbefehle der einzelnen Protokolle. Die Initialisierungsbefehle sind die ersten Befehle die RapidForm2004 an eine Schrittmotorsteuerung sendet um zu prüfen ob diese vorhanden ist. In diesem ersten Schritt wurde der String nur zur Identifizierung des von RapidForm2004 angefragten Protokolls verwendet. Die Antworten auf diese Strings wird erst in den Nachfolgenden Kapiteln beschrieben.\\
+Die Funktion \emph{switch\_Motor()} gab einen numerischen Wert zurück. Jede Zahl entsprach dabei einem Motorprotokoll. Die Zahlenwerte wurden dabei mittels Makro-Definitionen(Codelisting \ref{lst:rs232empfang} Zeile 1-6) mit lesbare Text-Variablen ersetzt. Dies erhöhte die Lesbarkeit und das Verständnis ungemein.\\
+War dieser Schritt erfolgreich, wurden in den folgenden if-Abfragen die richtige Auswerte-Funktion aufgerufen. Konnten die Funktion \emph{switch\_Motor()} den empfangen Befehl nicht zuordnen, gab sie \emph{M\_UNK} zurück und es wurde auf dem Display \emph{Unbekannter Motor!} ausgegeben.\\
+Somit war es mir möglich Befehle von RapidForm2004 zu empfangen und an eine entsprechende Auswerte-Funktionen zu übergeben. Zusätzlich wurde die Programmierung dadurch wesentlich robuster, da unbekannte Befehle ignoriert wurden.\\
+Ein Nachteil dieses Vorgehens besteht darin, dass für eine erneute Protokollwahl der Mikrocontroller neu gestartet werden muss. Ein Beheben dieses Nachteils wäre nicht ohne weiteres möglich gewesen.
+
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:uartrx,caption=Funktion: uartrx()]{Code/uart_rx.c}
+
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:switchMotor,caption=Funktion: switchMotor]{Code/switch_Motor.c}
-\subsubsection{Zeta}
-Zeta
-\subsubsection{Isel}
-\todo{Splitten und jeden Abschnitt einzeln erklären!}
-Auch hier wird wieder ein Array mit möglichen ankommenden Befehlen definiert und der ankommende String gegen dieses Array geprüft. Kommt z.B. die Sequenz "@01" an, wird case 3 ausgewählt. Das Display zeigt Init an und sendet die Antwort die RapidForm erwartet zurück.\\
-Die Sequenz "@0R" steht für eine Statusabfrage. Es wird eine Statusabfrage an die Schrittmotorkarte gesendet und der Status an RapidForm zurück gemeldet.
+
+\section{Auswerte-Funktionen}
+
+Die Auswerte-Funktionen sind das Herzstück des Programms. Es ging darum für jedes Protokoll eine eigene Auswerte-Funktion zu schreiben. Diese sollten die von RapidForm2004 kommenden Strings verstehen können und in einen, für die vorhandene Schrittmotorkarte, verständlichen Befehl übersetzen können. Die Funktionen sollten weiterhin prüfen, ob der Befehl von der Schrittmotorkarte erkannt wurde und den Status der Schrittmotorkarte zurück an RapidForm2004 melden.\\
+
+
+Alle bisherigen Arbeitsschritte hatten zum Ziel die Kommunikation zwischen RapidForm2004 und der ersten Schrittmotorkarte zu ermöglichen. Jetzt fehlte nur noch das Programm zum Übersetzen der Protokolle. 
+RapidForm2004 war in der Lage eine Reihe von Befehlen an die Schrittmotorkarte zu senden. Die Schrittmotorkarte konnte die Befehle nicht erkennen, da sie nur ihr eigenes Protokoll verstehen konnte.
+
+
+
+
+Im folgenden Kapitel wird dieser Ablauf nun exemplarisch für das Protokolle eines Isel-Motors erklärt.
+
+
+Nummer			mWert		c			x			
+sz 776			767			363			229
+bad 777			22			9872		8
+WZ 775			555			6581		178
+1. 797			279			8718		11
+Kü	774			3			9480		1			
+
+
+
+\subsection{Auswerte-Funktion für Isel Motoren}
+Nun sollte die Kommunikation zwischen RapidForm2004 und der Schrittmotorkarte beschrieben werden.\\
+Wurde wie im Kapitel \ref{sec:AutoProtokoll} beschrieben das Protokoll für einen Isel Motor ausgewählt, wurde der empfangene String, gespeichert in \emph{str\_rx()}, an die Auswerte-Funktion \emph{switch\_Isel(str\_rx)} übergeben. Der Abaluf dieser Funktion ist ähnlich zu dem bei der Kommunikation mit der Schrittmotorkarte(Kapitel \ref{sec:Komm_SM}) und bei der Automatischen Protokollwahl(Kapitel \ref{sec:AutoProtokoll}. In der Funktion hinterlegte ich im Array \emph{pOptions} alle benötigten Befehle des Isel-Protokolls. Mit der aus Kapitel \ref{sec:Auswerten} bekannten Funktion \emph{FindStringInArray(str\_rx, pOptions)} wurde \emph{str\_rx} gegen diese Befehle geprüft. Wurde der Befehl im Array gefunden gab \emph{FindStringInArray} die Position des Strings im Array zurück. Mittels einer \emph{switch-case-Struktur} lies sich nun so für jeden Befehl eine entsprechende Reaktion ausführen. 
+
+\subsubsection{Initialisierung}
+
+\subsubsection{Statusabfrage}
+Kommt z.B. der String \emph{@0R} an, wird der Codeblock von \emph{case 4} ausgeführt. Dies ist der Codeblock für eine Statusabfrage. Auf dem LC-Display wird \emph{Satusabfrage:} ausgegeben. Danach wird der entsprechende Befehl für eine Statusabfrage an die Schrittmotorkarte gesendet. Nach einer kurzen Pause von 50ms, um die Verarbeitung auf der Schrittmotorkarte zu gewährleisten, wird mit einer if-Anweisung geprüft ob sich Daten im Schrittmotorkarten seitigen Empfangsregister befinden. Sprich, die Schrittmotorkarte reagiert hat. Ist dies der Fall, wird der Ablauf, bekannt aus Kapitel \ref{sec:Komm_SM}, durchlaufen. Während diesem Ablauf wird die entsprechende Antwort der Schrittmotorkarte auf dem LC-Display ausgegeben. In einer weiteren if-Anweisung wird überprüft ob der angekommene String erfolgreich war. Wenn ja, wird dies an RapidForm2004 gemeldet. Andernfalls zeigt das Display \emph{Fehlgeschlagen} an und sendet eine 1 an RapidForm2004.\\
+
+
+\subsubsection{Bewegung}
+
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:switch_Isel,caption=Übersetzungs Logik: Isel]{Code/switch_Isel.txt}
-\subsubsection{Weitere}
-Es sind weitere Protokolle ansatzweise implementiert. Diese werden im allgemeinen jedoch nicht benötigt da nur das Isel und das Zeta Protokoll ordentlich in der Clientsoftware umgesetzt sind.
 
 
 \subsection{Interrupts}
 \label{sec:Interrupts}
-Viele Mikrocontroller bieten die Möglichkeit zeitkritische Subroutinen auszuführen. Wenn einer der Interrupts ausgelöst wird, wird das Hauptprogramm unterbrochen und die Entsprechende Interrupt-Service-Routine ausgeführt. Nach Beendigung der ISR wird das Hauptprogramm an der vorherigen Stelle wieder aufgenommen.\\
+Viele Mikrocontroller bieten die Möglichkeit Eventbasierte Subroutinen auszuführen. Wenn einer der Interrupts ausgelöst wird, wird das Hauptprogramm unterbrochen und die Entsprechende Interrupt-Service-Routine, kurz ISR, ausgeführt. Nach Beendigung der ISR wird das Hauptprogramm an der  vorherigen Stelle wieder aufgenommen.\\
 ISR dürfen nur sehr wenige Befehle enthalten und müssen innerhalb weniger ClockCicles abgeschlossen sein. \\
 Interrupts können z.B. der Überlauf eines internen Timer sein, oder ein externens Signal an einem Pin.\\
 Im Projekt werden externe Interrupts, Timer-Überlauf Interrupts und der Watchdog Interrupt genutzt. 
 \subsubsection{Endschalter}
+\label{sec:Endschalter_SW}
 Die Endschalter sind über die Schrittmotorkarten und eine Brücke in der Steuerung mit der Mikrocontroller Platine Verbunden. Dort sind sie an 2 Interrupt Pins angeschlossen. \todo{Pins raus suchen!} Bei einem Flanken Wechsel an den Pins wird ein Interrupt ausgelöst. \\
 Das Code-Listing \ref{lst:ISR_ES} zeigt die ISR für die Endschalter.
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=2}

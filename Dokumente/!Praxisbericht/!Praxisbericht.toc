@@ -26,47 +26,46 @@
 \contentsline {section}{\numberline {3.2}Entwicklungsumgebung}{12}{section.51}
 \contentsline {section}{\numberline {3.3}Terminalprogramme}{12}{section.52}
 \contentsline {chapter}{\numberline {4}Arbeitsablauf}{13}{chapter.53}
-\contentsline {section}{\numberline {4.1}Erste Schritte}{13}{section.54}
+\contentsline {section}{\numberline {4.1}Bereitstellen grundlegender Funktionalit\IeC {\"a}ten}{13}{section.54}
 \contentsline {subsection}{\numberline {4.1.1}Taster nutzbar machen}{14}{subsection.55}
 \contentsline {subsection}{\numberline {4.1.2}LEDs ansteuern}{15}{subsection.72}
 \contentsline {subsection}{\numberline {4.1.3}LCD ansteuern}{15}{subsection.80}
 \contentsline {subsection}{\numberline {4.1.4}Serielle Schnittstelle ansteuern}{16}{subsection.102}
-\contentsline {section}{\numberline {4.2}Protokolle}{19}{section.169}
+\contentsline {section}{\numberline {4.2}Protokolle als notwendige Vorrausetzung zur Kommunikation zwischen PC und Peripherieger\IeC {\"a}ten}{19}{section.169}
 \contentsline {section}{\numberline {4.3}Kommunikation mit der Schrittmotorsteuerung}{20}{section.181}
 \contentsline {subsection}{\numberline {4.3.1}Befehle senden}{20}{subsection.182}
-\contentsline {subsection}{\numberline {4.3.2}Befehle Empfangen und auswerten}{22}{subsection.232}
-\contentsline {section}{\numberline {4.4}Verbesserungen an der vorhandenen Hardware}{22}{section.233}
-\contentsline {subsection}{\numberline {4.4.1}Spannungsverorgung}{22}{subsection.234}
-\contentsline {subsection}{\numberline {4.4.2}Inbetriebnahme der zweiten Schrittmotorkarte}{23}{subsection.236}
-\contentsline {subsection}{\numberline {4.4.3}Motorverkabelung}{23}{subsection.237}
-\contentsline {subsection}{\numberline {4.4.4}Endschalter}{24}{subsection.240}
-\contentsline {subsection}{\numberline {4.4.5}Zweite serielle Schnittstelle}{25}{subsection.242}
-\contentsline {section}{\numberline {4.5}Kommunikation mit RapidForm2004}{25}{section.244}
-\contentsline {subsection}{\numberline {4.5.1}Befehle empfangen}{25}{subsection.245}
-\contentsline {subsection}{\numberline {4.5.2}Befehle verarbeiten}{27}{subsection.284}
-\contentsline {chapter}{\numberline {5}Parkplatz}{28}{chapter.285}
-\contentsline {subsection}{\numberline {5.0.3}\IeC {\"U}bersetzungs Logik}{28}{subsection.286}
-\contentsline {subsubsection}{\numberline {5.0.3.1}FindStringInArray Funktion}{28}{subsubsection.287}
-\contentsline {subsubsection}{\numberline {5.0.3.2}Automatische Protokollwahl}{28}{subsubsection.297}
-\contentsline {subsubsection}{\numberline {5.0.3.3}Zeta}{29}{subsubsection.332}
-\contentsline {subsubsection}{\numberline {5.0.3.4}Isel}{29}{subsubsection.333}
-\contentsline {subsubsection}{\numberline {5.0.3.5}Weitere}{32}{subsubsection.425}
-\contentsline {subsection}{\numberline {5.0.4}Interrupts}{32}{subsection.426}
-\contentsline {subsubsection}{\numberline {5.0.4.1}Endschalter}{32}{subsubsection.427}
-\contentsline {subsubsection}{\numberline {5.0.4.2}Watchdog}{33}{subsubsection.439}
-\contentsline {chapter}{\numberline {6}Probleme und L\IeC {\"o}sungen}{34}{chapter.456}
-\contentsline {section}{\numberline {6.1}Entwicklungsumgebungen}{34}{section.457}
-\contentsline {subsection}{\numberline {6.1.1}AVR Studio 5}{34}{subsection.458}
-\contentsline {subsection}{\numberline {6.1.2}Eclipse}{34}{subsection.459}
-\contentsline {section}{\numberline {6.2}Fuses}{35}{section.460}
-\contentsline {section}{\numberline {6.3}Platinenlayout}{36}{section.462}
-\contentsline {chapter}{\numberline {7}Fazit und Zukunft}{37}{chapter.463}
-\contentsline {section}{\numberline {7.1}Fazit}{37}{section.464}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{40}{chapter*.466}
-\contentsline {chapter}{\numberline {A}Anhang}{i}{appendix.467}
-\contentsline {section}{\numberline {A.1}Schritt f\IeC {\"u}r Schritt Anleitung}{ii}{section.468}
-\contentsline {section}{\numberline {A.2}Protokoll der Schrittmotorkarte}{iii}{section.469}
-\contentsline {section}{\numberline {A.3}Protokolle aus RapidForm2004}{iv}{section.471}
-\contentsline {section}{\numberline {A.4}Technische Daten VI-910}{vii}{section.568}
-\contentsline {section}{\numberline {A.5}Verwendete Hardware}{ix}{section.570}
-\contentsline {section}{\numberline {A.6}Verwendete Software}{ix}{section.571}
+\contentsline {subsection}{\numberline {4.3.2}Antworten Empfangen und speichern}{22}{subsection.232}
+\contentsline {subsection}{\numberline {4.3.3}Antworten auswerten}{23}{subsection.247}
+\contentsline {section}{\numberline {4.4}Verbesserungen an der vorhandenen Hardware}{24}{section.291}
+\contentsline {subsection}{\numberline {4.4.1}Netzteil modular erweiterbar machen}{24}{subsection.292}
+\contentsline {subsection}{\numberline {4.4.2}Inbetriebnahme der zweiten Schrittmotorkarte}{25}{subsection.294}
+\contentsline {subsection}{\numberline {4.4.3}Motor- und Endschalterverkabelung}{25}{subsection.295}
+\contentsline {subsection}{\numberline {4.4.4}Inbetriebnahme der induktiven Endschalter}{26}{subsection.298}
+\contentsline {subsection}{\numberline {4.4.5}Zweite serielle Schnittstelle}{27}{subsection.300}
+\contentsline {section}{\numberline {4.5}Kommunikation mit RapidForm2004}{28}{section.302}
+\contentsline {subsection}{\numberline {4.5.1}Befehle empfangen}{28}{subsection.303}
+\contentsline {subsubsection}{\numberline {4.5.1.1}Automatische Protokollwahl}{29}{subsubsection.309}
+\contentsline {section}{\numberline {4.6}Auswerte-Funktionen}{31}{section.368}
+\contentsline {subsection}{\numberline {4.6.1}Auswerte-Funktion f\IeC {\"u}r Isel Motoren}{32}{subsection.369}
+\contentsline {subsubsection}{\numberline {4.6.1.1}Initialisierung}{32}{subsubsection.370}
+\contentsline {subsubsection}{\numberline {4.6.1.2}Statusabfrage}{32}{subsubsection.371}
+\contentsline {subsubsection}{\numberline {4.6.1.3}Bewegung}{33}{subsubsection.372}
+\contentsline {subsection}{\numberline {4.6.2}Interrupts}{35}{subsection.464}
+\contentsline {subsubsection}{\numberline {4.6.2.1}Endschalter}{35}{subsubsection.465}
+\contentsline {subsubsection}{\numberline {4.6.2.2}Watchdog}{36}{subsubsection.477}
+\contentsline {chapter}{\numberline {5}Probleme und L\IeC {\"o}sungen}{37}{chapter.494}
+\contentsline {section}{\numberline {5.1}Entwicklungsumgebungen}{37}{section.495}
+\contentsline {subsection}{\numberline {5.1.1}AVR Studio 5}{37}{subsection.496}
+\contentsline {subsection}{\numberline {5.1.2}Eclipse}{37}{subsection.497}
+\contentsline {section}{\numberline {5.2}Fuses}{38}{section.498}
+\contentsline {section}{\numberline {5.3}Platinenlayout}{39}{section.500}
+\contentsline {chapter}{\numberline {6}Fazit und Zukunft}{40}{chapter.501}
+\contentsline {section}{\numberline {6.1}Fazit}{40}{section.502}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{43}{chapter*.504}
+\contentsline {chapter}{\numberline {A}Anhang}{i}{appendix.505}
+\contentsline {section}{\numberline {A.1}Schritt f\IeC {\"u}r Schritt Anleitung}{ii}{section.506}
+\contentsline {section}{\numberline {A.2}Protokoll der Schrittmotorkarte}{vii}{section.508}
+\contentsline {section}{\numberline {A.3}Protokolle aus RapidForm2004}{viii}{section.510}
+\contentsline {section}{\numberline {A.4}Technische Daten VI-910}{xi}{section.607}
+\contentsline {section}{\numberline {A.5}Verwendete Hardware}{xiii}{section.609}
+\contentsline {section}{\numberline {A.6}Verwendete Software}{xiii}{section.610}

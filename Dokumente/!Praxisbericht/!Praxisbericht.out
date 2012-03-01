@@ -25,47 +25,46 @@
 \BOOKMARK [1][]{section.51}{Entwicklungsumgebung}{chapter.49}% 25
 \BOOKMARK [1][]{section.52}{Terminalprogramme}{chapter.49}% 26
 \BOOKMARK [0][]{chapter.53}{Arbeitsablauf}{}% 27
-\BOOKMARK [1][]{section.54}{Erste Schritte}{chapter.53}% 28
+\BOOKMARK [1][]{section.54}{Bereitstellen grundlegender Funktionalit\344ten}{chapter.53}% 28
 \BOOKMARK [2][]{subsection.55}{Taster nutzbar machen}{section.54}% 29
 \BOOKMARK [2][]{subsection.72}{LEDs ansteuern}{section.54}% 30
 \BOOKMARK [2][]{subsection.80}{LCD ansteuern}{section.54}% 31
 \BOOKMARK [2][]{subsection.102}{Serielle Schnittstelle ansteuern}{section.54}% 32
-\BOOKMARK [1][]{section.169}{Protokolle}{chapter.53}% 33
+\BOOKMARK [1][]{section.169}{Protokolle als notwendige Vorrausetzung zur Kommunikation zwischen PC und Peripherieger\344ten}{chapter.53}% 33
 \BOOKMARK [1][]{section.181}{Kommunikation mit der Schrittmotorsteuerung}{chapter.53}% 34
 \BOOKMARK [2][]{subsection.182}{Befehle senden}{section.181}% 35
-\BOOKMARK [2][]{subsection.232}{Befehle Empfangen und auswerten}{section.181}% 36
-\BOOKMARK [1][]{section.233}{Verbesserungen an der vorhandenen Hardware}{chapter.53}% 37
-\BOOKMARK [2][]{subsection.234}{Spannungsverorgung}{section.233}% 38
-\BOOKMARK [2][]{subsection.236}{Inbetriebnahme der zweiten Schrittmotorkarte}{section.233}% 39
-\BOOKMARK [2][]{subsection.237}{Motorverkabelung}{section.233}% 40
-\BOOKMARK [2][]{subsection.240}{Endschalter}{section.233}% 41
-\BOOKMARK [2][]{subsection.242}{Zweite serielle Schnittstelle}{section.233}% 42
-\BOOKMARK [1][]{section.244}{Kommunikation mit RapidForm2004}{chapter.53}% 43
-\BOOKMARK [2][]{subsection.245}{Befehle empfangen}{section.244}% 44
-\BOOKMARK [2][]{subsection.284}{Befehle verarbeiten}{section.244}% 45
-\BOOKMARK [0][]{chapter.285}{Parkplatz}{}% 46
-\BOOKMARK [1][]{subsection.286}{\334bersetzungs Logik}{chapter.285}% 47
-\BOOKMARK [2][]{subsubsection.287}{FindStringInArray Funktion}{subsection.286}% 48
-\BOOKMARK [3][]{subsubsection.297}{Automatische Protokollwahl}{subsubsection.287}% 49
-\BOOKMARK [3][]{subsubsection.332}{Zeta}{subsubsection.287}% 50
-\BOOKMARK [3][]{subsubsection.333}{Isel}{subsubsection.287}% 51
-\BOOKMARK [3][]{subsubsection.425}{Weitere}{subsubsection.287}% 52
-\BOOKMARK [2][]{subsection.426}{Interrupts}{subsection.286}% 53
-\BOOKMARK [3][]{subsubsection.427}{Endschalter}{subsection.426}% 54
-\BOOKMARK [3][]{subsubsection.439}{Watchdog}{subsection.426}% 55
-\BOOKMARK [0][]{chapter.456}{Probleme und L\366sungen}{}% 56
-\BOOKMARK [1][]{section.457}{Entwicklungsumgebungen}{chapter.456}% 57
-\BOOKMARK [2][]{subsection.458}{AVR Studio 5}{section.457}% 58
-\BOOKMARK [2][]{subsection.459}{Eclipse}{section.457}% 59
-\BOOKMARK [1][]{section.460}{Fuses}{chapter.456}% 60
-\BOOKMARK [1][]{section.462}{Platinenlayout}{chapter.456}% 61
-\BOOKMARK [0][]{chapter.463}{Fazit und Zukunft}{}% 62
-\BOOKMARK [1][]{section.464}{Fazit}{chapter.463}% 63
-\BOOKMARK [0][]{chapter*.466}{Eidesstattliche Erkl\344rung}{}% 64
-\BOOKMARK [0][]{appendix.467}{Anhang}{}% 65
-\BOOKMARK [1][]{section.468}{Schritt f\374r Schritt Anleitung}{appendix.467}% 66
-\BOOKMARK [1][]{section.469}{Protokoll der Schrittmotorkarte}{appendix.467}% 67
-\BOOKMARK [1][]{section.471}{Protokolle aus RapidForm2004}{appendix.467}% 68
-\BOOKMARK [1][]{section.568}{Technische Daten VI-910}{appendix.467}% 69
-\BOOKMARK [1][]{section.570}{Verwendete Hardware}{appendix.467}% 70
-\BOOKMARK [1][]{section.571}{Verwendete Software}{appendix.467}% 71
+\BOOKMARK [2][]{subsection.232}{Antworten Empfangen und speichern}{section.181}% 36
+\BOOKMARK [2][]{subsection.247}{Antworten auswerten}{section.181}% 37
+\BOOKMARK [1][]{section.291}{Verbesserungen an der vorhandenen Hardware}{chapter.53}% 38
+\BOOKMARK [2][]{subsection.292}{Netzteil modular erweiterbar machen}{section.291}% 39
+\BOOKMARK [2][]{subsection.294}{Inbetriebnahme der zweiten Schrittmotorkarte}{section.291}% 40
+\BOOKMARK [2][]{subsection.295}{Motor- und Endschalterverkabelung}{section.291}% 41
+\BOOKMARK [2][]{subsection.298}{Inbetriebnahme der induktiven Endschalter}{section.291}% 42
+\BOOKMARK [2][]{subsection.300}{Zweite serielle Schnittstelle}{section.291}% 43
+\BOOKMARK [1][]{section.302}{Kommunikation mit RapidForm2004}{chapter.53}% 44
+\BOOKMARK [2][]{subsection.303}{Befehle empfangen}{section.302}% 45
+\BOOKMARK [3][]{subsubsection.309}{Automatische Protokollwahl}{subsection.303}% 46
+\BOOKMARK [1][]{section.368}{Auswerte-Funktionen}{chapter.53}% 47
+\BOOKMARK [2][]{subsection.369}{Auswerte-Funktion f\374r Isel Motoren}{section.368}% 48
+\BOOKMARK [3][]{subsubsection.370}{Initialisierung}{subsection.369}% 49
+\BOOKMARK [3][]{subsubsection.371}{Statusabfrage}{subsection.369}% 50
+\BOOKMARK [3][]{subsubsection.372}{Bewegung}{subsection.369}% 51
+\BOOKMARK [2][]{subsection.464}{Interrupts}{section.368}% 52
+\BOOKMARK [3][]{subsubsection.465}{Endschalter}{subsection.464}% 53
+\BOOKMARK [3][]{subsubsection.477}{Watchdog}{subsection.464}% 54
+\BOOKMARK [0][]{chapter.494}{Probleme und L\366sungen}{}% 55
+\BOOKMARK [1][]{section.495}{Entwicklungsumgebungen}{chapter.494}% 56
+\BOOKMARK [2][]{subsection.496}{AVR Studio 5}{section.495}% 57
+\BOOKMARK [2][]{subsection.497}{Eclipse}{section.495}% 58
+\BOOKMARK [1][]{section.498}{Fuses}{chapter.494}% 59
+\BOOKMARK [1][]{section.500}{Platinenlayout}{chapter.494}% 60
+\BOOKMARK [0][]{chapter.501}{Fazit und Zukunft}{}% 61
+\BOOKMARK [1][]{section.502}{Fazit}{chapter.501}% 62
+\BOOKMARK [0][]{chapter*.504}{Eidesstattliche Erkl\344rung}{}% 63
+\BOOKMARK [0][]{appendix.505}{Anhang}{}% 64
+\BOOKMARK [1][]{section.506}{Schritt f\374r Schritt Anleitung}{appendix.505}% 65
+\BOOKMARK [1][]{section.508}{Protokoll der Schrittmotorkarte}{appendix.505}% 66
+\BOOKMARK [1][]{section.510}{Protokolle aus RapidForm2004}{appendix.505}% 67
+\BOOKMARK [1][]{section.607}{Technische Daten VI-910}{appendix.505}% 68
+\BOOKMARK [1][]{section.609}{Verwendete Hardware}{appendix.505}% 69
+\BOOKMARK [1][]{section.610}{Verwendete Software}{appendix.505}% 70
