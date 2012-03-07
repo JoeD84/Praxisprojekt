@@ -1,20 +1,21 @@
 \select@language {german}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Blick auf den Arbeitsaufbau}}{2}{figure.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces VI-900 - 3D-Scanner}}{5}{figure.27}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Prinzip: Laser-Triangulation}}{6}{figure.29}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ansteuerung im 19''-Rack}}{7}{figure.31}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Drehtisch}}{7}{figure.33}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Block Diagram: Mikrocontroller}}{9}{figure.42}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Schema: STK500}}{10}{figure.45}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Blick auf den Arbeitsaufbau}}{2}{figure.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces VI-900 - 3D-Scanner}}{3}{figure.12}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Prinzip: Laser-Triangulation}}{4}{figure.14}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Drehtisch}}{5}{figure.17}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ansteuerung im 19''-Rack}}{6}{figure.23}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Block Diagram: Mikrocontroller}}{7}{figure.27}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Schema: STK500}}{8}{figure.30}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Stromverbinder - Y-Kabel\cite {kosatec}}}{25}{figure.293}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Motor- und Endschalterverkabelung}}{26}{figure.296}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Motor- und Endschalterverkabelung}}{27}{figure.299}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Schema: MAX232}}{28}{figure.301}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stromverbinder - Y-Kabel\cite {kosatec}}}{22}{figure.279}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Motor- und Endschalterverkabelung}}{23}{figure.282}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Motor- und Endschalterverkabelung}}{24}{figure.285}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Schema: MAX232}}{25}{figure.287}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Platinenlayout}}{37}{figure.487}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

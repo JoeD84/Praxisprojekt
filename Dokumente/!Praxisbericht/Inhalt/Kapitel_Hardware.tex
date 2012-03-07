@@ -1,64 +1,67 @@
 \chapter{Vorstellung der vorhanden Hardware}
 \label{sec:Hardware}
-%Die Hardware besteht im wesentlichen aus den Komponenten in Abbildung \ref{fig:Übersicht}.
-%\todo{Nummern oder Farben in Bild!}
-%\begin{figure}[htb]
-%\centering
-%\includegraphics[width=\textwidth]{Blender/Schema_Arbeitsplatz.png}
-%\caption{Blick auf den Arbeitsaufbau}
-%\label{fig:Übersicht}
-%\end{figure}
-%\todo{ Komponenten auf Abbildung erwähnen!}
-
+Die Hardware besteht im wesentlichen aus den Komponenten in Abbildung \ref{fig:Übersicht}.
+\todo{Nummern oder Farben in Bild!}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{Blender/Schema_Arbeitsplatz.png}
+\caption{Blick auf den Arbeitsaufbau}
+\label{fig:Übersicht}
+\end{figure}
+\begin{table}[htb]
+\begin{tabular}{|c|l|}	\hline 
+\rule[-1ex]{0pt}{2.5ex} 1 & 
+\ref{sec:Computer} Computer\\ \hline 
+\rule[-1ex]{0pt}{2.5ex} 2 & 
+\ref{sec:VI-900} 3D-Laserscanner VI-900\\ \hline 
+\rule[-1ex]{0pt}{2.5ex} 3 & 
+\ref{sec:AnsteuerungDrehtisch} Ansteuerung für den Drehtisch\\ \hline 
+\rule[-1ex]{0pt}{2.5ex} 4 & 
+\ref{sec:Mikrocontroller} Mikrocontroller\\ \hline 
+\end{tabular} 
+\caption{Aufbau}
+\label{tbl:Aufbau}
+\end{table}
 \section{Computer}
 \label{sec:Computer}
-Zur Verfügung steht ein IBM kompatibler x86 Standard PC mit \\
-einer SCSI-Schnittstelle und zwei seriellen RS-232-Schnittstellen. Von denen jedoch nur eine genutzt wird.
-
+Zur Verfügung steht ein IBM kompatibler x86 Standard PC mit 
+einer \emph{SCSI-} und einer \emph{RS-232-Schnittstelle}. Auf diesem ist die Erfassungssoftware \emph{RapidForm2004} installiert. Die SCSI Schnittstelle wird zur Kommunikation mit dem 3D-Laserscanner und die RS-232-Schnittstelle zur Kommunikation mit einer Schrittmotorsteuerung genutzt.
 \section{3D-Laserscanner VI-900}
 \label{sec:VI-900}
+Der 3D-Laserscanner \emph{VI-900} der Firma Minolta besteht, wie auf Abbildung \ref{fig:VI900} zu sehen, aus einem \Fachbegriff{Lasertriangulator}(unten) und einer Kamera(oben). Das System lässt sich über eine \Fachbegriff{SCSI}-Schnittstelle ansprechen und konfigurieren. Zur mobilen Nutzung kann das Gerät auch auf der Rückseite bedient werden. Aufgenommene Daten können auf einer \Fachbegriff{CF-Karte} gespeichert werden. Im Projekt wurde jedoch lediglich die direkte Ansteuerung via SCSI genutzt.\\
+Der VI-900 digitalisiert Objekte durch ein Laser-Lichtschnittverfahren. Das vom Objekt reflektierte Licht wird von einer CCD-Flächenkamera erfasst, nach Ermittlung der Distanzwerte (Z-Achse) mittels Laser-Triangulation werden die 3D-Daten erstellt. Der Laserstrahl wird mit Hilfe eines hochpräzisen galvanischen Spiegels über das Objekt projiziert, pro Scan werden 640 x 480 Einzelpunkte erfasst.\cite{Minolta:Einleitung}\\
+Die Technischen Daten befinden sich im Anhang in Tabelle \ref{tab:TD_VI-910}
 \begin{figure}[htb]
 \centering
 \includegraphics[width=100pt]{vi900-big.jpg}
 \caption{VI-900 - 3D-Scanner}
 \label{fig:VI900}
 \end{figure}
-Der 3D-Laserscanner \Fachbegriff{VI-900} der Firma Minolta besteht, wie auf Abbildung \ref{fig:VI900} zu sehen, aus einem \Fachbegriff{Lasertriangulator}(unten) und einer Kamera(oben). Das System lässt sich über eine \Fachbegriff{SCSI}-Schnittstelle ansprechen und konfigurieren. Zur mobilen Nutzung kann das Gerät auch auf der Rückseite bedient werden. Aufgenommene Daten können auf einer \Fachbegriff{CF-Karte} gespeichert werden. Im Projekt wurde jedoch lediglich die direkte Ansteuerung via SCSI genutzt.
 \subsection{Lasertriangulator Prinzip}
 \label{sec:LaserTri}
-Ein Lasertriangulator, wie in Abbildung \ref{fig:LaserTriangulator} zu sehen, besteht aus einem Laser, einem Linsensystem und im einfachsten Fall aus einer Pixeldetektorzeile. Der Laser strahlt auf ein Objekt und je nach Entfernung des Objektes wird das Streulicht unter einem anderen Winkel zurückgestrahlt. Das Streulicht wird durch die Linsen auf den Pixeldetektor abgebildet. Über die Position des Laserspots auf dem Pixeldetektor lässt sich auf die Entfernung des Objektes schließen.\\
-Der VI-900 digitalisiert Objekte durch ein Laser-Lichtschnittverfahren. Das vom Objekt reflektierte Licht wird von einer CCD-Flächenkamera erfasst, nach Ermittlung der Distanzwerte (Z-Achse) mittels Laser-Triangulation werden die 3D-Daten erstellt. Der Laserstrahl wird mit Hilfe eines hochpräzisen galvanischen Spiegels über das Objekt projiziert, pro Scan werden 640 x 480 Einzelpunkte erfasst.\cite{Minolta:Einleitung}\\
-Die Technischen Daten befinden sich im Anhang in Tabelle \ref{tab:TD_VI-910}
-\begin{figure}[htb]
+Ein Lasertriangulator besteht, wie in Abbildung \ref{fig:LaserTriangulator} zu sehen, aus einem Laser, einem Linsensystem und im einfachsten Fall, aus einer Pixeldetektorzeile. Der Laser strahlt auf ein Objekt und je nach Entfernung des Objektes wird das Streulicht unter einem anderen Winkel zurückgestrahlt. Das Streulicht wird durch die Linsen auf den Pixeldetektor abgebildet. Über die Position des Laserspots auf dem Pixeldetektor lässt sich auf die Entfernung des Objektes schließen.
+\begin{figure}[h]
 \centering
 \includegraphics[width=100pt]{Laser-Triangulation.png}
 \caption{Prinzip: Laser-Triangulation}
 \label{fig:LaserTriangulator}
 \end{figure}
 
-\section{Ansteuerung für den Drehtisch}
+\section{Drehtisch und Ansteuerung}
 \label{sec:AnsteuerungDrehtisch}
-Die Ansteuerung für den Drehtisch ist in einem 19''-Rack verbaut(siehe Abbildung \ref{fig:19Zoll_Rack}).
-\begin{figure}[htb]
-\centering
-\includegraphics[width=100pt]{19Zoll_Rack}
-\caption{Ansteuerung im 19''-Rack}
-\label{fig:19Zoll_Rack}
-\end{figure}
-
 \subsection{Drehtisch}
 \label{sec:Drehtisch}
-\begin{figure}[htb]
+Der Tisch in dem der Drehtisch verbaut ist, ist eine Eigenkonstruktion der Werkstatt des RheinAhrCampus. Er besteht aus einer massiven Edelstahl-Arbeitsplatte, welche auf 4 Füßen ruht. Aus dieser ist ein Rechteck mit aufgesetztem Halbkreis ausgeschnitten. In diesem Ausschnitt befindet sich der Drehtisch(siehe Abbildung \ref{fig:Drehtisch}). Er ist auf einem Schienensystem gelagert. Mit dem Schienensystem kann der Drehtisch in der Vertikalen positioniert werden. Mit einem Schrittmotor lässt sich der Drehtisch zusätzlich in der Höhe verstellen. Die Höhenverstellung wird mit einem \Fachbegriff{Schneckengetriebe} realisiert. Ein weiterer Schrittmotor ist für die Drehung des Tisches zuständig. Der Tisch ist über ein \Fachbegriff{Harmonic-Drive-Getriebe} mit dem Schrittmotor verbunden. Das Übersetzungsverhältnis des Getriebes beträgt 1:50.  
+\begin{figure}[h]
 \centering
 \includegraphics[width=100pt]{Drehtisch}
 \caption{Drehtisch}
 \label{fig:Drehtisch}
 \end{figure}
-Der Drehtisch(siehe Abbildung \ref{fig:Übersicht}) ist eine Eigenkonstruktion der Werkstatt des RheinAhrCampus. Er besteht aus einer massiven Edelstahl Arbeitsplatte, welche auf 4 Füßen ruht. Aus dieser ist ein Rechteck mit aufgesetztem Halbkreis ausgeschnitten. In diesem Ausschnitt befindet sich der Drehtisch. Er ist auf einem Schienensystem gelagert. Mit dem Schienensystem kann der Drehtisch in der Vertikalen positioniert werden. Mit einem Schrittmotor lässt sich der Drehtisch zusätzlich in der Höhe verstellen. Die Höhenverstellung wird mit einem \Fachbegriff{Schneckengetriebe} realisiert. Ein weiterer Schrittmotor ist für die Drehung des Tisches zuständig. Der Tisch ist über ein \Fachbegriff{Harmonic-Drive-Getriebe} mit dem Schrittmotor verbunden. Das Übersetzungsverhältnis beträgt 1:50.  
  
 \subsection{Spannungsversorgung}
 \label{sec:Spannungsv}
-Die Schrittmotorkarten werden von einem PC-Netzteil gespeist. Die \Fachbegriff{Logikbausteine} werden mit 5V gespeist, zusätzlich werden die Schrittmotorkarten mit 12V für die Schrittmotoren gespeist. Die Kabel sind direkt an die \todo{Verbindungsleisten} gelötet.\\
+Die Schrittmotorkarten werden von einem PC-Netzteil gespeist. Die \Fachbegriff{Logikbausteine} werden mit 5V gespeist, zusätzlich werden die Schrittmotorkarten mit 12V für die Schrittmotoren gespeist. Die Kabel sind direkt an die Verbindungsleisten gelötet.\\
 Dies verhindert das einfache Ausbauen der Spannungsversorgung und die einfache Erweiterung um neue Einschubkarten.
 \subsection{Schrittmotoren}
 \label{sec:Schrittmotoren}
@@ -67,12 +70,18 @@ Dies verhindert das einfache Ausbauen der Spannungsversorgung und die einfache E
 
 \subsection{Schrittmotorkarten}
 \label{sec:Schrittmotorkarten}
-Die Ansteuerung für die Schrittmotoren sind als 19''-Einschübe realisiert. Für jeden Schrittmotor wird ein Einschub benötigt.
+Die Ansteuerung für die Schrittmotoren sind als 19''-Einschübe realisiert, siehe Abbildung \ref{fig:19Zoll_Rack}. Für jeden Schrittmotor wird ein Einschub benötigt.
 Die Einschübe sind Produkte der Firma R+S. Mittels \Fachbegriff{RS-232 Schnittstelle} lassen sich die Karten konfigurieren und ansteuern. Die Konfiguration und Ansteuerung erfolgt über einen vorgegeben 
 \Fachbegriff{ASCII}\footnote{Der American Standard Code for Information Interchange (ASCII, alternativ US-ASCII, oft [æski] ausgesprochen) ist eine 7-Bit-Zeichenkodierung\cite{wiki:ASCII}}
  Befehlssatz. Der Befehlssatz befindet sich im Kapitel \ref{sec:A_ASCII_Befehle}. Es können zwei oder mehr Karten als 
 \Fachbegriff{Daisy-Chain}\footnote{Als Daisy Chain (englisch, wörtlich „Gänseblümchenkette“) bezeichnet man eine Anzahl von Hardware-Komponenten, welche in Serie miteinander verbunden sind (meist in sogenannten Bussystemen in der Automatisierungstechnik).\cite{wiki:Daisy} } 
 in Reihe geschaltet werden.
+\begin{figure}[h]
+\centering
+\includegraphics[width=200pt]{19Zoll_Rack}
+\caption{Ansteuerung im 19''-Rack}
+\label{fig:19Zoll_Rack}
+\end{figure}
 \subsection{Motorverkabelung}
 \label{sec:Motorverkabelung}
 Die Schrittmotoren benötigen ein mindestens 4-adriges Kabel. Das Kabel für den Schrittmotor, der für die Rotation zuständig ist, war bereits gefertigt. Ein Kabel zwischen Schrittmotor und Schrittmotorkarte zur Höhenverstellung und für die Endschalter ist nicht vorhanden. 
@@ -81,8 +90,7 @@ Die Schrittmotoren benötigen ein mindestens 4-adriges Kabel. Das Kabel für den
 \subsection{Endschalter}
 \label{sec:Endschalter}
 Die Schrittmotorkarten unterstützen das Abschalten der Motoren wenn ein sogenannter Endschalter ausgelöst wird. Dies sind im allgemeinen mechanische Schalter die ausgelöst werden wenn der Tisch sich dem Ende des Arbeitsbereiches nähert. Dies verhindert eine Beschädigung des Aufbaus.\\
-Im Aufbau sind bereits induktive Endschalter der Firma \textit{Pepperl+Fuchs} verbaut. 
-Am Drehtisch ist ein Metallstutzen von ungenügender Länge angebracht. Durch die ungenügende Länge des Metallstutzen würde der Endschalter nicht rechtzeitig ausgelöst werden und der Aufbau des Drehtisches würde beschädigt.
+Im Aufbau sind bereits induktive Endschalter der Firma \textit{Pepperl+Fuchs} verbaut. Diese werden durch einen Metallstutzen ausgelöst. Dieser ist jedoch schlecht positioniert oder ungenügend lang. Würde der Drehtisch über seine Grenzen hinaus in der Höhe verstellt werden, würden die Endschalter nicht rechtzeitig ausgelöst werden und der Aufbau würde beschädigt werden.
 
 
 \section{Mikrocontroller}
@@ -91,7 +99,8 @@ Ein \Fachbegriff{Mikrocontroller} vereint, in einem IC, die wichtigsten Komponen
 Für unterschiedliche Aufgaben sind unterschiedliche Mikrocontroller geeignet.\\
 Es steht ein ATmega8515 \cite{atmel:8515} im DIL-Gehäuse zur Verfügung. Dieser hat 8 Kbyte Flash, drei externe Interrupts, eine serielle Schnittstelle und kann mit bis zu 16 MHz betrieben werden. 
 Dieser ist geeignet um sich in die Programmierung mit \Fachbegriff{C} einzufinden und eine serielle Schnittstelle anzusteuern. \\
-Für dieses Projekt sind jedoch zwei serielle Schnittstellen nötig. Der ATmega 324A \cite{atmel:324A} würde diese Voraussetzungen erfüllen, ist jedoch nicht vorhanden. Er ist dem ATmega 8515 recht ähnlich, bietet jedoch die benötigten zwei seriellen Schnittstellen. Des Weiteren hat er 32 Kbyte Flash. 
+\todo{Ports, Register erklären}
+%Für dieses Projekt sind jedoch zwei serielle Schnittstellen nötig. Der ATmega 324A \cite{atmel:324A} würde diese Voraussetzungen erfüllen, ist jedoch nicht vorhanden. Er ist dem ATmega 8515 recht ähnlich, bietet jedoch die benötigten zwei seriellen Schnittstellen. Des Weiteren hat er 32 Kbyte Flash. 
 %Diese wurden aufgrund des recht umfangreichen Programms und der diversen Bibliotheken notwendig.
 \begin{figure}[htb]
 \centering
@@ -103,10 +112,10 @@ Für dieses Projekt sind jedoch zwei serielle Schnittstellen nötig. Der ATmega 
 
 \subsection{Entwicklerboard STK500}
 \label{sec:STK500}
-Um den Mikrocontroller zu programmieren und die Programmierung zu überprüfen, soll das \Fachbegriff{Entwicklerboard STK500}(siehe Abbildung \ref{fig:STK500}) der Firma Atmel verwendet werden. Das Board enthält mehrere Mikrocontroller-Steckplätze, 2 serielle Schnittstellen, 8 Taster, 8 LEDs, 2 Erweiterungsports, eine Programmierschnittstelle \Fachbegriff{ISP}\footnote{In System Programmer} und mehrere Jumper zum Konfigurieren des Boards.\\
+Um den Mikrocontroller zu programmieren und die Programmierung zu überprüfen, wird das \Fachbegriff{Entwicklerboard STK500}(siehe Abbildung \ref{fig:STK500}) der Firma Atmel verwendet. Das Board enthält mehrere Mikrocontroller-Steckplätze, 2 serielle Schnittstellen, 8 Taster, 8 LEDs, 2 Erweiterungsports, eine \Fachbegriff{ISP}\footnote{In System Programmer} Programmierschnittstelle und mehrere Jumper zum Konfigurieren des Boards.\\
 Von den beiden seriellen Schnittstellen kann die eine zur Programmierung des Mikrocontrollers verwendet werden. Die andere kann zur Kommunikation mit dem Mikrocontroller genutzt werden.\\
 Auf dem Board stehen fünf 10 polige Stiftleisten 
-zur Verfügung. Diese sind direkt mit den Ports des Mikrocontroller verbunden und können über Flachbandkabel mit \todo{Peripherie} wie z.B. Taster, LED, LC-Displays oder seriellen Schnittstellen verbunden werden.
+zur Verfügung. Diese sind direkt mit den Ein- und Ausgabe Pins, den sogenannten \emph{Ports}, des Mikrocontroller verbunden und können über Flachbandkabel mit \todo{Peripherie} wie z.B. Taster, LED, LC-Displays oder seriellen Schnittstellen verbunden werden.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=\textwidth]{STK500_Schema.pdf}
@@ -117,7 +126,7 @@ zur Verfügung. Diese sind direkt mit den Ports des Mikrocontroller verbunden un
 
 \subsection{AVRISP mkII}
 \label{sec:AVRISP}
-Das AVRISP mkII ist ein USB-basiertes \Fachbegriff{In-System-Programmiersystem}. Dieses kann anstelle des RS-232 basierten Programmiersystem des STK500 verwendet werden.\\
+Das AVRISP mkII ist ein USB-basierter \Fachbegriff{In-System-Programmer}. Dieser kann anstelle des RS-232 basierten Programmiersystem des STK500 verwendet werden.\\
 Die Übertragungsgeschwindigkeit des AVRISP mkII ist wesentlich höher als die der Seriellen Schnittstelle. 
 %Desweiteren wurde der ATmega324A nicht mehr vom STK500 internen ISP unterstützt.\\
 Der AVRISP mkII lässt sich einfach an den Programmierport, eine 6-Polige Stiftleiste, des STK500 anschließen.

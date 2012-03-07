@@ -49,6 +49,7 @@ Je nach dem welche Ansicht in ?? gewählt ist, verändern sich auch das Menü un
 In der Menüzeile auf 
 \textbf{Macro -> Addins -> Konica Minolta VIVID Direct Control Addin v2.6.11}
 klicken.
+\todo{Schrittmotor verbinden!}
 & 
 \includegraphics[width=8cm]{Anleitung/3_ADDIN_Menu}
 \\ \hline  
@@ -68,7 +69,6 @@ Bild?
 \pagebreak 
 
 
-
 \multicolumn{2}{|l|}%
 {{\textbf{Schritt 5 - Kalibrieren}}}
 \\ \hline
@@ -84,7 +84,8 @@ Auf \textbf{Scan for Calib} klicken.
 {{\textbf{Schritt 6 - Kalibrierungsergebnis}}}
 \\ \hline
 Das Ergebnis sollte ähnlich zu dem in der rechten Abbildung sein. \linebreak
-Falls das Add-In einen Fehler ausgibt, muss das Kalibrierungsblech eventuell anders positioniert werden oder der Wert im Feld \textbf{Laser Power} verändert werden.
+Falls das Add-In einen Fehler ausgibt, muss das Kalibrierungsblech eventuell anders positioniert werden, der Wert im Feld \textbf{Laser Power} verändert werden oder der Fokus manuell eingestellt werden.\linebreak
+War die Kalibrierung erfolgreich können die \emph{Kalibrationsebenen }im \emph{Projektbaum} ausgeblendet werden.
 & 
 \includegraphics[width=8cm]{Anleitung/4_Calibration_result}
 \\ \hline  
@@ -92,17 +93,107 @@ Falls das Add-In einen Fehler ausgibt, muss das Kalibrierungsblech eventuell and
 \pagebreak 
 
 
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 7 - StepScan}}}
+\\ \hline
+Bei \textbf{Manual Para.} das Häkchen entfernen.\linebreak
+Zum Reiter \textbf{Step} wechseln.\linebreak
+Bei \textbf{Angle Tag} und \textbf{Rotate Table to next Scan position} Häkchen setzen.\linebreak
+Bei \textbf{Init. Align in RF Using Rotary Info.} und \textbf{Auto Accept} die Häkchen entfernen.\linebreak
+Bei \textbf{Rotation Step} die gewünschte Drehung in Grad eingeben. \linebreak
+''45'', ''60'' und ''90'' sind gute Werte.
+& 
+\includegraphics[width=8cm]{Anleitung/5_StepScan.jpg}
+\\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 6 - Kalibrieren}}}
+{{\textbf{Schritt 8 - AutoFocus}}}
 \\ \hline
-Im neu geöffneten AddIn-Panel auf \textbf{Scan for Calib} klicken.
-
+Das \emph{Kalibrationsblech} entfernen und durch das zu scannende Objekt ersetzen.\linebreak
+Zum Reiter \textbf{Control} wechseln. \linebreak
+Auf \textbf{Autofocus} klicken.\linebreak
 & 
-\includegraphics[width=8cm]{Anleitung/4_Calibration}
+\includegraphics[width=8cm]{Anleitung/6_AutoFocus}
 \\ \hline  
+
 \pagebreak 
 
+
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 9 - Scan}}}
+\\ \hline
+Auf \textbf{Scan} klicken. \linebreak
+Das Objekt sollte möglichst schon zu erkennen sein und die Farben sich im Mittleren Bereich bewegen. \linebreak
+Ansonsten muss mit den Parametern \textbf{Focus} und \textbf{LaserPower gespielt werden.}
+\begin{TippS}Die Position des VI-900 darf nach der Kalibrierung nicht mehr verändert werden!\end{TippS}
+& 
+\includegraphics[width=8cm]{Anleitung/7_Scan}
+\\ \hline  
+
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 10 - Akzeptieren}}}
+\\ \hline
+Wenn das Objekt gut zu erkennen ist, werden mit \textbf{Accept} die Daten an RapidForm2004 gesendet. Der Drehtisch sollte sich nun automatisch um den eingestellten Winkel drehen. 
+\begin{TippS}Bei \textbf{AutoAccept} kann nun ein Häkchen gesetzt werden.\end{TippS}
+& 
+\includegraphics[width=8cm]{Anleitung/8_Accept}
+\\ \hline  
+
+\pagebreak 
+
+
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 11 - Scannen}}}
+\\ \hline
+Auf \textbf{Scan} klicken.\linebreak
+Diesen Schritt wiederholen bis alle Aufnahmen abgeschlossen sind.\linebreak
+& 
+\includegraphics[width=8cm]{Anleitung/8_AutoAccept}
+\\ \hline  
+
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 12 - Ergebnis der Scans}}}
+\\ \hline
+Nach Abschluss aller Scans dreht der Tisch sich automatisch in die Ursprungsposition zurück.\linebreak
+Im Arbeitsbereich sollten sich nun alle Scans befinden.
+& 
+\includegraphics[width=8cm]{Anleitung/9_1_Scan_result}
+\\ \hline  
+
+\pagebreak 
+
+
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 13 - Drehen und Zusammenführen der Scans}}}
+\\ \hline
+In der Menüzeile auf \textbf{Build -> Register -> Rotary Table} klicken.\linebreak
+& 
+\includegraphics[width=8cm]{Anleitung/10_Rotary_Table}
+\\ \hline  
+
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 14 - Registrieren}}}
+\\ \hline
+Im Dialog auf \textbf{Select Axis} klicken.\linebreak
+Im Darstellungsbereich auf die Achse aus dem Kalibrationsscan klicken.
+Bei \textbf{Rotation-Angle} den Winkel eines Scans eintragen.\linebreak
+Im \emph{Projektbaum} den Entsprechenden Scan auswählen.\linebreak
+Die letzten beiden Schritte mit allen Scans wiederholen.\linebreak
+Den Dialog mit \textbf{Ok} verlassen.
+& 
+\includegraphics[width=8cm]{Anleitung/11_Register_Dialog_2}
+\\ \hline  
+
+\pagebreak 
+ 
+
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 15 - Ergebnis}}}
+\\ \hline
+Als Ergebnis sollte nun ein komplettes 3D-Modell des Objektes herauskommen.
+& 
+\includegraphics[width=8cm]{Anleitung/11_Register_result}
+\\ \hline  
 
 
 
