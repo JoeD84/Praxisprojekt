@@ -34,16 +34,13 @@ LSS += \
 Translator.lss \
 
 FLASH_IMAGE += \
-Translator.hex \
 
 EEPROM_IMAGE += \
-Translator.eep \
 
 SIZEDUMMY += \
 sizedummy \
 
 AVRDUDEDUMMY += \
-avrdudedummy \
 
 
 # All Target
@@ -56,6 +53,7 @@ Translator.elf: $(OBJS) $(USER_OBJS)
 	avr-gcc -Wl,-Map,Translator.map -mmcu=atmega324a -o"Translator.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
+	$(MAKE) --no-print-directory post-build
 
 Translator.lss: Translator.elf
 	@echo 'Invoking: AVR Create Extended Listing'
@@ -92,9 +90,13 @@ clean:
 	-$(RM) $(OBJS)$(C_DEPS)$(ASM_DEPS)$(EEPROM_IMAGE)$(FLASH_IMAGE)$(ELFS)$(LSS)$(AVRDUDEDUMMY)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS) Translator.elf
 	-@echo ' '
 
+post-build:
+	-avr-objcopy -j .text -j .data -O ihex Translator.elf Translator.hex
+	-@echo ' '
+
 secondary-outputs: $(LSS) $(FLASH_IMAGE) $(EEPROM_IMAGE) $(SIZEDUMMY) $(AVRDUDEDUMMY)
 
 .PHONY: all clean dependents
-.SECONDARY:
+.SECONDARY: post-build
 
 -include ../makefile.targets

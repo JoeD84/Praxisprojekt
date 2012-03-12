@@ -1,0 +1,122 @@
+% --------------------------------------------------------------------------
+% Formatvorlage für Diplomarbeiten der FHWT
+% --------------------------------------------------------------------------
+% 	Angelehnt an die Word-Vorlage von Herrn Stührenberg
+% 	Download unter http://www.atlando.de/fhwt.htm
+%
+% 	erstellt von Stefan Macke. 22.10.2007
+% 	http://blog.stefan-macke.de
+%   
+%   Genutzt und angepasst auf utf8 von Johannes Dielmann 
+
+% Meta-Informationen -------------------------------------------------------
+%	Informationen über das Dokument, wie z.B. Titel, Autor, Matrikelnr. etc
+%	werden in der Datei _Meta.tex definiert und können danach global
+%	verwendet werden.
+% --------------------------------------------------------------------------
+\input{_Meta}
+
+% Dokumentenkopf -----------------------------------------------------------
+% 	Diese Vorlage basiert auf "scrreprt" aus dem koma-script.
+%	Die Option draft sollte beim fertigen Dokument ausgeschaltet werden.
+% --------------------------------------------------------------------------
+\documentclass[
+	11pt,					% Schriftgröße
+	DIV10,
+	ngerman,					% für Umlaute, Silbentrennung etc.
+	a4paper,         		% Papierformat
+	oneside,				% einseitiges Dokument
+	titlepage,				% es wird eine Titelseite verwendet
+	final					% Status des Dokuments (final/draft)
+]{scrreprt}
+
+% Benötigte Packages -------------------------------------------------------
+%	Weitere Packages, die benötigt werden, sind in die Datei Packages.tex
+%	"ausgelagert", um die Vorlage möglichst übersichtlich zu halten.
+% --------------------------------------------------------------------------
+\input{Packages}
+
+% Erstellung eines Index und Abkürzungsverzeichnisses aktivieren -----------
+\makeindex
+\makenomenclature
+
+
+% Kopf- und Fußzeilen, Seitenränder etc. -----------------------------------
+\input{Seitenstil}
+
+% Eigene Definitionen für Silbentrennung
+\include{Silbentrennung}
+
+% Das eigentliche Dokument -------------------------------------------------
+% Der eigentliche Inhalt des Dokuments beginnt hier. Die einzelnen Seiten
+% und Kapitel werden in eigene Dateien ausgelagert und hier nur inkludiert.
+% --------------------------------------------------------------------------
+\begin{document}
+
+% auch subsubsection nummerieren
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\ofoot{}
+\include{Deckblatt}
+%\include{Inhalt/Abstract}
+\ofoot{\pagemark}
+
+% Seitennummerierung -------------------------------------------------------
+%	Vor dem Hauptteil werden die Seiten in großen römischen Ziffern 
+%	nummeriert...
+% --------------------------------------------------------------------------
+\pagenumbering{Roman}
+%\maintoc
+\tableofcontents								% Inhaltsverzeichnis
+
+% Abkürzungsverzeichnis ----------------------------------------------------
+\input{Inhalt/Glossar}		
+\label{sec:Glossar}		
+\printnomenclature
+
+\listoffigures						% Abbildungsverzeichnis
+\listoftables						% Tabellenverzeichnis
+\renewcommand{\lstlistlistingname}{Codeverzeichnis}
+\lstlistoflistings					% Listings-Verzeichnis
+
+% ...danach in normalen arabischen Ziffern ---------------------------------
+\clearpage
+\pagenumbering{arabic}
+% Inhalt -------------------------------------------------------------------
+%	Hier können jetzt die einzelnen Kapitel inkludiert werden. Sie müssen
+%	in den entsprechenden .TEX-Dateien vorliegen. Die Dateinamen können
+% 	natürlich angepasst werden.
+% --------------------------------------------------------------------------
+\include{Inhalt/Einleitung} 		% Motivation und Ziel
+%\include{Inhalt/Kapitel_Begriffe}	% Begriffe
+\include{Inhalt/Kapitel_Hardware}	% Hardware
+\include{Inhalt/Kapitel_Software}	% Software
+\include{Inhalt/Kapitel_AufbauderArbeit} % Aufbau
+\include{Inhalt/Fazit}				% Fazit und Zukunft
+
+% Literaturverzeichnis -----------------------------------------------------
+% Das Literaturverzeichnis wird aus der Datenbank Bibliographie.bib 
+% erstellt. Die genaue Verwendung von bibtex wird hier jedoch nicht erklärt.
+% Link: http://de.wikipedia.org/wiki/BibTeX
+% --------------------------------------------------------------------------
+\bibliography{Bibliographie}		% Aufruf: bibtex FHWTVorlage
+\bibliographystyle{natdin}			% DIN-Stil des Literaturverzeichnisses
+\include{Inhalt/Erklaerung}			% Selbständigkeitserklärung 
+
+% Anhang -------------------------------------------------------------------
+% Die Inhalte des Anhangs werden analog zu den Kapiteln inkludiert.
+% Dies geschieht in der Datei Anhang.tex
+% --------------------------------------------------------------------------
+\begin{appendix}
+	\clearpage
+	%\pagenumbering{roman}
+	\input{Inhalt/Anhang}
+\end{appendix}
+
+% Index --------------------------------------------------------------------
+%	Zum Erstellen eines Index, die folgende Zeile auskommentieren.
+% --------------------------------------------------------------------------
+\printindex		% Index hier einfügen
+
+\end{document}

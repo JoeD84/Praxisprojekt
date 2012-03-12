@@ -4,16 +4,16 @@
 #define M_CSG  		 1
 #define M_ZETA 		 2
 #define M_TERMINAL	 3
-
 int 	Initialized = M_NOTI;
-
-int 	switch_Motor		(char * str_rx) {
-	const char* pOptions[] = {
+// Automatische Befehlssatzwahl
+int 	switch_Motor		(char * str_rx) {	
+	const char* pOptions[] = {	// Array mit Initialisierungsbefehlen
 			"@01", 		// 0 - Isel
 			"Q:",    	// 1 - CSG
 			"ECHO0", 	// 2 - Zeta
 			"!Terminal",	// 3 - Terminal ansteuerung!
 			0 };
+	// Ankommenden String gegen Array pruefen
 	switch (FindStringInArray(str_rx, pOptions, 3)) {
 	case 0: 		// 0 - ISEL
 		return M_ISEL;
@@ -30,4 +30,4 @@ int 	switch_Motor		(char * str_rx) {
 	default:
 		return M_UNK;
 	}
-} 
+}

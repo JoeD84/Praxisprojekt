@@ -3,35 +3,33 @@
  \nomgroup{A}
 
   \item [{ADC}]\begingroup Analog Digital Convertor\nomeqref {0.0}
-		\nompageref{II}
+		\nompageref{III}
   \item [{ASCII}]\begingroup American Standard Code for Information Interchange\nomeqref {0.0}
-		\nompageref{II}
+		\nompageref{III}
   \item [{AVRISP}]\begingroup AVR in System Programmer\nomeqref {0.0}
-		\nompageref{II}
+		\nompageref{III}
   \item [{CAD}]\begingroup Computer Aided Design\nomeqref {0.0}
-		\nompageref{II}
-  \item [{CF}]\begingroup Compact Flash\nomeqref {0.0}\nompageref{II}
+		\nompageref{III}
+  \item [{CF}]\begingroup Compact Flash\nomeqref {0.0}\nompageref{III}
   \item [{CPU}]\begingroup Central Processing Unit\nomeqref {0.0}
-		\nompageref{II}
+		\nompageref{III}
   \item [{DAC}]\begingroup Digital Analog Convertor\nomeqref {0.0}
-		\nompageref{II}
+		\nompageref{III}
   \item [{DIL}]\begingroup Dual in Line Package\nomeqref {0.0}
-		\nompageref{II}
+		\nompageref{III}
   \item [{IC}]\begingroup Integrated Cuircuit\nomeqref {0.0}
-		\nompageref{II}
+		\nompageref{III}
   \item [{ISR}]\begingroup Interrupt Service Routine\nomeqref {0.0}
-		\nompageref{II}
+		\nompageref{III}
   \item [{LCD}]\begingroup Liquid Crystal Display\nomeqref {0.0}
-		\nompageref{II}
-  \item [{MHz}]\begingroup Megahertz\nomeqref {0.0}\nompageref{II}
+		\nompageref{III}
   \item [{RS}]\begingroup Recommended Standard\nomeqref {0.0}
-		\nompageref{II}
+		\nompageref{III}
   \item [{SCSI}]\begingroup Small Computer System Interface\nomeqref {0.0}
-		\nompageref{II}
-  \item [{USART}]\begingroup Universal Asynchronous Receiver Transmitter\nomeqref {0.0}
-		\nompageref{II}
+		\nompageref{III}
+  \item [{UART}]\begingroup Universal Asynchronous Receiver Transmitter\nomeqref {0.0}
+		\nompageref{III}
   \item [{USB}]\begingroup Universal Serial Bus\nomeqref {0.0}
-		\nompageref{II}
-  \item [{V}]\begingroup Volt\nomeqref {0.0}\nompageref{II}
+		\nompageref{III}
 
 \end{thenomenclature}

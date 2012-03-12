@@ -15,37 +15,59 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-// BAUD Rate definieren
-#define BAUD 9600
+
+#define BAUD 9600		// BAUD Rate definieren
 // Falls nicht bereits gesetzt, Taktfrequenz definieren
 #ifndef F_CPU
 #define F_CPU 8000000
 #endif
 // AVR Includes
-#include <avr/io.h>
-#include <util/delay.h>
-#include <util/setbaud.h>
-#include <stdlib.h>
-#include <string.h>
-#include <avr/interrupt.h>
-#include <avr/wdt.h>
-#include <string.h>
-#include <avr/pgmspace.h>
+#include <avr/io.h>			// Standardbibliothek
+#include <util/delay.h>		// Verzoegerungen
+#include <util/setbaud.h>	// UART Funktionen
+#include <stdlib.h>			// Standardbibliothek
+#include <string.h>			// String Funktionen nutzen (strncmp)
+#include <avr/interrupt.h>	// Interrupts
+#include <avr/wdt.h>		// Watchdog
+#include <avr/pgmspace.h>	// Stringspeicher vorbelegen
 // Meine Includes
-#include "mystuff.h"
-#include "Debounce.h"
-//#include "lcd.h"
+#include "mystuff.h"		// Eigene Makrodefinitionen fuer erhoehte Lesbarkeit
+#include "Debounce.h"		// Taster entprellen
+//#include "lcd.h"			// LC-Display (wird automatisch gebaut)
 // Globale Variablen
-#define B_OK 		"0\r\n"
 #define D_RapidForm 0
 #define D_Stepper 	1
+// Motor Protokolle
+#define M_UNK	   -2
+#define M_NOTI	   -1
+#define M_ISEL 		0
+#define M_CSG  		1
+#define M_ZETA 		2
+#define M_TERMINAL	3
+// Protokoll Befehle
+#define P_INIT 		0
+#define P_FINISH 	1
+#define P_AROT 		2
+#define P_STOP		3
+#define P_HOME		4
+#define P_STEP		5
+#define P_TIMEOUT	6
+// Erweiterte Befehle
+#define E_CLS		10
+#define E_TEST		11
+// Antworten
+#define B_Zeta 		"\r\n>\040\r\n>\040\r\n>\040\r\n>\040"
+#define B_OK 		"0\r\n"
+// Variablen Definitionen
+#define MENU_ENTRY_NAMELEN 19
+#define RETURN_LEN 40
+int 	Initialized = M_NOTI;
 int 	move = 0;
 int 	init_T = 0;
 char 	str_rx[100];
 
 //// Tinymenu
-// MCU_CLK = F_CPU fuer TinyMenu
-#define MCU_CLK F_CPU
+#define MCU_CLK F_CPU		// MCU_CLK = F_CPU fuer TinyMenu
 #include "tinymenu/spin_delay.h"
 #define CONFIG_TINYMENU_USE_CLEAR
 #include "tinymenu/tinymenu.h"
@@ -72,8 +94,8 @@ void 	switch_Isel			(char * str_rx);
 void 	switch_csg			(char * str_rx);
 // LCD und LED Stuff
 void 	lcd_my_type			(char *s);
-void 	lcd_spielereien		(void);
-void 	led_spielerein		(void);
+void 	lcd_boot			(void);
+void 	led_boot			(void);
 void 	debounce_init		(void);
 void 	led_lauflicht		(void);
 // Menu Stuff
@@ -91,28 +113,24 @@ void 	init				(void);
 //
 //////////////////////////////
 int main(void) {
-	init();
-	while (1) {
-		wdt_reset();
-		if (get_key_press(1 << KEY0) || get_key_rpt(1 << KEY0)){
-			lcd_puts("Betrete Menue!\n");
-			menu_enter(&menu_context, &menu_main);
-		}
-		if (get_key_press(1 << KEY1))
-			menu_exit(&menu_context); 	// 1 - Back
-		if( get_key_press( 1<<KEY2 ))
+	init();		// Komponenten Initialisieren
+	while (1) { // In Endlosschleife wechseln
+		wdt_reset();	// Watchdog zuruecksetzen
+		if (get_key_press(1 << KEY1))	// 1 - Back
+			menu_exit(&menu_context);
+		if( get_key_press(1 << KEY2))	// 2 - Hoch
 			menu_prev_entry(&menu_context);
-		if (get_key_press(1 << KEY3) || get_key_rpt(1 << KEY3))
+		if (get_key_press(1 << KEY3))	// 3 - Runter
 			menu_next_entry(&menu_context);
-		if (get_key_press(1 << KEY4) || get_key_rpt(1 << KEY4))
-			menu_select(&menu_context); // 4 - Select
-		if ((UCSR0A & (1 << RXC0))){
-			LED_PORT &= ( 1 << LED2 );
-			uart_rx(D_RapidForm);
+		if (get_key_press(1 << KEY4))	// 4 - Select
+			menu_select(&menu_context);
+		if ((UCSR0A & (1 << RXC0))){	// RapidForm Polling
+			LED_PORT &= ( 1 << LED2 );	// LED einschalten
+			uart_rx(D_RapidForm);		// Register auslesen
 		}
-		if ((UCSR1A & (1 << RXC1))){
-			LED_PORT &= ( 1 << LED3 );
-			uart_rx(D_Stepper);
+		if ((UCSR1A & (1 << RXC1))){	// Stepper Polling
+			LED_PORT &= ( 1 << LED3 );	// LED einschalten
+			uart_rx(D_Stepper);			// Register auslesen
 		}
 	}
 }
@@ -123,179 +141,99 @@ int main(void) {
 //////////////////////////////
 
 // Interrupt Stuff
-ISR(WDT_vect){ 							// Watchdog ISR
-		LED_PORT &= ~(1 << LED4); 		// LED5 einschalten
+ISR(WDT_vect){ 					// Watchdog ISR
+		LED_PORT &=~(1 << LED4);// LED5 einschalten
+		lcd_clrscr();
 		lcd_puts("Something went \nterribly wrong!\nRebooting!");
 }
-ISR(PCINT3_vect){						// Endschalter Position erreicht
-	lcd_puts("Positive Enschalter Position Erreicht!");
-	//uart_put_string("1H\n", D_Stepper);
+ISR(PCINT3_vect){				// + Endschalter Position erreicht
+	lcd_clrscr();
+	lcd_puts("Obere\nEndposition\nErreicht!");
 	LED_PORT ^= (1 << LED3);
 }
-ISR(PCINT2_vect){						// Endschalter Position erreicht
-	lcd_puts("Negative Enschalter Position Erreicht!");
-	//uart_put_string("1H\n", D_Stepper);
+ISR(PCINT2_vect){				// - Endschalter Position erreicht
+	lcd_clrscr();
+	lcd_puts("Untere\nEndposition\nErreicht!");
 	LED_PORT ^= (1 << LED3);
 }
 // UART Stuff
-void 	uart_init			() {
+void 	uart_init			() {// UART Initialisieren
 	// UART 0 - IN (Rapidform Software/Terminal)
 	UBRR0H = UBRRH_VALUE;
 	UBRR0L = UBRRL_VALUE;
 	UCSR0C = (3 << UCSZ00);
 	UCSR0B |= (1 << TXEN0); //Transmitter Enabled
 	UCSR0B |= (1 << RXEN0); // UART RX einschalten
-
 	// UART 1 - OUT (Stepper Karte/Drehtisch)
 	UBRR1H = UBRRH_VALUE;
 	UBRR1L = UBRRL_VALUE;
 	UCSR1C = (3 << UCSZ00);
 	UCSR1B |= (1 << TXEN1); //Transmitter Enabled
 	UCSR1B |= (1 << RXEN1); // UART RX einschalten
-
 }
-void 	uart_put_charater	(unsigned char c, int dir) {
-	// To Rapidform
-	if (dir == D_RapidForm) {
-		while (!(UCSR0A & (1 << UDRE0))) //warten bis Senden moeglich
-		{
-		}
+void 	uart_put_charater	(unsigned char c, int dir) { // UART Zeichen senden
+	if (dir == D_RapidForm) {// To Rapidform
+		while (!(UCSR0A & (1 << UDRE0))){} //warten bis Senden moeglich
 		UDR0 = c; // sende Zeichen
 	}
-	// To Stepper
-	else {
-		while (!(UCSR1A & (1 << UDRE1))) //warten bis Senden moeglich
-		{
-		}
+	else {// To Stepper
+		while (!(UCSR1A & (1 << UDRE1))){} //warten bis Senden moeglich
 		UDR1 = c; // sende Zeichen
 	}
-	//return 0;
 }
-void 	uart_put_string		(char *s, int dir) {
-	while (*s) // so lange *s != '\0' also ungleich dem "String-Endezeichen(Terminator)"
-	{
-		uart_put_charater(*s, dir);
+void 	uart_put_string		(char *s, int dir) { 		 // UART String senden
+	while (*s){ // so lange *s != '\0' also ungleich dem "String-Endezeichen(Terminator)"
+		uart_put_charater(*s, dir); // Zeichenweise senden
 		s++;
 	}
 }
-int 	uart_get_character	(int dir) {
-	if (dir == D_RapidForm) {
-		while (!(UCSR0A & (1 << RXC0)))
-			// warten bis Zeichen verfuegbar
-			;
+int 	uart_get_character	(int dir) {			 // UART Zeichen empfangen
+	if (dir == D_RapidForm) {	// Aus RapidForm Register auslesen
+		while (!(UCSR0A & (1 << RXC0))) ; // warten bis Zeichen verfuegbar
 		return UDR0; // Zeichen aus UDR an Aufrufer zurueckgeben
 	}
-	if (dir == D_Stepper) {
-		while (!(UCSR1A & (1 << RXC1)))
-			// warten bis Zeichen verfuegbar
-			;
+	if (dir == D_Stepper) {		// Aus Schrittmotor Register auslesen
+		while (!(UCSR1A & (1 << RXC1))) ; // warten bis Zeichen verfuegbar
 		return UDR1; // Zeichen aus UDR an Aufrufer zurueckgeben
 	}
-	return -1;
+	return -1;	// Wenn nichts ausgelesen wurde -1 zurueckgeben
 }
-void 	uart_get_string		(char * string_in, int dir) {
-	char c;
-	int i = 0;
+void 	uart_get_string		(char * string_in, int dir) {// UART String empfangen
+	char c;	// Einzelnes Zeichen
+	int i = 0;	// Zaehlvariable
 	do {
-		c = uart_get_character(dir);
-		if (c != '\r') {
-			*string_in = c;
-			string_in += 1;
-			i++;
+		c = uart_get_character(dir); // Einzelnes Zeichen holen
+		if (c != '\r') {			 // Wenn keinn \r
+			*string_in = c;			 // Zeichen in Empfangsstring schreiben
+			string_in += 1;			 // Adresse des Empfangsstring um 1 inkrementieren
+			i++;					 // Zaehlvariable um 1 erhoehen
 		}
-	} while (i < 100 && c != '\r' && c != '\n');
-	*string_in = '\0';
+	} while (i < 100 && c != '\r' && c != '\n'); // So lange bis \r \n oder ueber 100 Zeichen
+	*string_in = '\0';				 // 0 Terminieren
 	if (dir == D_Stepper)
-		LED_PORT |= ( 1 << LED3 );
+		LED_PORT |= ( 1 << LED3 );	 // "Daten Vorhanden" LED ausschalten
 	else
-		LED_PORT |= ( 1 << LED2 );
+		LED_PORT |= ( 1 << LED2 );	 // "Daten Vorhanden" LED ausschalten
 }
 
 // String Stuff
-#define M_UNK		-2
-#define M_NOTI		-1
-#define M_ISEL 		 0
-#define M_CSG  		 1
-#define M_ZETA 		 2
-#define M_TERMINAL	 3
-
-#define P_INIT 		0
-#define P_FINISH 	1
-#define P_AROT 		2
-#define P_STOP		3
-#define P_HOME		4
-#define P_STEP		5
-#define P_TIMEOUT	6
-
-#define E_CLS		10
-#define E_TEST		11
-
-#define B_Zeta_Return 	"\r\n>\040\r\n>\040\r\n>\040\r\n>\040"
-
-#define MENU_ENTRY_NAMELEN 19
-#define RETURN_LEN 40
-
-// Struct Versuche
-/*
-typedef struct Entry_s {
-	char Name[19];           					// Name zum Anzeigen
-	char Input[40];							// Vergleichswert
-	char Output[40];                 			// Ausgabebefehl
-} PROGMEM Entry_t;											// Ergeben Struct P_Entry_t
-
-typedef struct Motor_s {
-	uint8_t 	num_Befehle;
-	Entry_t 	*Befehl;						// 4 Motoren vom Typ Befehle_t
-} Motor_t;											// Ergeben Struct Motor_t
-
-typedef struct Protokoll {
-	uint8_t 	num_Motor;
-	Motor_t 	Motor[4];
-} Protokoll_t;
-
-Entry_t progmem_Befehl[] = {   // <===
-	{	// Befehl[0] Init
-		.Name = "Init\n",
-		.Input = "@01",
-		.Output = "0\r\n",
-	},
-	{	// Befehl[1] Home
-		.Name = "Home\n",
-		.Input = "@01",
-		.Output = "0\r\n",
-	},
-};
-
-Protokoll_t Protokoll = {
-	.num_Motor = 4,
-	.Motor[M_ISEL] = {	// Motor[0] Isel
-			.num_Befehle = 7,
-			.Befehl = progmem_Befehl,
-	},
-	.Motor[M_ZETA] = {
-			.num_Befehle = 7,
-			.Befehl = progmem_Befehl,
-	}
-};
-*/
-
+// Auffinden eines Strings aus einem vorgegebenen Array
 int 	FindStringInArray	(const char* pInput, const char* pOptions[], int cmp_length) {
 	int n = -1;
-	while (pOptions[++n]) {
-		//lcd_puts(pOptions[n]);
-		//lcd_puts("\n");
-		if (!strncmp(pInput, pOptions[n], cmp_length)){
-			return n;
-		}
+	while (pOptions[++n]) {	//Array durchlaufen bis 0 terminiert
+		//Wenn pInput == pOptions dann gib Array Position zurueck
+		if (!strncmp(pInput, pOptions[n], cmp_length))	return n;
 	}
-	return 99;
+	return 99; // Wenn keine uebereinstimmung, gib 99 zurueck
 }
+// Strings zerlegen
 void 	String_zerlegen_Isel(char * str_rx, char * Position, char * Winkel) {
 	//0M5200, +600
 	//Achse M Position, +Geschwindigkeit
 	char * Achse="0";
-	Achse[0] = str_rx[1];
+	Achse[0] = str_rx[1];	// Achse setzen
 	Achse[1] = '\0';
+	// Ausgeben welche Achse gewaehlt wurde
 	if(atoi(Achse)==0){
 		lcd_puts("Achse: ");
 		lcd_puts(Achse);
@@ -306,8 +244,7 @@ void 	String_zerlegen_Isel(char * str_rx, char * Position, char * Winkel) {
 		lcd_puts(Achse);
 		lcd_puts(" (Hoehe)   \n");
 	}
-	lcd_puts("Test: ");
-	lcd_puts(Position);
+	// Anzahl der Schritte aus dem String auslesen
 	char c;
 	int i = 0;
 	do {
@@ -317,16 +254,16 @@ void 	String_zerlegen_Isel(char * str_rx, char * Position, char * Winkel) {
 			i++;
 		}
 	} while (i < 20 && c != '\0' && c != ',');
-	Position[i] = '\0';
+	Position[i] = '\0'; // String 0 Terminieren
 	int32_t z;
 	int32_t y;
-	z = atol(Position);
-	y = z / 7200;
-	z = (z * 71111)  /1024;
-	ltoa(y, Winkel,		10 );
-	ltoa(z, Position,	10 );
+	z = atol(Position);	// String in Zahl(long) umwandeln
+	y = z / 7200;		// Berechnung des Winkel
+	z = (z * 71111)  /1024;	// Berechnung der Schritte
+	ltoa(y, Winkel,		10 ); // Winekl in String umwandeln
+	ltoa(z, Position,	10 ); // Schritte in String umwandeln
 }
-void 	String_zerlegen_csg	(char * str_rx) {
+void 	String_zerlegen_csg	(char * str_rx) { 	// Unvollstaendig?
 	//012 3456 78901 2345 6789 01234 5678
 	//D:2 S500 F5000 R200 S500 F5000 R200.
 	//D:2S500F5000R200S500F5000R200
@@ -422,10 +359,10 @@ void 	String_zerlegen_csg	(char * str_rx) {
 	uart_put_string(B_OK, D_RapidForm);
 }
 // 		Hilfs Funktionen
-void 	csg_Status_melden	(void) {
+void 	csg_Status_melden	(void) {			// Unvollstaendig?
 		uart_put_string("         0,         0,K,K,R\r\n", D_RapidForm); // Status an RapidForm zurueckmelden
 }
-void 	Position_Zeta		(char * Position) {
+void 	Position_Zeta		(char * Position) { // Schritte Auslesen - Zeta
     char c;
     int i = 0;
     do{
@@ -442,51 +379,42 @@ void 	Position_Zeta		(char * Position) {
 	z = z/9;
 	ltoa(z,Position,10);
 }
-// 		Vearbeitungs Logik
-int 	Initialized = M_NOTI;
-void 	switch_Stepper		(char * str_rx) {
-	const char* pOptions[] = {
-			"#", 	// 0 - Stepper Karte Befehl erkannt
-			"E", 	// 1 - Error
-			"!CLS", // 2 - Clear Screen
-			"Test", // 3 - Test
+// 		Uebersetzungs Logik
+void 	switch_Stepper		(char * str_rx) {	// Uebersetzung Schrittmotorkarte
+	const char* pOptions[] = {	// Array mit bekannten Befehlen
+			"#", 	// 0 - Stepper Karte hat Befehl erkannt
+			"E", 	// 1 - Stepper Karte meldet Error
+			"!CLS", // 2 - Clear Screen (Debugging)
+			"Test", // 3 - Test (Debugging)
 			0 };
-	switch (FindStringInArray(str_rx, pOptions, 1)) {
-	case 0:
+	switch (FindStringInArray(str_rx, pOptions, 1)) { // String gegen bekannte Antworten pruefen
+	case 0:			// 0 - Stepper Karte hat Befehl erkannt
 		lcd_puts("Erfolgreich\n");
-		//uart_put_string("0\n\r", D_RapidForm);
 		break;
-	case 1:
+	case 1:			// 1 - Stepper Karte meldet Error
 		lcd_puts("Error\n");
 		uart_put_string("1\r\n", D_RapidForm);
 		break;
-	case 2:
+	case 2:			// 2 - Clear Screen (Debugging)
 		lcd_clrscr();
 		break;
-	case 3:
+	case 3:			// 3 - Test (Debugging)
 		lcd_puts("Test bestanden\n");
-		//uart_put_string("Test bestanden\n\r", D_RapidForm);
-		//uart_put_string("Test bestanden\n\r", D_Stepper);
 		break;
 	default:
 		ms_spin(10);
-		//lcd_puts("Stepper: ");
-		//lcd_puts(str_rx);
-		//lcd_puts("!\n");
 	}
 }
-void 	switch_Isel			(char * str_rx) {
+void 	switch_Isel			(char * str_rx) {	// Uebersetzung Isel
 	const char* pOptions[] = {
 			"XXXXXXX", 	// 0 - Reserve
 			"!CLS",    	// 1 - LC-Display loeschen
 			"Test", 	// 2 - Test
 			"@01",  	// 3 - Achse auswaehlen
 			"@0R", 		// 4 - Status abfrage
-			"@0M", 		// 5 - Gehe zu Position MX , +600
+			"@0M", 		// 5 - Gehe zu Position
 			0 };
-
-	int Ret_Val = FindStringInArray(str_rx, pOptions, 3);
-	switch (Ret_Val) {
+	switch (FindStringInArray(str_rx, pOptions, 3)) {
 	case 0: 		// 0 - Reserve
 		lcd_puts("Reserve\r\n");
 		break;
@@ -496,57 +424,32 @@ void 	switch_Isel			(char * str_rx) {
 	case 2:			// 2 - Test
 		lcd_puts("Test bestanden\n");
 		uart_put_string("Test bestanden\r\n", D_RapidForm);
-		//lcd_puts(Protokoll.Motoren.M_Motor[M_ISEL].P_Init);
 		break;
 	case 3:			// 3 - Achse auswaehlen
 		ms_spin(10);
-		/*
-	    char buf[32];
-	    PGM_P p;
-	    int i;
-
-	    memcpy_P(&p, &Protokoll.Motor[M_ISEL].Befehl[0].Name[0], sizeof(PGM_P));
-	    strcpy_P(buf, p);
-	    */
-        /*
-		char string_in[40];
-		char c;
-
-		char * str_in_p = &string_in;
-
-		do{
-			c = pgm_read_byte( s_ptr );
-			*str_in_p = c;
-			str_in_p += 1;
-			s_ptr++; // Increase string pointer
-		} while( pgm_read_byte( s_ptr ) != 0x00 );  // End of string
-		*/
-
-		//lcd_puts( buf );
 		lcd_puts("Init");
-		//String_zerlegen_Isel(str_rx, Position);
 		uart_put_string("0\r\n", D_RapidForm);
-		//uart_put_string(Protokoll.Motor[M_ISEL].Befehl[0].Output, D_RapidForm);
 		break;
 	case 4:			// 4 - Status abfrage
 		lcd_puts("Statusabfrage:     \n");
-		uart_put_string("A\n", D_Stepper);
-		ms_spin(50);
-		if ((UCSR1A & (1 << RXC1)))
-			uart_rx(D_Stepper);
-		if (!strcmp(str_rx,"0#"))
-			uart_put_string("0\r\n", D_RapidForm);
+		uart_put_string("A\n", D_Stepper);	// Statusabfrage an Stepper senden
+		ms_spin(50);						// Verarbeitungszeit gewaehren
+		if ((UCSR1A & (1 << RXC1)))			// Wenn ein Zeichen empfangen wurde
+			uart_rx(D_Stepper);				// Zeichen auslesen
+		if (!strcmp(str_rx,"0#"))			// Empfangenes Zeichen ueberpruefen
+			uart_put_string("0\r\n", D_RapidForm); // Antwort Ok an RapidForm melden
 		else {
-			lcd_puts("Fehlgeschlagen     \n");
-			uart_put_string("1\r\n", D_RapidForm);
+			lcd_puts("Fehlgeschlagen     \n");	   // Fehler auf Display anzeigen
+			uart_put_string("1\r\n", D_RapidForm); // Fehler an RapidForm melden
 		}
 		break;
 	case 5:			// 5 - Gehe zu Position MX , +600
 		ms_spin(10);
 		char Position[33], Winkel[6];
-		memset(Position, '\0', 33);
-		memset(Winkel, '\0', 6);
-		String_zerlegen_Isel(str_rx, Position, Winkel);
+		memset(Position, '\0', 33); // Strign 0 Terminiert vorbelegen
+		memset(Winkel, '\0', 6);    // String 0 Terminiert vorbelegen
+		String_zerlegen_Isel(str_rx, Position, Winkel); // String auswerten
+		// String fuer Stepper vorbereiten
 		char Move_To[40];
 		memset(Move_To,  '\0', 40);
 		Move_To[0] = 'M';
@@ -557,27 +460,29 @@ void 	switch_Isel			(char * str_rx) {
 		strcat(Move_To, "\n");
 		lcd_puts("Pos:");
 		lcd_puts(Move_To);
-
+		// String an Stepper senden
 		uart_put_string(Move_To, D_Stepper);
 		ms_spin(50);
 		if ((UCSR1A & (1 << RXC1)))
-			uart_rx(D_Stepper);
+			uart_rx(D_Stepper);	// Antwort des Stepper auslesen
 		else {
-			//lcd_puts("Befehl n. bestaetig\n");
-			break;
+			break; // Bei Fehler abbrechen
 		}
-
+		// Status des Stepper Abfragen
 		uart_put_string("A\n", D_Stepper);
 		ms_spin(50);
+		// Antwort des Stepper Abfragen
 		if ((UCSR1A & (1 << RXC1)))
 			uart_rx(D_Stepper);
 		else {
 			lcd_puts("Keine Bewegung!\n");
 		}
-
+		// So lange der Stepper Bewegung meldet erneut Statusabfrage
 		while (!strcmp(str_rx,"1#")){
+			// Statusabfrage an Stepper
 			uart_put_string("A\n", D_Stepper);
 			ms_spin(50);
+			// Statusabfrage auslesen und auswerten
 			if ((UCSR1A & (1 << RXC1))){
 				uart_rx(D_Stepper);
 				lcd_clrscr();
@@ -593,14 +498,14 @@ void 	switch_Isel			(char * str_rx) {
 		lcd_puts("Winkel: ");
 		lcd_puts(Winkel);
 		lcd_puts(" Erreicht\n");
+		// Bewegung abgeschlossen an RapidForm melden
 		uart_put_string("0\r\n", D_RapidForm);
 		break;
-	default:
-		//lcd_puts("ISEL:    \n");
+	default: // Unbekannte Befehle auf dem Display anzeigen
 		lcd_puts(str_rx);
 	}
 }
-void 	switch_csg			(char * str_rx) {
+void 	switch_csg			(char * str_rx) {	// Uebersetzung CSG Unvollstaendig?
 	const char* pOptions[] = {
 			"Test2", // 0 - Stepper Karte Befehl erkannt
 			"!CLS", // 1 - LC-Display loeschen
@@ -662,7 +567,7 @@ void 	switch_csg			(char * str_rx) {
 		lcd_puts("!END       \n");
 	}
 }
-void 	switch_Zeta			(char * str_rx) {
+void 	switch_Zeta			(char * str_rx) {	// Uebersetzung Zeta
 	const char* pOptions[] = {
 			"!CLS", // 0 - LC-Display loeschen
 			"Test",	// 1 - Test
@@ -695,8 +600,6 @@ void 	switch_Zeta			(char * str_rx) {
 		ms_spin(100);
 		strcat(Move_To, Position);
 		strcat(Move_To, "\n");
-		//lcd_puts("Pos:");
-		//lcd_puts(Move_To);
 
 		uart_put_string(Move_To, D_Stepper);
 		ms_spin(50);
@@ -748,7 +651,7 @@ void 	switch_Zeta			(char * str_rx) {
 		lcd_puts("Position: \n");
 		lcd_puts(Position);
 		lcd_puts(" Erreicht\n");
-		uart_put_string(B_Zeta_Return, D_RapidForm);
+		uart_put_string(B_Zeta, D_RapidForm);
 		break;
 	case 3: // WAIT
 		break;
@@ -783,7 +686,7 @@ void 	switch_Zeta			(char * str_rx) {
 		//Initialized = switch_Inputs(str_rx);
 	}
 }
-void 	switch_Terminal		(char * str_rx) {
+void 	switch_Terminal		(char * str_rx) {	// Uebersetzung Terminal Unvollstaendig
 	const char* pOptions[] = {
 			"!CLS", // 0 - LC-Display loeschen
 			"Test",	// 1 - Test
@@ -818,13 +721,14 @@ void 	switch_Terminal		(char * str_rx) {
 		uart_put_string("\n",D_Stepper);
 	}
 }
-int 	switch_Motor		(char * str_rx) {
-	const char* pOptions[] = {
+int 	switch_Motor		(char * str_rx) {	// Automatische Befehlssatzwahl
+	const char* pOptions[] = {	// Array mit Initialisierungsbefehlen
 			"@01", 		// 0 - Isel
 			"Q:",    	// 1 - CSG
 			"ECHO0", 	// 2 - Zeta
 			"!Terminal",	// 3 - Terminal ansteuerung!
 			0 };
+	// Ankommenden String gegen Array pruefen
 	switch (FindStringInArray(str_rx, pOptions, 3)) {
 	case 0: 		// 0 - ISEL
 		return M_ISEL;
@@ -842,31 +746,34 @@ int 	switch_Motor		(char * str_rx) {
 		return M_UNK;
 	}
 }
-void 	uart_rx				(int dir) {
-	uart_get_string(str_rx, dir);
-	if (dir == D_Stepper)
-		switch_Stepper(str_rx);
-	else{
-		if(Initialized == M_UNK){
+void 	uart_rx				(int dir) {			// UART Empfangsregister auslesen
+	uart_get_string(str_rx, dir);	// String aus Empfangsregister auslesen
+	if (dir == D_Stepper)			// Empfangsregister Stepper
+		switch_Stepper(str_rx);		// Uebersungsfunktion fuer Stepper aufrufen
+	else{							// Empfangsregsiter RapidForm
+		// Uebersetzungsfunktion auswaehlen
+		if(Initialized == M_UNK){	// Unbekannter Initialisierungsbefehl
 			lcd_puts("Unbekannter Motor!\n");
-			//lcd_puts(str_rx);
-			Initialized = M_NOTI;
+			Initialized = M_NOTI;	// Variable Initialized zuruecksetzen
 		}
-		if(Initialized == M_NOTI){
-			Initialized = switch_Motor(str_rx);
+		if(Initialized == M_NOTI){	// Befehlssatz bestimmen
+			Initialized = switch_Motor(str_rx); //Automatische Befehlssatzwahl
 		}
-		if(Initialized == M_ISEL)
+		if(Initialized == M_ISEL)	// Uebersetzung ISEL
 			switch_Isel(str_rx);
-		if(Initialized == M_CSG)
+		if(Initialized == M_CSG)	// Uebersetzung CSG
 			switch_csg(str_rx);
-		if(Initialized == M_ZETA)
+		if(Initialized == M_ZETA)	// Uebersetzung Zeta
 			switch_Zeta(str_rx);
-		if(Initialized == M_TERMINAL)
+		if(Initialized == M_TERMINAL)// Uebersetzung Terminal
 			switch_Terminal(str_rx);
 	}
 }
 // 		LCD und LED Stuff
-void 	lcd_my_type			(char *s) {
+void 	lcd_my_type			(char *s) {			// Zeichen auf Display ausgeben
+	// Spielerei!
+	// Zeichen mit unterschiedlicher Geschwindigkeit ausgeben
+	// Dies Simuliert einen Menschlichen Benutzer...
 	srand(TCNT0);
 	int min = 10;
 	int max = 250;
@@ -880,22 +787,22 @@ void 	lcd_my_type			(char *s) {
 			_delay_ms(1);
 	}
 }
-void 	lcd_spielereien		(void) {
+void 	lcd_boot			(void) {			// Boot: Nachricht ausgeben
 	_delay_ms(100);
-	lcd_my_type("Hello Joe!\n");
-	_delay_ms(600);
+	lcd_my_type("Guten Tag!\n");
+	_delay_ms(400);
+	lcd_my_type("Bereit!\n");
+	_delay_ms(400);
 	lcd_clrscr();
-	lcd_my_type("Ready!\n");
 }
-void 	led_spielerein		(void) {						// LEDs durchlaufen
+void 	led_boot			(void) {			// Boot: LEDs durchlaufen
 	for (int i = 1; i < 9; i++) {
 		_delay_ms(80); 					// warte 80ms
 		LED_PORT &= ~((1 << i)); 	   	// loescht Bit an PortB - LED an
 		LED_PORT |=  ((1 << (i - 1))); 	// setzt  Bit an PortB - LED aus
-		//wdt_reset();
 	}
 }
-void 	debounce_init		(void) {
+void 	debounce_init		(void) {			// Taster entprellen
 	KEY_DDR &= ~ALL_KEYS; // configure key port for input
 	KEY_PORT |= ALL_KEYS; // and turn on pull up resistors
 	TCCR0B = (1 << CS02) | (1 << CS00); // divide by 1024
@@ -903,59 +810,42 @@ void 	debounce_init		(void) {
 	TIMSK0 |= 1 << TOIE0; // enable timer interrupt
 	sei();
 }
-/*		Wie funktioniert das?
- * i   11110111		11111110	11111111
- * is  11101111		11111101	11111110
- * F0  11110000	FE	11111110	11111110
- * r   11100000		11111100	11111110
- *
- * i   11110111		11111110	11111111
- * 07  00000111	00	00000000	00000000
- * l   00000111		00000000	00000000
- *
- * l|r 11100111		11111100	11111110
- *
- * if< 11110000	FE	11111110	11111110
- *
- * 08  00001000		00000001
- * i|  11101111		11111101
-*/
-void 	led_lauflicht 		(void) {
+void 	led_lauflicht 		(void) {			// LED Lauflicht
 	uint8_t i = LED_PORT;
 	i = (i & 0x00) | ((i << 1) & 0xFE);
 	if (i < 0xFE) i |= 0x01;
-		LED_PORT = i;
+	LED_PORT = i;
 }
 // 		Menu Stuff
-void 	mod_manual			(void *arg, void *name) {
+void 	mod_manual			(void *arg, void *name) { // Manuelle Aufnahme
 	lcd_puts("Manueller Modus\n");
 	lcd_puts("Aufnahme starten!\n");
 	lcd_puts("Danach Select\n");
 	lcd_puts("-> Drehung um 45\n");
 	if (get_key_press(1 << KEY4))
-		uart_put_string("M 55750\r", D_Stepper);
+	uart_put_string("M 55750\r", D_Stepper);
 }
-void 	my_select			(void *arg, char *name) {
+void 	my_select			(void *arg, char *name) { // Deprecated?
 	lcd_clrscr();
 	lcd_puts("Selected: ");
 	lcd_puts(name);
-
 	ms_spin(750);
 }
-void 	menu_puts			(void *arg, char *name) {
-	//my_select(arg, name);
-	uart_put_string(arg, D_Stepper);
+void 	menu_puts			(void *arg, char *name) { // Menu/Sende Funktion
+	uart_put_string(arg, D_Stepper);	// Uebergebenen String an Stepper senden
+	// Befehl auf Display ausgeben
 	lcd_clrscr();
-	lcd_puts("Send: ");
+	lcd_puts("Sent: ");
 	lcd_puts(arg);
 	lcd_puts("\n");
 	ms_spin(100);
 	//if ((UCSR1A & (1 << RXC1)))
-	uart_rx(D_Stepper);
-	ms_spin(1000);
+	uart_rx(D_Stepper);	// Antwort des Stepper empfangen
+	ms_spin(1000);		// Antwort noch eine weile Anzeigen
 }
 // Init Stuff
-void init_WDT(void) {
+void 	init_WDT			(void) {			// Watchdog Initialisieren
+	// Vordefinierte Sequenz aus Anleitung
 	cli();
 	wdt_reset();
 	WDTCSR |= (1 << WDCE) | (1 << WDE);
@@ -963,7 +853,7 @@ void init_WDT(void) {
 	//WDTCSR = 0x0F; //Watchdog Off
 	sei();
 }
-void init() {
+void 	init				(void) {			// Initialisierung durchlaufen
 	init_WDT();						// Watchdog Initialisieren oder Abschalten
 	LED_DDR   = 0xFF;				// LED Port Richtung definieren (Ausgang)
 	LED_PORT  = 0xFF;				// LEDs ausschalten
@@ -972,9 +862,9 @@ void init() {
 	DDRC     |= ( 1 << PB7     );	// Pin7 (Kontrast) als Ausgang definieren 	(Nur LCD an STK500)
 	LCD_PORT &= ( 1 << PB7 	   );  	// Pin7 auf 0V legen 						(Nur LCD an STK500)
 	lcd_init(LCD_DISP_ON_CURSOR);	// LC Display initialisieren
-	lcd_spielereien();				// Kurze Startup Meldung zeigen
-	led_spielerein();				// Starten des Mikrocontroller kennzeichnen
+	lcd_boot();						// Kurze Startup Meldung zeigen
+	led_boot();						// Starten des Mikrocontroller kennzeichnen
 	debounce_init();				// Taster entprellen
 	uart_init();					// RS-232 Verbindung initialisieren
-	//menu_enter(&menu_context, &menu_main); // Kommentar entfernen um Menue zu aktivieren
+	menu_enter(&menu_context, &menu_main); // Kommentar entfernen um Menue zu aktivieren
 }

@@ -4,5 +4,5 @@ int 	FindStringInArray	(const char* pInput, const char* pOptions[], int cmp_leng
 		//Wenn pInput == pOptions dann gib Array Position zurueck
 		if (!strncmp(pInput, pOptions[n], cmp_length))	return n; 
 	}
-	return 99;
+	return 99; // Wenn keine uebereinstimmung, gib 99 zurueck
 } 
