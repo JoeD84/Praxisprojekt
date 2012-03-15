@@ -6,45 +6,57 @@ Eine Schritt für Schritt Anleitung zum vollständigen Scannen und exportieren e
 \caption{Schritt für Schritt Anleitung} 
 \label{tab:StepbyStep}
 \\ \hline
-\multicolumn{2}{|c|}{\textbf{Schritt für Schritt Anleitung}}
-\\ \hline 
-\endfirsthead
-
-
-\multicolumn{2}{|c|}%
-{{ Fortsetzung }} 
-\\ \hline 
-%\multicolumn{1}{|c|}{\textbf{Time (s)}} &
-%\multicolumn{1}{c|}{\textbf{Triple chosen}} 
+%\multicolumn{2}{|c|}{\textbf{Schritt für Schritt Anleitung}}
 %\\ \hline 
-\endhead
+%\endfirsthead
 
+
+%\multicolumn{2}{|c|}%
+%{{ Fortsetzung }} 
+%\\ \hline 
+%\endhead
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 1 - Starten von RapidForm2004}}}
+{{\textbf{Schritt 1 - Einschalten der Schrittmotorsteuerung}}}
 \\ \hline
-Auf dem Desktop doppelt auf das RapidForm Icon klicken.
+Auf der Rückseite des 19''-Rack befindet sich ein Schalter. Mit diesem kann die Steuerung eingeschaltet werden.
 & 
-\includegraphics[width=8cm]{Anleitung/1_Desktop}
+\includegraphics[width=8cm]{19Zoll_Rack}
+\\ \hline 
+
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 2 - Einschalten des VI-900}}}
+\\ \hline
+\multicolumn{2}{|p{13cm}|}%
+{Bevor der VI-900 eingeschaltet wird, muss der Erfassungs-PC eingeschaltet werden. Kurz nach dem BIOS wird nach SCSI Geräten gesucht. Zu diesem Zeitpunkt muss der VI-900 eingeschaltet werden.}
 \\ \hline 
  
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 2 - Oberfläche von RapidForm2004}}}
+{{\textbf{Schritt 3 - Einloggen}}}
 \\ \hline
-Die Oberfläche unterteilt sich in Menü, Werkzeugleisten, Projektbaum und ??.
-Je nach dem welche Ansicht in ?? gewählt ist, verändern sich auch das Menü und die Werkzeugleisten. 
+\multicolumn{2}{|l|}%
+{{Der Benutzername lautet \textbf{Minolta}, das Passwort kann leer bleiben.}}
+\\ \hline  
+ 
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 4 - Starten von RapidForm2004}}}
+\\ \hline
+Auf dem Desktop doppelt auf das Icon \textbf{RapidForm} Icon klicken.
+& 
+\includegraphics[width=8cm]{Anleitung/1_Desktop}
+\\ \hline 
+
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 5 - Oberfläche von RapidForm2004}}}
+\\ \hline
+Die Oberfläche unterteilt sich in Menü, Werkzeugleisten, Projektbaum und Anzeigefläche.
+Je nach dem welche Ansicht in der Anzeigefläche gewählt ist, verändern sich auch das Menü und die Werkzeugleisten. 
 & 
 \includegraphics[width=8cm]{Anleitung/2_RapidForm}
 \\ \hline  
 
-\pagebreak 
-
-
-
-
-
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 3 - Starten des ''ADD-IN''}}}
+{{\textbf{Schritt 6 - Starten des ''ADD-IN''}}}
 \\ \hline
 In der Menüzeile auf 
 \textbf{Macro -> Addins -> Konica Minolta VIVID Direct Control Addin v2.6.11}
@@ -55,22 +67,18 @@ klicken.
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 4 - Kalibrieren vorbereiten}}}
+{{\textbf{Schritt 7 - Kalibrieren vorbereiten}}}
 \\ \hline
 \begin{TippS}Für ein erfolgreiches Zusammenführen der einzelnen Aufnahmen ist die Kalibrierung unerlässlich!\end{TippS}
 Auf dem Add-In Panel, unter dem Vorschau Fenster, auf \textbf{Live-Preview} klicken. \linebreak
 Das Kalibrierungsblech auf dem Drehtisch positionieren.  \linebreak
 Dabei muss der Noppen an der Unterseite des Kalibrierungsblechs in das mittlere Loch des Drehtisches gesteckt werden. Die abgeklebte Seite muss zum VI-900 zeigen.
 & 
-%\includegraphics[width=8cm]{Anleitung/3_ADDIN_Menu}
-Bild?
+\includegraphics[width=8cm]{Anleitung/4_5_Calibration}
 \\ \hline  
 
-\pagebreak 
-
-
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 5 - Kalibrieren}}}
+{{\textbf{Schritt 8 - Kalibrieren}}}
 \\ \hline
 Den Reiter \textbf{VIVID: 1} auswählen.\linebreak
 Bei \textbf{Manual Para.} ein Häkchen setzen.\linebreak
@@ -81,20 +89,17 @@ Auf \textbf{Scan for Calib} klicken.
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 6 - Kalibrierungsergebnis}}}
+{{\textbf{Schritt 9 - Kalibrierungsergebnis}}}
 \\ \hline
 Das Ergebnis sollte ähnlich zu dem in der rechten Abbildung sein. \linebreak
 Falls das Add-In einen Fehler ausgibt, muss das Kalibrierungsblech eventuell anders positioniert werden, der Wert im Feld \textbf{Laser Power} verändert werden oder der Fokus manuell eingestellt werden.\linebreak
-War die Kalibrierung erfolgreich können die \emph{Kalibrationsebenen }im \emph{Projektbaum} ausgeblendet werden.
+War die Kalibrierung erfolgreich, können die \emph{Kalibrationsebenen} im \emph{Projektbaum} ausgeblendet werden.
 & 
 \includegraphics[width=8cm]{Anleitung/4_Calibration_result}
 \\ \hline  
 
-\pagebreak 
-
-
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 7 - StepScan}}}
+{{\textbf{Schritt 10 - StepScan}}}
 \\ \hline
 Bei \textbf{Manual Para.} das Häkchen entfernen.\linebreak
 Zum Reiter \textbf{Step} wechseln.\linebreak
@@ -107,7 +112,7 @@ Bei \textbf{Rotation Step} die gewünschte Drehung in Grad eingeben. \linebreak
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 8 - AutoFocus}}}
+{{\textbf{Schritt 11 - AutoFocus}}}
 \\ \hline
 Das \emph{Kalibrationsblech} entfernen und durch das zu scannende Objekt ersetzen.\linebreak
 Zum Reiter \textbf{Control} wechseln. \linebreak
@@ -116,11 +121,8 @@ Auf \textbf{Autofocus} klicken.\linebreak
 \includegraphics[width=8cm]{Anleitung/6_AutoFocus}
 \\ \hline  
 
-\pagebreak 
-
-
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 9 - Scan}}}
+{{\textbf{Schritt 12 - Scan}}}
 \\ \hline
 Auf \textbf{Scan} klicken. \linebreak
 Das Objekt sollte möglichst schon zu erkennen sein und die Farben sich im Mittleren Bereich bewegen. \linebreak
@@ -131,19 +133,16 @@ Ansonsten muss mit den Parametern \textbf{Focus} und \textbf{LaserPower gespielt
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 10 - Akzeptieren}}}
+{{\textbf{Schritt 13 - Akzeptieren}}}
 \\ \hline
-Wenn das Objekt gut zu erkennen ist, werden mit \textbf{Accept} die Daten an RapidForm2004 gesendet. Der Drehtisch sollte sich nun automatisch um den eingestellten Winkel drehen. 
+Ist das Objekt gut zu erkennen, können mit \textbf{Accept} die Daten an RapidForm2004 gesendet werden. Der Drehtisch sollte sich nun automatisch um den eingestellten Winkel drehen. 
 \begin{TippS}Bei \textbf{AutoAccept} kann nun ein Häkchen gesetzt werden.\end{TippS}
 & 
 \includegraphics[width=8cm]{Anleitung/8_Accept}
 \\ \hline  
 
-\pagebreak 
-
-
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 11 - Scannen}}}
+{{\textbf{Schritt 14 - Scannen}}}
 \\ \hline
 Auf \textbf{Scan} klicken und warten bis der Scan abgeschlossen ist und der Tisch sich gedreht hat.\linebreak
 Diesen Schritt wiederholen bis alle Aufnahmen abgeschlossen sind.\linebreak
@@ -152,7 +151,7 @@ Diesen Schritt wiederholen bis alle Aufnahmen abgeschlossen sind.\linebreak
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 12 - Ergebnis der Scans}}}
+{{\textbf{Schritt 15 - Ergebnis der Scans}}}
 \\ \hline
 Nach Abschluss aller Scans dreht der Tisch sich automatisch in die Ursprungsposition zurück.\linebreak
 Im Arbeitsbereich sollten sich nun alle Scans befinden.
@@ -160,11 +159,8 @@ Im Arbeitsbereich sollten sich nun alle Scans befinden.
 \includegraphics[width=8cm]{Anleitung/9_1_Scan_result}
 \\ \hline  
 
-\pagebreak 
-
-
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 13 - Drehen und Zusammenführen der Scans}}}
+{{\textbf{Schritt 16 - Drehen und Zusammenführen der Scans}}}
 \\ \hline
 In der Menüzeile auf \textbf{Build -> Register -> Rotary Table} klicken.\linebreak
 & 
@@ -172,7 +168,7 @@ In der Menüzeile auf \textbf{Build -> Register -> Rotary Table} klicken.\linebr
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 14 - Registrieren}}}
+{{\textbf{Schritt 17 - Registrieren}}}
 \\ \hline
 Im Dialog auf \textbf{Select Axis} klicken.\linebreak
 Im Darstellungsbereich auf die Achse aus dem Kalibrationsscan klicken.
@@ -184,19 +180,12 @@ Den Dialog mit \textbf{Ok} verlassen.
 \includegraphics[width=8cm]{Anleitung/11_Register_Dialog_2}
 \\ \hline  
 
-\pagebreak 
- 
-
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 15 - Ergebnis}}}
+{{\textbf{Schritt 18 - Ergebnis}}}
 \\ \hline
-Als Ergebnis sollte nun ein komplettes 3D-Modell des Objektes herauskommen.
+Das Ergebnis ist ein komplettes 3D-Modell des Objektes.
 & 
 \includegraphics[width=8cm]{Anleitung/11_Register_result}
 \\ \hline  
 
-
-
-
 \end{longtable} 
-
