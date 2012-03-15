@@ -36,31 +36,33 @@
 \BOOKMARK [2][]{subsection.278}{Endschalter}{section.271}% 36
 \BOOKMARK [2][]{subsection.280}{Zweite serielle Schnittstelle}{section.271}% 37
 \BOOKMARK [1][]{section.282}{Kommunikation mit RapidForm2004}{chapter.38}% 38
-\BOOKMARK [2][]{subsection.283}{Befehle empfangen}{section.282}% 39
-\BOOKMARK [3][]{subsubsection.289}{Automatische Auswahl eines Befehlssatzes}{subsection.283}% 40
-\BOOKMARK [1][]{section.349}{Auswerte-Funktionen}{chapter.38}% 41
-\BOOKMARK [2][]{subsection.350}{Auswerte-Funktion f\374r Isel-Motoren}{section.349}% 42
-\BOOKMARK [3][]{subsubsection.351}{Initialisierung}{subsection.350}% 43
-\BOOKMARK [3][]{subsubsection.352}{Statusabfrage}{subsection.350}% 44
-\BOOKMARK [3][]{subsubsection.353}{Bewegung}{subsection.350}% 45
-\BOOKMARK [1][]{section.445}{Platinenlayout und 19''-Einschub}{chapter.38}% 46
-\BOOKMARK [0][]{chapter.447}{Probleme und L\366sungen}{}% 47
-\BOOKMARK [1][]{section.448}{Entwicklungsumgebungen}{chapter.447}% 48
-\BOOKMARK [2][]{subsection.449}{AVR Studio 5}{section.448}% 49
-\BOOKMARK [2][]{subsection.450}{Eclipse}{section.448}% 50
-\BOOKMARK [1][]{section.451}{Interrupts}{chapter.447}% 51
-\BOOKMARK [2][]{subsection.452}{Endschalter}{section.451}% 52
-\BOOKMARK [2][]{subsection.464}{Watchdog}{section.451}% 53
-\BOOKMARK [1][]{section.481}{Fuses}{chapter.447}% 54
-\BOOKMARK [0][]{chapter.483}{Fazit und Zukunft}{}% 55
-\BOOKMARK [1][]{section.484}{Fazit}{chapter.483}% 56
-\BOOKMARK [0][]{chapter*.486}{Eidesstattliche Erkl\344rung}{}% 57
-\BOOKMARK [0][]{appendix.487}{Anhang}{}% 58
-\BOOKMARK [1][]{section.488}{Schritt f\374r Schritt Anleitung}{appendix.487}% 59
-\BOOKMARK [1][]{section.490}{Befehlssatz der vorhandene Schrittmotorkarte}{appendix.487}% 60
-\BOOKMARK [1][]{section.492}{Befehlss\344tze aus RapidForm2004}{appendix.487}% 61
-\BOOKMARK [1][]{section.589}{Technische Daten VI-910}{appendix.487}% 62
-\BOOKMARK [1][]{section.591}{Verwendete Hardware}{appendix.487}% 63
-\BOOKMARK [1][]{section.592}{Verwendete Software}{appendix.487}% 64
-\BOOKMARK [1][]{section.593}{main.c}{appendix.487}% 65
-\BOOKMARK [1][]{section.1465}{Danksagung}{appendix.487}% 66
+\BOOKMARK [2][]{subsection.284}{Befehle empfangen}{section.282}% 39
+\BOOKMARK [3][]{subsubsection.290}{Automatische Auswahl eines Befehlssatzes}{subsection.284}% 40
+\BOOKMARK [1][]{section.350}{Auswerte-Funktionen}{chapter.38}% 41
+\BOOKMARK [2][]{subsection.351}{Auswerte-Funktion f\374r Isel-Motoren}{section.350}% 42
+\BOOKMARK [3][]{subsubsection.364}{Initialisierung}{subsection.351}% 43
+\BOOKMARK [3][]{subsubsection.371}{Statusabfrage}{subsection.351}% 44
+\BOOKMARK [3][]{subsubsection.386}{Rotation}{subsection.351}% 45
+\BOOKMARK [1][]{section.482}{Platinenlayout und 19''-Einschub}{chapter.38}% 46
+\BOOKMARK [0][]{chapter.486}{Probleme und L\366sungen}{}% 47
+\BOOKMARK [1][]{section.487}{Entwicklungsumgebungen}{chapter.486}% 48
+\BOOKMARK [2][]{subsection.488}{AVR Studio 5}{section.487}% 49
+\BOOKMARK [2][]{subsection.489}{Eclipse}{section.487}% 50
+\BOOKMARK [1][]{section.490}{Interrupts}{chapter.486}% 51
+\BOOKMARK [2][]{subsection.491}{Endschalter}{section.490}% 52
+\BOOKMARK [2][]{subsection.505}{Watchdog}{section.490}% 53
+\BOOKMARK [1][]{section.523}{Fuses}{chapter.486}% 54
+\BOOKMARK [0][]{chapter.525}{Fazit und weitere M\366glichkeiten}{}% 55
+\BOOKMARK [1][]{section.526}{Fazit}{chapter.525}% 56
+\BOOKMARK [1][]{section.527}{Bekannte Probleme}{chapter.525}% 57
+\BOOKMARK [1][]{section.528}{Weitere M\366glichkeiten}{chapter.525}% 58
+\BOOKMARK [0][]{chapter*.530}{Eidesstattliche Erkl\344rung}{}% 59
+\BOOKMARK [0][]{appendix.531}{Anhang}{}% 60
+\BOOKMARK [1][]{section.532}{Schritt f\374r Schritt Anleitung}{appendix.531}% 61
+\BOOKMARK [1][]{section.534}{Befehlssatz der vorhandene Schrittmotorkarte}{appendix.531}% 62
+\BOOKMARK [1][]{section.536}{Befehlss\344tze aus RapidForm2004}{appendix.531}% 63
+\BOOKMARK [1][]{section.633}{Technische Daten VI-910}{appendix.531}% 64
+\BOOKMARK [1][]{section.635}{Verwendete Hardware}{appendix.531}% 65
+\BOOKMARK [1][]{section.636}{Verwendete Software}{appendix.531}% 66
+\BOOKMARK [1][]{section.637}{main.c}{appendix.531}% 67
+\BOOKMARK [1][]{section.1509}{Credits}{appendix.531}% 68

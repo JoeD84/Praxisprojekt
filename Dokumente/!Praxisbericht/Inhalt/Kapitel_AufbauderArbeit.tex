@@ -134,6 +134,7 @@ Somit stand ein Kabel zur Verfügung mit dem sowohl der Schrittmotor gesteuert, 
 \caption{Motor- und Endschalterverkabelung}
 \label{fig:Motorverkabelung}
 \end{figure}
+
 \begin{longtable}{|c|l|} 
 \caption{Motor- und Endschalterverkabelung} \\
 \hline
@@ -181,10 +182,16 @@ Dadurch ist es möglich mit dem Mikrocontroller über zwei RS-232-Schnittstellen
 
 \section{Kommunikation mit RapidForm2004}
 \label{sec:Komm_RF2004}
-RapidForm2004 sendet Befehle die für die Drehtischsteuerung bestimmt sind an den Mikrocontroller. Diese sollen dort empfangen, ausgewertet und in verständlicher Form an die Drehtischsteuerung weiter gegeben werden. RapidForm2004 verwendet dabei verschiedene Befehlssätze für verschiedene Schrittmotorsteuerungen. Für jeden dieser Befehlssätze wird eine eigene Auswerte-Funktion geschrieben. Im folgenden Kapitel wird nun das Empfangen der Befehle beschrieben und eine erste Auswertung, die den empfangenden Befehl dem Befehlssatz einer Schrittmotorsteuerung zuordnet.\\
-Nachdem ein Befehl in der richtigen Auswerte-Funktion erkannt wurde, soll ein entsprechender Befehl an die Drehtischsteuerung gesendet und die Antwort der Drehtischsteuerung ausgewertet werden. Abschließend soll eine entsprechende Antwort an RapidForm2004 zurück gesendet werden.\\
+RapidForm2004 sendet Befehle die für die Drehtischsteuerung bestimmt sind an den Mikrocontroller. Diese sollen dort empfangen, ausgewertet und in verständlicher Form an die Drehtischsteuerung weiter gegeben werden. RapidForm2004 verwendet dabei verschiedene Befehlssätze für verschiedene Schrittmotorsteuerungen. Für jeden dieser Befehlssätze wird eine eigene Auswerte-Funktion geschrieben. Im folgenden Kapitel wird nun das Empfangen der Befehle beschrieben und eine erste Auswertung, die den empfangenen Befehl dem Befehlssatz einer Schrittmotorsteuerung zuordnet. 
+Nachdem ein Befehl zugeordnet wurde und in der entsprechenden Auswerte-Funktion erkannt wurde, soll ein entsprechender Befehl an die Drehtischsteuerung gesendet und die Antwort der Drehtischsteuerung vom Mikrocontroller ausgewertet werden. Abschließend soll eine entsprechende Antwort an RapidForm2004 zurück gesendet werden. Abbildung \ref{fig:Schema_Komm} zeigt eine schematische Übersicht dieser Kommunikation.\\
 Die Kommunikation mit RapidForm2004 ist ähnlich zu der mit der Schrittmotorsteuerung. Diese wurde bereits in Kapitel \ref{sec:Komm_SM} ausführlich beschrieben. Daher wird die Kommunikation hier etwas oberflächlicher behandelt.
-\todo{tolle Zeichnung!}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Schema_Kommunikation}
+\caption{Schema der Kommunikation}
+\label{fig:Schema_Komm}
+\end{figure}
+
 \subsection{Befehle empfangen}
 Zuerst sollen nun die Befehle von RapidForm2004 an den Mikrocontroller, gespeichert werden. Anschließend wird die automatische Auswahl des Befehlssatzes beschrieben.\\
 Um anstehende Befehle zu empfangen wird, ähnlich wie in Kapitel \ref{sec:Empfangen_Schrittmotor}, eine Funktion die ständig das Eingangsregister der ersten seriellen Schnittstelle abfragt verwendet (siehe Codelisting \ref{lst:rs232empfangrf}). Auch hier wird die Funktion \Code{uart\_rx(dir)} aufgerufen, jedoch mit dem Parameter \Code{D\_RapidForm}. Der empfangenen String wird auch hier in die Variable \Code{str\_rx} gespeichert. Somit können nun auch Strings von RapidForm2004 empfangen und in der Variablen \Code{str\_rx} gespeichert werden.
@@ -207,77 +214,94 @@ Der Nachteil dieses Vorgehens besteht darin, dass für ein wechseln des Befehlss
 \section{Auswerte-Funktionen}
 \label{sec:Auswerten_RF}
 Die Auswerte-Funktionen sind das Herzstück des Programms. Es geht darum für jedes Protokoll eine eigene Auswerte-Funktion zu schreiben. Diese sollen die von RapidForm2004 kommenden Strings verstehen können und in einen, für die vorhandene Schrittmotorkarte, verständlichen Befehl übersetzen können. Die Funktionen sollen weiterhin prüfen, ob der Befehl von der Schrittmotorkarte erkannt wurde und den Status der Schrittmotorkarte zurück an RapidForm2004 melden.\\
-Alle bisherigen Arbeitsschritte hatten zum Ziel, die Kommunikation zwischen RapidForm2004 und der ersten Schrittmotorkarte zu ermöglichen. Nun fehlte nur noch der Teil des Programms der die ankommenden Befehle auswertet und in verständlicher Form an die Schrittmotorkarte weitergibt.\\
+Alle bisherigen Arbeitsschritte hatten zum Ziel, die Kommunikation zwischen RapidForm2004 und der ersten Schrittmotorkarte zu ermöglichen. Nun fehlt nur noch der Teil des Programms der die ankommenden Befehle auswertet und in verständlicher Form an die Schrittmotorkarte weitergibt.
 Im folgenden Kapitel wird dieser Ablauf nun exemplarisch für den Befehlssatz eines Isel-Motors erklärt.
 
 \subsection{Auswerte-Funktion für Isel-Motoren}
-Nun soll die Kommunikation zwischen RapidForm2004 und der Schrittmotorkarte beschrieben werden.\\
-Wurde wie in Kapitel \ref{sec:AutoProtokoll} beschrieben, der Befehlssatz für einen Isel-Motor erkannt, wird der empfangene String, an die Auswerte-Funktion \Code{switch\_Isel(str\_rx)} übergeben. Der Ablauf dieser Funktion ist ähnlich aufgebaut wie bei der Kommunikation mit der Schrittmotorkarte (Kapitel \ref{sec:Komm_SM}) und bei der automatischen Auswahl des Befehlssatzes (Kapitel \ref{sec:AutoProtokoll}. In der Funktion \Code{switch\_Isel(str\_rx)} sind in dem Array \Code{pOptions} alle benötigten Befehle des Isel-Befehlssatzes hinterlegt. Mit der aus Kapitel \ref{sec:Auswerten_SM} bekannten Funktion \Code{FindStringInArray(str\_rx, pOptions)} wird  \Code{str\_rx} gegen diese Befehle geprüft. Wird der Befehl im Array gefunden gibt die Funktion \Code{FindStringInArray()} die Position des Strings im Array zurück. Mittels der \emph{switch-case-Struktur} lässt sich nun so für jeden Befehl eine entsprechender Ablauf ausführen. 
+Wird der Befehl \Code{@01} empfangen, übergibt die in Kapitel \ref{sec:AutoProtokoll} beschriebene Funktion, den String an die Auswerte-Funktion \Code{switch\_Isel(str\_rx)}. Der Ablauf dieser Funktion ist ähnlich aufgebaut wie bei der Kommunikation mit der Schrittmotorkarte (Kapitel \ref{sec:Komm_SM}) und bei der automatischen Auswahl des Befehlssatzes (Kapitel \ref{sec:AutoProtokoll}. In der Funktion \Code{switch\_Isel(str\_rx)} sind in dem Array \Code{pOptions} alle benötigten Befehle des Isel-Befehlssatzes hinterlegt. Mit der aus Kapitel \ref{sec:Auswerten_SM} bekannten Funktion \Code{FindStringInArray(str\_rx, pOptions)} wird  \Code{str\_rx} gegen diese Befehle geprüft. Wird der Befehl im Array gefunden gibt die Funktion \Code{FindStringInArray()} die Position des Strings im Array zurück. Mittels einer \Fachbegriff{switch-case-Struktur} lässt sich nun so für jeden Befehl ein entsprechender Ablauf ausführen. Die einzelnen Abläufe werden übersichtlich in den folgenden Kapiteln beschrieben.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:switch_Isel,caption=Übersetzungs Logik für einen Isel-Motor]{Code/switch_Isel.c}
 
 \subsubsection{Initialisierung}
+Für den String \Code{@01} wird \Code{case 3} ausgeführt. Dieser Codeblock zeigt die Meldung \emph{Init} auf dem Display an und sendet den erwarteten Befehl an RapidForm2004.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:switch_Isel_Init,caption=case 3: Initialisierung]{Code/switch_Isel_Init.c}
 
 \subsubsection{Statusabfrage}
-Kommt z.B. der String \emph{@0R} an, wird der Codeblock von \emph{case 4} ausgeführt. Dies ist der Codeblock für eine Statusabfrage. Auf dem LC-Display wird \emph{Satusabfrage:} ausgegeben. Danach wird der entsprechende Befehl für eine Statusabfrage an die Schrittmotorkarte gesendet. Nach einer kurzen Pause von 50ms, um die Verarbeitung auf der Schrittmotorkarte zu gewährleisten, wird mit einer if-Anweisung geprüft ob sich Daten im Schrittmotorkarten seitigen Empfangsregister befinden. Sprich, die Schrittmotorkarte reagiert hat. Ist dies der Fall, wird der Ablauf, bekannt aus Kapitel \ref{sec:Komm_SM}, durchlaufen. Während diesem Ablauf wird die entsprechende Antwort der Schrittmotorkarte auf dem LC-Display ausgegeben. In einer weiteren if-Anweisung wird überprüft ob der angekommene String erfolgreich war. Wenn ja, wird dies an RapidForm2004 gemeldet. Andernfalls zeigt das Display \emph{Fehlgeschlagen} an und sendet eine 1 an RapidForm2004.\\
-
-
-\subsubsection{Bewegung}
-
+Wird der String \Code{@0R} empfangen, wird der Codeblock \Code{case 4} ausgeführt. Auf dem LC-Display wird \emph{Satusabfrage:} ausgegeben. Danach wird der entsprechende Befehl für eine Statusabfrage an die Schrittmotorkarte gesendet. Nach einer kurzen Pause von 50ms, um die Verarbeitung auf der Schrittmotorkarte zu gewährleisten, wird mit einer if-Anweisung geprüft ob sich Daten im Schrittmotorkarten-Empfangsregister befinden. Sprich, die Schrittmotorkarte reagiert hat. Ist dies der Fall, wird der Ablauf, bekannt aus Kapitel \ref{sec:Komm_SM}, durchlaufen. Während diesem Ablauf wird die entsprechende Antwort der Schrittmotorkarte auf dem LC-Display ausgegeben. In einer weiteren if-Anweisung wird überprüft ob der angekommene String erfolgreich war. Wenn ja, wird dies an RapidForm2004 gemeldet. Andernfalls zeigt das Display \emph{Fehlgeschlagen} an und sendet eine \emph{1} an RapidForm2004.
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
-\lstinputlisting[label=lst:switch_Isel,caption=Übersetzungs Logik: Isel]{Code/switch_Isel.txt}
+\lstinputlisting[label=lst:switch_Isel_Status,caption=case 4: Statusabfrage]{Code/switch_Isel_Status.c}
+
+\subsubsection{Rotation}
+Der Codeblock von \Code{case 5} ist für die Rotation verantwortlich. Es werden je ein String für die Endposition und für den Winkel mit Stringterminierungszeichen vorbelegt. Diese werden an die Funktion \linebreak \Code{String\_zerlegen\_Isel(str\_rx, Position, Winkel)} (Codelisting \ref{lst:StringzerlegenIsel}) übergeben. Dort wird der String in die Bestandteile \emph{Achse}, \emph{Rotationsbefehl}, \emph{Position/Anzahl der Schritte} und \emph{Geschwindigkeit} zerlegt. Von diesen ist nur die Anzahl der Schritte relevant. Da die Anzahl der Schritte für den Schrittmotor angepasst werden muss, wird der String in eine Zahl umgewandelt und mit einem entsprechenden Faktor multipliziert. Zugunsten der Rechenzeit wird nicht exakt gerechnet und die Division im Faktor mit 1024 durchgeführt. Diese wird beim Kompilieren durch eine \Fachbegriff{Bitverschiebung} ersetzt. Dies spart mehrere Sekunden Rechenzeit und die Abweichung der Schritte beträgt nur maximal 3 Schritte. Die berechnete Anzahl der Schritte wird anschließend wieder als String gespeichert. Dieser wird dann an den String für den Rotationsbefehl der Schrittmotorkarte angehängt. Der neue String wird auf dem Display ausgegeben und an die Schrittmotorsteuerung gesendet. Die Antwort der Schrittmotorsteuerung wird ausgelesen und anschließend wird in einer \Fachbegriff{while-Schleife} so lange der Status des Motors abgefragt bis dieser keine Bewegung mehr meldet. Die Position ist damit erreicht und es wird der erwartete Befehl an RapidForm2004 gesendet.
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:switch_Isel_Rotation,caption=case 5: Rotation]{Code/switch_Isel_Rotation.c}
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting[label=lst:StringzerlegenIsel,caption=Funktion: string zerlegen Isel()]{Code/string_zerlegen_Isel.c}
+
 
 \section{Platinenlayout und 19''-Einschub}
 \label{sec:Platinenlayout}
-Der Mikrocontroller und seine Peripherie befinden sich zur Zeit noch auf dem STK500. Nun soll ein Platinenlayout entwickelt werden das den Mikrocontroller und seine Peripherie enthält.\\
-Dazu wird ein Platinenlayout in der Open Source Software KiCad entwickelt. Diese bietet fast alles, was benötigt wird um ein Platinenlayout zu entwickeln. Ein Schaltplaneditor, ein Bauteileditor und ein Layouteditor. Da die Schrittmotorkarten als 19''-Einschübe realisiert sind, wird auch das Platinenlayout für den Mikrocontroller als 19''-Einschub entwickelt. Dazu gehören vor allem der Steckverbinder an der Rückseite der Platine und genügend Platz für die Verschraubung der Blende an der Vorderseite, sowie die Größe der Platine. Die Schaltungen wie sie auf dem STK500 vorhanden sind, werden im Schaltplaneditor von KiCad in den eigenen Schaltplan übernommen. Anschließend wird das Layout im Layouteditor entwickelt. Dabei waren mehrere enge Vorgaben einzuhalten. Da in der FH keine Platinen mit \Fachbegriff{Duschkontaktierungen} hergestellt werden können, sollten \Fachbegriff{Vias} vermieden, IC-Sockel, Kondensatoren und Potis nur auf der Unterseite verlötet werden. Abschließend werden die benötigten Verbindungen zwischen den Bauteilen berechnet. Die Aufgabe übernimmt im allgemeinen ein \Fachbegriff{Autorouter}. Dies kann nicht in der Software KiCad selbst durchgeführt werden. Diese Funktionalität wird jedoch durch die Java-Web-Anwendung, zu finden unter  \url{http://www.freerouting.net/}, bereitgestellt. Da der Autorouter die Aufgabe nicht zufriedenstellend lösen konnte, mussten viele Verbindungen nachträglich manuell angelegt werden. 
-\begin{figure}[htb]
+Der Mikrocontroller und seine Peripherie befanden sich noch auf dem STK500. Es soll ein Platinenlayout entwickelt werden, welches den Mikrocontroller und seine Peripherie enthält.\\
+Dazu wird ein Platinenlayout in der Open Source Software KiCad entwickelt. Diese bietet fast alles, was benötigt wird um ein Platinenlayout zu entwickeln. Ein Schaltplaneditor, ein Bauteileditor und ein Layouteditor. Da die Schrittmotorkarten als 19''-Einschübe realisiert sind, wird auch das Platinenlayout für den Mikrocontroller als 19''-Einschub entwickelt. Dazu gehören vor allem der Steckverbinder an der Rückseite der Platine und genügend Platz für die Verschraubung der Blende an der Vorderseite, sowie die Größe der Platine. Die Schaltungen wie sie auf dem STK500 vorhanden sind, werden im Schaltplaneditor von KiCad in den eigenen Schaltplan (siehe Abbildung \ref{fig:Schaltplan}) übernommen.  
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Schaltplan}
+\caption{Schaltplan}
+\label{fig:Schaltplan}
+\end{figure}
+Anschließend wird das Layout im Layouteditor entwickelt. Dabei waren mehrere enge Vorgaben einzuhalten. Da in der Werkstatt des RheinAhrCampus keine Platinen mit \Fachbegriff{Durchkontaktierungen} hergestellt werden können, sollen \Fachbegriff{Vias} vermieden, IC-Sockel, Kondensatoren und Potis nur auf der Unterseite verlötet werden. Abschließend werden die benötigten Verbindungen zwischen den Bauteilen berechnet. Die Aufgabe übernimmt im allgemeinen ein \Fachbegriff{Autorouter}. Dies kann nicht in der Software KiCad selbst durchgeführt werden. Diese Funktionalität wird jedoch durch die Java-Web-Anwendung \emph{Freeroute}[\ref{sec:V_Software}] bereitgestellt. Da der Autorouter die Aufgabe nicht zufriedenstellend lösen konnte, mussten viele Verbindungen nachträglich manuell angelegt werden. Das fertige Layout (siehe Abbildung \ref{fig:Platine}) wurde von der Werkstatt am RheinAhrCampus gefertigt und anschließend bestückt. 
+\begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{Translator_white}
 \caption{Platinenlayout}
 \label{fig:Platine}
 \end{figure}
-\todo{Schaltplan und einbinden.}
-Das fertige Layout wurde von der Werkstatt am RheinAhrCampus gefertigt und anschließend von mir bestückt. Über den rückwärtigen Steckverbinder wird die Platine mit der Spannungsversorgung verbunden. Zusätzlich kommen hier auch die Signale der Endschalter an. An der Vorderseite der Platine wird eine Blende verbaut. Auf dieser Blende befinden sich das LC-Display, fünf Taster, 5 LEDs und 2 serielle Schnittstellen. Alle Bauteile sind mittels Flachbandkabel, steckbar, mit der Platine verbunden. \todo{Bild des Einschub}\\
-Dadurch sind alle im Projekt verwendeten Komponenten auf einem 19''-Einschub vereint.
+Über den rückwärtigen Steckverbinder wird die Platine mit der Spannungsversorgung verbunden. Zusätzlich kommen hier auch die Signale der Endschalter an. An der Vorderseite der Platine wird eine Blende verbaut. Auf dieser Blende befinden sich das LC-Display, fünf Taster, 5 LEDs und 2 serielle Schnittstellen. Alle Bauteile sind mittels Flachbandkabel, steckbar, mit der Platine verbunden.\\
+Dadurch sind alle im Projekt verwendeten Komponenten auf einem 19''-Einschub (siehe Abbildung \ref{fig:Einschub}) vereint.
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{19ZollEinschub}
+\caption{19''-Einschub}
+\label{fig:Einschub}
+\end{figure}
 
 \chapter{Probleme und Lösungen}
 \section{Entwicklungsumgebungen}
 \subsection{AVR Studio 5}
-Die von Atmel AVR Studio 5 ist eine von Atmel bereitgestellte Entwicklungsumgebung. Diese scheint jedoch eine fehlerhafte Bibliothek zu enthalten. Die Kombination aus Mikrocontroller ATmega324A und AVR Studio 5 erzeugte nicht nachvollziehbare Probleme. Bei dem selbem Programm und einem anderem Mikrocontroller oder einer anderen Entwicklungsumgebung tauchten keine Fehler auf.
-In der Entwicklungsumgebung Eclipse lies sich der Fehler reproduzieren wenn der Pfad der Atmel Bibliotheken eingestellt wurde. Die WinAVR Bibliotheken und eine selbst kompilierte \Fachbegriff{Toolchain} unter Linux zeigten keine Probleme.\\
-Daher wechselte ich zur \Fachbegriff{Open Source} Entwicklungsumgebung Eclipse. Erst dadurch wurde es möglich erfolgreich zu arbeiten. Außerdem wurde das Projekt dadurch plattformunabhänig und ich nutzte bis auf RapidForm2004 nur noch freie Open Source Software.\\
+\emph{AVR Studio 5}[\ref{sec:V_Software}] ist eine von Atmel bereitgestellte Entwicklungsumgebung. Diese scheint jedoch eine fehlerhafte Bibliothek zu enthalten. Die Kombination aus Mikrocontroller ATmega324A und AVR Studio 5 erzeugte nicht nachvollziehbare Probleme. Bei dem selbem Programm und einem anderem Mikrocontroller oder einer anderen Entwicklungsumgebung tauchten keine Fehler auf.
+In der Entwicklungsumgebung \emph{Eclipse}[\ref{sec:V_Software}] lies sich der Fehler reproduzieren wenn der Pfad der von Atmel bereitgestellten Bibliotheken eingestellt wurde. Eine von \emph{WinAVR} bereitgestellte Bibliothek und eine selbst kompilierte \Fachbegriff{Toolchain} unter \emph{Linux} zeigten diese Probleme nicht.\\
+Daher wurde zur \Fachbegriff{Open Source} Entwicklungsumgebung Eclipse mit freien Bibliotheken von WinAVR gewechselt. Dadurch wurde das Problem umgangen und das Projekt plattformunabhänig. Bis auf RapidForm2004 wurde somit nur noch freie Open Source Software verwendet.\\
 \subsection{Eclipse}
-Eclipse ist eine in Java programmierte freie Open Source Entwicklungsumgebung für Java. Sie lässt sich durch \Fachbegriff{Plugins} leicht für viele Sprachen erweitern.\\
-Mit dem CDT-Plugin, dem AVR-Plugin und einer Bibliothek wie z.B. WinAVR für Windows ist Eclipse eine vollwertige Entwicklungsumgebung für Atmel Mikrocontroller. 
-Ergänzt wird diese durch die Programmiersoftware AVR-Dude.\\
+Eclipse ist eine in Java programmierte freie open source Entwicklungsumgebung für Java. Sie lässt sich durch \Fachbegriff{Plugins} leicht für viele Programmiersprachen erweitern.\\
+Mit dem \emph{CDT-Plugin}, dem \emph{AVR-Plugin}, der Bibliothek von \emph{WinAVR} und der Programmiersoftware \emph{AVRDude} ist Eclipse eine vollwertige Entwicklungsumgebung für Mikrocontroller von Atmel. 
 
 \section{Interrupts}
 \label{sec:Interrupts}
-Viele Mikrocontroller bieten die Möglichkeit Eventbasierte Subroutinen auszuführen. Wenn einer der Interrupts ausgelöst wird, wird das Hauptprogramm unterbrochen und die Entsprechende Interrupt-Service-Routine, kurz ISR, ausgeführt. Nach Beendigung der ISR wird das Hauptprogramm an der  vorherigen Stelle wieder aufgenommen.\\
-ISR dürfen nur sehr wenige Befehle enthalten und müssen innerhalb weniger ClockCicles abgeschlossen sein. \\
-Interrupts können z.B. der Überlauf eines internen Timer sein, oder ein externens Signal an einem Pin.\\
-Im Projekt werden externe Interrupts, Timer-Überlauf Interrupts und der Watchdog Interrupt genutzt. 
+Viele Mikrocontroller bieten die Möglichkeit \emph{eventbasierte} \Fachbegriff{Subroutinen} auszuführen. Wenn ein sogenannter \Fachbegriff{Interrupt} ausgelöst wird, wird das Hauptprogramm unterbrochen und eine entsprechende \Fachbegriff{Interrupt-Service-Routine}, kurz ISR, ausgeführt. Nach Beendigung der ISR wird das Hauptprogramm an der Stelle wieder aufgenommen, an der es unterbrochen wurde. ISR dürfen nur sehr wenige Befehle enthalten und sollten innerhalb weniger \Fachbegriff{Taktzyklen} abgeschlossen sein.\\
+Interrupts können z.B. der Überlauf eines internen Timer, oder ein externens Signal an einem Pin sein. Im Projekt werden Externe-Interrupts für die Endschalter, Timer-Überlauf-Interrupts für das Entprellen der Taster und der Watchdog-Interrupt zum erkennen von Fehlern genutzt. 
 \subsection{Endschalter}
 \label{sec:Endschalter_SW}
-Die Endschalter sind über die Schrittmotorkarten und eine Brücke in der Steuerung mit der Mikrocontroller Platine Verbunden. Dort sind sie an 2 Interrupt Pins angeschlossen. \todo{Pins raus suchen!} Bei einem Flanken Wechsel an den Pins wird ein Interrupt ausgelöst. \\
-Das Code-Listing \ref{lst:ISR_ES} zeigt die ISR für die Endschalter.
+Die Endschalter sind über die Schrittmotorkarten und eine Brücke auf der Rückseite der Einschubsteckplätze mit der Mikrocontrollerplatine verbunden. Dort sind sie an 2 Interrupt Pins angeschlossen. \todo{Pins raus suchen!} Bei einem Flankenwechsel an den Pins wird ein Interrupt ausgelöst. \\
+Mit den Zeilen 1--2 des Codelistings \ref{lst:ISR_ES} werden Pin-Change-Interrupts für bestimmte Pins zugelassen. Die Zeilen 3--7 und 8--12 zeigen die Interrupt-Service-Routinen für die beiden Interrupts.
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=2}
 \lstinputlisting[label=lst:ISR_ES,caption=ISR: Endschalter]{Code/ISR_Endschalter.c}
 \subsection{Watchdog}
-Der \Fachbegriff{Watchdog} ist eine Sicherungseinrichtung des Mikrocontroller. In regelmäßigen Abständen wird überprüft ob das Watchdog Bit gesetzt ist und anschließend zurück gesetzt. Das Bit muss innerhalb der voreingestellten Zeit immer wieder neu gesetzt werden. Dies kann mit der wdt\_reset() Funktion realisiert werden. Ist das Bit nicht gesetzt, wird der Mikrocontroller zurückgesetzt. \todo{Inverse Logik?} Dies geschieht z.B. bei nicht geplanten Endlosschleifen.\\
-Wahlweise kann kurz vor dem Reset noch die Watchdog-ISR durchlaufen werden.\\
-Im Projekt wird in der ISR die Fehler LED eingeschaltet und eine Meldung auf dem LC-Display ausgegeben. Siehe hierzu auch Listing \ref{lst:Watchdog} Zeilen 12-15.
+Der \Fachbegriff{Watchdog} ist eine Sicherungseinrichtung des Mikrocontroller. In regelmäßigen Abständen wird überprüft ob das Watchdog-Bit gesetzt ist und anschließend zurück gesetzt. Das Bit muss innerhalb der voreingestellten Zeit immer wieder neu gesetzt werden. Dies kann mit der Funktion \Code{wdt\_reset()} realisiert werden. Ist das Bit nicht gesetzt, wird der Mikrocontroller zurückgesetzt. Dies geschieht z.B. bei ungewollten Endlosschleifen.\\
+Mit den Zeilen 3--10 des Codelisting \ref{lst:Watchdog} wird der Watchdog initialisiert und festgelegt in welchen Zeitintervallen das Watchdog-Bit überprüft werden soll. Der Ablauf zum einstellen des Zeitinveralls muss genau wie im Datenblatt des Mikrocontroller beschrieben eingehalten werden. Dies verhindert ein versehentliches Ändern der Einstellung. 
+Ist das Fusebit \emph{WDTON} gesetzt kann der Watchdog nicht abgeschaltet werden (siehe Kapitel \ref{sec:Fuses}).\\
+Wahlweise kann kurz vor dem zurücksetzen des Mikrocontroller noch die Watchdog-ISR durchlaufen werden. Im Projekt wird in der ISR die \emph{Fehler-LED} eingeschaltet und eine Meldung auf dem LC-Display ausgegeben (siehe Codelisting \ref{lst:Watchdog} Zeilen 12-16).
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=4}
 \lstinputlisting[label=lst:Watchdog,caption=Watchdog]{Code/Watchdog.txt}
 
 \section{Fuses}
 \label{sec:Fuses}
-Als Fuses werden Register bezeichnet mit denen sich, auf Hardwareebene, das Verhalten des Mikrocontrollers verändern lässt. \\
-Im Projekt wurden folgende Fuses problematisch.
+Als \Fachbegriff{Fuses} werden Register bezeichnet mit denen sich, auf Hardwareebene, das Verhalten des Mikrocontrollers verändern lässt. Im Projekt wurden folgende Fuses problematisch.
 \begin{itemize}
-\item \textbf{JTAGEN} - Ist dieses \Fachbegriff{Fusebit} gesetzt, werden 4 Pins des PortB genutzt um den Mikrocontroller zu debuggen und können nicht anders genutzt werden. Hardware Debugging bietet viele Vorteile. Diese wurden im Projekt jedoch nicht genutzt da PortB für die LEDs genutzt wurde.
-\item \textbf{WDTON} - Ist dieses Fusebit gesetzt läuft der Watchdog Timer immer mit. Wird der Watchdog dann nicht regelmäßig zurückgesetzt startet der Mikrocontroller ständig neu.
-\item \textbf{CKDIV8} - Teilt den Systemtakt des Mikrocontroller durch 8. Dies ist Energiesparender. Der geringere Takt muss in F\_CPU angepasst werden da sonst zeitkritische Prozesse mit der falschen Geschwindigkeit ablaufen.
-\item \textbf{CKOUT} - An PortB wird an einem Pin der Systemtakt ausgegeben. Dieser kann dann leicht mit einem Frequenz-Messgerät überprüft werden. Der Pin kann dann jedoch nicht anderweitig genutzt werden.
+\item \textbf{JTAGEN} - Ist dieses Bit gesetzt, kann an 4 Pins des \emph{PortB} ein \Fachbegriff{JTAG-Debugger} angeschlossen werden. Debuggen auf Hardwareebene bietet viele Vorteile. Diese wurden im Projekt jedoch nicht genutzt, da kein JTAG-Debugger zur Verfügung stand und PortB für die LEDs genutzt wurde.
+\item \textbf{WDTON} - Ist dieses Bit gesetzt, läuft der Watchdog-Timer immer mit. Wird der Watchdog dann nicht regelmäßig mit der Funktion \Code{wdt\_reset()} zurückgesetzt, startet der Mikrocontroller ständig neu. 
+\item \textbf{CKDIV8} - Teilt den Systemtakt des Mikrocontroller durch 8. Dies ist Energiesparender. Der geringere Takt muss in F\_CPU angepasst werden da sonst zeitkritische Prozesse mit der falschen Geschwindigkeit ablaufen. Das Bit wurde jedoch im Projekt nicht gesetzt.
+\item \textbf{CKOUT} - An einem Pin an \emph{PortB} wird der Systemtakt ausgegeben. Dieser kann dann leicht mit einem Frequenz-Messgerät überprüft werden. Der Pin kann dann jedoch nicht anderweitig genutzt werden.
 \item \textbf{CKSELX} - Über diese 4 Bits kann der Systemtakt eingestellt werden.
 \end{itemize}
 \begin{longtable}{|l|l|} 
