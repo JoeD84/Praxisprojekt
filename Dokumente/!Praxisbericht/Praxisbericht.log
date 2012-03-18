@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.12.22)  15 MAR 2012 01:51
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.12.22)  18 MAR 2012 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -950,11 +950,8 @@ Writing nomenclature file Praxisbericht.nlo
 
 (./Silbentrennung.tex) (./Praxisbericht.aux (./Deckblatt.aux)
 (./Inhalt/Einleitung.aux) (./Inhalt/Kapitel_Hardware.aux)
-(./Inhalt/Kapitel_Software.aux) (./Inhalt/Kapitel_AufbauderArbeit.aux
-
-LaTeX Warning: Label `fig:Motorverkabelung' multiply defined.
-
-) (./Inhalt/Fazit.aux) (./Inhalt/Erklaerung.aux) (./Inhalt/StepByStep.aux)
+(./Inhalt/Kapitel_Software.aux) (./Inhalt/Kapitel_AufbauderArbeit.aux)
+(./Inhalt/Fazit.aux) (./Inhalt/Erklaerung.aux) (./Inhalt/StepByStep.aux)
 (./Inhalt/Tabelle_ASCII_Befehle.aux) (./Inhalt/Tabelle_Protokolle_RF.aux)
 (./Inhalt/Tabelle_TD_VI900.aux) (./Inhalt/Werkzeuge.aux)
 (./Inhalt/Anhang_Codelistings.aux) (./Inhalt/Anhang_Danksagung.aux))
@@ -1173,45 +1170,41 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
  (./Inhalt/Kapitel_Hardware.tex
 Kapitel 2.
-<Bilder/Blender/Schema_Arbeitsplatz.png, id=489, 349.7868pt x 241.3818pt>
+<Bilder/Blender/Schema_Arbeitsplatz.png, id=491, 349.7868pt x 241.3818pt>
 File: Bilder/Blender/Schema_Arbeitsplatz.png Graphic file (type png)
 
 <use Bilder/Blender/Schema_Arbeitsplatz.png>
+Overfull \hbox (22.78258pt too wide) in paragraph at lines 27--28
+\T1/cmr/m/n/10.95 [[][]A.6[][]] in-stal-liert. Die SC-SI Schnitt-stel-le wird z
+ur Kom-mu-ni-ka-ti-on mit dem 3D-Laserscanner
+ []
+
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [2
+<use Bilder/RAC_Logo.jpg> [2
 
 
 
- <./Bilder/Blender/Schema_Arbeitsplatz.png (PNG copy)>]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 31.
-
-(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-<Bilder/vi900-big.jpg, id=504, 43.8438pt x 72.27pt>
+ <./Bilder/Blender/Schema_Arbeitsplatz.png (PNG copy)>] <Bilder/vi900-big.jpg, 
+id=506, 43.8438pt x 72.27pt>
 File: Bilder/vi900-big.jpg Graphic file (type jpg)
- <use Bilder/vi900-big.jpg>
-<Bilder/Laser-Triangulation.png, id=506, 180.675pt x 252.945pt>
+
+<use Bilder/vi900-big.jpg>
+<Bilder/Laser-Triangulation.png, id=508, 180.675pt x 252.945pt>
 File: Bilder/Laser-Triangulation.png Graphic file (type png)
 
 <use Bilder/Laser-Triangulation.png>
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg> [3 <./Bilder/vi900-big.jpg>] <Bilder/Drehtisch.jpg, 
-id=521, 599.23875pt x 499.8675pt>
+id=519, 599.23875pt x 499.8675pt>
 File: Bilder/Drehtisch.jpg Graphic file (type jpg)
 
 <use Bilder/Drehtisch.jpg>
-Overfull \hbox (9.5552pt too wide) in paragraph at lines 54--61
-\T1/cmr/m/n/10.95 des Rhei-nAhr-Cam-pus Re-ma-gen. Er be-steht aus ei-ner mas-s
-i-ven Edelstahl-Arbeitsplatte,
- []
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 <use Bilder/RAC_Logo.jpg> [4 <./Bilder/Laser-Triangulation.png (PNG copy)>]
-<Bilder/19Zoll_Rack.jpg, id=534, 1284.8pt x 963.6pt>
+<Bilder/19Zoll_Rack.jpg, id=531, 1284.8pt x 963.6pt>
 File: Bilder/19Zoll_Rack.jpg Graphic file (type jpg)
 
 <use Bilder/19Zoll_Rack.jpg>
@@ -1251,18 +1244,16 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
  (./Inhalt/Kapitel_AufbauderArbeit.tex
 Kapitel 4.
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4--4
- [] 
- []
-
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 <use Bilder/RAC_Logo.jpg> [11
 
 
 
 ]
-(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 21.
+ (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
@@ -1295,17 +1286,13 @@ und
  []
 
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
-<use Bilder/RAC_Logo.jpg> [16]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 65--65
- [] 
- []
+<use Bilder/RAC_Logo.jpg> [16] (./Code/Protokolle_RF_Isel.txt)
+File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
-(./Code/Protokolle_RF_Isel.txt)
+<use Bilder/RAC_Logo.jpg> [17] (./Code/menu.c) (./Code/menu_main.txt
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [17] (./Code/menu.c)
-(./Code/menu_main.txt
-File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [18])
+
+<use Bilder/RAC_Logo.jpg> [18])
 Overfull \hbox (5.3909pt too wide) in paragraph at lines 86--91
 \T1/cmr/m/n/10.95 ge-le-sen wird und fest-ge-legt wie er wei-ter-ver-ar-bei-tet
  wird. Die Funk-ti-on [][][][][][]
@@ -1327,33 +1314,28 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 <Bilder/Y-Kabel.jpg, id=873, 642.4pt x 481.8pt>
 File: Bilder/Y-Kabel.jpg Graphic file (type jpg)
  <use Bilder/Y-Kabel.jpg>
-
-LaTeX Font Warning: Font shape `T1/cmtt/bx/sc' undefined
-(Font)              using `T1/cmtt/bx/n' instead on input line 119.
-
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 119.
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
+
 <use Bilder/RAC_Logo.jpg> [21]
-<Bilder/Kabel.pdf, id=918, 463.6879pt x 101.58101pt>
+<Bilder/Kabel.pdf, id=917, 463.6879pt x 101.58101pt>
 File: Bilder/Kabel.pdf Graphic file (type pdf)
  <use Bilder/Kabel.pdf>
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 <use Bilder/RAC_Logo.jpg> [22 <./Bilder/Y-Kabel.jpg>]
-<Bilder/Endschalter.pdf, id=924, 193.3138pt x 148.46764pt>
+<Bilder/Endschalter.pdf, id=922, 193.3138pt x 148.46764pt>
 File: Bilder/Endschalter.pdf Graphic file (type pdf)
 
 <use Bilder/Endschalter.pdf>
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg> [23 <./Bilder/Kabel.pdf>] <Bilder/AVR-RS232.png, id=
-953, 534.49687pt x 321.45094pt>
+951, 534.49687pt x 321.45094pt>
 File: Bilder/AVR-RS232.png Graphic file (type png)
 
 <use Bilder/AVR-RS232.png>
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg> [24 <./Bilder/Endschalter.pdf>] <Bilder/Schema_Kommu
-nikation.pdf, id=977, 764.45598pt x 330.03299pt>
+nikation.pdf, id=976, 764.45598pt x 330.03299pt>
 File: Bilder/Schema_Kommunikation.pdf Graphic file (type pdf)
 
 <use Bilder/Schema_Kommunikation.pdf>
@@ -1365,17 +1347,17 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 (./Code/rs232_empfang.c)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
  <use Bilder/RAC_Logo.jpg> [26 <./Bilder/Schema_Kommunikation.pdf>] (./Code/uar
-t_rx.c)
+t_rx.c) (./Code/switch_Motor.c
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [27]
-(./Code/switch_Motor.c)
+
+<use Bilder/RAC_Logo.jpg> [27])
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [28] (./Code/switch_Isel.c)
-(./Code/switch_Isel_Init.c)
+ <use Bilder/RAC_Logo.jpg> [28]
+(./Code/switch_Isel.c) (./Code/switch_Isel_Init.c)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
- <use Bilder/RAC_Logo.jpg> [29]
-(./Code/switch_Isel_Status.c)
-Underfull \hbox (badness 10000) in paragraph at lines 236--238
+ <use Bilder/RAC_Logo.jpg>
+[29] (./Code/switch_Isel_Status.c)
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
 \T1/cmr/m/n/10.95 legt. Die-se wer-den an die Funk-ti-on
  []
 
@@ -1387,15 +1369,15 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 <use Bilder/RAC_Logo.jpg> [32])
-<Bilder/Schaltplan.pdf, id=1216, 845.61588pt x 597.50786pt>
+<Bilder/Schaltplan.pdf, id=1215, 845.61588pt x 597.50786pt>
 File: Bilder/Schaltplan.pdf Graphic file (type pdf)
 
 <use Bilder/Schaltplan.pdf>
-<Bilder/Translator_white.png, id=1219, 1197.47375pt x 728.7225pt>
+<Bilder/Translator_white.png, id=1218, 1197.47375pt x 728.7225pt>
 File: Bilder/Translator_white.png Graphic file (type png)
 
 <use Bilder/Translator_white.png>
-<Bilder/19ZollEinschub.JPG, id=1221, 1284.8pt x 963.6pt>
+<Bilder/19ZollEinschub.JPG, id=1220, 1284.8pt x 963.6pt>
 File: Bilder/19ZollEinschub.JPG Graphic file (type jpg)
 
 <use Bilder/19ZollEinschub.JPG>
@@ -1418,7 +1400,7 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 der/19ZollEinschub.JPG>]
 Kapitel 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--275
+Underfull \hbox (badness 10000) in paragraph at lines 271--274
 
  []
 
@@ -1429,7 +1411,7 @@ File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 File: Bilder/RAC_Logo.jpg Graphic file (type jpg)
 
 <use Bilder/RAC_Logo.jpg> [37] (./Code/Watchdog.txt)
-Overfull \hbox (8.87016pt too wide) in paragraph at lines 301--302
+Overfull \hbox (8.87016pt too wide) in paragraph at lines 300--301
 []\T1/cmr/bx/n/10.95 JTAGEN \T1/cmr/m/n/10.95 - Ist die-ses Bit ge-setzt, kann 
 an 4 Pins des \T1/cmr/m/it/10.95 PortB \T1/cmr/m/n/10.95 ein [][][][][][]
  []
@@ -1877,23 +1859,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
 (./Inhalt/Anhang_Codelistings.aux) (./Inhalt/Anhang_Danksagung.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
 Package rerunfilecheck Info: File `Praxisbericht.out' has not changed.
-(rerunfilecheck)             Checksum: 56583F35CD1A22977DC3444054CD20A7;4608.
+(rerunfilecheck)             Checksum: 04DB506571DDB4AFC513C62D0DE4D4DA;4608.
 Package rerunfilecheck Info: File `Praxisbericht.brf' has not changed.
-(rerunfilecheck)             Checksum: 0D349DDB2B83B8B55E35C46E5DCD8AAF;732.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: F16F1AB6E044EAFA1F10B7E4701F012F;782.
  ) 
 Here is how much of TeX's memory you used:
- 15278 strings out of 495022
- 218733 string characters out of 3180791
- 777727 words of memory out of 3000000
- 16325 multiletter control sequences out of 15000+200000
- 30595 words of font info for 70 fonts, out of 3000000 for 9000
+ 15273 strings out of 495022
+ 218676 string characters out of 3180791
+ 777789 words of memory out of 3000000
+ 16322 multiletter control sequences out of 15000+200000
+ 30282 words of font info for 69 fonts, out of 3000000 for 9000
  16 hyphenation exceptions out of 8191
  50i,16n,51p,1830b,2418s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
@@ -1914,14 +1889,13 @@ mf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
 super/sfsx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.
 pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share
-/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf-dist/fon
-ts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public
-/cm-super/sfxc1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc2
-074.pfb>
-Output written on Praxisbericht.pdf (85 pages, 4727197 bytes).
+/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fon
+ts/type1/public/cm-super/sfxc1095.pfb></usr/share/texmf-dist/fonts/type1/public
+/cm-super/sfxc2074.pfb>
+Output written on Praxisbericht.pdf (85 pages, 4700629 bytes).
 PDF statistics:
- 2909 PDF objects out of 2984 (max. 8388607)
- 2711 compressed objects within 28 object streams
- 1606 named destinations out of 1728 (max. 500000)
+ 2906 PDF objects out of 2984 (max. 8388607)
+ 2708 compressed objects within 28 object streams
+ 1605 named destinations out of 1728 (max. 500000)
  705 words of extra memory for PDF output out of 10000 (max. 10000000)
 

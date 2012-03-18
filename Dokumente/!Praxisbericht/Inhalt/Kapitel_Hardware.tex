@@ -24,11 +24,10 @@ Die Hardware besteht im Wesentlichen aus den Komponenten in Abbildung \ref{fig:�
 \end{table}
 \section{Computer}
 \label{sec:Computer}
-Zur Verfügung steht ein IBM kompatibler x86 Standard PC mit 
-einer \Fachbegriff{SCSI-} und einer \Fachbegriff{RS-232-Schnittstelle}. Auf diesem ist die Erfassungssoftware \emph{RapidForm2004} installiert. Die SCSI Schnittstelle wird zur Kommunikation mit dem 3D-Laserscanner und die RS-232-Schnittstelle zur Kommunikation mit einer Schrittmotorsteuerung genutzt.
+Zur Verfügung steht ein IBM kompatibler x86 Standard PC mit einer \Fachbegriff{SCSI-} und einer \Fachbegriff{RS-232-Schnittstelle}. Auf diesem ist die Erfassungssoftware \emph{RapidForm2004} [\ref{sec:V_Software}] installiert. Die SCSI Schnittstelle wird zur Kommunikation mit dem 3D-Laserscanner und die RS-232-Schnittstelle zur Kommunikation mit einer Schrittmotorsteuerung genutzt.
 \section{3D-Laserscanner VI-900}
 \label{sec:VI-900}
-Der 3D-Laserscanner \emph{VI-900} der Firma \emph{Konica Minolta}\footnote{Konica Minolta Sensing Europe, B.V. \url{http://www.konicaminolta.eu/}} besteht, wie auf Abbildung \ref{fig:VI900} zu sehen, aus einer Kamera und einem \Fachbegriff{Lasertriangulator}. Das System lässt sich über eine SCSI-Schnittstelle ansprechen und konfigurieren. Zur mobilen Nutzung kann das Gerät auch auf der Rückseite bedient werden. Aufgenommene Daten können auf einer \Fachbegriff{CF-Karte} gespeichert werden. Im Projekt wurde jedoch lediglich die direkte Ansteuerung via SCSI genutzt.\\
+Der 3D-Laserscanner \emph{VI-900} der Firma \emph{Konica Minolta}[\ref{sec:V_Hardware}] besteht, wie auf Abbildung \ref{fig:VI900} zu sehen, aus einer Kamera und einem \Fachbegriff{Lasertriangulator}. Das System lässt sich über eine SCSI-Schnittstelle ansprechen und konfigurieren. Zur mobilen Nutzung kann das Gerät auch auf der Rückseite bedient werden. Aufgenommene Daten können auf einer \Fachbegriff{CF-Karte} gespeichert werden. Im Projekt wurde jedoch lediglich die direkte Ansteuerung via SCSI genutzt.\\
 Der VI-900 digitalisiert Objekte durch ein Laser-Lichtschnittverfahren. Das vom Objekt reflektierte Licht wird von einer CCD-Flächenkamera erfasst, nach Ermittlung der Distanzwerte (Z-Achse) mittels Laser-Triangulation werden die 3D-Daten erstellt. Der Laserstrahl wird mit Hilfe eines hochpräzisen galvanischen Spiegels über das Objekt projiziert, pro Scan werden 640 x 480 Einzelpunkte erfasst.\cite{Minolta:Einleitung}\\
 Die Technischen Daten befinden sich im Anhang in Tabelle \ref{tab:TD_VI-910}
 \begin{figure}[htb]
@@ -51,7 +50,7 @@ Ein Lasertriangulator besteht, wie in Abbildung \ref{fig:LaserTriangulator} zu s
 \label{sec:AnsteuerungDrehtisch}
 \subsection{Drehtisch}
 \label{sec:Drehtisch}
-Der Tisch in dem der Drehtisch verbaut ist, ist eine Eigenkonstruktion der Werkstatt des RheinAhrCampus Remagen. Er besteht aus einer massiven Edelstahl-Arbeitsplatte, welche auf 4 Füßen ruht. Aus dieser ist ein Rechteck mit aufgesetztem Halbkreis ausgeschnitten. In diesem Ausschnitt befindet sich der Drehtisch(siehe Abbildung \ref{fig:Drehtisch}). Er ist auf einem Schienensystem gelagert. Mit dem Schienensystem kann der Drehtisch in der Vertikalen positioniert werden. Mit einem Schrittmotor lässt sich der Drehtisch zusätzlich in der Höhe verstellen. Die Höhenverstellung wird mit einem \Fachbegriff{Schneckengetriebe} realisiert. Ein weiterer Schrittmotor ist für die Drehung des Tisches zuständig. Der Tisch ist über ein \Fachbegriff{Harmonic-Drive-Getriebe} mit dem Schrittmotor verbunden. Das Übersetzungsverhältnis des Getriebes beträgt 1:50.  
+Der Tisch in dem der Drehtisch verbaut ist, ist eine Eigenkonstruktion der Werkstatt des RheinAhrCampus Remagen. Er besteht aus einer massiven Edelstahlarbeitsplatte, welche auf 4 Füßen ruht. Aus dieser ist ein Rechteck mit aufgesetztem Halbkreis ausgeschnitten. In diesem Ausschnitt befindet sich der Drehtisch(siehe Abbildung \ref{fig:Drehtisch}). Er ist auf einem Schienensystem gelagert. Mit dem Schienensystem kann der Drehtisch in der Vertikalen positioniert werden. Mit einem Schrittmotor lässt sich der Drehtisch zusätzlich in der Höhe verstellen. Die Höhenverstellung wird mit einem \Fachbegriff{Schneckengetriebe} realisiert. Ein weiterer Schrittmotor ist für die Drehung des Tisches zuständig. Der Tisch ist über ein \Fachbegriff{Harmonic-Drive-Getriebe} mit dem Schrittmotor verbunden. Das Übersetzungsverhältnis des Getriebes beträgt 1:50.  
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{Drehtisch}
@@ -67,15 +66,15 @@ Dies verhindert das einfache Ausbauen der Spannungsversorgung und die einfache E
 \label{sec:Schrittmotoren}
 Für die Rotation kommt der Schrittmotor 440-458 der Firma R+S zum Einsatz. Dieser hat einen Schrittwinkel von 1,8°, eine Haltedrehmoment von 500mNm, wird mit 8-Drahtleitung verschaltet und mit 12V Gleichspannung versorgt. Aus dem Schrittwinkel ergeben sich 200 Schritte pro Umdrehung. Diese werden mit einem \Fachbegriff{Harmonic-Drive-Getriebe}, mit einer Übersetzung von 500:1, auf 100.000 Schritte pro Umdrehung erhöht.\\
 Für die Höhenverstellung wird der Schrittmotor 440-420, ebenfalls von der Firma R+S, verwendet. Dieser hat auch einen Schrittwinkel von 1,8°, hat jedoch ein Haltemoment von 70mNm, wird in 6-Drahtleitung verschaltet und mit 5V Gleichspannung gespeist. Dieser ist mit einer Übersetzung von 5:1 und einem Schneckengetriebe mit dem Drehtisch verbunden.
-\todo{Überarbeiten?}
 
 \subsection{Schrittmotorkarten}
 \label{sec:Schrittmotorkarten}
-Die Ansteuerung für die Schrittmotoren sind als 19''-Einschübe realisiert, siehe Abbildung \ref{fig:19Zoll_Rack}. Für jeden Schrittmotor wird ein Einschub benötigt.
+Die Ansteuerung für die Schrittmotoren sind als 19''-Einschübe realisiert, siehe Abbildung \ref{fig:19Zoll_Rack} links. Für jeden Schrittmotor wird ein Einschub benötigt.
 Die Einschübe sind Produkte der Firma R+S. Mittels \Fachbegriff{RS-232 Schnittstelle} lassen sich die Karten konfigurieren und ansteuern. Die Konfiguration und Ansteuerung erfolgt über einen vorgegeben 
 \Fachbegriff{ASCII}\footnote{Der American Standard Code for Information Interchange (ASCII, alternativ US-ASCII, oft [æski] ausgesprochen) ist eine 7-Bit-Zeichenkodierung\cite{wiki:ASCII}}
  Befehlssatz. Der Befehlssatz befindet sich im Kapitel \ref{sec:A_ASCII_Befehle}. Es können zwei oder mehr Karten als 
-\Fachbegriff{Daisy-Chain}\footnote{Als Daisy Chain (englisch, wörtlich „Gänseblümchenkette“) bezeichnet man eine Anzahl von Hardware-Komponenten, welche in Serie miteinander verbunden sind (meist in sogenannten Bussystemen in der Automatisierungstechnik).\cite{wiki:Daisy} } in Reihe geschaltet werden. \todo{Hinweis zuerst nur eine Karte vorhanden.}
+\Fachbegriff{Daisy-Chain}\footnote{Als Daisy Chain (englisch, wörtlich „Gänseblümchenkette“) bezeichnet man eine Anzahl von Hardware-Komponenten, welche in Serie miteinander verbunden sind (meist in sogenannten Bussystemen in der Automatisierungstechnik).\cite{wiki:Daisy} } in Reihe geschaltet werden.\\
+Zu Beginn des Projekts war nur die erste Schrittmotorsteuerung vorbereitet.
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{19Zoll_Rack}
@@ -84,8 +83,7 @@ Die Einschübe sind Produkte der Firma R+S. Mittels \Fachbegriff{RS-232 Schnitts
 \end{figure}
 \subsection{Motorverkabelung}
 \label{sec:Motorverkabelung}
-Die Schrittmotoren benötigen ein mindestens 4-adriges Kabel. Das Kabel für den Schrittmotor, der für die Rotation zuständig ist, war bereits gefertigt. Ein Kabel zwischen Schrittmotor und Schrittmotorkarte zur Höhenverstellung und für die Endschalter ist nicht vorhanden. 
-
+Die Schrittmotoren benötigen ein mindestens 4-adriges Kabel. Das Kabel für den Schrittmotor, der für die Rotation zuständig ist, war bereits gefertigt. Ein Kabel zwischen Schrittmotor und Schrittmotorkarte zur Höhenverstellung und für die Endschalter war nicht vorhanden und wurde im Verlauf des Projekts gefertigt. 
 
 \subsection{Endschalter}
 \label{sec:Endschalter}

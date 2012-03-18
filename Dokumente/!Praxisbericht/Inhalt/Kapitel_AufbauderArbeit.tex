@@ -2,7 +2,7 @@
 \label{cha:Arbeit}
 Dieses Kapitel spiegelt den chronologischen Ablauf des Projektes wieder und zeigt die Schritte auf, die notwendig waren um den Mikrocontroller so zu programmieren, dass dieser die Kommunikation zwischen RapidForm2004 und der vorhandenen Schrittmotorkarte ermöglicht. So das er sozusagen als Übersetzer für die unterschiedlichen Befehlssätze von RapidForm2004 und dem der Schrittmotorkarte fungiert.
 \begin{Tipp}Die Codelistings in diesem Kapitel sind thematisch zusammen gefasst und gekürzt um die Lesbarkeit und das Verständnis zu gewährleisten. Ein komplettes Codelisting des Hauptprogramms befindet sich im Anhang \ref{sec:main.c}. Der komplette Code, mit allen Bibliotheken, liegt dem Praxisbericht als CD oder Archiv bei.\end{Tipp}
-Kapitel \ref{sec:Erste_Schritte} beschreibt die Programmierung des Mikrocontrollers welche die notwendigen Grundvoraussetzungen für dieses Projekt schafft. Das Ziel dieser Programmierung besteht darin die geforderten Komponenten, LEDs, LC-Display, Taster und serielle Schnittstellen im Mikrocontroller nutzbar zu machen.\\
+Kapitel \ref{sec:Erste_Schritte} beschreibt die Programmierung des Mikrocontrollers, welche die notwendigen Grundvoraussetzungen für dieses Projekt schafft. Das Ziel dieser Programmierung besteht darin die geforderten Komponenten, LEDs, LC-Display, Taster und serielle Schnittstellen im Mikrocontroller nutzbar zu machen.\\
 Kapitel \ref{sec:Protokolle} beschreibt die Erarbeitung der Befehlssätze die die Software RapidForm2004 enthält um mit den von ihr unterstützten Schrittmotorkarten zu kommunizieren. Auch der Befehlssatz zur Kommunikation zwischen dem Mikrocontroller und der Schrittmotorkarte wird beschrieben.\\
 Kapitel \ref{sec:Komm_SM} beschreibt wie der Mikrocontroller diesen Befehlssatz für die Kommunikation mit der vorhandenen Schrittmotorkarte nutzt.\\
 Kapitel \ref{sec:Verbesserung_Hardware} gibt die Schritte zur Entwicklung und Verbesserung der Hardware, um diese so zu erweitern, dass sie den Vorgaben entspricht, wieder.\\
@@ -116,7 +116,6 @@ Dadurch kann das Netzteil nun einfach ein- und ausgebaut werden, bzw. das System
 \caption{Stromverbinder - Y-Kabel\cite{kosatec}}
 \label{fig:Y-Kabel}
 \end{figure}
-\todo{\url{http://www.kosatec.de/prod_images/kc/640x480/100539.jpg}}
 
 \subsection{Zweite Schrittmotorkarte}
 Zu Anfang war nur eine Schrittmotorkarte für die Rotation des Drehtisches vorbereitet. Mit einem zweiten Schrittmotor konnte der Tisch in der Höhe verstellt werden. Für diesen fehlte jedoch noch eine zweite Schrittmotorkarte. Diese musste noch vorbereitet und mit der Ersten verbunden werden.\\
@@ -161,8 +160,8 @@ Da die Schrittmotorkarte nur mechanische Endschalter unterstützt, ließen sich 
 \begin{figure}[h]
 \centering
 \includegraphics{Endschalter.pdf}
-\caption{Motor- und Endschalterverkabelung}
-\label{fig:Motorverkabelung}
+\caption{Endschalterverkabelung}
+\label{fig:Endschalterverkabelung}
 \end{figure}
 Ein weiteres Problem bestand darin, dass, wenn der Tisch sich bereits in der Endposition befand, die Endschalter noch nicht aktiviert wurden. Dies lag daran, dass der Metallstutzen, der die Endschalter auslösen sollte, sich nicht im Schaltbereich der induktiven Schalter befand. Zur Abhilfe wurde ein längerer Metallstutzen von der Werkstatt des RheinAhrCampus angefertigt.\\
 Wenn der Tisch sich in der Endposition befindet, soll dies auch auf dem LC-Display angezeigt werden. Die Signale der Endschalter liegen auf der Rückseite der Schrittmotorkarte am Verbindungsstecker an. Um die Signale dem Mikrocontroller zugänglich zu machen wurde eine Brücke zwischen den Verbindungssteckern der Schrittmotorkarte und der Mikrocontroller-Platine gelötet. Auf der Mikrocontroller-Platine sind diese beiden Pins mit je einem Pin des Mikrocontrollers verbunden. Diese beiden Pins werden im Mikrocontroller als \Fachbegriff{Interrupts} definiert. Die \Fachbegriff{Interrupt-Service-Routine} zum Anzeigen der Nachricht auf dem LC-Display wird in Kapitel \ref{sec:Endschalter_SW} beschrieben.\\
@@ -175,9 +174,9 @@ Dadurch ist es möglich mit dem Mikrocontroller über zwei RS-232-Schnittstellen
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{AVR-RS232}
-\caption{Schema: MAX232}
+\caption{Schaltplan für die zweite serielle Schnittstelle
+\cite{uC:RS232}}
 \label{fig:MAX232}
-\citep{uC:RS232}
 \end{figure}
 
 \section{Kommunikation mit RapidForm2004}
