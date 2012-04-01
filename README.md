@@ -20,7 +20,7 @@
 * Eclipse mit AVRPlugin und AVRDude
 * ~~AVR-Studio 5~~
 
-### [Praxisbericht](https://github.com/JoeD84/Praxisprojekt/blob/master/Dokumente/!Praxisbericht/!Praxisbericht.pdf?raw=true)
+### [Praxisbericht](https://github.com/JoeD84/Praxisprojekt/blob/master/Dokumente/!Praxisbericht/Praxisbericht.pdf?raw=true)
 
 ### [Verlauf des Projekts](https://github.com/JoeD84/Praxisprojekt/blob/master/Dokumente/Praxisprojekt_Fortschritte.pdf?raw=true)
 
