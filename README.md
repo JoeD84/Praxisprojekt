@@ -1,7 +1,7 @@
 # Praxisprojekt #
 
 ## Übersetzen von Schrittmotorbefehlen
-## Entwurf eines HardwareübersetzersÜbersetzen von Schrittmotorbefehlen
+## Entwurf eines Hardwareübersetzers
 
 ### Hardware:
 
