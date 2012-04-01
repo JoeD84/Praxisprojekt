@@ -30,4 +30,4 @@ Bei Fragen stehe ich gerne unter:<br />
 <Joe84D@gmail.com>
 zur Verfuegung.
 
-![Screenshot](https://lh5.googleusercontent.com/-3DdKukSgjJs/TuCvp-5xpEI/AAAAAAAALDs/eeFK-buyE2Q/s800/IMG_20111207_191907.jpg)
+![Überblick](https://lh6.googleusercontent.com/-ps6gQUfSk9E/T3h7-y8aDxI/AAAAAAAAL_M/RAAYclFvOqM/s640/R0013516.JPG)
