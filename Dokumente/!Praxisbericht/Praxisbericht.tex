@@ -79,7 +79,18 @@
 \listoftables						% Tabellenverzeichnis
 \renewcommand{\lstlistlistingname}{Codeverzeichnis}
 \lstlistoflistings					% Listings-Verzeichnis
+\chapter*{Hinweise zum Dokument}
+\begin{Tipp}Hinweise werden durch diese Boxen gekennzeichnet\end{Tipp}
 
+\Fachbegriff{Fachbegriffe} werden blau hinterlegt.\\
+
+\emph{Eigennamen} werden kursiv dargestellt.\\
+
+\Code{Code-Fragmente} werden gelb hinterlegt.\\
+
+\lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
+\lstinputlisting{Code/Hinweis.c}
+Der komplette Quelltext für den Mikrocontroller, der Quelltext für diese Dokumentation, die Dokumentation selbst und weitere Bilder können unter \url{https://github.com/JoeD84/Praxisprojekt} abgerufen werden.
 % ...danach in normalen arabischen Ziffern ---------------------------------
 \clearpage
 \pagenumbering{arabic}

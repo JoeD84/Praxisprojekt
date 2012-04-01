@@ -126,7 +126,6 @@ Somit steht eine baugleiche Schrittmotorkarte zur Verfügung. Diese kann nun den
 Zwischen der zweiten Schrittmotorkarte und dem zugehörigen Schrittmotor, der für die Höhenverstellung zuständig ist, war noch kein Kabel vorhanden. Dieses musste noch gefertigt und um 3 Leitungen für die Endschalter erweitert werden.\\
 Dafür wurde in der Werkstatt des RheinAhrCampus Remagen ein 7 adriges Kabel (siehe Abbildung \ref{fig:Motorverkabelung}) besorgt und die passenden Endstecker bestellt. Die Belegung wurde gleich zum Kabel für den ersten Schrittmotor gewählt, jedoch um die 3 Adern für die beiden Endschalter erweitert. Tabelle \ref{tab:Motorverkabelung} gibt die Belegung des Kabels wieder.\\
 Somit stand ein Kabel zur Verfügung mit dem sowohl der Schrittmotor gesteuert, als auch der Status der Endschalter an die Schrittmotorkarte übermittelt werden konnte.
-\todo{Belegung überprüfen!}
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{Kabel.pdf}
@@ -155,7 +154,7 @@ Somit stand ein Kabel zur Verfügung mit dem sowohl der Schrittmotor gesteuert, 
 \end{longtable} 
 
 \subsection{Endschalter}
-Nun geht es darum, die vorgegeben induktiven Endschalter mit der Schrittmotorkarte und dem Mikrocontroller zu verbinden. Dadurch soll gewährleistet werden, dass der Drehtisch nicht über den Arbeitsbereich hinaus bewegt werden kann. Zusätzlich soll das Erreichen der Endpositionen auf dem LC-Display angezeigt werden.\\
+Nun sollen die vorgegeben induktiven Endschalter mit der Schrittmotorkarte und dem Mikrocontroller zu verbinden. Dadurch soll gewährleistet werden, dass der Drehtisch nicht über den Arbeitsbereich hinaus bewegt werden kann. Zusätzlich soll das Erreichen der Endpositionen auf dem LC-Display angezeigt werden.\\
 Da die Schrittmotorkarte nur mechanische Endschalter unterstützt, ließen sich die induktiven Endschalter nicht ohne weiteres nutzen. Um die induktiven Endschalter nutzen zu können, musste die Spannung über einen Spannungsteiler heruntergesetzt werden und die standardmäßigen Eingänge für die mechanischen Endschalter umgangen werden. Die induktiven Endschalter werden direkt an den Optokoppler angeschlossen, welcher für die mechanischen Endschalter zuständig ist. Dadurch wurden die Signale der Endschalter für die Schrittmotorkarte nutzbar.
 \begin{figure}[h]
 \centering
@@ -281,7 +280,7 @@ Viele Mikrocontroller bieten die Möglichkeit \emph{eventbasierte} \Fachbegriff{
 Interrupts können z.B. der Überlauf eines internen Timer, oder ein externens Signal an einem Pin sein. Im Projekt werden Externe-Interrupts für die Endschalter, Timer-Überlauf-Interrupts für das Entprellen der Taster und der Watchdog-Interrupt zum erkennen von Fehlern genutzt. 
 \subsection{Endschalter}
 \label{sec:Endschalter_SW}
-Die Endschalter sind über die Schrittmotorkarten und eine Brücke auf der Rückseite der Einschubsteckplätze mit der Mikrocontrollerplatine verbunden. Dort sind sie an 2 Interrupt Pins angeschlossen. \todo{Pins raus suchen!} Bei einem Flankenwechsel an den Pins wird ein Interrupt ausgelöst. \\
+Die Endschalter sind über die Schrittmotorkarten und eine Brücke auf der Rückseite der Einschubsteckplätze mit der Mikrocontrollerplatine verbunden. Dort sind sie an 2 Interrupt Pins angeschlossen. Bei einem Flankenwechsel an den Pins wird ein Interrupt ausgelöst. \\
 Mit den Zeilen 1--2 des Codelistings \ref{lst:ISR_ES} werden Pin-Change-Interrupts für bestimmte Pins zugelassen. Die Zeilen 3--7 und 8--12 zeigen die Interrupt-Service-Routinen für die beiden Interrupts.
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=2}
 \lstinputlisting[label=lst:ISR_ES,caption=ISR: Endschalter]{Code/ISR_Endschalter.c}
@@ -310,7 +309,7 @@ Als \Fachbegriff{Fuses} werden Register bezeichnet mit denen sich, auf Hardwaree
 OCDEN & On Chip Debugging \\ \hline 
 JTAGEN & Hardware Debugging \\ \hline 
 SPIEN & Serial Program and Data Downloading \\ \hline 
-WDTON & Watchdot Timer always on \\ \hline 
+WDTON & Watchdog Timer always on \\ \hline 
 EESAVE & EEPROM memory is preserved through the Chip Erase \\ \hline 
 BOOTSZ1 & Select Boot Size \\ \hline 
 BOOTSZ0 & Select Boot Size \\ \hline 

@@ -41,11 +41,11 @@ Auf der Rückseite des 19''-Rack befindet sich ein Schalter. Mit diesem kann die
 \multicolumn{2}{|l|}%
 {{\textbf{Schritt 4 - Starten von RapidForm2004}}}
 \\ \hline
-Auf dem Desktop doppelt auf das Icon \textbf{RapidForm} Icon klicken.
+Auf dem Desktop doppelt auf das Icon \textbf{RapidForm} klicken.
 & 
 \includegraphics[width=8cm]{Anleitung/1_Desktop}
 \\ \hline 
-
+\newpage
 \multicolumn{2}{|l|}%
 {{\textbf{Schritt 5 - Oberfläche von RapidForm2004}}}
 \\ \hline
@@ -61,13 +61,24 @@ Je nach dem welche Ansicht in der Anzeigefläche gewählt ist, verändern sich a
 In der Menüzeile auf 
 \textbf{Macro -> Addins -> Konica Minolta VIVID Direct Control Addin v2.6.11}
 klicken.
-\todo{Schrittmotor verbinden!}
 & 
 \includegraphics[width=8cm]{Anleitung/3_ADDIN_Menu}
 \\ \hline  
 
+\pagebreak
+
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 7 - Kalibrieren vorbereiten}}}
+{{\textbf{Schritt 7 - Verbinden des Schrittmotor}}}
+\\ \hline
+Damit der Drehtisch genutzt werden kann muss dieser im Add-In ausgewählt werden. Dazu im unteren Bereich den Reiter \textbf{Rotary Table} auswählen. Dort aus dem Dropdown Menü den Drehtisch \textbf{ISEL RF-1} auswählen. Die Befehle für diesen Drehtisch werden vom Mikrocontroller am besten unterstützt.
+Anschließend auf \textbf{Connect} klicken.\linebreak
+Bei einem Fehler überprüfen ob die Steuerung eingeschaltet ist und alle Verbindungen hergestellt wurden.
+& 
+\includegraphics[width=8cm]{Anleitung/4_Calibration}
+\\ \hline  
+
+\multicolumn{2}{|l|}%
+{{\textbf{Schritt 8 - Kalibrieren vorbereiten}}}
 \\ \hline
 \begin{TippS}Für ein erfolgreiches Zusammenführen der einzelnen Aufnahmen ist die Kalibrierung unerlässlich!\end{TippS}
 Auf dem Add-In Panel, unter dem Vorschau Fenster, auf \textbf{Live-Preview} klicken. \linebreak
@@ -77,8 +88,10 @@ Dabei muss der Noppen an der Unterseite des Kalibrierungsblechs in das mittlere 
 \includegraphics[width=8cm]{Anleitung/4_5_Calibration}
 \\ \hline  
 
+\pagebreak
+
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 8 - Kalibrieren}}}
+{{\textbf{Schritt 9 - Kalibrieren}}}
 \\ \hline
 Den Reiter \textbf{VIVID: 1} auswählen.\linebreak
 Bei \textbf{Manual Para.} ein Häkchen setzen.\linebreak
@@ -89,7 +102,7 @@ Auf \textbf{Scan for Calib} klicken.
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 9 - Kalibrierungsergebnis}}}
+{{\textbf{Schritt 10 - Kalibrierungsergebnis}}}
 \\ \hline
 Das Ergebnis sollte ähnlich zu dem in der rechten Abbildung sein. \linebreak
 Falls das Add-In einen Fehler ausgibt, muss das Kalibrierungsblech eventuell anders positioniert werden, der Wert im Feld \textbf{Laser Power} verändert werden oder der Fokus manuell eingestellt werden.\linebreak
@@ -98,8 +111,10 @@ War die Kalibrierung erfolgreich, können die \emph{Kalibrationsebenen} im \emph
 \includegraphics[width=8cm]{Anleitung/4_Calibration_result}
 \\ \hline  
 
+\pagebreak
+
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 10 - StepScan}}}
+{{\textbf{Schritt 11 - StepScan}}}
 \\ \hline
 Bei \textbf{Manual Para.} das Häkchen entfernen.\linebreak
 Zum Reiter \textbf{Step} wechseln.\linebreak
@@ -112,7 +127,7 @@ Bei \textbf{Rotation Step} die gewünschte Drehung in Grad eingeben. \linebreak
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 11 - AutoFocus}}}
+{{\textbf{Schritt 12 - AutoFocus}}}
 \\ \hline
 Das \emph{Kalibrationsblech} entfernen und durch das zu scannende Objekt ersetzen.\linebreak
 Zum Reiter \textbf{Control} wechseln. \linebreak
@@ -121,8 +136,10 @@ Auf \textbf{Autofocus} klicken.\linebreak
 \includegraphics[width=8cm]{Anleitung/6_AutoFocus}
 \\ \hline  
 
+\pagebreak
+
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 12 - Scan}}}
+{{\textbf{Schritt 13 - Scan}}}
 \\ \hline
 Auf \textbf{Scan} klicken. \linebreak
 Das Objekt sollte möglichst schon zu erkennen sein und die Farben sich im Mittleren Bereich bewegen. \linebreak
@@ -133,7 +150,7 @@ Ansonsten muss mit den Parametern \textbf{Focus} und \textbf{LaserPower gespielt
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 13 - Akzeptieren}}}
+{{\textbf{Schritt 14 - Akzeptieren}}}
 \\ \hline
 Ist das Objekt gut zu erkennen, können mit \textbf{Accept} die Daten an RapidForm2004 gesendet werden. Der Drehtisch sollte sich nun automatisch um den eingestellten Winkel drehen. 
 \begin{TippS}Bei \textbf{AutoAccept} kann nun ein Häkchen gesetzt werden.\end{TippS}
@@ -141,8 +158,10 @@ Ist das Objekt gut zu erkennen, können mit \textbf{Accept} die Daten an RapidFo
 \includegraphics[width=8cm]{Anleitung/8_Accept}
 \\ \hline  
 
+\pagebreak
+
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 14 - Scannen}}}
+{{\textbf{Schritt 15 - Scannen}}}
 \\ \hline
 Auf \textbf{Scan} klicken und warten bis der Scan abgeschlossen ist und der Tisch sich gedreht hat.\linebreak
 Diesen Schritt wiederholen bis alle Aufnahmen abgeschlossen sind.\linebreak
@@ -151,7 +170,7 @@ Diesen Schritt wiederholen bis alle Aufnahmen abgeschlossen sind.\linebreak
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 15 - Ergebnis der Scans}}}
+{{\textbf{Schritt 16 - Ergebnis der Scans}}}
 \\ \hline
 Nach Abschluss aller Scans dreht der Tisch sich automatisch in die Ursprungsposition zurück.\linebreak
 Im Arbeitsbereich sollten sich nun alle Scans befinden.
@@ -159,8 +178,10 @@ Im Arbeitsbereich sollten sich nun alle Scans befinden.
 \includegraphics[width=8cm]{Anleitung/9_1_Scan_result}
 \\ \hline  
 
+\pagebreak
+
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 16 - Drehen und Zusammenführen der Scans}}}
+{{\textbf{Schritt 17 - Drehen und Zusammenführen der Scans}}}
 \\ \hline
 In der Menüzeile auf \textbf{Build -> Register -> Rotary Table} klicken.\linebreak
 & 
@@ -168,7 +189,7 @@ In der Menüzeile auf \textbf{Build -> Register -> Rotary Table} klicken.\linebr
 \\ \hline  
 
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 17 - Registrieren}}}
+{{\textbf{Schritt 18 - Registrieren}}}
 \\ \hline
 Im Dialog auf \textbf{Select Axis} klicken.\linebreak
 Im Darstellungsbereich auf die Achse aus dem Kalibrationsscan klicken.
@@ -180,8 +201,10 @@ Den Dialog mit \textbf{Ok} verlassen.
 \includegraphics[width=8cm]{Anleitung/11_Register_Dialog_2}
 \\ \hline  
 
+\pagebreak
+
 \multicolumn{2}{|l|}%
-{{\textbf{Schritt 18 - Ergebnis}}}
+{{\textbf{Schritt 19 - Ergebnis}}}
 \\ \hline
 Das Ergebnis ist ein komplettes 3D-Modell des Objektes.
 & 
