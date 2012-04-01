@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#define BAUD 9600		// BAUD Rate definieren
+#define BAUD 9600			// BAUD Rate definieren
 // Falls nicht bereits gesetzt, Taktfrequenz definieren
 #ifndef F_CPU
 #define F_CPU 8000000
