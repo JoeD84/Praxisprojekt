@@ -1,0 +1,24 @@
+\select@language {ngerman}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Blick auf den Arbeitsaufbau}}{2}{figure.10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces VI-900 - Kamera oben, Lasertriangulator unten}}{3}{figure.14}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Prinzip: Laser-Triangulation}}{4}{figure.16}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Drehtisch}}{5}{figure.19}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ansteuerung im 19''-Rack}}{6}{figure.25}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Block Diagramm: Mikrocontroller ATmega324A\cite {atmel:ug_324A}}}{8}{figure.29}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Schemazeichnung eines STK500\cite {atmel:ug_STK500}}}{9}{figure.32}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Stromverbinder - Y-Kabel\cite {kosatec}}}{22}{figure.275}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Motor- und Endschalterverkabelung}}{23}{figure.278}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Endschalterverkabelung}}{24}{figure.281}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Schaltplan f\IeC {\"u}r die zweite serielle Schnittstelle \cite {uC:RS232}}}{25}{figure.283}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Schema der Kommunikation}}{26}{figure.285}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Schaltplan}}{34}{figure.485}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Platinenlayout}}{34}{figure.486}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 19''-Einschub}}{35}{figure.487}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
