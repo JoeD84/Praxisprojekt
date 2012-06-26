@@ -1,0 +1,15 @@
+\nomenclatureentry{aSCSI@[{SCSI}]\begingroup Small Computer System Interface\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aASCII@[{ASCII}]\begingroup American Standard Code for Information Interchange\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aCAD@[{CAD}]\begingroup Computer Aided Design\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aCF@[{CF}]\begingroup Compact Flash\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aLCD@[{LCD}]\begingroup Liquid Crystal Display\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aRS@[{RS}]\begingroup Recommended Standard\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aIC@[{IC}]\begingroup Integrated Cuircuit\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aCPU@[{CPU}]\begingroup Central Processing Unit\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aADC@[{ADC}]\begingroup Analog Digital Convertor\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aDAC@[{DAC}]\begingroup Digital Analog Convertor\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aDIL@[{DIL}]\begingroup Dual in Line Package\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aAVRISP@[{AVRISP}]\begingroup AVR in System Programmer\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aUSB@[{USB}]\begingroup Universal Serial Bus\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aISR@[{ISR}]\begingroup Interrupt Service Routine\nomeqref {0}|nompageref}{III}
+\nomenclatureentry{aUART@[{UART}]\begingroup Universal Asynchronous Receiver Transmitter\nomeqref {0}|nompageref}{III}

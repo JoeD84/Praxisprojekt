@@ -1,0 +1,16 @@
+#include <avr/wdt.h> 
+// Initialisierung des Watchdog
+void init_WDT(void) {
+	cli();
+	wdt_reset();
+	WDTCSR |= (1 << WDCE) | (1 << WDE);
+	WDTCSR = (1 << WDE) | (1 << WDIE) | (1 << WDP3) | (1 << WDP0); //Watchdog 8s
+	//WDTCSR = 0x0F; //Watchdog Off
+	sei();
+}
+// Watchdog ISR
+ISR(WDT_vect){
+		LED_PORT &=~(1 << LED4);// LED5 einschalten
+		lcd_clrscr();
+		lcd_puts("Something went \nterribly wrong!\nRebooting!");
+}

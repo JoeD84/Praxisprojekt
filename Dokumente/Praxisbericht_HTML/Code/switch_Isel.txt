@@ -1,0 +1,90 @@
+void 	switch_Isel			(char * str_rx) {
+	const char* pOptions[] = {
+			"XXXXXXX", 	// 0 - Reserve
+			"!CLS",    	// 1 - LC-Display loeschen
+			"Test", 	// 2 - Test
+			"@01",  	// 3 - Achse auswaehlen
+			"@0R", 		// 4 - Status abfrage
+			"@0M", 		// 5 - Gehe zu Position MX , +600
+			0 };
+
+	int Ret_Val = FindStringInArray(str_rx, pOptions, 3);
+	switch (Ret_Val) {
+	case 0: 		// 0 - Reserve
+	case 1: 		// 1 - LC-Display loeschen
+	case 2:			// 2 - Test
+	case 3:			// 3 - Achse auswaehlen
+		ms_spin(10);
+		lcd_puts("Init");
+		uart_put_string("0\r\n", D_RapidForm);
+		break;
+	case 4:			// 4 - Status abfrage
+		lcd_puts("Statusabfrage:     \n");
+		uart_put_string("A\n", D_Stepper);
+		ms_spin(50);
+		if ((UCSR1A & (1 << RXC1)))
+			uart_rx(D_Stepper);
+		if (!strcmp(str_rx,"0#"))
+			uart_put_string("0\r\n", D_RapidForm);
+		else {
+			lcd_puts("Fehlgeschlagen     \n");
+			uart_put_string("1\r\n", D_RapidForm);
+		}
+		break;
+	case 5:			// 5 - Gehe zu Position MX , +600
+		ms_spin(10);
+		char Position[33], Winkel[6];
+		memset(Position, '\0', 33);
+		memset(Winkel, '\0', 6);
+		String_zerlegen_Isel(str_rx, Position, Winkel);
+		char Move_To[40];
+		memset(Move_To,  '\0', 40);
+		Move_To[0] = 'M';
+		Move_To[1] = 'A';
+		Move_To[2] = ' ';
+		Move_To[3] = '\0';
+		strcat(Move_To, Position);
+		strcat(Move_To, "\n");
+		lcd_puts("Pos:");
+		lcd_puts(Move_To);
+
+		uart_put_string(Move_To, D_Stepper);
+		ms_spin(50);
+		if ((UCSR1A & (1 << RXC1)))
+			uart_rx(D_Stepper);
+		else {
+			break;
+		}
+
+		uart_put_string("A\n", D_Stepper);
+		ms_spin(50);
+		if ((UCSR1A & (1 << RXC1)))
+			uart_rx(D_Stepper);
+		else {
+			lcd_puts("Keine Bewegung!\n");
+		}
+
+		while (!strcmp(str_rx,"1#")){
+			uart_put_string("A\n", D_Stepper);
+			ms_spin(50);
+			if ((UCSR1A & (1 << RXC1))){
+				uart_rx(D_Stepper);
+				lcd_clrscr();
+				lcd_puts("Gehe zu Winkel: ");
+				lcd_puts(Winkel);
+				lcd_puts("\n");
+			}
+			else {
+				lcd_puts("Keine Antwort\n");
+			}
+			wdt_reset();
+		}
+		lcd_puts("Winkel: ");
+		lcd_puts(Winkel);
+		lcd_puts(" Erreicht\n");
+		uart_put_string("0\r\n", D_RapidForm);
+		break;
+	default:
+		lcd_puts(str_rx);
+	}
+}

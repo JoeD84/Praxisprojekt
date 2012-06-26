@@ -1,0 +1,31 @@
+/* CSS for left navigation bar */
+
+.navbar { 
+    z-index: 1000;
+    display:block!important; 
+    background: #A6DBE3;
+    position:fixed; 
+    left:20px; top:150px; 
+    width:176px;
+    margin:0em; padding:1em; 
+    font: bold 75% sans-serif; 
+    border: #009DA0  5px solid;
+    border-right: 0px;
+    border-radius: 25px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.navbar ul { 
+    margin-left:-2em; 
+}
+.main { 
+    position:absolute; 
+    background: #A6DBE3;
+    left:220px; top:20px; right:20px; 
+    margin:0px; 
+    margin-bottom: 20px;
+    padding:1em 3em 1em 2em;
+    /*width:70%; */
+    border: 5px solid #009DA0;
+    border-radius: 25px;
+}

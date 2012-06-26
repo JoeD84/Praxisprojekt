@@ -1,0 +1,50 @@
+% Zeilenabstand ------------------------------------------------------------
+% \onehalfspacing
+
+% Seitenränder -------------------------------------------------------------
+%\geometry{paper=a4paper,left=30mm,right=40mm,top=10mm,bottom=65mm}
+%\geometry{paper=a4paper,left=35mm,right=35mm,top=30mm,bottom=40mm}
+
+
+% Kopf- und Fußzeilen ------------------------------------------------------
+%\pagestyle{scrheadings}
+
+% Kopf- und Fußzeile auch auf Kapitelanfangsseiten -------------------------
+%\renewcommand*{\chapterpagestyle}{scrheadings}
+
+% Schriftform der Kopfzeile ------------------------------------------------
+%\renewcommand{\headfont}{%
+%\normalfont
+%}
+%
+%% Kopfzeile ----------------------------------------------------------------
+%\ihead{\large{\textsc{\titel}}\\ \small{\untertitel} \\[2ex] \textit{\headmark}}
+%\chead{}
+%\ohead{\includegraphics[scale=0.25]{RAC_Logo.jpg}}
+%%
+%\setlength{\headheight}{21mm} % Höhe der Kopfzeile
+%\setheadwidth[0pt]{textwithmarginpar} % Kopfzeile über den Text hinaus verbreitern
+%\setheadsepline[text]{0.4pt} % Trennlinie unter Kopfzeile
+%
+%% Fußzeile -----------------------------------------------------------------
+%\ifoot{\autor}
+%\cfoot{}
+%\ofoot{\pagemark}
+
+
+% erzeugt ein wenig mehr Platz hinter einem Punkt --------------------------
+\frenchspacing 
+
+% Schusterjungen und Hurenkinder vermeiden
+\clubpenalty = 10000
+\widowpenalty = 10000 
+\displaywidowpenalty = 10000
+
+
+% Quellcode-Ausgabe formatieren --------------------------------------------
+\lstset{numbers=left, numberstyle=\tiny, numbersep=5pt, breaklines=true}
+\lstset{emph={square}, emphstyle=\color{red}, emph={[2]root,base}, emphstyle={[2]\color{blue}}}
+
+% Fußnoten fortlaufend durchnummerieren ------------------------------------
+%\counterwithout{footnote}{chapter}
+
