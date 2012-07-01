@@ -1,0 +1,3 @@
+RewriteEngine on
+AddType image/x-icon .ico
+RewriteRule ^favicon.ico favicon.ico [NC,L]

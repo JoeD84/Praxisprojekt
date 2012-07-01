@@ -1,0 +1,139 @@
+/* CSS for left navigation bar */
+
+.header {
+/*    font-size: 120%;*/
+    }
+.header .up, .footer {
+min-height: 35px;
+}
+
+.graphics{
+    max-width: 100%;
+    height: auto;
+    }
+
+.navbar { 
+    z-index: 1000;
+    display: block!important;
+    position: absolute;
+    width: 280px;
+/*    margin: 1em;*/
+/*    padding: 1em;*/
+    font: bold 75% sans-serif;
+    }
+    
+.navbar > .start:before {
+    position: relative;
+    content: url(x1.jpg);
+}
+
+.navbar .start {
+    font-size:120%;
+    
+    }
+        
+/*.navbar ul { */
+/*    margin-left:-2em; */
+/*}*/
+
+
+a {
+   color: #009DA0; 
+   
+    }
+a:link          { color:#009DA0;   text-decoration:none; }
+a:visited       { color:#009DA0;   text-decoration:none; }
+a:focus         { color:#009DA0;   text-decoration:underline; }
+a:hover         { color:#009DA0;   text-decoration:none; }
+a:active        { color:#009DA0;   text-decoration:underline; }   
+    
+.navbar > .toc {
+    background: #A6DBE3;
+    padding-left: 47px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: #009DA0 3px solid;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    }
+    
+.listing {
+    padding: 3px;
+}
+.listing .tabular {       
+    border: solid 1px black;
+    background: #FFFFAA;
+    width:100%;
+}
+    
+.content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: white;
+    clear: both;
+    padding: 1em;
+    border: 1px solid;
+}
+    
+.navbar .toc li {
+    margin-left: -30px;
+}
+    
+.navbar li {
+    white-space: normal;
+}
+    
+.navbar li.self {
+    position: relative;
+/*    left: 23px;*/
+/*    margin: 10px;*/
+/*    margin-left: -30px;*/
+    margin-right: -3px;
+    z-index: 2000;
+    background: #A6DBE3;
+/*    padding: 5px;*/
+    padding-left: 5px;
+    margin-left: -38px;
+    border: #009DA0 3px solid;
+    border-right: 0px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    overflow: visible;
+    }
+    
+.bibitem {
+    background: #EEE;
+    padding: 5px;
+    
+    }
+    
+.credits .tbody>.tr {
+    background: #FFF;
+    }
+    
+.credits .tbody>.tr:nth-child(odd) { 
+    background: #DDD; 
+    }
+
+.bibitem:nth-child(odd) { 
+    background: #EEE; 
+    }
+    
+.figure {
+    text-align: center;
+    }
+    
+.main { 
+    position: absolute;
+    left: 285px; right: 0px;
+    background: #A6DBE3;
+    margin-right: 8px;
+    margin-bottom: -10px;
+    padding: 1em 1em 1em 1em;
+    min-height: 600px;
+/*    min-width: 560px;*/
+    border: 3px solid #009DA0;
+    border-radius: 10px;
+}

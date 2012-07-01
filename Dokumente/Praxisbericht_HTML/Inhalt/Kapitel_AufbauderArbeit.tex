@@ -1,7 +1,9 @@
 \chapter{Zeitlicher Arbeitsablauf}
 \label{cha:Arbeit}
 Dieses Kapitel spiegelt den chronologischen Ablauf des Projektes wieder und zeigt die Schritte auf, die notwendig waren um den Mikrocontroller so zu programmieren, dass dieser die Kommunikation zwischen RapidForm2004 und der vorhandenen Schrittmotorkarte ermöglicht. So das er sozusagen als Übersetzer für die unterschiedlichen Befehlssätze von RapidForm2004 und dem der Schrittmotorkarte fungiert.
-%\begin{Tipp}Die Codelistings in diesem Kapitel sind thematisch zusammen gefasst und gekürzt um die Lesbarkeit und das Verständnis zu gewährleisten. Ein komplettes Codelisting des Hauptprogramms befindet sich im Anhang \ref{sec:main.c}. Der komplette Code, mit allen Bibliotheken, liegt dem Praxisbericht als CD oder Archiv bei.\end{Tipp}
+%\begin{Tipp}
+Die Codelistings in diesem Kapitel sind thematisch zusammen gefasst und gekürzt um die Lesbarkeit und das Verständnis zu gewährleisten. Ein komplettes Codelisting des Hauptprogramms befindet sich im Anhang \ref{sec:main.c}. Der komplette Code, mit allen Bibliotheken, liegt dem Praxisbericht als CD oder Archiv bei.
+%\end{Tipp}
 Kapitel \ref{sec:Erste_Schritte} beschreibt die Programmierung des Mikrocontrollers, welche die notwendigen Grundvoraussetzungen für dieses Projekt schafft. Das Ziel dieser Programmierung besteht darin die geforderten Komponenten, LEDs, LC-Display, Taster und serielle Schnittstellen im Mikrocontroller nutzbar zu machen.\\
 Kapitel \ref{sec:Protokolle} beschreibt die Erarbeitung der Befehlssätze die die Software RapidForm2004 enthält um mit den von ihr unterstützten Schrittmotorkarten zu kommunizieren. Auch der Befehlssatz zur Kommunikation zwischen dem Mikrocontroller und der Schrittmotorkarte wird beschrieben.\\
 Kapitel \ref{sec:Komm_SM} beschreibt wie der Mikrocontroller diesen Befehlssatz für die Kommunikation mit der vorhandenen Schrittmotorkarte nutzt.\\
@@ -62,7 +64,9 @@ Jede Schrittmotorkarte verwendet eigenen Befehle. Alle Befehle für eine Schritt
 Nun soll der Mikrocontroller sowohl mit RapidForm2004 als auch mit der ersten der vorhandenen Schrittmotorkarten kommunizieren. Befehle an die zweite Schrittmotorkarte werden über die Erste gesendet. Um mit beiden Seiten kommunizieren zu können muss der Mikrocontroller den Befehlssatz der vorhanden Schrittmotorkarten und zumindest einen der Befehlssätze aus RapidForm2004 kennen. Außerdem muss er wissen welche Antwort RapidForm2004 auf einen gesendeten Befehl erwartet. \\
 In der ersten Phase wurde die Software \emph{Free Serial Port Monitor} verwendet um die Kommunikation zwischen RapidForm2004 und dem Mikrocontroller abzuhören. Dies hatte jedoch den Nachteil, das RapidForm2004 erst dann den nächsten Befehl sendete, wenn der Erste mit der erwarteten Antwort quittiert wurde. Die Befehle die RapidForm erwartete, konnten zwar teilweise aus den Betriebsanleitungen der Schrittmotorsteuerungen entnommen werden, dieses Vorgehen war jedoch sehr mühsam. Eine besseres Vorgehen, war das sogenannte \Fachbegriff{Reverse-Engineering}. Dadurch konnten alle Befehe und die darauf erwarteten Antworten aus einer ausführbaren Datei von RapidForm2004 ausgelesen werden.\\
 Das Codelisting \ref{lst:Proto_RF_Isel} zeigt einen Auszug für den Befehlssatz eines Isel Schrittmotors. Im Anhang \ref{sec:Protokolle_RF} befinden sich die Befehlssätze aller Schrittmotorkarten. Somit stehen die Befehlssätze aller Schrittmotorsteuerungen zur Verfügung. Diese wurden in einer Textdatei gespeichert und werden später im Programm verwendet. Dadurch sind alle Befehle und die Antworten die RapidForm2004 auf einen daraus ausgesendeten Befehl erwartet bekannt.
-%\begin{Tipp}In Codelistings und im Quelltext wird teilweise noch die Bezeichnung \emph{Protokolle} statt \emph{Befehlssätze} verwendet. Diese sind gleichbedeutend.\end{Tipp}
+%\begin{Tipp}
+In Codelistings und im Quelltext wird teilweise noch die Bezeichnung \emph{Protokolle} statt \emph{Befehlssätze} verwendet. Diese sind gleichbedeutend.
+%\end{Tipp}
 \lstset{language=C, basicstyle=\footnotesize, showstringspaces=false, tabsize=8}
 \lstinputlisting[label=lst:Proto_RF_Isel,caption=Befehlssatz aus Rapidform: Isel]{Code/Protokolle_RF_Isel.txt}
 
@@ -133,26 +137,18 @@ Somit stand ein Kabel zur Verfügung mit dem sowohl der Schrittmotor gesteuert, 
 \label{fig:Motorverkabelung}
 \end{figure}
 
-\begin{longtable}{|c|l|} 
-\caption{Motor- und Endschalterverkabelung} \\
-\hline
-\label{tab:Motorverkabelung}
-1 & Phase A \\ 
-\hline 
-2 & Phase B \\ 
-\hline 
-3 & Phase C \\ 
-\hline 
-4 & Phase D \\ 
-\hline 
-5 & Endschalter oben \\ 
-\hline 
-6 & Endschalter unten \\ 
-\hline 
-7 & Endschalter Masse \\ 
-\hline 
-\end{longtable} 
 
+\begin{longtable}{|c|l|} 
+\caption{Motor- und Endschalterverkabelung}\\
+\hline
+\label{tab:Motorverkabelung}1 & Phase A\\ \hline 
+2 & Phase B\\ \hline 
+3 & Phase C\\ \hline 
+4 & Phase D\\ \hline 
+5 & Endschalter oben\\ \hline 
+6 & Endschalter unten\\ \hline 
+7 & Endschalter Masse\\ \hline 
+\end{longtable} 
 \subsection{Endschalter}
 Nun sollen die vorgegeben induktiven Endschalter mit der Schrittmotorkarte und dem Mikrocontroller zu verbinden. Dadurch soll gewährleistet werden, dass der Drehtisch nicht über den Arbeitsbereich hinaus bewegt werden kann. Zusätzlich soll das Erreichen der Endpositionen auf dem LC-Display angezeigt werden.\\
 Da die Schrittmotorkarte nur mechanische Endschalter unterstützt, ließen sich die induktiven Endschalter nicht ohne weiteres nutzen. Um die induktiven Endschalter nutzen zu können, musste die Spannung über einen Spannungsteiler heruntergesetzt werden und die standardmäßigen Eingänge für die mechanischen Endschalter umgangen werden. Die induktiven Endschalter werden direkt an den Optokoppler angeschlossen, welcher für die mechanischen Endschalter zuständig ist. Dadurch wurden die Signale der Endschalter für die Schrittmotorkarte nutzbar.
@@ -303,23 +299,22 @@ Als \Fachbegriff{Fuses} werden Register bezeichnet mit denen sich, auf Hardwaree
 \item \textbf{CKSELX} - Über diese 4 Bits kann der Systemtakt eingestellt werden.
 \end{itemize}
 \begin{longtable}{|l|l|} 
-\caption{Fuses} \\
+\caption{Fuses}\\
 \hline
-\label{tab:Fuses}
-OCDEN & On Chip Debugging \\ \hline 
-JTAGEN & Hardware Debugging \\ \hline 
-SPIEN & Serial Program and Data Downloading \\ \hline 
-WDTON & Watchdog Timer always on \\ \hline 
-EESAVE & EEPROM memory is preserved through the Chip Erase \\ \hline 
-BOOTSZ1 & Select Boot Size \\ \hline 
-BOOTSZ0 & Select Boot Size \\ \hline 
-BOOTRST & Select Reset Vector \\ \hline 
-CKDIV8 & Divide clock by 8 \\ \hline 
-CKOUT & Clock output \\ \hline 
-SUT1 & Select start-up time \\ \hline 
-SUT0 & Select start-up time \\ \hline 
-CKSEL3 & Select Clock source \\ \hline 
-CKSEL2 & Select Clock source \\ \hline 
-CKSEL1 & Select Clock source \\ \hline 
-CKSEL0 & Select Clock source \\ \hline 
+\label{tab:Fuses}OCDEN & On Chip Debugging\\ \hline 
+JTAGEN & Hardware Debugging\\ \hline 
+SPIEN & Serial Program and Data Downloading\\ \hline 
+WDTON & Watchdog Timer always on\\ \hline 
+EESAVE & EEPROM memory is preserved through the Chip Erase\\ \hline 
+BOOTSZ1 & Select Boot Size\\ \hline 
+BOOTSZ0 & Select Boot Size\\ \hline 
+BOOTRST & Select Reset Vector\\ \hline 
+CKDIV8 & Divide clock by 8\\ \hline 
+CKOUT & Clock output\\ \hline 
+SUT1 & Select start-up time\\ \hline 
+SUT0 & Select start-up time\\ \hline 
+CKSEL3 & Select Clock source\\ \hline 
+CKSEL2 & Select Clock source\\ \hline 
+CKSEL1 & Select Clock source\\ \hline 
+CKSEL0 & Select Clock source\\ \hline 
 \end{longtable} 

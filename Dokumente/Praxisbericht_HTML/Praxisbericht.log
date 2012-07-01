@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.12.22)  25 JUN 2012 00:10
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.12.22)  1 JUL 2012 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7,10 +7,10 @@ entering extended mode
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, german, ngerman, swissgerman, loaded.
-(./_Meta.tex) (/usr/share/texmf-dist/tex/latex/base/report.cls
+(/usr/share/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/share/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -24,7 +24,245 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (./Packages.tex
+) (./_Meta.tex)
+(./Packages.tex (/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+(/usr/share/texmf-dist/tex/generic/babel/ngermanb.ldf
+Language: ngermanb 2008/07/06 v2.6n new German support from the babel system
+
+(/usr/share/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+\l@naustrian = a dialect from \language\l@ngerman 
+Package babel Info: Making " an active character on input line 92.
+))
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/share/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/share/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
 (/usr/share/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -42,7 +280,81 @@ Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
 (/usr/share/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
-)
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
 LaTeX Info: Redefining \oldstylenums on input line 266.
 Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
 Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
@@ -97,7 +409,7 @@ Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks14
+\KV@toks@=\toks16
 )
 (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -113,8 +425,8 @@ Package graphics Info: Driver file: dvips.def on input line 91.
 (/usr/share/texmf-dist/tex/latex/graphics/dvips.def
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
@@ -126,51 +438,51 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks15
-\ex@=\dimen105
+\@emptytoks=\toks17
+\ex@=\dimen106
 ))
 (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen106
+\pmbraise@=\dimen107
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count88
+\inf@bad=\count89
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count89
-\leftroot@=\count90
+\uproot@=\count90
+\leftroot@=\count91
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count91
-\DOTSCASE@=\count92
+\classnum@=\count92
+\DOTSCASE@=\count93
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen107
+\big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count93
-\c@MaxMatrixCols=\count94
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
 \dotsspace@=\muskip10
-\c@parentequation=\count95
-\dspbrk@lvl=\count96
-\tag@help=\toks16
-\row@=\count97
-\column@=\count98
-\maxfields@=\count99
-\andhelp@=\toks17
-\eqnshift@=\dimen108
-\alignsep@=\dimen109
-\tagshift@=\dimen110
-\tagwidth@=\dimen111
-\totwidth@=\dimen112
-\lineht@=\dimen113
-\@envbody=\toks18
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks18
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks19
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks20
 \multlinegap=\skip44
 \multlinetaggap=\skip45
-\mathdisplay@stack=\toks19
+\mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
@@ -184,25 +496,47 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (/usr/share/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
+(/usr/share/texmf-site/tex/latex/floatflt/floatflt.sty
+Package: floatflt 1997/07/16 v. 1.31
+\c@OptionTest=\count101
+\figbox=\box28
+\tabbox=\box29
+\pagebox=\box30
+\ffigcount=\count102
+\ftabcount=\count103
+\fftest=\count104
+\hangcount=\count105
+\nosuccesstryfig=\count106
+\nosuccesstrytab=\count107
+\figgutter=\dimen115
+\tabgutter=\dimen116
+\htdone=\dimen117
+\pageht=\dimen118
+\startpageht=\dimen119
+\tabbredd=\dimen120
+\floatfltwidth=\dimen121
+\fltitemwidth=\dimen122
+\outputpretest=\toks22
+)
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count100
-\lst@gtempboxa=\box28
-\lst@token=\toks20
-\lst@length=\count101
-\lst@currlwidth=\dimen114
-\lst@column=\count102
-\lst@pos=\count103
-\lst@lostspace=\dimen115
-\lst@width=\dimen116
-\lst@newlines=\count104
-\lst@lineno=\count105
-\lst@maxwidth=\dimen117
+\lst@mode=\count108
+\lst@gtempboxa=\box31
+\lst@token=\toks23
+\lst@length=\count109
+\lst@currlwidth=\dimen123
+\lst@column=\count110
+\lst@pos=\count111
+\lst@lostspace=\dimen124
+\lst@width=\dimen125
+\lst@newlines=\count112
+\lst@lineno=\count113
+\lst@maxwidth=\dimen126
 
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count106
-\lst@skipnumbers=\count107
-\lst@framebox=\box29
+\c@lstnumber=\count114
+\lst@skipnumbers=\count115
+\lst@framebox=\box32
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
@@ -219,7 +553,7 @@ Package color Info: Driver file: pdftex.def on input line 130.
 
 (/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2010/09/14 v0.05b Graphics/color for pdfTeX
-\Gread@gobject=\count108
+\Gread@gobject=\count116
 ))
 (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
@@ -230,7 +564,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip46
 \bibsep=\skip47
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count109
+\c@NAT@ctr=\count117
 )
 (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2010/09/17 v6.81q Hypertext links for LaTeX
@@ -290,180 +624,26 @@ Package: letltxmacro 2008/06/24 v1.3 Let assignment for LaTeX macros (HO)
 (/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
 )
-\@linkdim=\dimen118
-\Hy@linkcounter=\count110
-\Hy@pagecounter=\count111
+\@linkdim=\dimen127
+\Hy@linkcounter=\count118
+\Hy@pagecounter=\count119
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2010/09/17 v6.81q Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
 )
 (/usr/share/texmf-dist/tex/generic/oberdiek/intcalc.sty
 Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 )
-\Hy@SavedSpaceFactor=\count112
+\Hy@SavedSpaceFactor=\count120
 
 (/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `final' set `true' on input line 3798.
 Package hyperref Info: Option `bookmarks' set `true' on input line 3798.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unhbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\voidb@x' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unhbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\voidb@x' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\setbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempboxa' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\global' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathchardef' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\spacefactor' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\accent' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\spacefactor' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unhbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\voidb@x' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unhbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\voidb@x' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\setbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempboxa' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\global' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathchardef' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\spacefactor' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\accent' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\spacefactor' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unhbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\voidb@x' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unhbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\voidb@x' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\setbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@tempboxa' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\global' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathchardef' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\spacefactor' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\accent' on input line 3798.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\spacefactor' on input line 3798.
-
 Package hyperref Info: Option `colorlinks' set `true' on input line 3798.
 Package hyperref Info: Option `plainpages' set `false' on input line 3798.
 Package hyperref Info: Option `pdfpagelabels' set `true' on input line 3798.
@@ -475,6 +655,7 @@ Package hyperref Info: Plain pages OFF on input line 3917.
 Package hyperref Info: Backreferencing ON on input line 3920.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4132.
+
 (/usr/share/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2010/08/30 v1.36 Bibliographical back referencing
 
@@ -494,15 +675,15 @@ Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 71.
 ))
-\c@Hy@tempcnt=\count113
+\c@Hy@tempcnt=\count121
 LaTeX Info: Redefining \url on input line 4487.
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/bitset.sty
 Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
 )
-\Fld@menulength=\count114
-\Field@Width=\dimen119
-\Fld@charsize=\dimen120
+\Fld@menulength=\count122
+\Field@Width=\dimen128
+\Fld@charsize=\dimen129
 Package hyperref Info: Hyper figures OFF on input line 5526.
 Package hyperref Info: Link nesting OFF on input line 5531.
 Package hyperref Info: Hyper index ON on input line 5534.
@@ -516,17 +697,17 @@ LaTeX Info: Redefining \pageref on input line 5600.
 (/usr/share/texmf-dist/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2010/03/25 v1.12 At begin shipout hook (HO)
 )
-\Hy@abspage=\count115
-\c@Item=\count116
-\c@Hfootnote=\count117
+\Hy@abspage=\count123
+\c@Item=\count124
+\c@Hfootnote=\count125
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2010/09/17 v6.81q Hyperref driver for pdfTeX
-\Fld@listcount=\count118
-\c@bookmark@seq@number=\count119
+\Fld@listcount=\count126
+\c@bookmark@seq@number=\count127
 \Hy@SectionHShift=\skip48
 )
 (/usr/share/texmf-dist/tex/latex/tools/longtable.sty
@@ -535,23 +716,23 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTright=\skip50
 \LTpre=\skip51
 \LTpost=\skip52
-\LTchunksize=\count120
-\LTcapwidth=\dimen121
-\LT@head=\box30
-\LT@firsthead=\box31
-\LT@foot=\box32
-\LT@lastfoot=\box33
-\LT@cols=\count121
-\LT@rows=\count122
-\c@LT@tables=\count123
-\c@LT@chunks=\count124
-\LT@p@ftn=\toks21
+\LTchunksize=\count128
+\LTcapwidth=\dimen130
+\LT@head=\box33
+\LT@firsthead=\box34
+\LT@foot=\box35
+\LT@lastfoot=\box36
+\LT@cols=\count129
+\LT@rows=\count130
+\c@LT@tables=\count131
+\c@LT@chunks=\count132
+\LT@p@ftn=\toks24
 )
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen122
-\extrarowheight=\dimen123
-\NC@list=\toks22
+\col@sep=\dimen131
+\extrarowheight=\dimen132
+\NC@list=\toks25
 \extratabsurround=\skip53
 \backup@length=\skip54
 )
@@ -564,42 +745,41 @@ Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 \plpartopsep=\skip56
 \plitemsep=\skip57
 \plparsep=\skip58
-\pl@lab=\toks23
-))
-\@indexfile=\write3
-\openout3 = `Praxisbericht.idx'.
-
-
-Writing index file Praxisbericht.idx
+\pl@lab=\toks26
+)) (./Seitenstil.tex)
 \@input{Silbentrennung.aux}
 \openout2 = `Silbentrennung.aux'.
 
-(./Silbentrennung.tex) (./Praxisbericht.aux (./Inhalt/Einleitung.aux)
-(./Inhalt/Kapitel_Hardware.aux) (./Inhalt/Kapitel_Software.aux)
-(./Inhalt/Kapitel_AufbauderArbeit.aux) (./Inhalt/Fazit.aux))
+(./Silbentrennung.tex) (./Praxisbericht.aux (./Deckblatt.aux)
+(./Inhalt/Einleitung.aux) (./Inhalt/Kapitel_Hardware.aux)
+(./Inhalt/Kapitel_Software.aux) (./Inhalt/Kapitel_AufbauderArbeit.aux)
+(./Inhalt/Fazit.aux) (./Inhalt/Erklaerung.aux)
+(./Inhalt/Tabelle_ASCII_Befehle.aux) (./Inhalt/Tabelle_Protokolle_RF.aux)
+(./Inhalt/Werkzeuge.aux) (./Inhalt/Anhang_Codelistings.aux)
+(./Inhalt/Anhang_Danksagung.aux))
 \openout1 = `Praxisbericht.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 55.
 
 (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
 
 (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -618,24 +798,24 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count125
+\c@lstlisting=\count133
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen124
-\scratchbox=\box34
-\nofMPsegments=\count127
-\nofMParguments=\count128
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen125
-\MPnumerator=\count130
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count134
+\scratchdimen=\dimen133
+\scratchbox=\box37
+\nofMPsegments=\count135
+\nofMParguments=\count136
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen134
+\MPnumerator=\count138
+\everyMPtoPDFconversion=\toks28
 )
-Package backref Info: ** backref set up for natbib ** on input line 54.
-\AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring ON on input line 54.
+Package backref Info: ** backref set up for natbib ** on input line 55.
+\AtBeginShipoutBox=\box38
+Package hyperref Info: Link coloring ON on input line 55.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -645,89 +825,80 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
-\c@section@level=\count131
+\c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
+LaTeX Info: Redefining \ref on input line 55.
+LaTeX Info: Redefining \pageref on input line 55.
+LaTeX Info: Redefining \nameref on input line 55.
 
 (./Praxisbericht.out) (./Praxisbericht.out)
-\@outlinefile=\write4
-\openout4 = `Praxisbericht.out'.
+\@outlinefile=\write3
+\openout3 = `Praxisbericht.out'.
 
- (./Praxisbericht.lof
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 
-Package natbib Warning: Citation `atmel:ug_324A' on page 1 undefined on input l
-ine 9.
+LaTeX Warning: No \author given.
+
+[1
 
 
-Package natbib Warning: Citation `atmel:ug_STK500' on page 1 undefined on input
- line 10.
+
+{//var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+\openout2 = `Deckblatt.aux'.
+
+ (./Deckblatt.tex)
+[1
+
+] (./Praxisbericht.toc [1
 
 
-Package natbib Warning: Citation `kosatec' on page 1 undefined on input line 13
-.
+])
+\tf@toc=\write4
+\openout4 = `Praxisbericht.toc'.
 
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-Package natbib Warning: Citation `uC:RS232' on page 1 undefined on input line 1
-6.
-
-)
+ [2] (./Praxisbericht.lof)
 \tf@lof=\write5
 \openout5 = `Praxisbericht.lof'.
-
- [1
-
-
-
-
-{//var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Praxisbericht.lot)
-\tf@lot=\write6
-\openout6 = `Praxisbericht.lot'.
-
-[2
-
-] (./Praxisbericht.lol
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-)
-\tf@lol=\write7
-\openout7 = `Praxisbericht.lol'.
 
  [3
 
 ]
-Chapter 1.
+(./Praxisbericht.lot)
+\tf@lot=\write6
+\openout6 = `Praxisbericht.lot'.
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+ [4
+
+] (./Praxisbericht.lol)
+\tf@lol=\write7
+\openout7 = `Praxisbericht.lol'.
+
+ [5
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 97.
+(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
@@ -737,76 +908,23 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 ) (./Code/Hinweis.c)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-
-[4
+[6
 
 ]
 \openout2 = `Inhalt/Einleitung.aux'.
 
  (./Inhalt/Einleitung.tex
-Chapter 2.
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
+Kapitel 1.
 )
-Overfull \hbox (2.86174pt too wide) in paragraph at lines 3--103
-\OT1/cmr/m/n/10 Haupt-einsatzgebiete finden sich in der Bauteilepr-fung, der Er
--stel-lung von Finite-
+Overfull \hbox (1.1129pt too wide) in paragraph at lines 3--110
+\T1/cmr/m/n/10 Ein 3D-Laserscanner bie-tet viel-fäl-ti-ge Mög-lich-kei-ten und 
+Ein-satz-ge-bie-te. Die Haupt-
  []
 
 
-Overfull \hbox (2.91733pt too wide) in paragraph at lines 3--103
-\OT1/cmr/m/n/10 Elemente-Daten in Verbindung mit Bauteil-anal-yse, der Er-stel-
-lung von 3D-Daten,
+Overfull \hbox (6.02284pt too wide) in paragraph at lines 3--110
+\T1/cmr/m/n/10 einsatzgebiete fin-den sich in der Bau-tei-le-prü-fung, der Er-s
+tel-lung von Finite-Elemente-
  []
 
 [1
@@ -817,359 +935,58 @@ lung von 3D-Daten,
 \openout2 = `Inhalt/Kapitel_Hardware.aux'.
 
  (./Inhalt/Kapitel_Hardware.tex
-Chapter 3.
-<Bilder/Uebersicht_2.pdf, id=338, 770.88pt x 579.76598pt>
+Kapitel 2.
+<Bilder/Uebersicht_2.pdf, id=486, 770.88pt x 579.76598pt>
 File: Bilder/Uebersicht_2.pdf Graphic file (type pdf)
 
-<use Bilder/Uebersicht_2.pdf>
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-
-LaTeX Warning: Reference `sec:V_Software' on page 2 undefined on input line 28.
-
-
-[2
+<use Bilder/Uebersicht_2.pdf> [2
 
 
 
  <./Bilder/Uebersicht_2.pdf>]
 
-LaTeX Warning: Reference `sec:V_Hardware' on page 3 undefined on input line 31.
-
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-Package natbib Warning: Citation `Minolta:Einleitung' on page 3 undefined on in
-put line 32.
-
-
 LaTeX Warning: Reference `tab:TD_VI-910' on page 3 undefined on input line 33.
 
-<Bilder/vi900-big.jpg, id=354, 43.8438pt x 72.27pt>
+<Bilder/vi900-big.jpg, id=505, 43.8438pt x 72.27pt>
 File: Bilder/vi900-big.jpg Graphic file (type jpg)
  <use Bilder/vi900-big.jpg>
-Overfull \hbox (12.533pt too wide) in paragraph at lines 31--40
-\OT1/cmr/m/n/10 bilen Nutzung kann das Gert auch auf der Rck-seite be-di-ent we
-r-den. Aufgenommene
- []
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-<Bilder/Laser-Triangulation.png, id=356, 180.675pt x 252.945pt>
+[3 <./Bilder/vi900-big.jpg>]
+<Bilder/Laser-Triangulation.png, id=514, 180.675pt x 252.945pt>
 File: Bilder/Laser-Triangulation.png Graphic file (type png)
 
 <use Bilder/Laser-Triangulation.png>
-Overfull \hbox (5.35246pt too wide) in paragraph at lines 42--49
-\OT1/cmr/m/n/10 durch die Lin-sen auf den Pix-elde-tek-tor abge-bildet. ber die
- Po-si-tion des Laserspots
- []
+<Bilder/Drehtisch.jpg, id=516, 599.23875pt x 499.8675pt>
+File: Bilder/Drehtisch.jpg Graphic file (type jpg)
 
+<use Bilder/Drehtisch.jpg>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-<Bilder/Drehtisch.jpg, id=358, 599.23875pt x 499.8675pt>
-File: Bilder/Drehtisch.jpg Graphic file (type jpg)
 
-<use Bilder/Drehtisch.jpg> [3] [4 <./Bilder/vi900-big.jpg> <./Bilder/Laser-Tria
-ngulation.png (PNG copy)>]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-
-Overfull \hbox (19.7969pt too wide) in paragraph at lines 64--66
-\OT1/cmr/m/n/10 Die Schrittmo-torkarten wer-den von einem PC-Netzteil gespeist.
- Die [][][][][][]
+Overfull \hbox (2.86394pt too wide) in paragraph at lines 64--66
+\T1/cmr/m/n/10 Die Schritt-mo-tor-kar-ten wer-den von ei-nem PC-Netzteil ge-spe
+ist. Die [][][][][][]
  []
 
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Â in font cmr10!
-Missing character: There is no ° in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Â in font cmr10!
-Missing character: There is no ° in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-[5 <./Bilder/Drehtisch.jpg>]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr8!
-Missing character: There is no ¦ in font cmr8!
-
-
-Package natbib Warning: Citation `wiki:ASCII' on page 6 undefined on input line
- 75.
-
-
-LaTeX Warning: Reference `sec:A_ASCII_Befehle' on page 6 undefined on input lin
-e 76.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr8!
-Missing character: There is no ¶ in font cmr8!
-Missing character: There is no â in font cmr8!
-Missing character: There is no € in font cmr8!
-Missing character: There is no ž in font cmr8!
-Missing character: There is no Ã in font cmr8!
-Missing character: There is no ¤ in font cmr8!
-Missing character: There is no Ã in font cmr8!
-Missing character: There is no ¼ in font cmr8!
-Missing character: There is no â in font cmr8!
-Missing character: There is no € in font cmr8!
-Missing character: There is no œ in font cmr8!
-
-Package natbib Warning: Citation `wiki:Daisy' on page 6 undefined on input line
- 77.
-
-<Bilder/19Zoll_Rack.jpg, id=377, 1284.8pt x 963.6pt>
+[4 <./Bilder/Laser-Triangulation.png (PNG copy)>]
+<Bilder/19Zoll_Rack.jpg, id=529, 1284.8pt x 963.6pt>
 File: Bilder/19Zoll_Rack.jpg Graphic file (type jpg)
 
-<use Bilder/19Zoll_Rack.jpg>
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
- [6 <./Bilder/19Zoll_Rack.jpg>]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-
-
-Package natbib Warning: Citation `atmel:8515' on page 7 undefined on input line
- 99.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-<Bilder/Mikrocontroller_Block.pdf, id=388, 544.51428pt x 402.0822pt>
+<use Bilder/19Zoll_Rack.jpg> [5 <./Bilder/Drehtisch.jpg>] [6 <./Bilder/19Zoll_R
+ack.jpg>] <Bilder/Mikrocontroller_Block.pdf, id=547, 544.51428pt x 402.0822pt>
 File: Bilder/Mikrocontroller_Block.pdf Graphic file (type pdf)
 
 <use Bilder/Mikrocontroller_Block.pdf>
-
-Package natbib Warning: Citation `atmel:ug_324A' on page 7 undefined on input l
-ine 104.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-LaTeX Warning: Reference `sec:V_Hardware' on page 7 undefined on input line 110
-.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-<Bilder/STK500_Schema.pdf, id=391, 391.3019pt x 245.79831pt>
+<Bilder/STK500_Schema.pdf, id=552, 391.3019pt x 245.79831pt>
 File: Bilder/STK500_Schema.pdf Graphic file (type pdf)
 
-<use Bilder/STK500_Schema.pdf>
-
-Package natbib Warning: Citation `atmel:ug_STK500' on page 7 undefined on input
- line 117.
-
-
-Overfull \hbox (2.94513pt too wide) in paragraph at lines 110--120
-\OT1/cmr/m/n/10 Um den Mikro-con-troller zu pro-gram-mieren und die Pro-gram-mi
-erung zu berprfen,
- []
-
-
-Overfull \hbox (27.43579pt too wide) in paragraph at lines 110--120
-\OT1/cmr/m/n/10 wen-det. Das Board enthlt mehrere Mikrocontroller-Steckpltze, 2
- se-rielle Schnittstellen,
- []
-
-[7]
-
-LaTeX Warning: Reference `sec:V_Hardware' on page 8 undefined on input line 123
-.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-) [8 <./Bilder/Mikrocontroller_Block.pdf>] [9 <./Bilder/STK500_Schema.pdf>]
+<use Bilder/STK500_Schema.pdf> [7 <./Bilder/Mikrocontroller_Block.pdf>])
+[8 <./Bilder/STK500_Schema.pdf>] [9]
 \openout2 = `Inhalt/Kapitel_Software.aux'.
 
-
-(./Inhalt/Kapitel_Software.tex
-Chapter 4.
-
-LaTeX Warning: Reference `sec:V_Software' on page 10 undefined on input line 6.
-
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-Overfull \hbox (3.32469pt too wide) in paragraph at lines 6--8
-\OT1/cmr/m/n/10 zur Ver-f-gung. Diese ist zur Er-fas-sung und Bear-beitung von 
-3D-Modellen gedacht.
- []
-
-
-LaTeX Warning: Reference `sec:V_Software' on page 10 undefined on input line 11
-.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-LaTeX Warning: Reference `sec:V_Software' on page 10 undefined on input line 15
-.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-LaTeX Warning: Reference `sec:V_Software' on page 10 undefined on input line 15
-.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-)
-Overfull \hbox (9.89098pt too wide) in paragraph at lines 15--106
-\OT1/cmr/m/it/10 mi-nal\OT1/cmr/m/n/10 [[]] zur Ver-f-gung. Dieses wurde im Ver
--lauf des Pro-jekts durch das wesentlich
- []
-
-[10
+ (./Inhalt/Kapitel_Software.tex
+Kapitel 3.
+) [10
 
 
 
@@ -1177,1124 +994,267 @@ Overfull \hbox (9.89098pt too wide) in paragraph at lines 15--106
 \openout2 = `Inhalt/Kapitel_AufbauderArbeit.aux'.
 
  (./Inhalt/Kapitel_AufbauderArbeit.tex
-Chapter 5.
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmbx12!
-Missing character: There is no ¤ in font cmbx12!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
+Kapitel 4.
 [11
 
 
 
 ]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-
-
-Package natbib Warning: Citation `uC:Dannegger' on page 12 undefined on input l
-ine 21.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-(./Code/taster.c
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 2.
- (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 5.
-
-(/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 5.
-)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-
-Overfull \hbox (10.09897pt too wide) in paragraph at lines 28--32
-\OT1/cmr/m/n/10 ver-bun-den wer-den. Um LEDs an \OT1/cmr/m/it/10 PortB \OT1/cmr
-/m/n/10 be-treiben zu kn-nen mssen die entsprechen-
+Underfull \hbox (badness 1484) in paragraph at lines 22--26
+\T1/cmr/m/n/10 Durch die Ver-wen-dung der Bi-blio-thek ist es mög-lich Funk-tio
+-nen wie z.B.
  []
 
-[12] (./Code/led.c)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmti10!
-Missing character: There is no ¼ in font cmti10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-
-
-Package natbib Warning: Citation `uC:Fleury' on page 13 undefined on input line
- 37.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-(./Code/lcd_def.c [13])
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-
-
-Package natbib Warning: Citation `uC:RS232' on page 14 undefined on input line 
-44.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--48
+(./Code/taster.c) [12] (./Code/led.c) (./Code/lcd_def.c [13])
+Underfull \hbox (badness 10000) in paragraph at lines 46--50
 
  []
 
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-(./Code/rs232.c [14]) [15]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
+(./Code/rs232.c [14])
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+\T1/cmr/m/n/10 Damit ste-hen die es-sen-ti-el-len Funk-tio-nen [][][][][][] und
 
-Underfull \hbox (badness 3919) in paragraph at lines 55--56
-\OT1/cmr/m/n/10 Damit ste-hen die es-sen-tiellen Funk-tio-nen [][][][][][] und
  []
 
-Missing character: There is no Ã in font cmbx12!
-Missing character: There is no ¤ in font cmbx12!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-LaTeX Warning: Reference `sec:Protokolle_RF' on page 16 undefined on input line
- 64.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-
-Overfull \hbox (6.30629pt too wide) in paragraph at lines 59--67
-\OT1/cmr/m/n/10 die Kom-mu-nika-tion zwis-chen Rapid-Form2004 und dem Mikro-con
--troller abzuhren.
- []
-
-(./Code/Protokolle_RF_Isel.txt [16])
-Overfull \hbox (32.80782pt too wide) in paragraph at lines 69--69
-[]\OT1/cmr/bx/n/14.4 Kommunikation mit der vorhan-de-nen Schrittmo-
- []
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmti10!
-Missing character: There is no ¼ in font cmti10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-Overfull \hbox (1.25056pt too wide) in paragraph at lines 73--78
-\OT1/cmr/m/n/10 Im nch-sten Schritt geht es darum, Be-fehle an die Schrittmo-to
-rkarte zu versenden.
- []
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-(./Code/menu.c [17])
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
- (./Code/menu_main.txt)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-
-Overfull \hbox (14.57944pt too wide) in paragraph at lines 82--84
-\OT1/cmr/m/it/10 +90 \OT1/cmr/m/n/10 aus-ge-whlt, wird die hin-ter-legte Funk-t
-ion [][][][][][](Codelisting
- []
-
-
-Overfull \hbox (8.19499pt too wide) in paragraph at lines 82--84
-\OT1/cmr/m/n/10 Es ist somit nun mglich mit Tastern vordefinierte Be-fehle aus 
-dem Men auszuwhlen
- []
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-Overfull \hbox (15.00069pt too wide) in paragraph at lines 86--91
-\OT1/cmr/m/n/10 Ar-beitss-chritt wird die Funk-tion-alitt zum Emp-fan-gen von A
-ntworten der Schrittmo-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--91
-\OT1/cmr/m/n/10 Kapi-tel [][]5.1.4[][] bekan-nten Funk-tion
- []
-
-
-Overfull \hbox (6.29857pt too wide) in paragraph at lines 86--91
-\OT1/cmr/m/n/10 entschieden von welcher Schnittstelle der emp-fan-gene Be-fehl 
-kam. Da [][][][][][]
+[15] (./Code/Protokolle_RF_Isel.txt [16]) (./Code/menu.c [17])
+(./Code/menu_main.txt)
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
+\T1/cmr/m/n/10 ten Funk-ti-on
  []
 
 [18] (./Code/rs232_empfang_stepper.c)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-Overfull \hbox (42.93582pt too wide) in paragraph at lines 96--101
-\OT1/cmr/m/n/10 gegeben, an-son-sten wird ''99'' zur-ck-gegeben. In einer an-sc
-hlieen-den [][][][][][]
+Overfull \hbox (18.88263pt too wide) in paragraph at lines 100--105
+[][][][][][]\T1/cmr/m/n/10 (Codelisting [][]4.9[][]) ge-gen ein [][][][][][]
  []
 
-
-Overfull \hbox (7.55612pt too wide) in paragraph at lines 96--101
-\OT1/cmr/m/n/10 Durch diese Funk-tion kann nun auf Strings reagiert wer-den und
- eine entsprechende
- []
-
-[19] (./Code/FindString.c) (./Code/switch_stepper.c)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-<Bilder/Y-Kabel.jpg, id=688, 642.4pt x 481.8pt>
+(./Code/FindString.c [19]) (./Code/switch_stepper.c)
+<Bilder/Y-Kabel.jpg, id=861, 642.4pt x 481.8pt>
 File: Bilder/Y-Kabel.jpg Graphic file (type jpg)
  <use Bilder/Y-Kabel.jpg>
+[20] <Bilder/Kabel.pdf, id=904, 463.6879pt x 101.58101pt>
+File: Bilder/Kabel.pdf Graphic file (type pdf)
 
-Package natbib Warning: Citation `kosatec' on page 20 undefined on input line 1
-16.
+<use Bilder/Kabel.pdf>
 
-
-Overfull \hbox (5.24133pt too wide) in paragraph at lines 109--119
-\OT1/cmr/m/n/10 Stan-dard PC-Netzteil Stecker er-setzt. Die [][][][][][] der Sc
-hrittmo-torkarte
- []
-
-[20]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-
-Overfull \hbox (2.5469pt too wide) in paragraph at lines 121--124
-\OT1/cmr/m/n/10 mit der er-sten Schrittmo-torkarte ver-bun-den. Dadurch kann di
-e zweite Schrittmo-
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./Bilder/Y-Kabel.jpg>]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-<Bilder/Kabel.pdf, id=735, 463.6879pt x 101.58101pt>
-File: Bilder/Kabel.pdf Graphic file (type pdf)
- <use Bilder/Kabel.pdf>
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-<Bilder/Endschalter.pdf, id=736, 193.3138pt x 148.46764pt>
+<Bilder/Endschalter.pdf, id=909, 193.3138pt x 148.46764pt>
 File: Bilder/Endschalter.pdf Graphic file (type pdf)
 
 <use Bilder/Endschalter.pdf>
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-
-Overfull \hbox (2.11157pt too wide) in paragraph at lines 157--168
-\OT1/cmr/m/n/10 con-troller zugnglich zu machen wurde eine Br-cke zwis-chen den
- Verbindungssteck-
- []
+Overfull \vbox (116.72386pt too high) has occurred while \output is active []
 
 
-Overfull \hbox (44.01926pt too wide) in paragraph at lines 157--168
-\OT1/cmr/m/n/10 ern der Schrittmo-torkarte und der Mikrocontroller-Platine gel-
-tet. Auf der Mikrocontroller-
- []
-
-[22 <./Bilder/Kabel.pdf>]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-<Bilder/AVR-RS232.png, id=764, 534.49687pt x 321.45094pt>
+[22 <./Bilder/Kabel.pdf> <./Bilder/Endschalter.pdf>]
+<Bilder/AVR-RS232.png, id=953, 534.49687pt x 321.45094pt>
 File: Bilder/AVR-RS232.png Graphic file (type png)
 
 <use Bilder/AVR-RS232.png>
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-
-Package natbib Warning: Citation `uC:RS232' on page 23 undefined on input line 
-177.
-
-[23 <./Bilder/Endschalter.pdf>]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-
-<Bilder/Schema_Kommunikation.pdf, id=787, 764.45598pt x 330.03299pt>
+<Bilder/Schema_Kommunikation.pdf, id=957, 764.45598pt x 330.03299pt>
 File: Bilder/Schema_Kommunikation.pdf Graphic file (type pdf)
 
-<use Bilder/Schema_Kommunikation.pdf>
-Overfull \hbox (13.79694pt too wide) in paragraph at lines 183--192
-\OT1/cmr/m/n/10 geschrieben. Im fol-gen-den Kapi-tel wird nun das Emp-fan-gen d
-er Be-fehle beschrieben
+<use Bilder/Schema_Kommunikation.pdf> [23 <./Bilder/AVR-RS232.png (PNG copy)>]
+(./Code/rs232_empfang.c)
+Overfull \hbox (10.60541pt too wide) in paragraph at lines 197--201
+\T1/cmr/m/n/10 aus Ka-pi-tel [][]4.3.3[][] be-kann-ten Funk-ti-on [][][][][][],
+
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-
-Overfull \hbox (0.55615pt too wide) in paragraph at lines 194--197
-\OT1/cmr/m/n/10 Funk-tion die stndig das Ein-gangsreg-is-ter der er-sten se-rie
-llen Schnittstelle abfragt
+[24 <./Bilder/Schema_Kommunikation.pdf>] (./Code/uart_rx.c) [25]
+(./Code/switch_Motor.c) [26] (./Code/switch_Isel.c) (./Code/switch_Isel_Init.c)
+[27] (./Code/switch_Isel_Status.c)
+Underfull \hbox (badness 10000) in paragraph at lines 230--232
+\T1/cmr/m/n/10 be-legt. Die-se wer-den an die Funk-ti-on
  []
 
-[24 <./Bilder/AVR-RS232.png (PNG copy)>] (./Code/rs232_empfang.c)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-
-Overfull \hbox (152.46402pt too wide) in paragraph at lines 201--205
-\OT1/cmr/m/n/10 bergeben. Diese prfte mit der aus Kapi-tel [][]5.3.3[][] bekan-
-nten Funk-tion [][][][][][],
- []
-
-
-Overfull \hbox (1.51907pt too wide) in paragraph at lines 201--205
-\OT1/cmr/m/n/10 Form2004 ver-wen-de-ten Be-fehlssatzes ver-wen-det. Das Antwort
-en auf einen String
- []
-
-
-Overfull \hbox (51.77257pt too wide) in paragraph at lines 201--205
-\OT1/cmr/m/n/10 wird erst in den nach-fol-gen-den Kapiteln beschrieben. Die Fun
-k-tion [][][][][][]
- []
-
-
-Overfull \hbox (4.19843pt too wide) in paragraph at lines 201--205
-\OT1/cmr/m/n/10 Kon-nte die Funk-tion [][][][][][] den emp-fan-gen Be-fehl nich
-t zuord-
- []
-
-
-Overfull \hbox (5.38928pt too wide) in paragraph at lines 201--205
-\OT1/cmr/m/n/10 Der Nachteil dieses Vorge-hens besteht darin, dass fr ein wech-
-seln des Be-fehlssatzes
- []
-
-[25 <./Bilder/Schema_Kommunikation.pdf>] (./Code/uart_rx.c)
-(./Code/switch_Motor.c [26])
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmbx12!
-Missing character: There is no ¼ in font cmbx12!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-Overfull \hbox (21.83434pt too wide) in paragraph at lines 219--221
-\OT1/cmr/m/n/10 der aus Kapi-tel [][]5.3.3[][] bekan-nten Funk-tion [][][][][][
-]
- []
-
-[27]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
- (./Code/switch_Isel.c)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
- (./Code/switch_Isel_Init.c)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-Overfull \hbox (1.05605pt too wide) in paragraph at lines 229--231
-\OT1/cmr/m/n/10 dem LC-Display wird \OT1/cmr/m/it/10 Sa-t-us-abfrage: \OT1/cmr/
-m/n/10 aus-gegeben. Danach wird der entsprechende
- []
-
-
-Overfull \hbox (13.77838pt too wide) in paragraph at lines 229--231
-\OT1/cmr/m/n/10 whrleis-ten, wird mit einer if-Anweisung geprft ob sich Daten i
-m Schrittmotorkarten-
- []
-
-[28] (./Code/switch_Isel_Status.c)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
-\OT1/cmr/m/n/10 belegt. Diese wer-den an die Funk-tion
- []
-
-
-Overfull \hbox (21.7826pt too wide) in paragraph at lines 234--236
-[][][][][][] \OT1/cmr/m/n/10 (Codelist-ing [][]5.18[][]) bergeben.
- []
-
-(./Code/switch_Isel_Rotation.c [29]) (./Code/string_zerlegen_Isel.c [30])
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-<Bilder/Schaltplan.pdf, id=1003, 845.61588pt x 597.50786pt>
+(./Code/switch_Isel_Rotation.c [28] [29]) (./Code/string_zerlegen_Isel.c)
+<Bilder/Schaltplan.pdf, id=1165, 845.61588pt x 597.50786pt>
 File: Bilder/Schaltplan.pdf Graphic file (type pdf)
 
 <use Bilder/Schaltplan.pdf>
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-
-
-LaTeX Warning: Reference `sec:V_Software' on page 31 undefined on input line 25
-1.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-<Bilder/Translator_white.png, id=1005, 1197.47375pt x 728.7225pt>
+<Bilder/Translator_white.png, id=1168, 1197.47375pt x 728.7225pt>
 File: Bilder/Translator_white.png Graphic file (type png)
 
 <use Bilder/Translator_white.png>
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
+<Bilder/19ZollEinschub.jpg, id=1170, 1284.8pt x 963.6pt>
+File: Bilder/19ZollEinschub.jpg Graphic file (type jpg)
 
-<Bilder/19ZollEinschub.JPG, id=1007, 1284.8pt x 963.6pt>
-File: Bilder/19ZollEinschub.JPG Graphic file (type jpg)
-
-<use Bilder/19ZollEinschub.JPG>
-Overfull \hbox (1.72284pt too wide) in paragraph at lines 243--266
-\OT1/cmr/m/n/10 Dadurch sind alle im Pro-jekt ver-wen-de-ten Kom-po-nen-ten auf
- einem 19''-Einschub
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[31]
+<use Bilder/19ZollEinschub.jpg> [30]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[32 <./Bilder/Schaltplan.pdf>] [33 <./Bilder/Translator_white.png (PNG copy)> <
-./Bilder/19ZollEinschub.JPG>]
-Chapter 6.
-Missing character: There is no Ã in font cmbx12!
-Missing character: There is no ¶ in font cmbx12!
+[31 <./Bilder/Schaltplan.pdf>] [32 <./Bilder/Translator_white.png (PNG copy)> <
+./Bilder/19ZollEinschub.jpg>]
+Kapitel 5.
 
-LaTeX Warning: Reference `sec:V_Software' on page 34 undefined on input line 27
-0.
-
-
-LaTeX Warning: Reference `sec:V_Software' on page 34 undefined on input line 27
-1.
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 270--273
+Underfull \hbox (badness 10000) in paragraph at lines 266--269
 
  []
 
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
+[33
 
-Overfull \hbox (11.11815pt too wide) in paragraph at lines 279--281
-\OT1/cmr/m/n/10 Viele Mikro-con-troller bi-eten die Mglichkeit \OT1/cmr/m/it/10
- event-basierte [][][][][][] \OT1/cmr/m/n/10 auszufhren.
+] (./Code/ISR_Endschalter.c) [34] (./Code/Watchdog.txt)
+Overfull \hbox (16.78796pt too wide) in paragraph at lines 295--296
+[]\T1/cmr/bx/n/10 JTAGEN \T1/cmr/m/n/10 - Ist die-ses Bit ge-setzt, kann an 4 P
+ins des \T1/cmr/m/it/10 PortB \T1/cmr/m/n/10 ein [][][][][][]
  []
 
-[34
-
-]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
- (./Code/ISR_Endschalter.c)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no „ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-Overfull \hbox (7.00055pt too wide) in paragraph at lines 288--293
-\OT1/cmr/m/n/10 Wahlweise kann kurz vor dem zur-ck-set-zen des Mikro-con-trolle
-r noch die Watchdog-
- []
-
-[35] (./Code/Watchdog.txt)
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-
-Overfull \hbox (29.71783pt too wide) in paragraph at lines 299--300
-[]\OT1/cmr/bx/n/10 JTAGEN \OT1/cmr/m/n/10 - Ist dieses Bit gesetzt, kann an 4 P
-ins des \OT1/cmr/m/it/10 PortB \OT1/cmr/m/n/10 ein [][][][][][]
- []
-
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-[36]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no œ in font cmr10!
-) [37]
+[35]) [36]
 \openout2 = `Inhalt/Fazit.aux'.
 
  (./Inhalt/Fazit.tex
-Chapter 7.
-Missing character: There is no Ã in font cmbx12!
-Missing character: There is no ¶ in font cmbx12!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
+Kapitel 6.
 
-LaTeX Warning: Reference `sec:StepbyStep' on page 38 undefined on input line 4.
+LaTeX Warning: Reference `sec:StepbyStep' on page 37 undefined on input line 4.
 
 
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no Ÿ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmbx12!
-Missing character: There is no ¶ in font cmbx12!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¼ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¤ in font cmr10!
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
+) [37
+
+
+
+] (./Praxisbericht.bbl (./Praxisbericht.brf)
+\tf@brf=\write8
+\openout8 = `Praxisbericht.brf'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+[]\T1/cmr/m/n/10 Atmel Cor-po-ra-ti-on, San Jo-se, CA 95131, USA.  \T1/cmr/m/it
+/10 AT-me-
+ []
+
 ) [38
 
 
+]
+\openout2 = `Inhalt/Erklaerung.aux'.
 
-] [39]
-No file Praxisbericht.bbl.
-No file Praxisbericht.ind.
+ (./Inhalt/Erklaerung.tex
+Kapitel 7.
 
-Package natbib Warning: There were undefined citations.
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
-(./Praxisbericht.aux (./Inhalt/Einleitung.aux) (./Inhalt/Kapitel_Hardware.aux)
-(./Inhalt/Kapitel_Software.aux) (./Inhalt/Kapitel_AufbauderArbeit.aux)
-(./Inhalt/Fazit.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
+ []
+
+
+</home/joe/!Multimedia/!Dokumente/!!Briefverkehr/!Bilder/Unterschrift.png, id=1
+300, 577.357pt x 126.071pt>
+File: /home/joe/!Multimedia/!Dokumente/!!Briefverkehr/!Bilder/Unterschrift.png 
+Graphic file (type png)
+
+<use /home/joe/!Multimedia/!Dokumente/!!Briefverkehr/!Bilder/Unterschrift.png>)
+[39
+
+
+ </home/joe/!Multimedia/!Dokumente/!!Briefverkehr/!Bilder/Unterschrift.png>] (.
+/Inhalt/Anhang.tex
+Anhang A.
+[40
+
+
+]
+\openout2 = `Inhalt/Tabelle_ASCII_Befehle.aux'.
+
+ (./Inhalt/Tabelle_ASCII_Befehle.tex) [41
+
+]
+\openout2 = `Inhalt/Tabelle_Protokolle_RF.aux'.
+
+
+(./Inhalt/Tabelle_Protokolle_RF.tex (./Code/Protokolle_RF.txt [42
+
+
+])) [43]
+\openout2 = `Inhalt/Werkzeuge.aux'.
+
+
+(./Inhalt/Werkzeuge.tex
+Overfull \hbox (62.65024pt too wide) in paragraph at lines 4--7
+\T1/cmr/m/n/10 Website: [][]$\T1/cmtt/m/n/10 http : / / www . konicaminolta . e
+u / de / messinstrumente / produkte / 3d-[]messtechnik /
+ []
+
+
+Overfull \hbox (4.91434pt too wide) in paragraph at lines 16--19
+\T1/cmr/m/n/10 Website: [][]$\T1/cmtt/m/n/10 http : / / www . pepperl-[]fuchs .
+ de / germany / de / classid _ 143 . htm ? view =
+ []
+
+[44
+
+
+]) [45]
+\openout2 = `Inhalt/Anhang_Codelistings.aux'.
+
+ (./Inhalt/Anhang_Codelistings.tex) [46
+
+
+]
+\openout2 = `Inhalt/Anhang_Danksagung.aux'.
+
+
+(./Inhalt/Anhang_Danksagung.tex
+Overfull \hbox (57.03125pt too wide) in paragraph at lines 8--44
+[][] 
+ []
+
+[47
+
+
+]) [48])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
+ (./Praxisbericht.aux (./Deckblatt.aux) (./Inhalt/Einleitung.aux)
+(./Inhalt/Kapitel_Hardware.aux) (./Inhalt/Kapitel_Software.aux)
+(./Inhalt/Kapitel_AufbauderArbeit.aux) (./Inhalt/Fazit.aux)
+(./Inhalt/Erklaerung.aux) (./Inhalt/Tabelle_ASCII_Befehle.aux)
+(./Inhalt/Tabelle_Protokolle_RF.aux) (./Inhalt/Werkzeuge.aux)
+(./Inhalt/Anhang_Codelistings.aux) (./Inhalt/Anhang_Danksagung.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
 Package rerunfilecheck Info: File `Praxisbericht.out' has not changed.
-(rerunfilecheck)             Checksum: A4CF3297CAE8B5DB564561B58DCF4928;3663.
+(rerunfilecheck)             Checksum: 045F628E0F7EE2552FC915A6A8DF8E95;4454.
+Package rerunfilecheck Info: File `Praxisbericht.brf' has not changed.
+(rerunfilecheck)             Checksum: BEADDDCE696CEF4A5AF703ABB669C419;786.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 9378 strings out of 495022
- 134197 string characters out of 3180791
- 740567 words of memory out of 3000000
- 11690 multiletter control sequences out of 15000+200000
- 12664 words of font info for 48 fonts, out of 3000000 for 9000
+ 11168 strings out of 495022
+ 154358 string characters out of 3180791
+ 670209 words of memory out of 3000000
+ 13236 multiletter control sequences out of 15000+200000
+ 28876 words of font info for 75 fonts, out of 3000000 for 9000
  16 hyphenation exceptions out of 8191
- 44i,10n,49p,1830b,1717s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1
-/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
-r/sfrm1000.pfb>
-Output written on Praxisbericht.pdf (43 pages, 3109757 bytes).
+ 44i,14n,49p,1830b,1971s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
+exmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/
+cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx10
+95.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/
+fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
+bx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb></us
+r/share/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf-d
+ist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1
+/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
+r/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+</usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/tex
+mf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
+super/sftt1000.pfb>
+Output written on Praxisbericht.pdf (56 pages, 3344352 bytes).
 PDF statistics:
- 1280 PDF objects out of 1440 (max. 8388607)
- 1168 compressed objects within 12 object streams
- 573 named destinations out of 1000 (max. 500000)
- 516 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1678 PDF objects out of 1728 (max. 8388607)
+ 1543 compressed objects within 16 object streams
+ 704 named destinations out of 1000 (max. 500000)
+ 609 words of extra memory for PDF output out of 10000 (max. 10000000)
 

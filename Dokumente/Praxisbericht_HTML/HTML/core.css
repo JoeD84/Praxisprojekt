@@ -14,12 +14,13 @@
 .header li { padding:0.1em 0.2em 0.1em 1em;}
 
 /* Main content */
-.content { clear:both; padding-top:5px; border-top:1px solid; }
+/*.content { clear:both; padding-top:5px; border-top:1px solid; }*/
 .footer  { margin-top:5px;  border-top:1px solid; }
 
 /* if shown */
+
 .navbar .toc li { margin-left:-0.5em; }
-.navbar li { white-space:nowrap; display:block; overflow:hidden; }
+.navbar li { white-space:nowrap; display:block; /*overflow:hidden;*/ }
 .navbar li .here { white-space:normal; overflow:visible; }
 
 /*======================================================================

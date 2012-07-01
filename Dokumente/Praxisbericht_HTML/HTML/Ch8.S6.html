@@ -1,0 +1,575 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers</title>
+    <!--Generated on Sun Jul  1 13:32:29 2012 by LaTeXML (version 0.7.9alpha) http://dlmf.nist.gov/LaTeXML/.-->
+      <!--Document created on July 1, 2012.-->
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="start" href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="prev" href="Ch8.S5.html" title="8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="next" href="Ch8.S7.html" title="8.7 Platinenlayout und 19’’-Einschub ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="stylesheet" type="text/css" href="core.css">
+    <link rel="stylesheet" type="text/css" href="Praxisbericht.css">
+  </head>
+  <body>
+    <nav class="navbar"><a href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref start"><span class="text reftitle">Übersetzen von Schrittmotorbefehlen<br class="break">Entwurf eines Hardwareübersetzers</span></a>
+    
+  <ul class="toc">
+  <li class="tocentry">
+<a href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Übersetzen von Schrittmotorbefehlen<br class="break">Entwurf eines Hardwareübersetzers</span></a>
+  <ul class="toc">
+  <li class="tocentry"><a href="Chx1.html" title="Hinweise zum Dokument ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Hinweise zum Dokument</span></a></li>
+  <li class="tocentry"><a href="Ch1.html" title="Kapitel 1 Einleitung ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">1 </span></span><span class="text small">Einleitung</span></span></a></li>
+  <li class="tocentry"><a href="Ch2.html" title="Kapitel 2 Vorstellung der vorhandenen Hardware ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">2 </span></span><span class="text small">Vorstellung der vorhandenen Hardware</span></span></a></li>
+  <li class="tocentry"><a href="Ch3.html" title="Kapitel 3 Vorstellung der vorhandenen Software ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">3 </span></span><span class="text small">Vorstellung der vorhandenen Software</span></span></a></li>
+  <li class="tocentry"><a href="Ch4.html" title="Kapitel 4 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">4 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a></li>
+  <li class="tocentry"><a href="Ch5.html" title="Kapitel 5 Probleme und Lösungen ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">5 </span></span><span class="text small">Probleme und Lösungen</span></span></a></li>
+  <li class="tocentry"><a href="Ch6.html" title="Kapitel 6 Vorstellung der vorhandenen Hardware ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">6 </span></span><span class="text small">Vorstellung der vorhandenen Hardware</span></span></a></li>
+  <li class="tocentry"><a href="Ch7.html" title="Kapitel 7 Vorstellung der vorhandenen Software ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">7 </span></span><span class="text small">Vorstellung der vorhandenen Software</span></span></a></li>
+  <li class="tocentry">
+<a href="Ch8.html" title="Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">8 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a>
+  <ul class="toc">
+  <li class="tocentry"><a href="Ch8.S1.html" title="8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.1 </span>Bereitstellen grundlegender Funktionalitäten</span></a></li>
+  <li class="tocentry"><a href="Ch8.S2.html" title="8.2 Befehlssätze ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.2 </span>Befehlssätze</span></a></li>
+  <li class="tocentry"><a href="Ch8.S3.html" title="8.3 Kommunikation mit der vorhandenen Schrittmotorsteuerung ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.3 </span>Kommunikation mit der vorhandenen Schrittmotorsteuerung</span></a></li>
+  <li class="tocentry"><a href="Ch8.S4.html" title="8.4 Verbesserungen an der vorhandenen Hardware ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.4 </span>Verbesserungen an der vorhandenen Hardware</span></a></li>
+  <li class="tocentry"><a href="Ch8.S5.html" title="8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.5 </span>Kommunikation mit RapidForm2004</span></a></li>
+  <li class="tocentry self">
+<span class="ref toc here"><span class="text reftitle"><span class="tag">8.6 </span>Auswerte-Funktionen</span></span>
+  <ul class="toc">
+  <li class="tocentry">
+<a href="#SS1" title="8.6.1 Auswerte-Funktion für Isel-Motoren ‣ 8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.6.1 </span>Auswerte-Funktion für Isel-Motoren</span></a>
+  <ul class="toc">
+  <li class="tocentry"><a href="#SS1.SSS1" title="8.6.1.1 Initialisierung ‣ 8.6.1 Auswerte-Funktion für Isel-Motoren ‣ 8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.6.1.1 </span>Initialisierung</span></a></li>
+  <li class="tocentry"><a href="#SS1.SSS2" title="8.6.1.2 Statusabfrage ‣ 8.6.1 Auswerte-Funktion für Isel-Motoren ‣ 8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.6.1.2 </span>Statusabfrage</span></a></li>
+  <li class="tocentry"><a href="#SS1.SSS3" title="8.6.1.3 Rotation ‣ 8.6.1 Auswerte-Funktion für Isel-Motoren ‣ 8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.6.1.3 </span>Rotation</span></a></li>
+    </ul>
+</li>
+    </ul>
+</li>
+  <li class="tocentry"><a href="Ch8.S7.html" title="8.7 Platinenlayout und 19’’-Einschub ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.7 </span>Platinenlayout und 19’’-Einschub</span></a></li>
+    </ul>
+</li>
+  <li class="tocentry"><a href="Ch9.html" title="Kapitel 9 Probleme und Lösungen ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">9 </span></span><span class="text small">Probleme und Lösungen</span></span></a></li>
+  <li class="tocentry"><a href="Ch10.html" title="Kapitel 10 Fazit und weitere Möglichkeiten ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">10 </span></span><span class="text small">Fazit und weitere Möglichkeiten</span></span></a></li>
+  <li class="tocentry"><a href="bib.html" title="Literatur ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Literatur</span></a></li>
+  <li class="tocentry"><a href="Ch11.html" title="Kapitel 11 Eidesstattliche Erklärung ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">11 </span></span><span class="text small">Eidesstattliche Erklärung</span></span></a></li>
+  <li class="tocentry"><a href="A1.html" title="Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">A </span></span><span class="text small">Anhang</span></span></a></li>
+    </ul>
+</li>
+    </ul>
+      </nav>
+    <div class="main">
+    <header class="header"><a href="Ch8.html" title="Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref up"><span class="text reftitle"><span class="tag"><span class="text small">8 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a><a href="Ch8.S5.html" title="8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref previous"><span class="text reftitle"><span class="tag">8.5 </span>Kommunikation mit RapidForm2004</span></a><a href="Ch8.S7.html" title="8.7 Platinenlayout und 19’’-Einschub ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref next"><span class="text reftitle"><span class="tag">8.7 </span>Platinenlayout und 19’’-Einschub</span></a>
+      </header>
+    <div class="content">
+<section class="section"><hgroup><h1 class="title small">
+<span class="tag">8.6 </span>Auswerte-Funktionen</h1></hgroup><div id="p1" class="para"><p class="p"><span class="text small">Die Auswerte-Funktionen sind das Herzstück des Programms. Es geht darum für jedes Protokoll eine eigene Auswerte-Funktion zu schreiben. Diese sollen die von RapidForm2004 kommenden Strings verstehen können und in einen, für die vorhandene Schrittmotorkarte, verständlichen Befehl übersetzen können. Die Funktionen sollen weiterhin prüfen, ob der Befehl von der Schrittmotorkarte erkannt wurde und den Status der Schrittmotorkarte zurück an RapidForm2004 melden.</span><br class="break"><span class="text small">Alle bisherigen Arbeitsschritte hatten zum Ziel, die Kommunikation zwischen RapidForm2004 und der ersten Schrittmotorkarte zu ermöglichen. Nun fehlt nur noch der Teil des Programms der die ankommenden Befehle auswertet und in verständlicher Form an die Schrittmotorkarte weitergibt.
+Im folgenden Kapitel wird dieser Ablauf nun exemplarisch für den Befehlssatz eines Isel-Motors erklärt.</span></p></div>
+<section id="SS1" class="subsection"><hgroup><h1 class="title small">
+<span class="tag">8.6.1 </span>Auswerte-Funktion für Isel-Motoren</h1></hgroup><div id="SS1.p1" class="para"><p class="p"><span class="text small">Wird der Befehl </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">@01</span><span class="text small"> empfangen, übergibt die in Kapitel </span><a href="Ch8.S5.html#SS1.SSS1" title="8.5.1.1 Automatische Auswahl eines Befehlssatzes ‣ 8.5.1 Befehle empfangen ‣ 8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">8.5.1.1</span></a><span class="text small"> beschriebene Funktion, den String an die Auswerte-Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">switch_Isel(str_rx)</span><span class="text small">. Der Ablauf dieser Funktion ist ähnlich aufgebaut wie bei der Kommunikation mit der Schrittmotorkarte (Kapitel </span><a href="Ch8.S3.html" title="8.3 Kommunikation mit der vorhandenen Schrittmotorsteuerung ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">8.3</span></a><span class="text small">) und bei der automatischen Auswahl des Befehlssatzes (Kapitel </span><a href="Ch8.S5.html#SS1.SSS1" title="8.5.1.1 Automatische Auswahl eines Befehlssatzes ‣ 8.5.1 Befehle empfangen ‣ 8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">8.5.1.1</span></a><span class="text small">. In der Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">switch_Isel(str_rx)</span><span class="text small"> sind in dem Array </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">pOptions</span><span class="text small"> alle benötigten Befehle des Isel-Befehlssatzes hinterlegt. Mit der aus Kapitel </span><a href="Ch8.S3.html#SS3" title="8.3.3 Antworten auswerten ‣ 8.3 Kommunikation mit der vorhandenen Schrittmotorsteuerung ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">8.3.3</span></a><span class="text small"> bekannten Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">FindStringInArray(str_rx, pOptions)</span><span class="text small"> wird  </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">str_rx</span><span class="text small"> gegen diese Befehle geprüft. Wird der Befehl im Array gefunden gibt die Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">FindStringInArray()</span><span class="text small"> die Position des Strings im Array zurück. Mittels einer </span><span class="text small" style="background-color:#D9D9FF;">switch-case-Struktur</span><span class="text small"> lässt sich nun so für jeden Befehl ein entsprechender Ablauf ausführen. Die einzelnen Abläufe werden übersichtlich in den folgenden Kapiteln beschrieben.</span></p></div>
+<figure id="LST34" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 34: </span>Übersetzungs Logik für einen Isel-Motor</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Uebersetzung<span class="text ltx_lst_space"> </span>Isel</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space">        </span>switch_Isel<span class="text ltx_lst_space">                        </span>(<span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>*<span class="text ltx_lst_space"> </span>str_rx)<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">const</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span>*<span class="text ltx_lst_space"> </span>pOptions[]<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>"<span class="text" style="color:#000000;">XXXXXXX</span>",<span class="text ltx_lst_space">      </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">0<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Reserve</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>"<span class="text" style="color:#000000;">!CLS</span>",<span class="text ltx_lst_space">         </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">1<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>LC-Display<span class="text ltx_lst_space"> </span>loeschen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">6</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>"<span class="text" style="color:#000000;">Test</span>",<span class="text ltx_lst_space">         </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">2<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Test</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">7</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>"<span class="text" style="color:#000000;">@01</span>",<span class="text ltx_lst_space">          </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">3<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Achse<span class="text ltx_lst_space"> </span>auswaehlen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">8</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>"<span class="text" style="color:#000000;">@0R</span>",<span class="text ltx_lst_space">          </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">4<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Status<span class="text ltx_lst_space"> </span>abfrage</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">9</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>"<span class="text" style="color:#000000;">@0M</span>",<span class="text ltx_lst_space">          </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">5<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Gehe<span class="text ltx_lst_space"> </span>zu<span class="text ltx_lst_space"> </span>Position</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">10</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>0<span class="text ltx_lst_space"> </span>};</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">11</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">switch</span><span class="text ltx_lst_space"> </span>(FindStringInArray(str_rx,<span class="text ltx_lst_space"> </span>pOptions,<span class="text ltx_lst_space"> </span>3))</span></td>
+</tr>
+</table></figure><section id="SS1.SSS1" class="subsubsection"><hgroup><h1 class="title small">
+<span class="tag">8.6.1.1 </span>Initialisierung</h1></hgroup><div id="SS1.SSS1.p1" class="para"><p class="p"><span class="text small">Für den String </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">@01</span><span class="text small"> wird </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">case 3</span><span class="text small"> ausgeführt. Dieser Codeblock zeigt die Meldung </span><em class="emph"><span class="text small">Init</span></em><span class="text small"> auf dem Display an und sendet den erwarteten Befehl an RapidForm2004.</span></p></div>
+<figure id="LST35" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 35: </span>case 3: Initialisierung</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">case</span><span class="text ltx_lst_space"> </span>3:<span class="text ltx_lst_space">                     </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">3<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Achse<span class="text ltx_lst_space"> </span>auswaehlen<span class="text ltx_lst_space"> </span>(Initialisierung)</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>ms_spin(10);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>lcd_puts("<span class="text" style="color:#000000;">Init</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>uart_put_string("<span class="text" style="color:#000000;">0\r\n</span>",<span class="text ltx_lst_space"> </span>D_RapidForm);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">break</span>;</span></td>
+</tr>
+</table></figure></section><section id="SS1.SSS2" class="subsubsection"><hgroup><h1 class="title small">
+<span class="tag">8.6.1.2 </span>Statusabfrage</h1></hgroup><div id="SS1.SSS2.p1" class="para"><p class="p"><span class="text small">Wird der String </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">@0R</span><span class="text small"> empfangen, wird der Codeblock </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">case 4</span><span class="text small"> ausgeführt. Auf dem LC-Display wird </span><em class="emph"><span class="text small">Satusabfrage:</span></em><span class="text small"> ausgegeben. Danach wird der entsprechende Befehl für eine Statusabfrage an die Schrittmotorkarte gesendet. Nach einer kurzen Pause von 50ms, um die Verarbeitung auf der Schrittmotorkarte zu gewährleisten, wird mit einer if-Anweisung geprüft ob sich Daten im Schrittmotorkarten-Empfangsregister befinden. Sprich, die Schrittmotorkarte reagiert hat. Ist dies der Fall, wird der Ablauf, bekannt aus Kapitel </span><a href="Ch8.S3.html" title="8.3 Kommunikation mit der vorhandenen Schrittmotorsteuerung ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">8.3</span></a><span class="text small">, durchlaufen. Während diesem Ablauf wird die entsprechende Antwort der Schrittmotorkarte auf dem LC-Display ausgegeben. In einer weiteren if-Anweisung wird überprüft ob der angekommene String erfolgreich war. Wenn ja, wird dies an RapidForm2004 gemeldet. Andernfalls zeigt das Display </span><em class="emph"><span class="text small">Fehlgeschlagen</span></em><span class="text small"> an und sendet eine </span><em class="emph"><span class="text small">1</span></em><span class="text small"> an RapidForm2004.</span></p></div>
+<figure id="LST36" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 36: </span>case 4: Statusabfrage</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">case</span><span class="text ltx_lst_space"> </span>4:<span class="text ltx_lst_space">                     </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">4<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Status<span class="text ltx_lst_space"> </span>abfrage</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>lcd_puts("<span class="text" style="color:#000000;">Statusabfrage:<span class="text ltx_lst_space">     </span>\n</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>uart_put_string("<span class="text" style="color:#000000;">A\n</span>",<span class="text ltx_lst_space"> </span>D_Stepper);<span class="text ltx_lst_space">      </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Statusabfrage<span class="text ltx_lst_space"> </span>an<span class="text ltx_lst_space"> </span>Stepper<span class="text ltx_lst_space"> </span>senden</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>ms_spin(50);<span class="text ltx_lst_space">                                   </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Verarbeitungszeit<span class="text ltx_lst_space"> </span>gewaehren</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>((UCSR1A<span class="text ltx_lst_space"> </span>&amp;<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>RXC1)))<span class="text ltx_lst_space">                 </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Wenn<span class="text ltx_lst_space"> </span>ein<span class="text ltx_lst_space"> </span>Zeichen<span class="text ltx_lst_space"> </span>empfangen<span class="text ltx_lst_space"> </span>wurde</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">6</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>uart_rx(D_Stepper);<span class="text ltx_lst_space">                     </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Zeichen<span class="text ltx_lst_space"> </span>auslesen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">7</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>(!strcmp(str_rx,"<span class="text" style="color:#000000;">0#</span>"))<span class="text ltx_lst_space">                     </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Empfangenes<span class="text ltx_lst_space"> </span>Zeichen<span class="text ltx_lst_space"> </span>ueberpruefen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">8</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>uart_put_string("<span class="text" style="color:#000000;">0\r\n</span>",<span class="text ltx_lst_space"> </span>D_RapidForm);<span class="text ltx_lst_space">    </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Antwort<span class="text ltx_lst_space"> </span>Ok<span class="text ltx_lst_space"> </span>an<span class="text ltx_lst_space"> </span>RF<span class="text ltx_lst_space"> </span>melden</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">9</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">else</span><span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">10</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>lcd_puts("<span class="text" style="color:#000000;">Fehlgeschlagen<span class="text ltx_lst_space">     </span>\n</span>");<span class="text ltx_lst_space">         </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Fehler<span class="text ltx_lst_space"> </span>auf<span class="text ltx_lst_space"> </span>Display<span class="text ltx_lst_space"> </span>anzeigen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">11</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>uart_put_string("<span class="text" style="color:#000000;">1\r\n</span>",<span class="text ltx_lst_space"> </span>D_RapidForm);<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Fehler<span class="text ltx_lst_space"> </span>an<span class="text ltx_lst_space"> </span>RapidForm<span class="text ltx_lst_space"> </span>melden</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">12</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">13</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">break</span>;</span></td>
+</tr>
+</table></figure></section><section id="SS1.SSS3" class="subsubsection"><hgroup><h1 class="title small">
+<span class="tag">8.6.1.3 </span>Rotation</h1></hgroup><div id="SS1.SSS3.p1" class="para"><p class="p"><span class="text small">Der Codeblock von </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">case 5</span><span class="text small"> ist für die Rotation verantwortlich. Es werden je ein String für die Endposition und für den Winkel mit Stringterminierungszeichen vorbelegt. Diese werden an die Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">String_zerlegen_Isel(str_rx, Position, Winkel)</span><span class="text small"> (Codelisting </span><a href="#LST38" title="38 ‣ 8.6.1.3 Rotation ‣ 8.6.1 Auswerte-Funktion für Isel-Motoren ‣ 8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">38</span></a><span class="text small">) übergeben. Dort wird der String in die Bestandteile </span><em class="emph"><span class="text small">Achse</span></em><span class="text small">, </span><em class="emph"><span class="text small">Rotationsbefehl</span></em><span class="text small">, </span><em class="emph"><span class="text small">Position/Anzahl der Schritte</span></em><span class="text small"> und </span><em class="emph"><span class="text small">Geschwindigkeit</span></em><span class="text small"> zerlegt. Von diesen ist nur die Anzahl der Schritte relevant. Da die Anzahl der Schritte für den Schrittmotor angepasst werden muss, wird der String in eine Zahl umgewandelt und mit einem entsprechenden Faktor multipliziert. Zugunsten der Rechenzeit wird nicht exakt gerechnet und die Division im Faktor mit 1024 durchgeführt. Diese wird beim Kompilieren durch eine </span><span class="text small" style="background-color:#D9D9FF;">Bitverschiebung</span><span class="text small"> ersetzt. Dies spart mehrere Sekunden Rechenzeit und die Abweichung der Schritte beträgt nur maximal 3 Schritte. Die berechnete Anzahl der Schritte wird anschließend wieder als String gespeichert. Dieser wird dann an den String für den Rotationsbefehl der Schrittmotorkarte angehängt. Der neue String wird auf dem Display ausgegeben und an die Schrittmotorsteuerung gesendet. Die Antwort der Schrittmotorsteuerung wird ausgelesen und anschließend wird in einer </span><span class="text small" style="background-color:#D9D9FF;">while-Schleife</span><span class="text small"> so lange der Status des Motors abgefragt bis dieser keine Bewegung mehr meldet. Die Position ist damit erreicht und es wird der erwartete Befehl an RapidForm2004 gesendet.</span></p></div>
+<figure id="LST37" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 37: </span>case 5: Rotation</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">case</span><span class="text ltx_lst_space"> </span>5:<span class="text ltx_lst_space">                     </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">5<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Gehe<span class="text ltx_lst_space"> </span>zu<span class="text ltx_lst_space"> </span>Position<span class="text ltx_lst_space"> </span>MX<span class="text ltx_lst_space"> </span>,<span class="text ltx_lst_space"> </span>+600</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>ms_spin(10);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>Position[33],<span class="text ltx_lst_space"> </span>Winkel[6];</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>memset(Position,<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">\0</span>’,<span class="text ltx_lst_space"> </span>33);<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Strign<span class="text ltx_lst_space"> </span>0<span class="text ltx_lst_space"> </span>Terminiert<span class="text ltx_lst_space"> </span>vorbelegen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>memset(Winkel,<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">\0</span>’,<span class="text ltx_lst_space"> </span>6);<span class="text ltx_lst_space">    </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">String<span class="text ltx_lst_space"> </span>0<span class="text ltx_lst_space"> </span>Terminiert<span class="text ltx_lst_space"> </span>vorbelegen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">6</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>String_zerlegen_Isel(str_rx,<span class="text ltx_lst_space"> </span>Position,<span class="text ltx_lst_space"> </span>Winkel);<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">String<span class="text ltx_lst_space"> </span>auswerten</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">7</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">String<span class="text ltx_lst_space"> </span>fuer<span class="text ltx_lst_space"> </span>Stepper<span class="text ltx_lst_space"> </span>vorbereiten</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">8</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>Move_To[40];</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">9</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>memset(Move_To,<span class="text ltx_lst_space">  </span>’<span class="text" style="color:#000000;">\0</span>’,<span class="text ltx_lst_space"> </span>40);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">10</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>Move_To[0]<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">M</span>’;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">11</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>Move_To[1]<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">A</span>’;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">12</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>Move_To[2]<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>’<span class="text ltx_lst_space" style="color:#000000;"> </span>’;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">13</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>Move_To[3]<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">\0</span>’;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">14</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>strcat(Move_To,<span class="text ltx_lst_space"> </span>Position);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">15</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>strcat(Move_To,<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\n</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">16</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>lcd_puts("<span class="text" style="color:#000000;">Pos:</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">17</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>lcd_puts(Move_To);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">18</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">String<span class="text ltx_lst_space"> </span>an<span class="text ltx_lst_space"> </span>Stepper<span class="text ltx_lst_space"> </span>senden</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">19</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>uart_put_string(Move_To,<span class="text ltx_lst_space"> </span>D_Stepper);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">20</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>ms_spin(50);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">21</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>((UCSR1A<span class="text ltx_lst_space"> </span>&amp;<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>RXC1)))</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">22</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>uart_rx(D_Stepper);<span class="text ltx_lst_space">     </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Antwort<span class="text ltx_lst_space"> </span>des<span class="text ltx_lst_space"> </span>Stepper<span class="text ltx_lst_space"> </span>auslesen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">23</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">else</span><span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">24</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">break</span>;<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Bei<span class="text ltx_lst_space"> </span>Fehler<span class="text ltx_lst_space"> </span>abbrechen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">25</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">26</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Status<span class="text ltx_lst_space"> </span>des<span class="text ltx_lst_space"> </span>Stepper<span class="text ltx_lst_space"> </span>Abfragen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">27</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>uart_put_string("<span class="text" style="color:#000000;">A\n</span>",<span class="text ltx_lst_space"> </span>D_Stepper);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">28</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>ms_spin(50);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">29</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Antwort<span class="text ltx_lst_space"> </span>des<span class="text ltx_lst_space"> </span>Stepper<span class="text ltx_lst_space"> </span>Abfragen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">30</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>((UCSR1A<span class="text ltx_lst_space"> </span>&amp;<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>RXC1)))</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">31</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>uart_rx(D_Stepper);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">32</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">else</span><span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">33</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>lcd_puts("<span class="text" style="color:#000000;">Keine<span class="text ltx_lst_space"> </span>Bewegung!\n</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">34</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">35</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">So<span class="text ltx_lst_space"> </span>lange<span class="text ltx_lst_space"> </span>der<span class="text ltx_lst_space"> </span>Stepper<span class="text ltx_lst_space"> </span>Bewegung<span class="text ltx_lst_space"> </span>meldet<span class="text ltx_lst_space"> </span>erneut<span class="text ltx_lst_space"> </span>Statusabfrage</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">36</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">while</span><span class="text ltx_lst_space"> </span>(!strcmp(str_rx,"<span class="text" style="color:#000000;">1#</span>")){</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">37</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Statusabfrage<span class="text ltx_lst_space"> </span>an<span class="text ltx_lst_space"> </span>Stepper</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">38</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>uart_put_string("<span class="text" style="color:#000000;">A\n</span>",<span class="text ltx_lst_space"> </span>D_Stepper);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">39</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>ms_spin(50);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">40</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Statusabfrage<span class="text ltx_lst_space"> </span>auslesen<span class="text ltx_lst_space"> </span>und<span class="text ltx_lst_space"> </span>auswerten</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">41</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>((UCSR1A<span class="text ltx_lst_space"> </span>&amp;<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>RXC1))){</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">42</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>uart_rx(D_Stepper);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">43</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>lcd_clrscr();</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">44</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>lcd_puts("<span class="text" style="color:#000000;">Gehe<span class="text ltx_lst_space"> </span>zu<span class="text ltx_lst_space"> </span>Winkel:<span class="text ltx_lst_space"> </span></span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">45</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>lcd_puts(Winkel);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">46</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>lcd_puts("<span class="text" style="color:#000000;">\n</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">47</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">48</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">else</span><span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">49</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>lcd_puts("<span class="text" style="color:#000000;">Keine<span class="text ltx_lst_space"> </span>Antwort\n</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">50</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">51</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>wdt_reset();</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">52</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">53</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>lcd_puts("<span class="text" style="color:#000000;">Winkel:<span class="text ltx_lst_space"> </span></span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">54</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>lcd_puts(Winkel);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">55</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>lcd_puts("<span class="text ltx_lst_space" style="color:#000000;"> </span><span class="text" style="color:#000000;">Erreicht\n</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">56</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Bewegung<span class="text ltx_lst_space"> </span>abgeschlossen<span class="text ltx_lst_space"> </span>an<span class="text ltx_lst_space"> </span>RapidForm<span class="text ltx_lst_space"> </span>melden</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">57</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>uart_put_string("<span class="text" style="color:#000000;">0\r\n</span>",<span class="text ltx_lst_space"> </span>D_RapidForm);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">58</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">break</span>;</span></td>
+</tr>
+</table></figure><figure id="LST38" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 38: </span>Funktion: string zerlegen Isel()</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space">        </span>String_zerlegen_Isel(<span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>*<span class="text ltx_lst_space"> </span>str_rx,<span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>*<span class="text ltx_lst_space"> </span>Position,<span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>*<span class="text ltx_lst_space"> </span>Winkel)<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text" style="color:#008000;">0M5200,<span class="text ltx_lst_space"> </span>+600</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text" style="color:#008000;">Achse<span class="text ltx_lst_space"> </span>M<span class="text ltx_lst_space"> </span>Position,<span class="text ltx_lst_space"> </span>+Geschwindigkeit</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>*<span class="text ltx_lst_space"> </span>Achse="<span class="text" style="color:#000000;">0</span>";</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>Achse[0]<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>str_rx[1];<span class="text ltx_lst_space">      </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Achse<span class="text ltx_lst_space"> </span>setzen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">6</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>Achse[1]<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">\0</span>’;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">7</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Ausgeben<span class="text ltx_lst_space"> </span>welche<span class="text ltx_lst_space"> </span>Achse<span class="text ltx_lst_space"> </span>gewaehlt<span class="text ltx_lst_space"> </span>wurde</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">8</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span>(atoi(Achse)==0){</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">9</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>lcd_puts("<span class="text" style="color:#000000;">Achse:<span class="text ltx_lst_space"> </span></span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">10</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>lcd_puts(Achse);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">11</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>lcd_puts("<span class="text ltx_lst_space" style="color:#000000;"> </span><span class="text" style="color:#000000;">(Rotation)\n</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">12</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">13</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span>(atoi(Achse)==1){</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">14</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>lcd_puts("<span class="text" style="color:#000000;">Achse:<span class="text ltx_lst_space"> </span></span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">15</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>lcd_puts(Achse);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">16</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>lcd_puts("<span class="text ltx_lst_space" style="color:#000000;"> </span><span class="text" style="color:#000000;">(Hoehe)<span class="text ltx_lst_space">   </span>\n</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">17</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">18</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Anzahl<span class="text ltx_lst_space"> </span>der<span class="text ltx_lst_space"> </span>Schritte<span class="text ltx_lst_space"> </span>aus<span class="text ltx_lst_space"> </span>dem<span class="text ltx_lst_space"> </span>String<span class="text ltx_lst_space"> </span>auslesen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">19</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>c;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">20</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">int</span><span class="text ltx_lst_space"> </span>i<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>0;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">21</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">do</span><span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">22</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>c<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>str_rx[i<span class="text ltx_lst_space"> </span>+<span class="text ltx_lst_space"> </span>3];</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">23</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>(c<span class="text ltx_lst_space"> </span>!=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">,</span>’)<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">24</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>Position[i]<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>c;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">25</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>i++;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">26</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">27</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}<span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">while</span><span class="text ltx_lst_space"> </span>(i<span class="text ltx_lst_space"> </span>&lt;<span class="text ltx_lst_space"> </span>20<span class="text ltx_lst_space"> </span>&amp;&amp;<span class="text ltx_lst_space"> </span>c<span class="text ltx_lst_space"> </span>!=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">\0</span>’<span class="text ltx_lst_space"> </span>&amp;&amp;<span class="text ltx_lst_space"> </span>c<span class="text ltx_lst_space"> </span>!=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">,</span>’);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">28</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>Position[i]<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">\0</span>’;<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">String<span class="text ltx_lst_space"> </span>0<span class="text ltx_lst_space"> </span>Terminieren</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">29</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>int32_t<span class="text ltx_lst_space"> </span>z;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">30</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>int32_t<span class="text ltx_lst_space"> </span>y;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">31</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>z<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>atol(Position);<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">String<span class="text ltx_lst_space"> </span>in<span class="text ltx_lst_space"> </span>Zahl(long)<span class="text ltx_lst_space"> </span>umwandeln</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">32</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>y<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>z<span class="text ltx_lst_space"> </span>/<span class="text ltx_lst_space"> </span>7200;<span class="text ltx_lst_space">             </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Berechnung<span class="text ltx_lst_space"> </span>des<span class="text ltx_lst_space"> </span>Winkel</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">33</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>z<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>(z<span class="text ltx_lst_space"> </span>*<span class="text ltx_lst_space"> </span>71111)<span class="text ltx_lst_space">  </span>/1024;<span class="text ltx_lst_space">   </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Berechnung<span class="text ltx_lst_space"> </span>der<span class="text ltx_lst_space"> </span>Schritte</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">34</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>ltoa(y,<span class="text ltx_lst_space"> </span>Winkel,<span class="text ltx_lst_space">            </span>10<span class="text ltx_lst_space"> </span>);<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Winekl<span class="text ltx_lst_space"> </span>in<span class="text ltx_lst_space"> </span>String<span class="text ltx_lst_space"> </span>umwandeln</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">35</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>ltoa(z,<span class="text ltx_lst_space"> </span>Position,<span class="text ltx_lst_space">    </span>10<span class="text ltx_lst_space"> </span>);<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Schritte<span class="text ltx_lst_space"> </span>in<span class="text ltx_lst_space"> </span>String<span class="text ltx_lst_space"> </span>umwandeln</span></span></td>
+</tr>
+</table></figure></section></section></section>
+        </div>
+    <footer class="footer">July 1, 2012<a href="Ch8.S5.html" title="8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref previous"><span class="text reftitle"><span class="tag">8.5 </span>Kommunikation mit RapidForm2004</span></a><a href="Ch8.S7.html" title="8.7 Platinenlayout und 19’’-Einschub ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref next"><span class="text reftitle"><span class="tag">8.7 </span>Platinenlayout und 19’’-Einschub</span></a>
+      </footer>
+      </div>
+    </body>
+</html>

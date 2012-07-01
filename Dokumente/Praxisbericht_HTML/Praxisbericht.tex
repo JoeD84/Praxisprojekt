@@ -9,40 +9,41 @@
 %   
 %   Genutzt und angepasst auf utf8 von Johannes Dielmann 
 
-% Meta-Informationen -------------------------------------------------------
-%	Informationen über das Dokument, wie z.B. Titel, Autor, Matrikelnr. etc
-%	werden in der Datei _Meta.tex definiert und können danach global
-%	verwendet werden.
-% --------------------------------------------------------------------------
 
 % Dokumentenkopf -----------------------------------------------------------
 % 	Diese Vorlage basiert auf "scrreprt" aus dem koma-script.
 %	Die Option draft sollte beim fertigen Dokument ausgeschaltet werden.
 % --------------------------------------------------------------------------
 \documentclass[
-	%11pt,					% Schriftgröße
+	11pt,					% Schriftgröße
 	%DIV10,
-	%ngerman,					% für Umlaute, Silbentrennung etc.
-	%a4paper,         		% Papierformat
-	%oneside,				% einseitiges Dokument
-	%titlepage,				% es wird eine Titelseite verwendet
-	%final					% Status des Dokuments (final/draft)
+	ngerman,					% für Umlaute, Silbentrennung etc.
+	a4paper,         		% Papierformat
+	oneside,				% einseitiges Dokument
+	titlepage,				% es wird eine Titelseite verwendet
+	final					% Status des Dokuments (final/draft)
 ]{report}
+
+% Meta-Informationen -------------------------------------------------------
+%	Informationen über das Dokument, wie z.B. Titel, Autor, Matrikelnr. etc
+%	werden in der Datei _Meta.tex definiert und können danach global
+%	verwendet werden.
+% --------------------------------------------------------------------------
+\input{_Meta.tex}
 
 % Benötigte Packages -------------------------------------------------------
 %	Weitere Packages, die benötigt werden, sind in die Datei Packages.tex
 %	"ausgelagert", um die Vorlage möglichst übersichtlich zu halten.
 % --------------------------------------------------------------------------
-\input{Meta}
 \input{Packages}
 
 % Erstellung eines Index und Abkürzungsverzeichnisses aktivieren -----------
-\makeindex
+%\makeindex
 %\makenomenclature
 
 
 % Kopf- und Fußzeilen, Seitenränder etc. -----------------------------------
-%\input{Seitenstil}
+\input{Seitenstil}
 
 % Eigene Definitionen für Silbentrennung
 \include{Silbentrennung}
@@ -54,11 +55,14 @@
 \begin{document}
 
 % auch subsubsection nummerieren
-%\setcounter{secnumdepth}{3}
-%\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 
 %\ofoot{}
-%\include{Deckblatt}
+\title{\titel \\ \untertitel}
+%\author{\autor}
+\maketitle
+\include{Deckblatt}
 %\include{Inhalt/Abstract}
 %\ofoot{\pagemark}
 
@@ -66,22 +70,25 @@
 %	Vor dem Hauptteil werden die Seiten in großen römischen Ziffern 
 %	nummeriert...
 % --------------------------------------------------------------------------
-%\pagenumbering{Roman}
+\pagenumbering{Roman}
 %\maintoc
-%\tableofcontents								% Inhaltsverzeichnis
+\tableofcontents								% Inhaltsverzeichnis
 
 % Abkürzungsverzeichnis ----------------------------------------------------
 %\input{Inhalt/Glossar}		
 %\label{sec:Glossar}		
 %\printnomenclature
 
+
 \listoffigures						% Abbildungsverzeichnis
 \listoftables						% Tabellenverzeichnis
 \renewcommand{\lstlistlistingname}{Codeverzeichnis}
 \lstlistoflistings					% Listings-Verzeichnis
-\chapter{Hinweise zum Dokument}
-\thechapter
-%\begin{Tipp}Hinweise werden durch diese Boxen gekennzeichnet\end{Tipp}
+
+\chapter*{Hinweise zum Dokument}
+%\begin{Tipp}
+Hinweise werden durch diese Boxen gekennzeichnet
+%\end{Tipp}
 
 \Fachbegriff{Fachbegriffe} werden blau hinterlegt.\\
 
@@ -115,7 +122,7 @@ Der komplette Quelltext für den Mikrocontroller, der Quelltext für diese Dokum
 \bibliography{Bibliographie}		% Aufruf: bibtex FHWTVorlage
 %\bibliographystyle{natdin}			% DIN-Stil des
 \bibliographystyle{plain}			% DIN-Stil des Literaturverzeichnisses
-%\include{Inhalt/Erklaerung}			% Selbständigkeitserklärung 
+\include{Inhalt/Erklaerung}			% Selbständigkeitserklärung 
 
 % Anhang -------------------------------------------------------------------
 % Die Inhalte des Anhangs werden analog zu den Kapiteln inkludiert.
@@ -124,12 +131,12 @@ Der komplette Quelltext für den Mikrocontroller, der Quelltext für diese Dokum
 \begin{appendix}
 	%\clearpage
 	%\pagenumbering{roman}
-	%\input{Inhalt/Anhang}
+	\input{Inhalt/Anhang}
 \end{appendix}
 
 % Index --------------------------------------------------------------------
 %	Zum Erstellen eines Index, die folgende Zeile auskommentieren.
 % --------------------------------------------------------------------------
-\printindex		% Index hier einfügen
+%\printindex		% Index hier einfügen
 
 \end{document}

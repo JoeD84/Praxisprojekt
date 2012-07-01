@@ -1,0 +1,113 @@
+/* CSS for left navigation bar */
+
+.header {
+    font-size: 120%;
+    }
+
+.navbar { 
+    z-index: 1000;
+    display:block!important; 
+    position:fixed; 
+    left:20px; top:10px; 
+    width:293px;
+    margin:0em; padding:1em; 
+    font: bold 75% sans-serif; 
+    }
+    
+.navbar > .start:before {
+   display:block;
+   content:url(x1.jpg);
+   margin: 10px;
+}
+
+.navbar .start {
+    font-size:200%;
+    
+    }
+        
+.navbar ul { 
+    margin-left:-2em; 
+}
+
+
+a {
+   color: #009DA0; 
+   
+    }
+a:link          { color:#009DA0;   text-decoration:none; }
+a:visited       { color:#009DA0;   text-decoration:none; }
+a:focus         { color:#009DA0;   text-decoration:underline; }
+a:hover         { color:#009DA0;   text-decoration:none; }
+a:active        { color:#009DA0;   text-decoration:underline; }   
+    
+.navbar > .toc {
+    background: #A6DBE3;
+    padding: 20px;
+    border: #009DA0 5px solid;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    }
+    
+.listing {
+    padding: 3px;
+}
+.listing .tabular {       
+    border: solid 1px black;
+    background: #FFFFAA;
+    width:100%;
+}
+    
+.content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: white;
+    clear: both;
+    padding: 1em;
+    border: 1px solid;
+}
+    
+    
+.navbar li {white-space: normal;}
+    
+.navbar li.self {
+    position: relative;
+    left: 25px;
+    margin-left: -37px;
+    z-index: 2000;
+    background: #A6DBE3;
+    padding: 3px;
+    border: #009DA0 3px solid;
+    border-right: 0px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    overflow: visible;
+    }
+    
+.bibitem {
+    background: #EEE;
+    padding: 5px;
+    
+    }
+    
+.bibitem:nth-child(odd) { 
+    background: #DDD; 
+    }
+    
+.figure {
+    text-align: center;
+    }
+    
+.main { 
+    position:absolute; 
+    background: #A6DBE3;
+    left:320px; top:20px; right:20px; 
+    margin:0px; 
+    margin-bottom: 20px;
+    padding:1em 3em 1em 2em;
+    min-height: 600px;
+    /*width:70%; */
+    border: 5px solid #009DA0;
+    border-radius: 10px;
+}

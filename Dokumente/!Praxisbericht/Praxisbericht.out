@@ -1,0 +1,69 @@
+\BOOKMARK [0][]{chapter*.2}{Abk\374rzungsverzeichnis}{}% 1
+\BOOKMARK [0][]{chapter.9}{Einleitung}{}% 2
+\BOOKMARK [0][]{chapter.10}{Vorstellung der vorhandenen Hardware}{}% 3
+\BOOKMARK [1][]{section.13}{Computer}{chapter.10}% 4
+\BOOKMARK [1][]{section.14}{3D-Laserscanner VI-900}{chapter.10}% 5
+\BOOKMARK [2][]{subsection.16}{Lasertriangulator Prinzip}{section.14}% 6
+\BOOKMARK [1][]{section.18}{Drehtisch und Ansteuerung}{chapter.10}% 7
+\BOOKMARK [2][]{subsection.19}{Drehtisch}{section.18}% 8
+\BOOKMARK [2][]{subsection.21}{Spannungsversorgung}{section.18}% 9
+\BOOKMARK [2][]{subsection.22}{Schrittmotoren}{section.18}% 10
+\BOOKMARK [2][]{subsection.23}{Schrittmotorkarten}{section.18}% 11
+\BOOKMARK [2][]{subsection.27}{Motorverkabelung}{section.18}% 12
+\BOOKMARK [2][]{subsection.28}{Endschalter}{section.18}% 13
+\BOOKMARK [1][]{section.29}{Mikrocontroller}{chapter.10}% 14
+\BOOKMARK [2][]{subsection.31}{Entwicklerboard STK500}{section.29}% 15
+\BOOKMARK [2][]{subsection.34}{AVRISP mkII}{section.29}% 16
+\BOOKMARK [2][]{subsection.35}{MAX232}{section.29}% 17
+\BOOKMARK [0][]{chapter.37}{Vorstellung der vorhandenen Software}{}% 18
+\BOOKMARK [1][]{section.38}{RapidForm2004}{chapter.37}% 19
+\BOOKMARK [1][]{section.39}{Entwicklungsumgebung}{chapter.37}% 20
+\BOOKMARK [1][]{section.40}{Terminalprogramme}{chapter.37}% 21
+\BOOKMARK [0][]{chapter.41}{Zeitlicher Arbeitsablauf}{}% 22
+\BOOKMARK [1][]{section.42}{Bereitstellen grundlegender Funktionalit\344ten}{chapter.41}% 23
+\BOOKMARK [2][]{subsection.43}{Taster}{section.42}% 24
+\BOOKMARK [2][]{subsection.58}{LEDs}{section.42}% 25
+\BOOKMARK [2][]{subsection.64}{Ansteuerung des LC-Display}{section.42}% 26
+\BOOKMARK [2][]{subsection.87}{RS-232-Schnittstelle}{section.42}% 27
+\BOOKMARK [1][]{section.154}{Befehlss\344tze}{chapter.41}% 28
+\BOOKMARK [1][]{section.166}{Kommunikation mit der vorhandenen Schrittmotorsteuerung}{chapter.41}% 29
+\BOOKMARK [2][]{subsection.167}{Befehle senden}{section.166}% 30
+\BOOKMARK [2][]{subsection.222}{Antworten empfangen und speichern}{section.166}% 31
+\BOOKMARK [2][]{subsection.237}{Antworten auswerten}{section.166}% 32
+\BOOKMARK [1][]{section.274}{Verbesserungen an der vorhandenen Hardware}{chapter.41}% 33
+\BOOKMARK [2][]{subsection.275}{Netzteil}{section.274}% 34
+\BOOKMARK [2][]{subsection.277}{Zweite Schrittmotorkarte}{section.274}% 35
+\BOOKMARK [2][]{subsection.278}{Motor- und Endschalterverkabelung}{section.274}% 36
+\BOOKMARK [2][]{subsection.281}{Endschalter}{section.274}% 37
+\BOOKMARK [2][]{subsection.283}{Zweite serielle Schnittstelle}{section.274}% 38
+\BOOKMARK [1][]{section.285}{Kommunikation mit RapidForm2004}{chapter.41}% 39
+\BOOKMARK [2][]{subsection.287}{Befehle empfangen}{section.285}% 40
+\BOOKMARK [3][]{subsubsection.293}{Automatische Auswahl eines Befehlssatzes}{subsection.287}% 41
+\BOOKMARK [1][]{section.353}{Auswerte-Funktionen}{chapter.41}% 42
+\BOOKMARK [2][]{subsection.354}{Auswerte-Funktion f\374r Isel-Motoren}{section.353}% 43
+\BOOKMARK [3][]{subsubsection.367}{Initialisierung}{subsection.354}% 44
+\BOOKMARK [3][]{subsubsection.374}{Statusabfrage}{subsection.354}% 45
+\BOOKMARK [3][]{subsubsection.389}{Rotation}{subsection.354}% 46
+\BOOKMARK [1][]{section.485}{Platinenlayout und 19''-Einschub}{chapter.41}% 47
+\BOOKMARK [0][]{chapter.489}{Probleme und L\366sungen}{}% 48
+\BOOKMARK [1][]{section.490}{Entwicklungsumgebungen}{chapter.489}% 49
+\BOOKMARK [2][]{subsection.491}{AVR Studio 5}{section.490}% 50
+\BOOKMARK [2][]{subsection.492}{Eclipse}{section.490}% 51
+\BOOKMARK [1][]{section.493}{Interrupts}{chapter.489}% 52
+\BOOKMARK [2][]{subsection.494}{Endschalter}{section.493}% 53
+\BOOKMARK [2][]{subsection.508}{Watchdog}{section.493}% 54
+\BOOKMARK [1][]{section.526}{Fuses}{chapter.489}% 55
+\BOOKMARK [0][]{chapter.528}{Fazit und weitere M\366glichkeiten}{}% 56
+\BOOKMARK [1][]{section.529}{Fazit}{chapter.528}% 57
+\BOOKMARK [1][]{section.530}{Bekannte Probleme}{chapter.528}% 58
+\BOOKMARK [1][]{section.531}{Weitere M\366glichkeiten}{chapter.528}% 59
+\BOOKMARK [0][]{chapter*.533}{Eidesstattliche Erkl\344rung}{}% 60
+\BOOKMARK [0][]{appendix.534}{Anhang}{}% 61
+\BOOKMARK [1][]{section.535}{Schritt f\374r Schritt Anleitung}{appendix.534}% 62
+\BOOKMARK [1][]{section.537}{Befehlssatz der vorhandene Schrittmotorkarte}{appendix.534}% 63
+\BOOKMARK [1][]{section.539}{Befehlss\344tze aus RapidForm2004}{appendix.534}% 64
+\BOOKMARK [1][]{section.636}{Technische Daten VI-910}{appendix.534}% 65
+\BOOKMARK [1][]{section.638}{Verwendete Hardware}{appendix.534}% 66
+\BOOKMARK [1][]{section.639}{Verwendete Software}{appendix.534}% 67
+\BOOKMARK [1][]{section.640}{main.c}{appendix.534}% 68
+\BOOKMARK [1][]{section.1512}{Credits}{appendix.534}% 69

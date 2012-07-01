@@ -1,0 +1,436 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>A.2 Befehlssätze aus RapidForm2004 ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers</title>
+    <!--Generated on Sun Jul  1 14:15:02 2012 by LaTeXML (version 0.7.9alpha) http://dlmf.nist.gov/LaTeXML/.-->
+      <!--Document created on July 1, 2012.-->
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="start" href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="prev" href="A1.S1.html" title="A.1 Befehlssatz der vorhandene Schrittmotorkarte ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="next" href="A1.S3.html" title="A.3 Verwendete Hardware ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="stylesheet" type="text/css" href="core.css">
+    <link rel="stylesheet" type="text/css" href="Praxisbericht.css">
+  </head>
+  <body>
+    <nav class="navbar"><a href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref start"><span class="text reftitle">Übersetzen von Schrittmotorbefehlen<br class="break">Entwurf eines Hardwareübersetzers</span></a>
+    
+  <ul class="toc">
+  <li class="tocentry">
+<a href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Übersetzen von Schrittmotorbefehlen<br class="break">Entwurf eines Hardwareübersetzers</span></a>
+  <ul class="toc">
+  <li class="tocentry"><a href="Chx1.html" title="Hinweise zum Dokument ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Hinweise zum Dokument</span></a></li>
+  <li class="tocentry"><a href="Ch1.html" title="Kapitel 1 Einleitung ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">1 </span></span><span class="text small">Einleitung</span></span></a></li>
+  <li class="tocentry"><a href="Ch2.html" title="Kapitel 2 Vorstellung der vorhandenen Hardware ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">2 </span></span><span class="text small">Vorstellung der vorhandenen Hardware</span></span></a></li>
+  <li class="tocentry"><a href="Ch3.html" title="Kapitel 3 Vorstellung der vorhandenen Software ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">3 </span></span><span class="text small">Vorstellung der vorhandenen Software</span></span></a></li>
+  <li class="tocentry"><a href="Ch4.html" title="Kapitel 4 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">4 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a></li>
+  <li class="tocentry"><a href="Ch5.html" title="Kapitel 5 Probleme und Lösungen ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">5 </span></span><span class="text small">Probleme und Lösungen</span></span></a></li>
+  <li class="tocentry"><a href="Ch6.html" title="Kapitel 6 Fazit und weitere Möglichkeiten ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">6 </span></span><span class="text small">Fazit und weitere Möglichkeiten</span></span></a></li>
+  <li class="tocentry"><a href="bib.html" title="Literatur ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Literatur</span></a></li>
+  <li class="tocentry"><a href="Ch7.html" title="Kapitel 7 Eidesstattliche Erklärung ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">7 </span></span><span class="text small">Eidesstattliche Erklärung</span></span></a></li>
+  <li class="tocentry">
+<a href="A1.html" title="Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">A </span></span><span class="text small">Anhang</span></span></a>
+  <ul class="toc">
+  <li class="tocentry"><a href="A1.S1.html" title="A.1 Befehlssatz der vorhandene Schrittmotorkarte ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">A.1 </span>Befehlssatz der vorhandene Schrittmotorkarte</span></a></li>
+  <li class="tocentry self"><span class="ref toc here"><span class="text reftitle"><span class="tag">A.2 </span>Befehlssätze aus RapidForm2004</span></span></li>
+  <li class="tocentry"><a href="A1.S3.html" title="A.3 Verwendete Hardware ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">A.3 </span>Verwendete Hardware</span></a></li>
+  <li class="tocentry"><a href="A1.S4.html" title="A.4 Verwendete Software ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">A.4 </span>Verwendete Software</span></a></li>
+  <li class="tocentry"><a href="A1.S5.html" title="A.5 main.c ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">A.5 </span>main.c</span></a></li>
+  <li class="tocentry"><a href="A1.S6.html" title="A.6 Credits ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">A.6 </span>Credits</span></a></li>
+    </ul>
+</li>
+    </ul>
+</li>
+    </ul>
+      </nav>
+    <div class="main">
+    <header class="header"><a href="A1.html" title="Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref up"><span class="text reftitle"><span class="tag"><span class="text small">A </span></span><span class="text small">Anhang</span></span></a><a href="A1.S1.html" title="A.1 Befehlssatz der vorhandene Schrittmotorkarte ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref previous"><span class="text reftitle"><span class="tag">A.1 </span>Befehlssatz der vorhandene Schrittmotorkarte</span></a><a href="A1.S3.html" title="A.3 Verwendete Hardware ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref next"><span class="text reftitle"><span class="tag">A.3 </span>Verwendete Hardware</span></a>
+      </header>
+    <div class="content">
+<section class="section"><hgroup><h1 class="title small">
+<span class="tag">A.2 </span>Befehlssätze aus RapidForm2004</h1></hgroup><figure id="LST21" class="listing ltx_lstlisting ltx_lst_language_Java"><figcaption class="caption small"><span class="tag">Listing 21: </span>Befehlssätze aus RapidForm2004</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">model<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">CSG-602R(Ver.2.0)</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">port<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">9600</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">n81h</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">init<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">D:2S500F5000R200S500F5000R200\r\nH:1-\r\n</span>"<span class="text ltx_lst_space"> </span>""</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">finish<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:1\r\nH:1-\r\n</span>"<span class="text ltx_lst_space"> </span>""</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">arot<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">M:1+P%d\r\nG:\r\n</span>"<span class="text ltx_lst_space"> </span>""</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">6</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">stop<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:E\r\n</span>"<span class="text ltx_lst_space"> </span>""</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">7</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">home<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:1\r\nH:1-\r\n</span>"<span class="text ltx_lst_space"> </span>""</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">8</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">step<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-0.0025</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-99999999</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">99999999</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">9</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">timeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">60</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">10</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">firsttimeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">10</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">11</span></td>
+    <td class="td"><span class="text ltx_lst_line"></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">12</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">model<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">CSG-602R(Ver.1.0)</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">13</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">port<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">9600</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">n81h</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">14</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">init<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">D:2S500F5000R200S500F5000R200\r\nH:1-\r\n</span>"<span class="text ltx_lst_space"> </span>""</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">15</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">finish<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:1\r\nH:1-\r\n</span>"<span class="text ltx_lst_space"> </span>""</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">16</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">arot<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">M:1+P%d\r\nG:\r\n</span>"<span class="text ltx_lst_space"> </span>""</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">17</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">stop<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:E\r\n</span>"<span class="text ltx_lst_space"> </span>""<span class="text ltx_lst_space"> </span>home<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:1\r\nH:1-\r\n</span>"<span class="text ltx_lst_space"> </span>""</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">18</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">step<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-0.005</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-99999999</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">99999999</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">19</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">timeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">60</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">20</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">firsttimeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">10</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">21</span></td>
+    <td class="td"><span class="text ltx_lst_line"></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">22</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">model<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">Mark-202</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">23</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">port<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">9600</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">n81h</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">24</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">init<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">S:180\r\nD:1S20000F200000R200\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">OK\r\nOK\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">25</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">finish<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:1\r\nH:1\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">OK\r\nOK\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">26</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">arot<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">M:1+P%d\r\nG:\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">OK\r\nOK\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">27</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">stop<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:E\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">OK\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">28</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">home<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:1\r\nH:1\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">OK\r\nOK\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">29</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">step<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-0.0000625</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-99999999</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">99999999</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">30</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">timeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">60</span>"<span class="text ltx_lst_space"> </span>firsttimeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">10</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">31</span></td>
+    <td class="td"><span class="text ltx_lst_line"></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">32</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">model<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">Mark-102</span>"<span class="text ltx_lst_space"> </span>port<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">9600</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">n81h</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">33</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">init<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">D:WS500F5000R200S500F5000R200\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">OK\r\nOK\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">34</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">finish<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">H:1-\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">OK\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">35</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">arot<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">M:1+P%d\r\nG:\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">OK\r\nOK\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">36</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">stop<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:E\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">OK\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">37</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">home<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">H:1-\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">OK\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">38</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">step<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-0.0025</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-99999999</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">99999999</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">39</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">timeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">60</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">40</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">firsttimeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">10</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">41</span></td>
+    <td class="td"><span class="text ltx_lst_line"></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">42</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">model<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">isel(RF-1)</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">43</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">port<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">9600</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">n81h</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">44</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">init<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">@01\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">45</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">finish<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">@0M0\054+600\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">46</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">arot<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">@0M%d\054+600\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">47</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">stop<span class="text ltx_lst_space"> </span>""<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">48</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">home<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">@0M0\054+600\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">49</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">step<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-0.0173076</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-8000000</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">8000000</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">50</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">timeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">60</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">51</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">firsttimeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">10</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">52</span></td>
+    <td class="td"><span class="text ltx_lst_line"></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">53</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">model<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">isel(R-1)</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">54</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">port<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">9600</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">n81h</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">55</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">init<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">@01\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">56</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">finish<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">@0M0\054+300\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">57</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">arot<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">@0M%d\054+300\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">58</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">stop<span class="text ltx_lst_space"> </span>""<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">59</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">home<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">@0M0\054+300\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">60</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">step<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-0.05</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-8000000</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">8000000</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">61</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">timeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">60</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">62</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">firsttimeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">10</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">63</span></td>
+    <td class="td"><span class="text ltx_lst_line"></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">64</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">model<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">ZETA6104</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">65</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">port<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">9600</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">n81n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">66</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">init<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">ECHO0\rCOMEXC0\PSET0\rA8\rV8\r</span>"<span class="text ltx_lst_space"> </span>""</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">67</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">finish<span class="text ltx_lst_space"> </span>"<span class="text ltx_lst_space" style="color:#000000;">  </span><span class="text" style="color:#000000;">D0<span class="text ltx_lst_space"> </span>\rGO1\rWAIT(1PE&lt;&gt;1)\rRESET\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n&gt;\040\r\n&gt;\040\r\n&gt;\040\r\n&gt;\040</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">68</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">arot<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">MA1<span class="text ltx_lst_space"> </span>D%d\rGO1\rWAIT(1PE&lt;&gt;1)\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n&gt;\040\r\n&gt;\040\r\n&gt;\040\r\n&gt;\040</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">69</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">home<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">MA1<span class="text ltx_lst_space"> </span>D0<span class="text ltx_lst_space"> </span>\rGO1\rWAIT(1PE&lt;&gt;1)\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n&gt;\040\r\n&gt;\040\r\n&gt;\040\r\n&gt;\040</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">70</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">stop<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">!S\r</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n&gt;\040</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">71</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">step<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0.00008</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-4500000</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">4500000</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">72</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">timeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">60</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">73</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">firsttimeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">10</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">74</span></td>
+    <td class="td"><span class="text ltx_lst_line"></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">75</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">model<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">MMC-2(15kg)</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">76</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">port<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">9600</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">n81h</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">77</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">init<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">F:XP3\r\nS:X1\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">78</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">finish<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:X\r\nA:XP0\r\nW:\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">79</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">arot<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">A:XP%d\r\nW:\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">80</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">stop<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">E:\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">81</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">home<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">A:XP0\r\nW:\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">82</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">step<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0.002</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-99999999</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">99999999</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">83</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">timeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">60</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">84</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">firsttimeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">10</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">85</span></td>
+    <td class="td"><span class="text ltx_lst_line"></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">86</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">model<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">MMC-2</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">87</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">port<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">9600</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">n81h</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">88</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">init<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">F:XP3\r\nS:X1\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">89</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">finish<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">L:X\r\nA:XP0\r\nW:\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">90</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">arot<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">A:XP%d\r\nW:\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">91</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">stop<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">E:\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">92</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">home<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">A:XP0\r\nW:\r\n</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">\r\n</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">93</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">step<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">0.005</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">-99999999</span>"<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">99999999</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">94</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">timeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">60</span>"</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">95</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">firsttimeout<span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">10</span>"</span></td>
+</tr>
+</table></figure></section>
+        </div>
+    <footer class="footer">July 1, 2012<a href="A1.S1.html" title="A.1 Befehlssatz der vorhandene Schrittmotorkarte ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref previous"><span class="text reftitle"><span class="tag">A.1 </span>Befehlssatz der vorhandene Schrittmotorkarte</span></a><a href="A1.S3.html" title="A.3 Verwendete Hardware ‣ Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref next"><span class="text reftitle"><span class="tag">A.3 </span>Verwendete Hardware</span></a>
+      </footer>
+      </div>
+    </body>
+</html>

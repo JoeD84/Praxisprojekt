@@ -1,0 +1,498 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers</title>
+    <!--Generated on Sun Jul  1 13:32:29 2012 by LaTeXML (version 0.7.9alpha) http://dlmf.nist.gov/LaTeXML/.-->
+      <!--Document created on July 1, 2012.-->
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="start" href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="prev" href="Ch8.html" title="Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="next" href="Ch8.S2.html" title="8.2 Befehlssätze ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="stylesheet" type="text/css" href="core.css">
+    <link rel="stylesheet" type="text/css" href="Praxisbericht.css">
+  </head>
+  <body>
+    <nav class="navbar"><a href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref start"><span class="text reftitle">Übersetzen von Schrittmotorbefehlen<br class="break">Entwurf eines Hardwareübersetzers</span></a>
+    
+  <ul class="toc">
+  <li class="tocentry">
+<a href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Übersetzen von Schrittmotorbefehlen<br class="break">Entwurf eines Hardwareübersetzers</span></a>
+  <ul class="toc">
+  <li class="tocentry"><a href="Chx1.html" title="Hinweise zum Dokument ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Hinweise zum Dokument</span></a></li>
+  <li class="tocentry"><a href="Ch1.html" title="Kapitel 1 Einleitung ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">1 </span></span><span class="text small">Einleitung</span></span></a></li>
+  <li class="tocentry"><a href="Ch2.html" title="Kapitel 2 Vorstellung der vorhandenen Hardware ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">2 </span></span><span class="text small">Vorstellung der vorhandenen Hardware</span></span></a></li>
+  <li class="tocentry"><a href="Ch3.html" title="Kapitel 3 Vorstellung der vorhandenen Software ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">3 </span></span><span class="text small">Vorstellung der vorhandenen Software</span></span></a></li>
+  <li class="tocentry"><a href="Ch4.html" title="Kapitel 4 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">4 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a></li>
+  <li class="tocentry"><a href="Ch5.html" title="Kapitel 5 Probleme und Lösungen ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">5 </span></span><span class="text small">Probleme und Lösungen</span></span></a></li>
+  <li class="tocentry"><a href="Ch6.html" title="Kapitel 6 Vorstellung der vorhandenen Hardware ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">6 </span></span><span class="text small">Vorstellung der vorhandenen Hardware</span></span></a></li>
+  <li class="tocentry"><a href="Ch7.html" title="Kapitel 7 Vorstellung der vorhandenen Software ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">7 </span></span><span class="text small">Vorstellung der vorhandenen Software</span></span></a></li>
+  <li class="tocentry">
+<a href="Ch8.html" title="Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">8 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a>
+  <ul class="toc">
+  <li class="tocentry self">
+<span class="ref toc here"><span class="text reftitle"><span class="tag">8.1 </span>Bereitstellen grundlegender Funktionalitäten</span></span>
+  <ul class="toc">
+  <li class="tocentry"><a href="#SS1" title="8.1.1 Taster ‣ 8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.1.1 </span>Taster</span></a></li>
+  <li class="tocentry"><a href="#SS2" title="8.1.2 LEDs ‣ 8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.1.2 </span>LEDs</span></a></li>
+  <li class="tocentry"><a href="#SS3" title="8.1.3 Ansteuerung des LC-Display ‣ 8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.1.3 </span>Ansteuerung des LC-Display</span></a></li>
+  <li class="tocentry"><a href="#SS4" title="8.1.4 RS-232-Schnittstelle ‣ 8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.1.4 </span>RS-232-Schnittstelle</span></a></li>
+    </ul>
+</li>
+  <li class="tocentry"><a href="Ch8.S2.html" title="8.2 Befehlssätze ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.2 </span>Befehlssätze</span></a></li>
+  <li class="tocentry"><a href="Ch8.S3.html" title="8.3 Kommunikation mit der vorhandenen Schrittmotorsteuerung ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.3 </span>Kommunikation mit der vorhandenen Schrittmotorsteuerung</span></a></li>
+  <li class="tocentry"><a href="Ch8.S4.html" title="8.4 Verbesserungen an der vorhandenen Hardware ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.4 </span>Verbesserungen an der vorhandenen Hardware</span></a></li>
+  <li class="tocentry"><a href="Ch8.S5.html" title="8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.5 </span>Kommunikation mit RapidForm2004</span></a></li>
+  <li class="tocentry"><a href="Ch8.S6.html" title="8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.6 </span>Auswerte-Funktionen</span></a></li>
+  <li class="tocentry"><a href="Ch8.S7.html" title="8.7 Platinenlayout und 19’’-Einschub ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.7 </span>Platinenlayout und 19’’-Einschub</span></a></li>
+    </ul>
+</li>
+  <li class="tocentry"><a href="Ch9.html" title="Kapitel 9 Probleme und Lösungen ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">9 </span></span><span class="text small">Probleme und Lösungen</span></span></a></li>
+  <li class="tocentry"><a href="Ch10.html" title="Kapitel 10 Fazit und weitere Möglichkeiten ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">10 </span></span><span class="text small">Fazit und weitere Möglichkeiten</span></span></a></li>
+  <li class="tocentry"><a href="bib.html" title="Literatur ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Literatur</span></a></li>
+  <li class="tocentry"><a href="Ch11.html" title="Kapitel 11 Eidesstattliche Erklärung ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">11 </span></span><span class="text small">Eidesstattliche Erklärung</span></span></a></li>
+  <li class="tocentry"><a href="A1.html" title="Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">A </span></span><span class="text small">Anhang</span></span></a></li>
+    </ul>
+</li>
+    </ul>
+      </nav>
+    <div class="main">
+    <header class="header"><a href="Ch8.html" title="Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref up"><span class="text reftitle"><span class="tag"><span class="text small">8 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a><a href="Ch8.html" title="Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref previous"><span class="text reftitle"><span class="tag"><span class="text small">8 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a><a href="Ch8.S2.html" title="8.2 Befehlssätze ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref next"><span class="text reftitle"><span class="tag">8.2 </span>Befehlssätze</span></a>
+      </header>
+    <div class="content">
+<section class="section"><hgroup><h1 class="title small">
+<span class="tag">8.1 </span>Bereitstellen grundlegender Funktionalitäten</h1></hgroup><div id="p1" class="para"><p class="p"><span class="text small">Im ersten Schritt ging es darum, den Mikrocontroller so zu programmieren, dass dieser die für dieses Projekt grundlegenden Funktionalitäten bereitstellen kann.</span><br class="break"><span class="text small">Der Mikrocontroller befand sich vorerst auf dem </span><span class="text small" style="background-color:#D9D9FF;">STK500</span><span class="text small">(siehe Kapitel </span><a href="Ch6.S4.html#SS1" title="6.4.1 Entwicklerboard STK500 ‣ 6.4 Mikrocontroller ‣ Kapitel 6 Vorstellung der vorhandenen Hardware ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">6.4.1</span></a><span class="text small">). Um dessen Komponenten im Mikrocontroller nutzen zu können, müssen dafür Register initialisiert werden oder Funktionalitäten wie z.B. Bibliotheken für das LC-Display bereit gestellt werden.</span><br class="break"><span class="text small">Die folgenden Kapitel beschreiben den Programmcode, der notwendig ist um diese Funktionalitäten bereitzustellen.</span></p></div>
+<section id="SS1" class="subsection"><hgroup><h1 class="title small">
+<span class="tag">8.1.1 </span>Taster</h1></hgroup><div id="SS1.p1" class="para"><p class="p"><span class="text small">Um die Taster des STK500 im Mikrocontroller nutzen zu können müssen diese mit dem Mikrocontroller verbunden und entprellt</span><span class="note footnote"><sup class="mark">10</sup><span class="note_content_outer"><span class="note_content"><sup class="mark">10</sup><span class="text small">Als </span><span class="text small" style="background-color:#D9D9FF;">Prellen</span><span class="text small"> bezeichnet man das ungewollte mehrfache Schalten eines mechanischen Schalters bei einem einzelnen Schaltvorgang.</span></span></span></span><span class="text small"> werden.</span><br class="break"><span class="text small">Dazu muss die Stiftleiste von </span><em class="emph"><span class="text small">PortA</span></em><span class="text small"> mit der Stiftleiste für die Taster verbunden werden. Das Entprellen der Taster wird softwareseitig realisiert. Dies bietet sich bei einem Mikrocontroler an. Dazu gibt es vorgefertigte Bibliotheken die genutzt werden können. Im Projekt wurde die Bibliothek </span><span class="text typewriter small" style="background-color:#FFFFE6;">Debounce.h</span><cite class="cite"><span class="text small">(</span><a href="bib.html#bib12" title="Entprellung - mikrocontroller.net" class="ref">4</a><span class="text small">)</span></cite><span class="text small"> von Peter Dannegger genutzt. Sie ist sehr komfortabl und funktionsreich und basiert auf </span><span class="text small" style="background-color:#D9D9FF;">Timer-Interrupts</span><span class="text small">. Um sie zu nutzen wird die Datei </span><span class="text typewriter small" style="background-color:#FFFFE6;">Debounce.h</span><span class="text small"> in das Projektverzeichnis kopiert und mit Zeile 1 des Codelisting </span><a href="#LST21" title="21 ‣ 8.1.1 Taster ‣ 8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">21</span></a><span class="text small"> in das Programm eingebunden. Die Zeilen 2-10 spiegeln die Funktion zum Initialisieren der Bibliothek wieder. Diese Zeilen müssen auf den jeweils verwendeten Mikrocontroller angepasst werden.</span><br class="break"><span class="text small">Durch die Verwendung der Bibliothek ist es möglich Funktionen wie z.B. </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">get_key_press()</span><span class="text small"> zu nutzen um den Status der Taster prellfrei auszulesen und diese Information für Entscheidungen im Programmablauf zu verwenden.
+</span><span class="text small"></span></p></div>
+<figure id="LST21" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 21: </span>Taster</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">keywordstyle <span class="text ltx_lst_directive">include</span><span class="text ltx_lst_space"> </span>"<span class="text" style="color:#000000;">Debounce.h</span>"<span class="text ltx_lst_space">                          </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Taster<span class="text ltx_lst_space"> </span>entprellen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space">        </span>debounce_init<span class="text ltx_lst_space">                </span>(<span class="text ltx_lst_keyword" style="color:#FF0000;">void</span>)<span class="text ltx_lst_space"> </span>{<span class="text ltx_lst_space">    </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Taster<span class="text ltx_lst_space"> </span>entprellen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>KEY_DDR<span class="text ltx_lst_space"> </span>&amp;=<span class="text ltx_lst_space"> </span>~ALL_KEYS;<span class="text ltx_lst_space">                  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">configure<span class="text ltx_lst_space"> </span>key<span class="text ltx_lst_space"> </span>port<span class="text ltx_lst_space"> </span>for<span class="text ltx_lst_space"> </span>input</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>KEY_PORT<span class="text ltx_lst_space"> </span>|=<span class="text ltx_lst_space"> </span>ALL_KEYS;<span class="text ltx_lst_space">                   </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">and<span class="text ltx_lst_space"> </span>turn<span class="text ltx_lst_space"> </span>on<span class="text ltx_lst_space"> </span>pull<span class="text ltx_lst_space"> </span>up<span class="text ltx_lst_space"> </span>resistors</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>TCCR0B<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>CS02)<span class="text ltx_lst_space"> </span>|<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>CS00);<span class="text ltx_lst_space">   </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">divide<span class="text ltx_lst_space"> </span>by<span class="text ltx_lst_space"> </span>1024</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">6</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">preload<span class="text ltx_lst_space"> </span>for<span class="text ltx_lst_space"> </span>10ms</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">7</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>TCNT0<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>(uint8_t)<span class="text ltx_lst_space"> </span>(int16_t)<span class="text ltx_lst_space"> </span>-(F_CPU<span class="text ltx_lst_space"> </span>/<span class="text ltx_lst_space"> </span>1024<span class="text ltx_lst_space"> </span>*<span class="text ltx_lst_space"> </span>10<span class="text ltx_lst_space"> </span>*<span class="text ltx_lst_space"> </span>10e-3<span class="text ltx_lst_space"> </span>+<span class="text ltx_lst_space"> </span>0.5);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">8</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>TIMSK0<span class="text ltx_lst_space"> </span>|=<span class="text ltx_lst_space"> </span>1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>TOIE0;<span class="text ltx_lst_space">                      </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">enable<span class="text ltx_lst_space"> </span>timer<span class="text ltx_lst_space"> </span>interrupt</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">9</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>sei();<span class="text ltx_lst_space">                                     </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">global<span class="text ltx_lst_space"> </span>enable<span class="text ltx_lst_space"> </span>Interrupts</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">10</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">11</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>(get_key_press(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>KEY4))</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">12</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>menu_select(&amp;menu_context);<span class="text ltx_lst_space">            </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Aktuellen<span class="text ltx_lst_space"> </span>Menuepunkt<span class="text ltx_lst_space"> </span>auswaehlen</span></span></td>
+</tr>
+</table></figure></section><section id="SS2" class="subsection"><hgroup><h1 class="title small">
+<span class="tag">8.1.2 </span>LEDs</h1></hgroup><div id="SS2.p1" class="para"><p class="p"><span class="text small">LEDs sollen im Programmablauf genutzt werden können, um z.B. Fehler zu signalisieren.</span><br class="break"><span class="text small">Dazu muss zuerst die Stiftleiste von </span><em class="emph"><span class="text small">PortB</span></em><span class="text small"> mit der LED Stiftleiste des STK500 verbunden werden. Um LEDs an </span><em class="emph"><span class="text small">PortB</span></em><span class="text small"> betreiben zu können müssen die entsprechenden Pins im </span><span class="text small" style="background-color:#D9D9FF;">Register</span><span class="text small"> </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">DDRB</span><span class="text small"> als Ausgänge definiert werden. Dies geschieht in Zeile 1 des Codelisting </span><a href="#LST22" title="22 ‣ 8.1.2 LEDs ‣ 8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">22</span></a><span class="text small">. Die Bibliothek zum Entprellen der Taster nutzt die Variablen </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">LED_DDR</span><span class="text small"> und </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">LED_PORT</span><span class="text small">. Diese Variablen werden auch hier genutzt um auf die Register zuzugreifen. Dies gewährleistet eine bessere Übersicht. Die Werte im 8-Bit Register </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">LED_PORT</span><span class="text small"> spiegeln die Spannungen an den Pins des </span><em class="emph"><span class="text small">PortB</span></em><span class="text small"> am Mikrocontroller wieder. Da die LEDs auf dem STK500 mit </span><span class="text small" style="background-color:#D9D9FF;">active-low-Logik</span><span class="text small"> betrieben werden, muss das jeweilige Bit gelöscht, also auf ’’0’’, gesetzt werden damit die LED leuchtet. Um alle Bits in einem Register zu verändern kann das Register mit einem 2-stelligen Hex-Wert (8-Bit) oder einem 8 stelligen binären Bitmuster beschrieben werden. In Zeile 2 werden alle Bits mit dem Hex-Wert </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">0xFF</span><span class="text small"> auf ’’1’’ gesetzt und somit alle LEDs ausgeschaltet. Um ein einzelnes Bit zu verändern, können die Anweisungen in den Zeilen 3 und 4 verwendet werden. Dabei steht das ’’X’’ in </span><em class="emph"><span class="text small">PBX</span></em><span class="text small"> für die x-te Stelle im Register die gesetzt oder gelöscht werden soll.</span><br class="break"><span class="text small">Es ist damit möglich im Programmablauf einzelne LEDs anzusteuern.</span></p></div>
+<figure id="LST22" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 22: </span>LEDs</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">LED_DDR<span class="text ltx_lst_space">   </span>=<span class="text ltx_lst_space"> </span>0xFF;<span class="text ltx_lst_space">                 </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">LED<span class="text ltx_lst_space"> </span>Port<span class="text ltx_lst_space"> </span>Richtung<span class="text ltx_lst_space"> </span>definieren<span class="text ltx_lst_space"> </span>(Ausgang)</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">LED_PORT<span class="text ltx_lst_space">  </span>=<span class="text ltx_lst_space"> </span>0xFF;<span class="text ltx_lst_space">                  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">LEDs<span class="text ltx_lst_space"> </span>ausschalten</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">LED_PORT<span class="text ltx_lst_space"> </span>&amp;=<span class="text ltx_lst_space"> </span>~((1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>PBX));<span class="text ltx_lst_space">         </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">loescht<span class="text ltx_lst_space"> </span>Bit<span class="text ltx_lst_space"> </span>an<span class="text ltx_lst_space"> </span>PortB<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>LED<span class="text ltx_lst_space"> </span>an</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">LED_PORT<span class="text ltx_lst_space"> </span>|=<span class="text ltx_lst_space">  </span>((1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>PBX));<span class="text ltx_lst_space">         </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">setzt<span class="text ltx_lst_space">  </span>Bit<span class="text ltx_lst_space"> </span>an<span class="text ltx_lst_space"> </span>PortB<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>LED<span class="text ltx_lst_space"> </span>aus</span></span></td>
+</tr>
+</table></figure></section><section id="SS3" class="subsection"><hgroup><h1 class="title small">
+<span class="tag">8.1.3 </span>Ansteuerung des LC-Display</h1></hgroup><div id="SS3.p1" class="para"><p class="p"><span class="text small">Um den aktuellen Status des Motor komfortabel in Textform anzeigen zu können und die Schrittmotorkarte </span><em class="emph"><span class="text small">menübasiert</span></em><span class="text small"> ansteuern zu können wird ein </span><span class="text small" style="background-color:#D9D9FF;">LC-Display</span><span class="text small"> verwendet. Das verwendete Display ist </span><span class="text small" style="background-color:#D9D9FF;">alpha numerisch</span><span class="text small"> und kann 4x20 Zeichen anzeigen.</span><br class="break"><span class="text small">Die meisten LC-Displays werden auf die gleiche Weise angesteuert. Hier gibt es fertige Bibliotheken die frei genutzt werden können. Im Projekt wurde die Bibliothek von Peter Fleury </span><cite class="cite"><span class="text small">(</span><a href="bib.html#bib11" title="Peter fleury’s home page" class="ref">5</a><span class="text small">)</span></cite><span class="text small"> verwendet. Die Bibliothek wird heruntergeladen und die Dateien </span><span class="text typewriter small" style="background-color:#FFFFE6;">lcd.c</span><span class="text small"> und </span><span class="text typewriter small" style="background-color:#FFFFE6;">lcd.h</span><span class="text small"> in das Projektverzeichnis entpackt. Die Bibliothek wird mit </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">#include ’’lcd.h’’</span><span class="text small"> eingebunden. In der </span><span class="text typewriter small" style="background-color:#FFFFE6;">lcd.h</span><span class="text small"> müssen dann noch die Daten des Displays eingegeben werden (siehe Codelisting </span><a href="#LST23" title="23 ‣ 8.1.3 Ansteuerung des LC-Display ‣ 8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">23</span></a><span class="text small"> Zeilen 2–10).</span><br class="break"><span class="text small">Danach kann das Display im Programm mit den Befehlen aus Zeile 12–21 angesteuert werden.</span></p></div>
+<figure id="LST23" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 23: </span>lcd.h (Auszug)</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">/*<span class="text" style="color:#008000;">*&lt;<span class="text ltx_lst_space"> </span>Use<span class="text ltx_lst_space"> </span>0<span class="text ltx_lst_space"> </span>for<span class="text ltx_lst_space"> </span>HD44780<span class="text ltx_lst_space"> </span>controller,<span class="text ltx_lst_space">  </span>1<span class="text ltx_lst_space"> </span>for<span class="text ltx_lst_space"> </span>KS0073<span class="text ltx_lst_space"> </span>controller<span class="text ltx_lst_space"> </span></span>*/</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>LCD_CONTROLLER_KS0073<span class="text ltx_lst_space"> </span>0</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>LCD_LINES<span class="text ltx_lst_space">           </span>4<span class="text ltx_lst_space">          </span>/*<span class="text" style="color:#008000;">*&lt;<span class="text ltx_lst_space"> </span>number<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>visible<span class="text ltx_lst_space"> </span>lines<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>the<span class="text ltx_lst_space"> </span>display<span class="text ltx_lst_space"> </span></span>*/</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>LCD_DISP_LENGTH<span class="text ltx_lst_space">    </span>19<span class="text ltx_lst_space">        </span>/*<span class="text" style="color:#008000;">*&lt;<span class="text ltx_lst_space"> </span>visibles<span class="text ltx_lst_space"> </span>characters<span class="text ltx_lst_space"> </span>per<span class="text ltx_lst_space"> </span>line<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>the<span class="text ltx_lst_space"> </span>display<span class="text ltx_lst_space"> </span></span>*/</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>LCD_LINE_LENGTH<span class="text ltx_lst_space">  </span>0x40<span class="text ltx_lst_space">           </span>/*<span class="text" style="color:#008000;">*&lt;<span class="text ltx_lst_space"> </span>internal<span class="text ltx_lst_space"> </span>line<span class="text ltx_lst_space"> </span>length<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>the<span class="text ltx_lst_space"> </span>display<span class="text ltx_lst_space">   </span></span>*/</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">6</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>LCD_START_LINE1<span class="text ltx_lst_space">  </span>0x00<span class="text ltx_lst_space">           </span>/*<span class="text" style="color:#008000;">*&lt;<span class="text ltx_lst_space"> </span>DDRAM<span class="text ltx_lst_space"> </span>address<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>first<span class="text ltx_lst_space"> </span>char<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>line<span class="text ltx_lst_space"> </span>1<span class="text ltx_lst_space"> </span></span>*/</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">7</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>LCD_START_LINE2<span class="text ltx_lst_space">  </span>0x40<span class="text ltx_lst_space">           </span>/*<span class="text" style="color:#008000;">*&lt;<span class="text ltx_lst_space"> </span>DDRAM<span class="text ltx_lst_space"> </span>address<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>first<span class="text ltx_lst_space"> </span>char<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>line<span class="text ltx_lst_space"> </span>2<span class="text ltx_lst_space"> </span></span>*/</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">8</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>LCD_START_LINE3<span class="text ltx_lst_space">  </span>0x14<span class="text ltx_lst_space">           </span>/*<span class="text" style="color:#008000;">*&lt;<span class="text ltx_lst_space"> </span>DDRAM<span class="text ltx_lst_space"> </span>address<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>first<span class="text ltx_lst_space"> </span>char<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>line<span class="text ltx_lst_space"> </span>3<span class="text ltx_lst_space"> </span></span>*/</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">9</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>LCD_START_LINE4<span class="text ltx_lst_space">  </span>0x54<span class="text ltx_lst_space">           </span>/*<span class="text" style="color:#008000;">*&lt;<span class="text ltx_lst_space"> </span>DDRAM<span class="text ltx_lst_space"> </span>address<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>first<span class="text ltx_lst_space"> </span>char<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>line<span class="text ltx_lst_space"> </span>4<span class="text ltx_lst_space"> </span></span>*/</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">10</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>LCD_WRAP_LINES<span class="text ltx_lst_space">      </span>1<span class="text ltx_lst_space">       </span>/*<span class="text" style="color:#008000;">*&lt;<span class="text ltx_lst_space"> </span>0:<span class="text ltx_lst_space"> </span>no<span class="text ltx_lst_space"> </span>wrap,<span class="text ltx_lst_space"> </span>1:<span class="text ltx_lst_space"> </span>wrap<span class="text ltx_lst_space"> </span>at<span class="text ltx_lst_space"> </span>end<span class="text ltx_lst_space"> </span>of<span class="text ltx_lst_space"> </span>visibile<span class="text ltx_lst_space"> </span>line<span class="text ltx_lst_space"> </span></span>*/</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">11</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Funktionen<span class="text ltx_lst_space"> </span>zum<span class="text ltx_lst_space"> </span>Ansteuern<span class="text ltx_lst_space"> </span>des<span class="text ltx_lst_space"> </span>Displays:</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">12</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">extern</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space"> </span>lcd_init(uint8_t<span class="text ltx_lst_space"> </span>dispAttr);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">13</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">extern</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space"> </span>lcd_clrscr(<span class="text ltx_lst_keyword" style="color:#FF0000;">void</span>);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">14</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">extern</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space"> </span>lcd_home(<span class="text ltx_lst_keyword" style="color:#FF0000;">void</span>);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">15</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">extern</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space"> </span>lcd_gotoxy(uint8_t<span class="text ltx_lst_space"> </span>x,<span class="text ltx_lst_space"> </span>uint8_t<span class="text ltx_lst_space"> </span>y);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">16</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">extern</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space"> </span>lcd_putc(<span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>c);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">17</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">extern</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space"> </span>lcd_puts(<span class="text ltx_lst_keyword" style="color:#FF0000;">const</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>*s);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">18</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">extern</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space"> </span>lcd_puts_p(<span class="text ltx_lst_keyword" style="color:#FF0000;">const</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>*progmem_s);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">19</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">extern</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space"> </span>lcd_command(uint8_t<span class="text ltx_lst_space"> </span>cmd);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">20</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">extern</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space"> </span>lcd_data(uint8_t<span class="text ltx_lst_space"> </span>data);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">21</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>lcd_puts_P(__s)<span class="text ltx_lst_space"> </span>lcd_puts_p(PSTR(__s))</span></td>
+</tr>
+</table></figure></section><section id="SS4" class="subsection"><hgroup><h1 class="title small">
+<span class="tag">8.1.4 </span>RS-232-Schnittstelle</h1></hgroup><div id="SS4.p1" class="para">
+<p class="p"><span class="text small" style="background-color:#D9D9FF;">RS-232</span><span class="text small"> ist der Name der am häufigsten verwendeten seriellen Schnittstelle um Daten zwischen zwei elektronischen Geräten hin und her zu senden. </span><cite class="cite"><span class="text small">(</span><a href="bib.html#bib13" title="RS-232 - mikrocontroller.net" class="ref">7</a><span class="text small">)</span></cite><br class="break"><span class="text small">Auf dem STK500 ist bereits eine serielle Schnittstelle vorbereitet. Um diese nutzen zu können, müssen die Pins 3 und 4 des </span><em class="emph"><span class="text small">PortC</span></em><span class="text small"> (erster </span><span class="text small" style="background-color:#D9D9FF;">UART</span><span class="text small">) des Mikrocontrollers mit der Stiftleiste </span><em class="emph"><span class="text small">Rx/Tx</span></em><span class="text small"> auf dem STK500 verbunden werden. Eine weitere Schnittstelle wurde auf einem Steckbrett aufgebaut. Diese wurde mit den Pins 1 und 2 des </span><em class="emph"><span class="text small">PortC</span></em><span class="text small"> (zweiter UART) des Mikrocontrollers verbunden. Um die Schnittstellen im Mikrocontroller nutzen zu können müssen diese noch durch setzen von Bits in den entsprechenden Registern des Mikrocontrollers aktiviert werden.</span><br class="break"><span class="text small">Das Codelisting </span><a href="#LST24" title="24 ‣ 8.1.4 RS-232-Schnittstelle ‣ 8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">24</span></a><span class="text small"> teilt sich in 4 wesentliche Bereiche: </span><br class="break"></p>
+<ul id="Ch8.I1" class="itemize">
+<li id="Ch8.I1.i1" class="item"><div id="Ch8.I1.i1.p1" class="para"><p class="p"><span class="text small">Zeilen 1 – 2: Setzen der Baudrate und einbinden der benötigten Bibliotheken.</span></p></div></li>
+<li id="Ch8.I1.i2" class="item"><div id="Ch8.I1.i2.p1" class="para"><p class="p"><span class="text small">Zeilen 3 – 17: Initialisieren der Schnittstellen durch setzen der richtigen Bits in den entsprechenden Registern.</span></p></div></li>
+<li id="Ch8.I1.i3" class="item"><div id="Ch8.I1.i3.p1" class="para"><p class="p"><span class="text small">Zeilen 18 – 35: Funktionen zum Senden von Daten</span></p></div></li>
+<li id="Ch8.I1.i4" class="item"><div id="Ch8.I1.i4.p1" class="para"><p class="p"><span class="text small">Zeilen 36 – 65: Funktionen zum Empfangen von Daten</span></p></div></li>
+</ul>
+</div>
+<figure id="LST24" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 24: </span>RS-232</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>BAUD<span class="text ltx_lst_space"> </span>9600<span class="text ltx_lst_space">         </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">BAUD<span class="text ltx_lst_space"> </span>Rate<span class="text ltx_lst_space"> </span>definieren</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">keywordstyle <span class="text ltx_lst_directive">include</span><span class="text ltx_lst_space"> </span>&lt;util/setbaud.h&gt;<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>Funktionen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>Initialisieren</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space">        </span>uart_init<span class="text ltx_lst_space">                </span>()<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>0<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>IN<span class="text ltx_lst_space"> </span>(Rapidform<span class="text ltx_lst_space"> </span>Software/Terminal)</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">6</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>UBRR0H<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>UBRRH_VALUE;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">7</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>UBRR0L<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>UBRRL_VALUE;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">8</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>UCSR0C<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>(3<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>UCSZ00);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">9</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>UCSR0B<span class="text ltx_lst_space"> </span>|=<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>TXEN0);<span class="text ltx_lst_space">    </span>//<span class="text" style="color:#008000;">Transmitter<span class="text ltx_lst_space"> </span>Enabled</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">10</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>UCSR0B<span class="text ltx_lst_space"> </span>|=<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>RXEN0);<span class="text ltx_lst_space">    </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>RX<span class="text ltx_lst_space"> </span>einschalten</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">11</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>1<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>OUT<span class="text ltx_lst_space"> </span>(Stepper<span class="text ltx_lst_space"> </span>Karte/Drehtisch)</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">12</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>UBRR1H<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>UBRRH_VALUE;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">13</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>UBRR1L<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>UBRRL_VALUE;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">14</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>UCSR1C<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>(3<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>UCSZ00);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">15</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>UCSR1B<span class="text ltx_lst_space"> </span>|=<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>TXEN1);<span class="text ltx_lst_space">    </span>//<span class="text" style="color:#008000;">Transmitter<span class="text ltx_lst_space"> </span>Enabled</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">16</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>UCSR1B<span class="text ltx_lst_space"> </span>|=<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>RXEN1);<span class="text ltx_lst_space">    </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>RX<span class="text ltx_lst_space"> </span>einschalten</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">17</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">18</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>Zeichen<span class="text ltx_lst_space"> </span>senden</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">19</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space">        </span>uart_put_charater<span class="text ltx_lst_space">        </span>(<span class="text ltx_lst_keyword" style="color:#FF0000;">unsigned</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>c,<span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">int</span><span class="text ltx_lst_space"> </span>dir)<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">20</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>(dir<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>D_RapidForm)<span class="text ltx_lst_space"> </span>{<span class="text ltx_lst_space">       </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">To<span class="text ltx_lst_space"> </span>Rapidform</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">21</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">while</span><span class="text ltx_lst_space"> </span>(!(UCSR0A<span class="text ltx_lst_space"> </span>&amp;<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>UDRE0)))<span class="text ltx_lst_space"> </span>{}//<span class="text" style="color:#008000;">warten<span class="text ltx_lst_space"> </span>bis<span class="text ltx_lst_space"> </span>Senden<span class="text ltx_lst_space"> </span>moeglich</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">22</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>UDR0<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>c;<span class="text ltx_lst_space">            </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">sende<span class="text ltx_lst_space"> </span>Zeichen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">23</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">24</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">else</span><span class="text ltx_lst_space"> </span>{<span class="text ltx_lst_space">                              </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">To<span class="text ltx_lst_space"> </span>Stepper</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">25</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">while</span><span class="text ltx_lst_space"> </span>(!(UCSR1A<span class="text ltx_lst_space"> </span>&amp;<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>UDRE1)))<span class="text ltx_lst_space"> </span>{}//<span class="text" style="color:#008000;">warten<span class="text ltx_lst_space"> </span>bis<span class="text ltx_lst_space"> </span>Senden<span class="text ltx_lst_space"> </span>moeglich</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">26</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>UDR1<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>c;<span class="text ltx_lst_space">            </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">sende<span class="text ltx_lst_space"> </span>Zeichen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">27</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">28</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">29</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>String<span class="text ltx_lst_space"> </span>senden</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">30</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space">        </span>uart_put_string<span class="text ltx_lst_space">                </span>(<span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>*s,<span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">int</span><span class="text ltx_lst_space"> </span>dir)<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">31</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">while</span><span class="text ltx_lst_space"> </span>(*s){<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">so<span class="text ltx_lst_space"> </span>lange<span class="text ltx_lst_space"> </span>*s<span class="text ltx_lst_space"> </span>!=<span class="text ltx_lst_space"> </span>’\0’<span class="text ltx_lst_space"> </span>Terminierungszeichen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">32</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>uart_put_charater(*s,<span class="text ltx_lst_space"> </span>dir);<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Zeichenweise<span class="text ltx_lst_space"> </span>senden</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">33</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>s++;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">34</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">35</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">36</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>Zeichen<span class="text ltx_lst_space"> </span>empfangen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">37</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">int</span><span class="text ltx_lst_space">        </span>uart_get_character<span class="text ltx_lst_space">        </span>(<span class="text ltx_lst_keyword" style="color:#FF0000;">int</span><span class="text ltx_lst_space"> </span>dir)<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">38</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>(dir<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>D_RapidForm)<span class="text ltx_lst_space"> </span>{<span class="text ltx_lst_space">       </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Aus<span class="text ltx_lst_space"> </span>RapidForm<span class="text ltx_lst_space"> </span>Register<span class="text ltx_lst_space"> </span>auslesen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">39</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">while</span><span class="text ltx_lst_space"> </span>(!(UCSR0A<span class="text ltx_lst_space"> </span>&amp;<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>RXC0)))<span class="text ltx_lst_space"> </span>;<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">warten<span class="text ltx_lst_space"> </span>bis<span class="text ltx_lst_space"> </span>Zeichen<span class="text ltx_lst_space"> </span>verfuegbar</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">40</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">return</span><span class="text ltx_lst_space"> </span>UDR0;<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Zeichen<span class="text ltx_lst_space"> </span>aus<span class="text ltx_lst_space"> </span>UDR<span class="text ltx_lst_space"> </span>an<span class="text ltx_lst_space"> </span>Aufrufer<span class="text ltx_lst_space"> </span>zurueckgeben</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">41</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">42</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>(dir<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>D_Stepper)<span class="text ltx_lst_space"> </span>{<span class="text ltx_lst_space">               </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Aus<span class="text ltx_lst_space"> </span>Schrittmotor<span class="text ltx_lst_space"> </span>Register<span class="text ltx_lst_space"> </span>auslesen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">43</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">while</span><span class="text ltx_lst_space"> </span>(!(UCSR1A<span class="text ltx_lst_space"> </span>&amp;<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>RXC1)))<span class="text ltx_lst_space"> </span>;<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">warten<span class="text ltx_lst_space"> </span>bis<span class="text ltx_lst_space"> </span>Zeichen<span class="text ltx_lst_space"> </span>verfuegbar</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">44</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">return</span><span class="text ltx_lst_space"> </span>UDR1;<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Zeichen<span class="text ltx_lst_space"> </span>aus<span class="text ltx_lst_space"> </span>UDR<span class="text ltx_lst_space"> </span>an<span class="text ltx_lst_space"> </span>Aufrufer<span class="text ltx_lst_space"> </span>zurueckgeben</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">45</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">46</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">return</span><span class="text ltx_lst_space"> </span>-1;<span class="text ltx_lst_space">    </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Wenn<span class="text ltx_lst_space"> </span>nichts<span class="text ltx_lst_space"> </span>ausgelesen<span class="text ltx_lst_space"> </span>wurde<span class="text ltx_lst_space"> </span>-1<span class="text ltx_lst_space"> </span>zurueckgeben</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">47</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">48</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>String<span class="text ltx_lst_space"> </span>empfangen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">49</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space">        </span>uart_get_string<span class="text ltx_lst_space">                </span>(<span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>*<span class="text ltx_lst_space"> </span>string_in,<span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">int</span><span class="text ltx_lst_space"> </span>dir)<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">50</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>c;<span class="text ltx_lst_space">              </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Einzelnes<span class="text ltx_lst_space"> </span>Zeichen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">51</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">int</span><span class="text ltx_lst_space"> </span>i<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>0;<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Zaehlvariable</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">52</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">do</span><span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">53</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>c<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>uart_get_character(dir);<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Einzelnes<span class="text ltx_lst_space"> </span>Zeichen<span class="text ltx_lst_space"> </span>holen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">54</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>(c<span class="text ltx_lst_space"> </span>!=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">\r</span>’)<span class="text ltx_lst_space"> </span>{<span class="text ltx_lst_space">           </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Wenn<span class="text ltx_lst_space"> </span>keinn<span class="text ltx_lst_space"> </span>\r</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">55</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>*string_in<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>c;<span class="text ltx_lst_space">           </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Zeichen<span class="text ltx_lst_space"> </span>in<span class="text ltx_lst_space"> </span>Empfangsstring<span class="text ltx_lst_space"> </span>schreiben</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">56</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>string_in<span class="text ltx_lst_space"> </span>+=<span class="text ltx_lst_space"> </span>1;<span class="text ltx_lst_space">          </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Adresse<span class="text ltx_lst_space"> </span>des<span class="text ltx_lst_space"> </span>Empfangsstring<span class="text ltx_lst_space"> </span>um<span class="text ltx_lst_space"> </span>1<span class="text ltx_lst_space"> </span>ink</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">57</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>i++;<span class="text ltx_lst_space">                     </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Zaehlvariable<span class="text ltx_lst_space"> </span>um<span class="text ltx_lst_space"> </span>1<span class="text ltx_lst_space"> </span>erhoehen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">58</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">59</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}<span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">while</span><span class="text ltx_lst_space"> </span>(i<span class="text ltx_lst_space"> </span>&lt;<span class="text ltx_lst_space"> </span>100<span class="text ltx_lst_space"> </span>&amp;&amp;<span class="text ltx_lst_space"> </span>c<span class="text ltx_lst_space"> </span>!=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">\r</span>’<span class="text ltx_lst_space"> </span>&amp;&amp;<span class="text ltx_lst_space"> </span>c<span class="text ltx_lst_space"> </span>!=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">\n</span>’);<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">So<span class="text ltx_lst_space"> </span>lange<span class="text ltx_lst_space"> </span>bis<span class="text ltx_lst_space"> </span>\r<span class="text ltx_lst_space"> </span>\n<span class="text ltx_lst_space"> </span>o.<span class="text ltx_lst_space"> </span>&gt;100<span class="text ltx_lst_space"> </span>Zeichen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">60</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>*string_in<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>’<span class="text" style="color:#000000;">\0</span>’;<span class="text ltx_lst_space">                       </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">0<span class="text ltx_lst_space"> </span>Terminieren</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">61</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>(dir<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>D_Stepper)</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">62</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>LED_PORT<span class="text ltx_lst_space"> </span>|=<span class="text ltx_lst_space"> </span>(<span class="text ltx_lst_space"> </span>1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>LED3<span class="text ltx_lst_space"> </span>);<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">"Daten<span class="text ltx_lst_space"> </span>Vorhanden"<span class="text ltx_lst_space"> </span>LED<span class="text ltx_lst_space"> </span>ausschalten</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">63</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">else</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">64</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>LED_PORT<span class="text ltx_lst_space"> </span>|=<span class="text ltx_lst_space"> </span>(<span class="text ltx_lst_space"> </span>1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>LED2<span class="text ltx_lst_space"> </span>);<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">"Daten<span class="text ltx_lst_space"> </span>Vorhanden"<span class="text ltx_lst_space"> </span>LED<span class="text ltx_lst_space"> </span>ausschalten</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">65</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">}</span></td>
+</tr>
+</table></figure><div id="SS4.p2" class="para"><p class="p"><span class="text small">Damit stehen die essentiellen Funktionen </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">uart_put_string(dir)</span><span class="text small"> und </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">uart_get_string(dir)</span><span class="text small"> zur Verfügung. Mit diesen kann der Mikrocontroller über die serielle Schnittstelle Strings senden und empfangen. Der Parameter </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">dir</span><span class="text small"> gibt dabei die Schnittstelle an über die gesendet oder empfangen werden soll.</span></p></div></section></section>
+        </div>
+    <footer class="footer">July 1, 2012<a href="Ch8.html" title="Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref previous"><span class="text reftitle"><span class="tag"><span class="text small">8 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a><a href="Ch8.S2.html" title="8.2 Befehlssätze ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref next"><span class="text reftitle"><span class="tag">8.2 </span>Befehlssätze</span></a>
+      </footer>
+      </div>
+    </body>
+</html>

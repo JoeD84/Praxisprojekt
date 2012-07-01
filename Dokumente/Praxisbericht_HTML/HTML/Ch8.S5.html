@@ -1,0 +1,323 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers</title>
+    <!--Generated on Sun Jul  1 13:32:29 2012 by LaTeXML (version 0.7.9alpha) http://dlmf.nist.gov/LaTeXML/.-->
+      <!--Document created on July 1, 2012.-->
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="start" href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="prev" href="Ch8.S4.html" title="8.4 Verbesserungen an der vorhandenen Hardware ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="next" href="Ch8.S6.html" title="8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
+    <link rel="stylesheet" type="text/css" href="core.css">
+    <link rel="stylesheet" type="text/css" href="Praxisbericht.css">
+  </head>
+  <body>
+    <nav class="navbar"><a href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref start"><span class="text reftitle">Übersetzen von Schrittmotorbefehlen<br class="break">Entwurf eines Hardwareübersetzers</span></a>
+    
+  <ul class="toc">
+  <li class="tocentry">
+<a href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Übersetzen von Schrittmotorbefehlen<br class="break">Entwurf eines Hardwareübersetzers</span></a>
+  <ul class="toc">
+  <li class="tocentry"><a href="Chx1.html" title="Hinweise zum Dokument ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Hinweise zum Dokument</span></a></li>
+  <li class="tocentry"><a href="Ch1.html" title="Kapitel 1 Einleitung ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">1 </span></span><span class="text small">Einleitung</span></span></a></li>
+  <li class="tocentry"><a href="Ch2.html" title="Kapitel 2 Vorstellung der vorhandenen Hardware ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">2 </span></span><span class="text small">Vorstellung der vorhandenen Hardware</span></span></a></li>
+  <li class="tocentry"><a href="Ch3.html" title="Kapitel 3 Vorstellung der vorhandenen Software ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">3 </span></span><span class="text small">Vorstellung der vorhandenen Software</span></span></a></li>
+  <li class="tocentry"><a href="Ch4.html" title="Kapitel 4 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">4 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a></li>
+  <li class="tocentry"><a href="Ch5.html" title="Kapitel 5 Probleme und Lösungen ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">5 </span></span><span class="text small">Probleme und Lösungen</span></span></a></li>
+  <li class="tocentry"><a href="Ch6.html" title="Kapitel 6 Vorstellung der vorhandenen Hardware ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">6 </span></span><span class="text small">Vorstellung der vorhandenen Hardware</span></span></a></li>
+  <li class="tocentry"><a href="Ch7.html" title="Kapitel 7 Vorstellung der vorhandenen Software ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">7 </span></span><span class="text small">Vorstellung der vorhandenen Software</span></span></a></li>
+  <li class="tocentry">
+<a href="Ch8.html" title="Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">8 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a>
+  <ul class="toc">
+  <li class="tocentry"><a href="Ch8.S1.html" title="8.1 Bereitstellen grundlegender Funktionalitäten ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.1 </span>Bereitstellen grundlegender Funktionalitäten</span></a></li>
+  <li class="tocentry"><a href="Ch8.S2.html" title="8.2 Befehlssätze ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.2 </span>Befehlssätze</span></a></li>
+  <li class="tocentry"><a href="Ch8.S3.html" title="8.3 Kommunikation mit der vorhandenen Schrittmotorsteuerung ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.3 </span>Kommunikation mit der vorhandenen Schrittmotorsteuerung</span></a></li>
+  <li class="tocentry"><a href="Ch8.S4.html" title="8.4 Verbesserungen an der vorhandenen Hardware ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.4 </span>Verbesserungen an der vorhandenen Hardware</span></a></li>
+  <li class="tocentry self">
+<span class="ref toc here"><span class="text reftitle"><span class="tag">8.5 </span>Kommunikation mit RapidForm2004</span></span>
+  <ul class="toc">
+  <li class="tocentry">
+<a href="#SS1" title="8.5.1 Befehle empfangen ‣ 8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.5.1 </span>Befehle empfangen</span></a>
+  <ul class="toc">
+  <li class="tocentry"><a href="#SS1.SSS1" title="8.5.1.1 Automatische Auswahl eines Befehlssatzes ‣ 8.5.1 Befehle empfangen ‣ 8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.5.1.1 </span>Automatische Auswahl eines Befehlssatzes</span></a></li>
+    </ul>
+</li>
+    </ul>
+</li>
+  <li class="tocentry"><a href="Ch8.S6.html" title="8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.6 </span>Auswerte-Funktionen</span></a></li>
+  <li class="tocentry"><a href="Ch8.S7.html" title="8.7 Platinenlayout und 19’’-Einschub ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag">8.7 </span>Platinenlayout und 19’’-Einschub</span></a></li>
+    </ul>
+</li>
+  <li class="tocentry"><a href="Ch9.html" title="Kapitel 9 Probleme und Lösungen ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">9 </span></span><span class="text small">Probleme und Lösungen</span></span></a></li>
+  <li class="tocentry"><a href="Ch10.html" title="Kapitel 10 Fazit und weitere Möglichkeiten ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">10 </span></span><span class="text small">Fazit und weitere Möglichkeiten</span></span></a></li>
+  <li class="tocentry"><a href="bib.html" title="Literatur ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle">Literatur</span></a></li>
+  <li class="tocentry"><a href="Ch11.html" title="Kapitel 11 Eidesstattliche Erklärung ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">11 </span></span><span class="text small">Eidesstattliche Erklärung</span></span></a></li>
+  <li class="tocentry"><a href="A1.html" title="Anhang A Anhang ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref toc"><span class="text reftitle"><span class="tag"><span class="text small">A </span></span><span class="text small">Anhang</span></span></a></li>
+    </ul>
+</li>
+    </ul>
+      </nav>
+    <div class="main">
+    <header class="header"><a href="Ch8.html" title="Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref up"><span class="text reftitle"><span class="tag"><span class="text small">8 </span></span><span class="text small">Zeitlicher Arbeitsablauf</span></span></a><a href="Ch8.S4.html" title="8.4 Verbesserungen an der vorhandenen Hardware ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref previous"><span class="text reftitle"><span class="tag">8.4 </span>Verbesserungen an der vorhandenen Hardware</span></a><a href="Ch8.S6.html" title="8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref next"><span class="text reftitle"><span class="tag">8.6 </span>Auswerte-Funktionen</span></a>
+      </header>
+    <div class="content">
+<section class="section"><hgroup><h1 class="title small">
+<span class="tag">8.5 </span>Kommunikation mit RapidForm2004</h1></hgroup><div id="p1" class="para"><p class="p"><span class="text small">RapidForm2004 sendet Befehle die für die Drehtischsteuerung bestimmt sind an den Mikrocontroller. Diese sollen dort empfangen, ausgewertet und in verständlicher Form an die Drehtischsteuerung weiter gegeben werden. RapidForm2004 verwendet dabei verschiedene Befehlssätze für verschiedene Schrittmotorsteuerungen. Für jeden dieser Befehlssätze wird eine eigene Auswerte-Funktion geschrieben. Im folgenden Kapitel wird nun das Empfangen der Befehle beschrieben und eine erste Auswertung, die den empfangenen Befehl dem Befehlssatz einer Schrittmotorsteuerung zuordnet.
+Nachdem ein Befehl zugeordnet wurde und in der entsprechenden Auswerte-Funktion erkannt wurde, soll ein entsprechender Befehl an die Drehtischsteuerung gesendet und die Antwort der Drehtischsteuerung vom Mikrocontroller ausgewertet werden. Abschließend soll eine entsprechende Antwort an RapidForm2004 zurück gesendet werden. Abbildung </span><a href="#Ch8.F5" title="Abbildung 8.5 ‣ 8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">8.5</span></a><span class="text small"> zeigt eine schematische Übersicht dieser Kommunikation.</span><br class="break"><span class="text small">Die Kommunikation mit RapidForm2004 ist ähnlich zu der mit der Schrittmotorsteuerung. Diese wurde bereits in Kapitel </span><a href="Ch8.S3.html" title="8.3 Kommunikation mit der vorhandenen Schrittmotorsteuerung ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">8.3</span></a><span class="text small"> ausführlich beschrieben. Daher wird die Kommunikation hier etwas oberflächlicher behandelt.</span></p></div>
+<figure id="Ch8.F5" class="figure"><img src="x13.png" id="Ch8.F5.g1" class="graphics centering" width="674" height="292"><figcaption class="caption centering small"><span class="tag">Abbildung 8.5: </span>Schema der Kommunikation</figcaption></figure><section id="SS1" class="subsection"><hgroup><h1 class="title small">
+<span class="tag">8.5.1 </span>Befehle empfangen</h1></hgroup><div id="SS1.p1" class="para"><p class="p"><span class="text small">Zuerst sollen nun die Befehle von RapidForm2004 an den Mikrocontroller, gespeichert werden. Anschließend wird die automatische Auswahl des Befehlssatzes beschrieben.</span><br class="break"><span class="text small">Um anstehende Befehle zu empfangen wird, ähnlich wie in Kapitel </span><a href="Ch8.S3.html#SS2" title="8.3.2 Antworten empfangen und speichern ‣ 8.3 Kommunikation mit der vorhandenen Schrittmotorsteuerung ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">8.3.2</span></a><span class="text small">, eine Funktion die ständig das Eingangsregister der ersten seriellen Schnittstelle abfragt verwendet (siehe Codelisting </span><a href="#LST31" title="31 ‣ 8.5.1 Befehle empfangen ‣ 8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">31</span></a><span class="text small">). Auch hier wird die Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">uart_rx(dir)</span><span class="text small"> aufgerufen, jedoch mit dem Parameter </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">D_RapidForm</span><span class="text small">. Der empfangenen String wird auch hier in die Variable </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">str_rx</span><span class="text small"> gespeichert. Somit können nun auch Strings von RapidForm2004 empfangen und in der Variablen </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">str_rx</span><span class="text small"> gespeichert werden.</span></p></div>
+<figure id="LST31" class="listing ltx_lstlisting ltx_lst_language_Java"><figcaption class="caption small"><span class="tag">Listing 31: </span>RS-232 Empfang - RapidForm2004</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>((UCSR0A<span class="text ltx_lst_space"> </span>&amp;<span class="text ltx_lst_space"> </span>(1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>RXC0))){<span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">RapidForm<span class="text ltx_lst_space"> </span>Polling</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>LED_PORT<span class="text ltx_lst_space"> </span>&amp;=<span class="text ltx_lst_space"> </span>(<span class="text ltx_lst_space"> </span>1<span class="text ltx_lst_space"> </span>&lt;&lt;<span class="text ltx_lst_space"> </span>LED2<span class="text ltx_lst_space"> </span>);<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">LED<span class="text ltx_lst_space"> </span>einschalten</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>uart_rx(D_RapidForm);<span class="text ltx_lst_space">             </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Register<span class="text ltx_lst_space"> </span>auslesen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">}</span></td>
+</tr>
+</table></figure><section id="SS1.SSS1" class="subsubsection"><hgroup><h1 class="title small">
+<span class="tag">8.5.1.1 </span>Automatische Auswahl eines Befehlssatzes</h1></hgroup><div id="SS1.SSS1.p1" class="para"><p class="p"><span class="text small">Nun geht es darum, dass der Mikrocontroller anhand eines ersten Befehls der empfangen wird, festlegt, mit welchem Befehlssatz fortan kommuniziert werden soll. Die Kennung für den Befehlssatz wird in einer globalen Variable gespeichert und alle weiteren Befehle werden an die entsprechende Auswerte-Funktion für diesen Befehlssatz übergeben.</span><br class="break"><span class="text small">In der Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">uart_rx(dir)</span><span class="text small">(Codelisting </span><a href="#LST32" title="32 ‣ 8.5.1.1 Automatische Auswahl eines Befehlssatzes ‣ 8.5.1 Befehle empfangen ‣ 8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">32</span></a><span class="text small">) wird nun in der ersten </span><em class="emph"><span class="text small">if-Abfrage</span></em><span class="text small"> entschieden, von welcher Schnittstelle der empfangene Befehl kam. Diese verzweigt nun, da </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">D_RapidForm</span><span class="text small"> übergeben wurde, in den else-Teil. In diesem wird mit mehreren </span><em class="emph"><span class="text small">if-Abfragen</span></em><span class="text small"> überprüft, ob bereits der Befehlssatz für einen bestimmten Motor ausgewählt wurde. Ist dies nicht der Fall, wird der empfangende String an die Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">switch_Motor(str_rx)</span><span class="text small">(Codelisting </span><a href="#LST33" title="33 ‣ 8.5.1.1 Automatische Auswahl eines Befehlssatzes ‣ 8.5.1 Befehle empfangen ‣ 8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">33</span></a><span class="text small">) übergeben. Diese prüfte mit der aus Kapitel </span><a href="Ch8.S3.html#SS3" title="8.3.3 Antworten auswerten ‣ 8.3 Kommunikation mit der vorhandenen Schrittmotorsteuerung ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">8.3.3</span></a><span class="text small"> bekannten Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">FindStringInArray(str_rx, pOptions, 3)</span><span class="text small">, den angekommenen String gegen die Initialisierungsbefehle der einzelnen Befehlssätze. Die Initialisierungsbefehle sind die ersten Befehle die RapidForm2004 an eine Schrittmotorsteuerung sendet um zu prüfen ob diese vorhanden ist. In diesem ersten Schritt wird der String nur zur Identifizierung des von RapidForm2004 verwendeten Befehlssatzes verwendet. Das Antworten auf einen String wird erst in den nachfolgenden Kapiteln beschrieben. Die Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">switch_Motor(str_rx)</span><span class="text small"> gibt einen numerischen Wert zurück. Jede Zahl entspricht dabei dem Befehlssatz für eine Schrittmotorsteuerung. Die Zahlenwerte werden dabei mittels Makro-Definitionen (Codelisting </span><a href="#LST33" title="33 ‣ 8.5.1.1 Automatische Auswahl eines Befehlssatzes ‣ 8.5.1 Befehle empfangen ‣ 8.5 Kommunikation mit RapidForm2004 ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref"><span class="text reftag">33</span></a><span class="text small"> Zeile 1-6) durch lesbare Text-Variablen ersetzt. Dies erhöhte die Lesbarkeit und das Verständnis. War dieser Schritt erfolgreich, wird in den folgenden if-Abfragen die richtige Auswerte-Funktion aufgerufen. Konnte die Funktion </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">switch_Motor(str_rx)</span><span class="text small"> den empfangen Befehl nicht zuordnen, gibt sie </span><span class="text typewriter small" style="color:#0000FF;background-color:#FFFFE6;">M_UNK</span><span class="text small"> zurück und es wird auf dem Display </span><em class="emph"><span class="text small">Unbekannter Motor!</span></em><span class="text small"> ausgegeben.</span><br class="break"><span class="text small">Somit ist es möglich Befehle von RapidForm2004 zu empfangen und an die richtige Auswerte-Funktionen zu übergeben. Zusätzlich wird die Programmierung dadurch wesentlich robuster, da unbekannte Befehle ignoriert werden.</span><br class="break"><span class="text small">Der Nachteil dieses Vorgehens besteht darin, dass für ein wechseln des Befehlssatzes der Mikrocontroller neu gestartet werden muss. Ein Beheben dieses Nachteils wäre nicht ohne weiteres möglich gewesen.</span></p></div>
+<figure id="LST32" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 32: </span>Funktion: uart rx()</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">UART<span class="text ltx_lst_space"> </span>Empfangsregister<span class="text ltx_lst_space"> </span>auslesen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">void</span><span class="text ltx_lst_space">        </span>uart_rx<span class="text ltx_lst_space">                                </span>(<span class="text ltx_lst_keyword" style="color:#FF0000;">int</span><span class="text ltx_lst_space"> </span>dir)<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>uart_get_string(str_rx,<span class="text ltx_lst_space"> </span>dir);<span class="text ltx_lst_space">   </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">String<span class="text ltx_lst_space"> </span>aus<span class="text ltx_lst_space"> </span>Empfangsregister<span class="text ltx_lst_space"> </span>auslesen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span><span class="text ltx_lst_space"> </span>(dir<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>D_Stepper)<span class="text ltx_lst_space">         </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Empfangsregister<span class="text ltx_lst_space"> </span>Stepper</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>switch_Stepper(str_rx);<span class="text ltx_lst_space">             </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Uebersung<span class="text ltx_lst_space"> </span>Stepper</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">6</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">else</span>{<span class="text ltx_lst_space">                               </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Empfangsregsiter<span class="text ltx_lst_space"> </span>RapidForm</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">7</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Uebersetzungsfunktion<span class="text ltx_lst_space"> </span>auswaehlen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">8</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span>(Initialized<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>M_UNK){<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Unbekannter<span class="text ltx_lst_space"> </span>Initialisierungsbefehl</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">9</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>lcd_puts("<span class="text" style="color:#000000;">Unbekannter<span class="text ltx_lst_space"> </span>Motor!\n</span>");</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">10</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>Initialized<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>M_NOTI;<span class="text ltx_lst_space">    </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Variable<span class="text ltx_lst_space"> </span>Initialized<span class="text ltx_lst_space"> </span>zuruecksetzen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">11</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">12</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span>(Initialized<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>M_NOTI){<span class="text ltx_lst_space"> </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Befehlssatz<span class="text ltx_lst_space"> </span>bestimmen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">13</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>Initialized<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>switch_Motor(str_rx);<span class="text ltx_lst_space"> </span>//<span class="text" style="color:#008000;">Automatische<span class="text ltx_lst_space"> </span>Befehlssatzwahl</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">14</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">15</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span>(Initialized<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>M_ISEL)<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Uebersetzung<span class="text ltx_lst_space"> </span>ISEL</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">16</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>switch_Isel(str_rx);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">17</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span>(Initialized<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>M_CSG)<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Uebersetzung<span class="text ltx_lst_space"> </span>CSG</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">18</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>switch_csg(str_rx);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">19</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span>(Initialized<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>M_ZETA)<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Uebersetzung<span class="text ltx_lst_space"> </span>Zeta</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">20</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>switch_Zeta(str_rx);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">21</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">if</span>(Initialized<span class="text ltx_lst_space"> </span>==<span class="text ltx_lst_space"> </span>M_TERMINAL)<span class="text ltx_lst_space">  </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Uebersetzung<span class="text ltx_lst_space"> </span>Terminal</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">22</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>switch_Terminal(str_rx);</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">23</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">24</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">}</span></td>
+</tr>
+</table></figure><figure id="LST33" class="listing ltx_lstlisting ltx_lst_language_C"><figcaption class="caption small"><span class="tag">Listing 33: </span>Funktion: switch Motor()</figcaption><table class="tabular">
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">1</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>M_UNK<span class="text ltx_lst_space">              </span>-2</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">2</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>M_NOTI<span class="text ltx_lst_space">              </span>-1</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">3</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>M_ISEL<span class="text ltx_lst_space">               </span>0</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">4</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>M_CSG<span class="text ltx_lst_space">               </span>1</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">5</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>M_ZETA<span class="text ltx_lst_space">               </span>2</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">6</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">define<span class="text ltx_lst_space"> </span>M_TERMINAL<span class="text ltx_lst_space">       </span>3</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">7</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">int</span><span class="text ltx_lst_space">        </span>Initialized<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>M_NOTI;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">8</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Automatische<span class="text ltx_lst_space"> </span>Befehlssatzwahl</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">9</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_keyword" style="color:#FF0000;">int</span><span class="text ltx_lst_space">        </span>switch_Motor<span class="text ltx_lst_space">                </span>(<span class="text ltx_lst_keyword" style="color:#FF0000;">char</span><span class="text ltx_lst_space"> </span>*<span class="text ltx_lst_space"> </span>str_rx)<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">10</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">const</span><span class="text ltx_lst_space"> </span><span class="text ltx_lst_keyword" style="color:#FF0000;">char</span>*<span class="text ltx_lst_space"> </span>pOptions[]<span class="text ltx_lst_space"> </span>=<span class="text ltx_lst_space"> </span>{<span class="text ltx_lst_space">       </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Array<span class="text ltx_lst_space"> </span>mit<span class="text ltx_lst_space"> </span>Initialisierungsbefehlen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">11</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>"<span class="text" style="color:#000000;">@01</span>",<span class="text ltx_lst_space">          </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">0<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Isel</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">12</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>"<span class="text" style="color:#000000;">Q:</span>",<span class="text ltx_lst_space">           </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">1<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>CSG</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">13</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>"<span class="text" style="color:#000000;">ECHO0</span>",<span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">2<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Zeta</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">14</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>"<span class="text" style="color:#000000;">!Terminal</span>",<span class="text ltx_lst_space">    </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">3<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Terminal<span class="text ltx_lst_space"> </span>ansteuerung!</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">15</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                        </span>0<span class="text ltx_lst_space"> </span>};</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">16</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">Ankommenden<span class="text ltx_lst_space"> </span>String<span class="text ltx_lst_space"> </span>gegen<span class="text ltx_lst_space"> </span>Array<span class="text ltx_lst_space"> </span>pruefen</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">17</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">switch</span><span class="text ltx_lst_space"> </span>(FindStringInArray(str_rx,<span class="text ltx_lst_space"> </span>pOptions,<span class="text ltx_lst_space"> </span>3))<span class="text ltx_lst_space"> </span>{</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">18</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">case</span><span class="text ltx_lst_space"> </span>0:<span class="text ltx_lst_space">             </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">0<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>ISEL</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">19</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">return</span><span class="text ltx_lst_space"> </span>M_ISEL;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">20</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">break</span>;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">21</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">case</span><span class="text ltx_lst_space"> </span>1:<span class="text ltx_lst_space">             </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">1<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>CSG</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">22</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">return</span><span class="text ltx_lst_space"> </span>M_CSG;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">23</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">break</span>;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">24</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">case</span><span class="text ltx_lst_space"> </span>2:<span class="text ltx_lst_space">                     </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">2<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Zeta</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">25</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">return</span><span class="text ltx_lst_space"> </span>M_ZETA;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">26</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">break</span>;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">27</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">case</span><span class="text ltx_lst_space"> </span>3:<span class="text ltx_lst_space">                     </span>//<span class="text ltx_lst_space" style="color:#008000;"> </span><span class="text" style="color:#008000;">3<span class="text ltx_lst_space"> </span>-<span class="text ltx_lst_space"> </span>Terminal<span class="text ltx_lst_space"> </span>ansteuerung</span></span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">28</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">return</span><span class="text ltx_lst_space"> </span>M_TERMINAL;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">29</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">break</span>;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">30</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span><span class="text ltx_lst_keyword" style="color:#FF0000;">default</span>:</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">31</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">                </span><span class="text ltx_lst_keyword" style="color:#FF0000;">return</span><span class="text ltx_lst_space"> </span>M_UNK;</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">32</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote"><span class="text ltx_lst_space">        </span>}</span></td>
+</tr>
+<tr class="tr">
+    <td class="td ltx_lst_linenum"><span class="text tiny">33</span></td>
+    <td class="td"><span class="text ltx_lst_line footnote">}</span></td>
+</tr>
+</table></figure></section></section></section>
+        </div>
+    <footer class="footer">July 1, 2012<a href="Ch8.S4.html" title="8.4 Verbesserungen an der vorhandenen Hardware ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref previous"><span class="text reftitle"><span class="tag">8.4 </span>Verbesserungen an der vorhandenen Hardware</span></a><a href="Ch8.S6.html" title="8.6 Auswerte-Funktionen ‣ Kapitel 8 Zeitlicher Arbeitsablauf ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref next"><span class="text reftitle"><span class="tag">8.6 </span>Auswerte-Funktionen</span></a>
+      </footer>
+      </div>
+    </body>
+</html>

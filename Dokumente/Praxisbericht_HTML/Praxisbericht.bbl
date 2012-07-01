@@ -1,0 +1,56 @@
+\begin{thebibliography}{10}
+
+\bibitem{atmel:ug_STK500}
+Atmel Corporation, San Jose, CA 95131, USA.
+\newblock {\em AVR STK500 User Guide}, 06 2003.
+
+\bibitem{atmel:ug_324A}
+Atmel Corporation, San Jose, CA 95131, USA.
+\newblock {\em ATmega164A/PA/324A/PA/644A/PA/1284/P Complete}, 06 2011.
+
+\bibitem{atmel:8515}
+Atmel Corporation.
+\newblock Atmega8515- atmel corporation, 2012.
+\newblock [Online; Stand 11. Februar 2012].
+
+\bibitem{uC:Dannegger}
+Peter Dannegger.
+\newblock Entprellung - mikrocontroller.net, 2012.
+\newblock [Online; Stand 11. Februar 2012].
+
+\bibitem{uC:Fleury}
+Peter Fleury.
+\newblock Peter fleury's home page, 2012.
+\newblock [Online; Stand 11. Februar 2012].
+
+\bibitem{kosatec}
+Kosatec.
+\newblock Kosatec, 2012.
+\newblock [Online; Stand 01. November 2011].
+
+\bibitem{uC:RS232}
+Mikrocontroller.ner.
+\newblock Rs-232 - mikrocontroller.net, 2012.
+\newblock [Online; Stand 11. Februar 2012].
+
+\bibitem{Minolta:Einleitung}
+Minolta.
+\newblock Funktionen - vi-910 | konica minolta, 2012.
+\newblock [Online; Stand 11. Februar 2012].
+
+\bibitem{rs:ug_stepper}
+RS, Mörfelden-Walldorf.
+\newblock {\em Schrittmotor-Platine mit integriertem Treiber}, 03 2001.
+
+\bibitem{wiki:ASCII}
+Wikipedia.
+\newblock American standard code for information interchange --- wikipedia{,}
+  die freie enzyklopädie, 2012.
+\newblock [Online; Stand 23. Februar 2012].
+
+\bibitem{wiki:Daisy}
+Wikipedia.
+\newblock Daisy chain --- wikipedia{,} die freie enzyklopädie, 2012.
+\newblock [Online; Stand 11. Februar 2012].
+
+\end{thebibliography}

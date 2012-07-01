@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="/home/joe/Praxisbericht"?>
+<?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML">
+  <bibliography xml:id="bib">
+    <title/>
+    <biblist>
+      <bibentry key="wiki:proto" type="misc" xml:id="bib.bib1">
+        <bib-name role="author">
+          <surname>Wikipedia</surname>
+        </bib-name>
+        <bib-title>Kommunikationsprotokoll — wikipedia, die freie enzyklopÃ¤die</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://de.wikipedia.org/w/index.php?title=Kommunikationsprotokoll&amp;oldid=99325271">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 25. Februar 2012]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{wiki:proto,
+    author = {Wikipedia},
+     title = {Kommunikationsprotokoll — Wikipedia{,} Die freie Enzyklopädie},
+      year = {2012},
+       url = {http://de.wikipedia.org/w/index.php?title=Kommunikationsprotokoll&amp;oldid=99325271},
+      note = {[Online; Stand 25. Februar 2012]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="wiki:ascii" type="misc" xml:id="bib.bib2">
+        <bib-name role="author">
+          <surname>Wikipedia</surname>
+        </bib-name>
+        <bib-title>American standard code for information interchange — wikipedia, die freie enzyklopÃ¤die</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://de.wikipedia.org/w/index.php?title=American_Standard_Code_for_Information_Interchange&amp;oldid=99892678">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 23. Februar 2012]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{wiki:ascii,
+    author = {Wikipedia},
+     title = {American Standard Code for Information Interchange — Wikipedia{,} Die freie Enzyklopädie},
+      year = {2012},
+       url = {http://de.wikipedia.org/w/index.php?title=American_Standard_Code_for_Information_Interchange&amp;oldid=99892678},
+      note = {[Online; Stand 23. Februar 2012]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="wiki:stiftleiste" type="misc" xml:id="bib.bib3">
+        <bib-name role="author">
+          <surname>Wikipedia</surname>
+        </bib-name>
+        <bib-title>Stiftleiste — wikipedia, die freie enzyklopÃ¤die</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://de.wikipedia.org/w/index.php?title=Stiftleiste&amp;oldid=99052435">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 11. Februar 2012]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{wiki:stiftleiste,
+    author = {Wikipedia},
+     title = {Stiftleiste — Wikipedia{,} Die freie Enzyklopädie},
+      year = {2012},
+       url = {http://de.wikipedia.org/w/index.php?title=Stiftleiste&amp;oldid=99052435},
+      note = {[Online; Stand 11. Februar 2012]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="wiki:daisy" type="misc" xml:id="bib.bib4">
+        <bib-name role="author">
+          <surname>Wikipedia</surname>
+        </bib-name>
+        <bib-title>Daisy chain — wikipedia, die freie enzyklopÃ¤die</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://de.wikipedia.org/w/index.php?title=Daisy_chain&amp;oldid=98475104">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 11. Februar 2012]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{wiki:daisy,
+    author = {Wikipedia},
+     title = {Daisy chain — Wikipedia{,} Die freie Enzyklopädie},
+      year = {2012},
+       url = {http://de.wikipedia.org/w/index.php?title=Daisy_chain&amp;oldid=98475104},
+      note = {[Online; Stand 11. Februar 2012]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="atmel:8515" type="misc" xml:id="bib.bib5">
+        <bib-name role="author">
+          <surname>Corporation</surname>
+          <givenname>Atmel</givenname>
+        </bib-name>
+        <bib-title>ATmega8515- atmel corporation</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://www.atmel.com/devices/ATMEGA8515.aspx">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 11. Februar 2012]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{atmel:8515,
+    author = {Atmel Corporation},
+     title = {ATmega8515- Atmel Corporation},
+      year = {2012},
+       url = {http://www.atmel.com/devices/ATMEGA8515.aspx},
+      note = {[Online; Stand 11. Februar 2012]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="atmel:324a" type="misc" xml:id="bib.bib6">
+        <bib-name role="author">
+          <surname>Corporation</surname>
+          <givenname>Atmel</givenname>
+        </bib-name>
+        <bib-title>ATmega324A- atmel corporation</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://www.atmel.com/devices/ATMEGA324A.aspx">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 11. Februar 2012]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{atmel:324a,
+    author = {Atmel Corporation},
+     title = {ATmega324A- Atmel Corporation},
+      year = {2012},
+       url = {http://www.atmel.com/devices/ATMEGA324A.aspx},
+      note = {[Online; Stand 11. Februar 2012]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="rs:ug_stepper" type="manual" xml:id="bib.bib7">
+        <bib-title>Schrittmotor-platine mit integriertem treiber</bib-title>
+        <bib-key>V9141</bib-key>
+        <bib-organization>RS</bib-organization>
+        <bib-place>MÃ¶rfelden-Walldorf</bib-place>
+        <bib-data role="month">03</bib-data>
+        <bib-date role="publication">2001-03</bib-date>
+        <bib-data role="self" type="BibTeX">@manual{rs:ug_stepper,
+     title = {Schrittmotor-Platine mit integriertem Treiber},
+       key = {V9141},
+organization = {RS},
+   address = {Mörfelden-Walldorf},
+     month = {03},
+      year = {2001}}
+</bib-data>
+      </bibentry>
+      <bibentry key="atmel:ug_324a" type="manual" xml:id="bib.bib8">
+        <bib-title>ATmega164A/pa/324a/pa/644a/pa/1284/p complete</bib-title>
+        <bib-organization>Atmel Corporation</bib-organization>
+        <bib-place>San Jose, CA 95131, USA</bib-place>
+        <bib-data role="month">06</bib-data>
+        <bib-date role="publication">2011-06</bib-date>
+        <bib-data role="self" type="BibTeX">@manual{atmel:ug_324a,
+     title = {ATmega164A/PA/324A/PA/644A/PA/1284/P Complete},
+organization = {Atmel Corporation},
+   address = {San Jose, CA 95131, USA},
+     month = {06},
+      year = {2011}}
+</bib-data>
+      </bibentry>
+      <bibentry key="atmel:ug_stk500" type="manual" xml:id="bib.bib9">
+        <bib-title>AVR stk500 user guide</bib-title>
+        <bib-organization>Atmel Corporation</bib-organization>
+        <bib-place>San Jose, CA 95131, USA</bib-place>
+        <bib-data role="month">06</bib-data>
+        <bib-date role="publication">2003-06</bib-date>
+        <bib-data role="self" type="BibTeX">@manual{atmel:ug_stk500,
+     title = {AVR STK500 User Guide},
+organization = {Atmel Corporation},
+   address = {San Jose, CA 95131, USA},
+     month = {06},
+      year = {2003}}
+</bib-data>
+      </bibentry>
+      <bibentry key="minolta:einleitung" type="misc" xml:id="bib.bib10">
+        <bib-name role="author">
+          <surname>Minolta</surname>
+        </bib-name>
+        <bib-title>Funktionen - vi-910 — konica minolta</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://www.konicaminolta.eu/de/messinstrumente/produkte/3d-messtechnik/beruehrungsloser-3d-scanner/vi-910/funktionen.html">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 11. Februar 2012]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{minolta:einleitung,
+    author = {Minolta},
+     title = {Funktionen - VI-910 | KONICA MINOLTA},
+      year = {2012},
+       url = {http://www.konicaminolta.eu/de/messinstrumente/produkte/3d-messtechnik/beruehrungsloser-3d-scanner/vi-910/funktionen.html},
+      note = {[Online; Stand 11. Februar 2012]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="uc:fleury" type="misc" xml:id="bib.bib11">
+        <bib-name role="author">
+          <surname>Fleury</surname>
+          <givenname>Peter</givenname>
+        </bib-name>
+        <bib-title>Peter fleury’s home page</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://jump.to/fleury">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 11. Februar 2012]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{uc:fleury,
+    author = {Peter Fleury},
+     title = {Peter Fleury's Home Page},
+      year = {2012},
+       url = {http://jump.to/fleury},
+      note = {[Online; Stand 11. Februar 2012]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="uc:dannegger" type="misc" xml:id="bib.bib12">
+        <bib-name role="author">
+          <surname>Dannegger</surname>
+          <givenname>Peter</givenname>
+        </bib-name>
+        <bib-title>Entprellung - mikrocontroller.net</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://www.mikrocontroller.net/articles/Entprellung">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 11. Februar 2012]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{uc:dannegger,
+    author = {Peter Dannegger},
+     title = {Entprellung - Mikrocontroller.net},
+      year = {2012},
+       url = {http://www.mikrocontroller.net/articles/Entprellung},
+      note = {[Online; Stand 11. Februar 2012]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="uc:rs232" type="misc" xml:id="bib.bib13">
+        <bib-name role="author">
+          <surname>Mikrocontroller.ner</surname>
+        </bib-name>
+        <bib-title>RS-232 - mikrocontroller.net</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://www.mikrocontroller.net/articles/RS-232">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 11. Februar 2012]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{uc:rs232,
+    author = {Mikrocontroller.ner},
+     title = {RS-232 - Mikrocontroller.net},
+      year = {2012},
+       url = {http://www.mikrocontroller.net/articles/RS-232},
+      note = {[Online; Stand 11. Februar 2012]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="avrfreaks:menu" type="misc" xml:id="bib.bib14">
+        <bib-name role="author">
+          <surname>Twillman</surname>
+          <givenname>Tymm</givenname>
+        </bib-name>
+        <bib-title>AVR freaks</bib-title>
+        <bib-date role="publication">2011</bib-date>
+        <bib-url href="http://www.avrfreaks.net/">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 01. November 2011]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{avrfreaks:menu,
+    author = {Tymm Twillman},
+     title = {AVR Freaks},
+      year = {2011},
+       url = {http://www.avrfreaks.net/},
+      note = {[Online; Stand 01. November 2011]}}
+</bib-data>
+      </bibentry>
+      <bibentry key="kosatec" type="misc" xml:id="bib.bib15">
+        <bib-name role="author">
+          <surname>Kosatec</surname>
+        </bib-name>
+        <bib-title>Kosatec</bib-title>
+        <bib-date role="publication">2012</bib-date>
+        <bib-url href="http://www.kosatec.de/prod_images/kc/640x480/100539.jpg">Link</bib-url>
+        <bib-note role="annotation">[Online; Stand 01. November 2011]</bib-note>
+        <bib-data role="self" type="BibTeX">@misc{kosatec,
+    author = {Kosatec},
+     title = {Kosatec},
+      year = {2012},
+       url = {http://www.kosatec.de/prod_images/kc/640x480/100539.jpg},
+      note = {[Online; Stand 01. November 2011]}}
+</bib-data>
+      </bibentry>
+    </biblist>
+  </bibliography>
+</document>
