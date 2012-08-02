@@ -9,7 +9,9 @@
     <link rel="next" href="Ch2.html" title="Kapitel 2 Vorstellung der vorhandenen Hardware ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers">
     <link rel="stylesheet" type="text/css" href="core.css">
     <link rel="stylesheet" type="text/css" href="Praxisbericht.css">
-  </head>
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="joe.js"></script>
+</head>
   <body>
     <nav class="navbar"><a href="Praxisbericht.html" title="Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref start"><span class="text reftitle">Übersetzen von Schrittmotorbefehlen<br class="break">Entwurf eines Hardwareübersetzers</span></a>
     
@@ -36,7 +38,26 @@
       </header>
     <div class="content">
 <section class="chapter"><hgroup><h1 class="title small">
-<span class="tag">Kapitel 1 </span>Einleitung</h1></hgroup><div id="p1" class="para"><p class="p"><span class="text small">Ein 3D-Laserscanner bietet vielfältige Möglichkeiten und Einsatzgebiete. Die Haupt-einsatzgebiete finden sich in der Bauteileprüfung, der Erstellung von Finite-Elemente-Daten in Verbindung mit Bauteilanalyse, der Erstellung von 3D-Daten, der Kontrolle von Zubehörteilen und dem Reverse-Engineering.</span><br class="break"><span class="text small">Im Besitz der Fachhochschule Koblenz befindet sich ein komplettes 3D-Laserer-fassungssystem. Dazu gehören eine Erfassungssoftware, ein 3D-Laserscanner und ein Drehtisch. Bisher müssen für eine Aufnahme, alle Komponenten zueinander passen. Der Drehtisch in diesem System ist jedoch ein Eigenbau der Fachhochschule Koblenz und die darin verbaute Drehtischsteuerung nicht kompatibel zu denen, von der Erfassungssoftware unterstützten, Drehtischsteuerungen.</span><br class="break"><span class="text small">Mittels eines Mikrocontrollers soll der vorhandene Aufbau so erweitert werden, dass der Drehtisch von der Software angesteuert werden kann und so der volle Umfang des Systems nutzbar gemacht werden. Dabei sind folgende Aufgaben zu realisieren. Die Höhenverstellung des Drehtisches soll genutzt werden können und die verbauten Endschalter ihre vorhergesehene Funktion erfüllen. Der Mikrocontroller soll sich mit mehreren Tastern bedienen lassen und über ein LC-Display verfügen, welches den aktuellen Status anzeigt. Mit einer Schritt-für-Schritt-Anleitung soll es auch für Studenten und Mitarbeiter der Fachhochschule möglich sein, schnell und einfach eine Aufnahme durchzuführen. Die Daten dieser Aufnahme sollen exportiert und in z.B. CAD-Anwendungen nutzbar sein. </span><br class="break"><span class="text small">Der Aufbau der Arbeit gliedert sich im Wesentlichen in die Vorstellung der vorhandenen Hard- und Software, dem chronologischen Arbeitsablauf während des Projektes, ein Kapitel das Probleme und deren Lösungen aufzeigt, in ein Fazit und mögliche zukünftige Verbesserungen. Im Anhang befindet sich eine Schritt-für-Schritt-Anleitung die es Laien ermöglicht 3D-Modelle aufzunehmen und zu exportieren.
+<span class="tag">Kapitel 1 </span>Einleitung</h1></hgroup>
+
+<div id="p1" class="para">
+    <p class="p">
+        <img class="man_graf" src="Schema_Arbeitsplatz.png">
+        <span class="text small">Ein 3D-Laserscanner bietet vielfältige Möglichkeiten und Einsatzgebiete. Die Haupt-einsatzgebiete finden sich in der Bauteileprüfung, der Erstellung von Finite-Elemente-Daten in Verbindung mit Bauteilanalyse, der Erstellung von 3D-Daten, der Kontrolle von Zubehörteilen und dem Reverse-Engineering.</span>
+        <br class="break">
+        <span class="text small">Im Besitz der Fachhochschule Koblenz befindet sich ein komplettes 3D-Laserer-fassungssystem. Dazu gehören eine Erfassungssoftware, ein 3D-Laserscanner und ein Drehtisch. Bisher müssen für eine Aufnahme, alle Komponenten zueinander passen. Der Drehtisch in diesem System ist jedoch ein Eigenbau der Fachhochschule Koblenz und die darin verbaute Drehtischsteuerung nicht kompatibel zu denen, von der Erfassungssoftware unterstützten, Drehtischsteuerungen.</span>
+        <br class="break">
+        <span class="text small">Mittels eines Mikrocontrollers soll der vorhandene Aufbau so erweitert werden, dass der Drehtisch von der Software angesteuert werden kann und so der volle Umfang des Systems nutzbar gemacht werden.</span><br class="break">
+        <span>Dabei sind folgende Aufgaben zu realisieren:
+        <ul>
+            <li>Die Höhenverstellung des Drehtisches soll genutzt werden können</li> 
+            <li>die verbauten Endschalter ihre vorhergesehene Funktion erfüllen</li> 
+            <li>Der Mikrocontroller soll sich mit mehreren Tastern bedienen lassen und über ein LC-Display verfügen welches den aktuellen Status anzeigt</li> 
+            <li>Mit einer Schritt-für-Schritt-Anleitung soll es auch für Studenten und Mitarbeiter der Fachhochschule möglich sein, schnell und einfach eine Aufnahme durchzuführen.</li> 
+            <li>Die Daten dieser Aufnahme sollen exportiert und in z.B. CAD-Anwendungen nutzbar sein.</li>
+        </ul>  </span>
+        <br class="break">
+        <span class="text small">Der Aufbau der Arbeit gliedert sich im Wesentlichen in die Vorstellung der vorhandenen Hard- und Software, dem chronologischen Arbeitsablauf während des Projektes, ein Kapitel das Probleme und deren Lösungen aufzeigt, in ein Fazit und mögliche zukünftige Verbesserungen. Im Anhang befindet sich eine Schritt-für-Schritt-Anleitung die es Laien ermöglicht 3D-Modelle aufzunehmen und zu exportieren.
    </span></p></div></section>
         </div>
     <footer class="footer">July 1, 2012<a href="Chx1.html" title="Hinweise zum Dokument ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref previous"><span class="text reftitle">Hinweise zum Dokument</span></a><a href="Ch2.html" title="Kapitel 2 Vorstellung der vorhandenen Hardware ‣ Übersetzen von SchrittmotorbefehlenEntwurf eines Hardwareübersetzers" class="ref next"><span class="text reftitle"><span class="tag"><span class="text small">2 </span></span><span class="text small">Vorstellung der vorhandenen Hardware</span></span></a>

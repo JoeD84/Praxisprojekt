@@ -4,7 +4,7 @@
 /* Generic Page layout */
 /* Header & footer */
 /*.header:before { content:url(latexml.png); }*/
-.header,.footer   { font-size:80%; }
+/*.header,.footer   { font-size:80%; }*/
 .header .previous,
 .footer .previous { float:left; }
 .header .up,
@@ -49,7 +49,7 @@ a {
 .abstract    { margin:1em 4em 1em 4em; }
 .toc li      { list-style-type:none;  }
 
-.navbar { display: none; } /* override! */
+/*.navbar { display: none; } /* override! */*/
 .main { margin:0px; padding:1em 3em 1em 2em; }
 
 /*======================================================================

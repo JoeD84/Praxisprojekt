@@ -1,10 +1,48 @@
 /* CSS for left navigation bar */
 
 .header {
-/*    font-size: 120%;*/
+    background: white;
+    width: 658px;
+    float: left;
+    border: solid 1px black;
+    border-bottom: 0px;
+    border-radius: 5px 5px 0px 0px;
+    font-weight: bold;
+    vertical-align:middle;
     }
-.header .up, .footer {
-min-height: 35px;
+
+.header .ref {  
+    padding:3px;
+    display: block;
+    width: 300px;
+    height: 40px;
+    }
+    
+.header .previous {   
+    position:relative;
+    left:-1px;
+    border-radius:  0px 5px 5px 0px;
+    border: solid 1px black;
+    border-left:0px;
+    background: #A6DBE3;  
+    text-align:left;
+    }
+    
+.header .next {      
+    position:relative;
+    right:-1px;
+    border-radius: 5px 0px 0px 5px;
+    border: solid 1px black;
+    border-right: 0px;
+    background: #A6DBE3;  
+    text-align:right;
+    }    
+            
+    
+.header .up {
+    margin: 0px auto;
+    width:100%;
+    min-height: 40px;
 }
 
 .graphics{
@@ -13,23 +51,33 @@ min-height: 35px;
     }
 
 .navbar { 
-    z-index: 1000;
-    display: block!important;
-    position: absolute;
+    float: left;
+/*    z-index: 0;*/
+    position: relative;
+    left: 3px;
     width: 280px;
-/*    margin: 1em;*/
-/*    padding: 1em;*/
-    font: bold 75% sans-serif;
+    font: 100% sans-serif;
     }
     
-.navbar > .start:before {
+    
+* html .navbar { 
+    float: left;
+/*    z-index: 0;*/
     position: relative;
+    left: 6px;
+    width: 280px;
+    font: 100% sans-serif;
+    }
+    
+body>.navbar:before {
+    content: url(x1.jpg);
+}
+body>.navbar::before {
     content: url(x1.jpg);
 }
 
 .navbar .start {
-    font-size:120%;
-    
+    font:bold 0% sans-serif;
     }
         
 /*.navbar ul { */
@@ -37,10 +85,7 @@ min-height: 35px;
 /*}*/
 
 
-a {
-   color: #009DA0; 
-   
-    }
+a               { color:#009DA0; }
 a:link          { color:#009DA0;   text-decoration:none; }
 a:visited       { color:#009DA0;   text-decoration:none; }
 a:focus         { color:#009DA0;   text-decoration:underline; }
@@ -56,6 +101,13 @@ a:active        { color:#009DA0;   text-decoration:underline; }
     border-radius: 10px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+    box-shadow: 5px 5px 3px #005980;
+    }
+    
+.navbar > .toc > .tocentry > .ref{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
     }
     
 .listing {
@@ -74,6 +126,7 @@ a:active        { color:#009DA0;   text-decoration:underline; }
     clear: both;
     padding: 1em;
     border: 1px solid;
+    border-top: 0px;
 }
     
 .navbar .toc li {
@@ -82,8 +135,10 @@ a:active        { color:#009DA0;   text-decoration:underline; }
     
 .navbar li {
     white-space: normal;
+    padding-top:1px;
+    padding-bottom:1px;
 }
-    
+
 .navbar li.self {
     position: relative;
 /*    left: 23px;*/
@@ -92,7 +147,7 @@ a:active        { color:#009DA0;   text-decoration:underline; }
     margin-right: -3px;
     z-index: 2000;
     background: #A6DBE3;
-/*    padding: 5px;*/
+    padding: 5px;
     padding-left: 5px;
     margin-left: -38px;
     border: #009DA0 3px solid;
@@ -125,15 +180,152 @@ a:active        { color:#009DA0;   text-decoration:underline; }
     text-align: center;
     }
     
+.listing .tabular {
+    box-shadow: 3px 3px #DDD;
+    }
+    
 .main { 
-    position: absolute;
-    left: 285px; right: 0px;
-    background: #A6DBE3;
-    margin-right: 8px;
-    margin-bottom: -10px;
-    padding: 1em 1em 1em 1em;
-    min-height: 600px;
-/*    min-width: 560px;*/
-    border: 3px solid #009DA0;
-    border-radius: 10px;
+z-index:1;
+float: right;
+width: 660px;
+position: relative;
+/*left:-5px;*/
+background: #A6DBE3;
+/*margin-right: 8px;*/
+margin-bottom: 50px;
+padding: 1em 1em 1em 1em;
+min-height: 820px;
+border: 3px solid #009DA0;
+border-radius: 10px;
+box-shadow: 5px 5px 3px #005980;
 }
+
+/*.main:after{*/
+/*    margin:10px;*/
+/*    bottom: -200px;*/
+/*    background: #00FF00;*/
+/*    content: url(x1.jpg) ;*/
+/*    position:relative;*/
+/*    width:800px;*/
+/*    height:100px;*/
+/*    }*/
+    
+html {
+    margin:auto;
+    margin-top:30px;
+    margin-bottom:80px;    
+    width: 1007px;
+    }
+
+body {
+    float: left;
+    padding: 5px;
+    overflow: auto;
+    }
+
+body:before {
+    /*right: 0px;*/
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    /*right: -100%;*/
+    content: "";
+    font-size: 400%;
+    text-align:center;
+    vertical-align: middle;
+    background-color: #009DA0;
+    
+    /* fallback */
+    background-color: #1a82f7;
+    background: url(images/linear_bg_2.png);
+    background-repeat: repeat-x;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A6DBE3), to(#FFFFFF));
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #A6DBE3, #FFFFFF);
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #A6DBE3, #FFFFFF);
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #A6DBE3, #FFFFFF);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #A6DBE3, #FFFFFF);
+    }
+    
+	
+body::before {
+    /*right: 0px;*/
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    /*right: -100%;*/
+    content: "";
+    font-size: 400%;
+    text-align:center;
+    vertical-align: middle;
+    background-color: #009DA0;
+    
+    /* fallback */
+    background-color: #1a82f7;
+    background: url(images/linear_bg_2.png);
+    background-repeat: repeat-x;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A6DBE3), to(#FFFFFF));
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #A6DBE3, #FFFFFF);
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #A6DBE3, #FFFFFF);
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #A6DBE3, #FFFFFF);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #A6DBE3, #FFFFFF);
+    }
+	
+/*body:after{*/
+/*    content: "narf";*/
+/*    background: #00FF00;*/
+/*    position:absolute;*/
+/*    bottom:-*/
+/*    150px;*/
+/*    height:200px;*/
+/*    }*/
+    
+.title{
+    background-color:#A6DBE3;
+    text-align:left;
+    padding-top:8px;
+    padding-bottom:8px;
+    padding-left:5px;
+box-shadow: 3px 3px #005980;
+    }
+
+.man_graf{
+    float:right;
+    width:400px;
+    }
+    
+/*p.p .break {*/
+/*    display: block;*/
+/*    margin: 10px auto 10px auto;*/
+/*    padding: 1px 2px 3px 4px;*/
+/*/*    border: 1px solid black;*/*/
+/*    font-size: 8px;*/
+/*    line-height: 8px;*/
+/*    height: 2px;*/
+/*    background: #A6DBE3;  */
+/*/*    background-image: url("https://sites.google.com/a/fundoogeek.com/home/images/WhiteStarinRedCircle.gif");*/*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: top left;*/
+/*    background-origin: content-box;*/
+/*    color: blue;*/
+/*    content: "A";*/
+/*    width: 40px;*/
+/*    box-shadow: 3px 3px #005980;*/
+/*/*    position: relative;*/*/
+/*/*    top: 7px;*/*/
+/*}*/
