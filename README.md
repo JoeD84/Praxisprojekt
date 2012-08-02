@@ -21,6 +21,7 @@
 * ~~AVR-Studio 5~~
 
 ### [Praxisbericht](https://github.com/JoeD84/Praxisprojekt/blob/master/Dokumente/!Praxisbericht/Praxisbericht.pdf?raw=true)
+### [Praxisbericht(HTML)](http://joed.square7.de/Praxisbericht/)
 
 ### [Verlauf des Projekts](https://github.com/JoeD84/Praxisprojekt/blob/master/Dokumente/Praxisprojekt_Fortschritte.pdf?raw=true)
 
